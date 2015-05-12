@@ -1,0 +1,205 @@
+ubuntu下动态链接库的编译和使用实例 (2011-06-02 19:14:45)转载▼
+分类： 技术
+    以下实例的环境是amd64 + ubuntu10.10 + g++ 4.4.5测试成功，在其他配置的机器上可能有一点区别。
+    动态库的使用方式中有两种，第一种是类似于静态库的使用，另一种我称之为真正的动态加载动态库，主要是因为这种方式在程序运行的过程中加载链接库，使用之后在卸载链接库。
+    先介绍第一种。
+    在目录/home/owner/test/下创建我们的实验程序：
+        //dll_fun.c
+        #include <stdio.h>
+        void dll_function(const char* szString)
+        {
+                printf("%s\n", szString);
+        }
+    编译生成动态链接库
+        gcc -c -fPIC dll_fun.c //这里一定要加上-fPIC选项，不然下一步编译失败
+        gcc -shared -fPIC -o libdllfun.so dll_fun.o //生成动态链接库libdllfun.so
+    创建调用动态库方法：
+        //main.c
+        void dll_function(const char* szString);
+        int main()
+        {
+               dll_function("This is the words of the dll function!!!!!!");
+               return 0; 
+        }
+    编译main.c生成可执行文件
+        gcc -o main main.c -L. -ldllfun //这里提供了刚才生成的dllfun库
+    如果此时执行./main的话，会出现如下错误：
+        cannot open shared object file: No such file or directory
+    这是因为系统未找到动态库libdllfun.so。
+    Linux动态链接库的默认搜索路径是/lib和/usr/lib，因此动态库被创建后，一般都复制到这两个目录下面，当程序执行时需要某动态库，并且改动态库还没有加载到内存中，则系统会自动到这两个默认的搜索路径中去查找相应的动态库文件，然后加载改文件到内存中，这样程序就可以使用该动态库中的函数以及该动态库中的其他资源了。在linux中，动态库的搜索路径除了默认的搜索路径外，还可以通过其他三种方法来指定，这里只介绍其中的一种：通过环境变量LD_LIBRARY_PATH指定动态库搜索路径。
+    当通过该环境变量指定多个动态链接库搜索路径时，路径之间用冒号":"分隔。     
+    使用下面命令来配置环境
+      mkdir /home/owner/test/lib//将这个目录设置为动态库的存放目录
+       mkdir/home/owner/test/libdllfun.so /home/owner/test/lib/libdllfun.so
+       export LD_LIBRARY_PATH=/home/owner/test/lib
+   此时设置这个环境变量之后的所有命令命令中，该环境变量都有效。
+       ./main
+   可得如下结果：
+       This is the words of the dll function!!!!!!
+ 第二种加载动态库实例：
+       //dll_fun.c
+       #include<stdio.h>
+        void dll_function(const char* szString)
+       {
+             printf("%s\n", szString);
+       }
+    编译该文件：
+      gcc -Wall -fPIC -c dll_fun.c
+      gcc -shared -W1,-soname,libdllfun.so.1 -o libdllfun.so.1.0 *.o
+      sudo mv libdllfun.so.1.0 /usr/lib
+      sudo ln -sf /usr/lib/libdllfun.so.1.0 /usr/lib/libdllfun.so
+      sudo ln -sf /usr/lib/libdllfun.so.1.0 /usr/lib/libdllfun.so.1
+    参数详解：
+      -Wall：包含warning信息
+      -fPIC：编译动态库所必须的，输出不依赖位置的代码
+       -shared：编译动态库必须选项
+       -W1：向连接器传递一些参数，在这里传递的参数有“-soname”，"libdllfun.so.1"
+       -o：动态库的名字，在这个例子里最终生成动态库libdllfun.so.1.0
+    两个符号链接的含义：
+        第一个：允许应用代码用-dllfun的语法进行编译
+        第二个：允许应用程序在运行时调用动态库
+    下面是简单的动态调用so的例子：
+        增加dll_fun.h：
+        //dll_fun.h
+        #ifndef _DLL_FUN_H_
+        #define _DLL_FUN_H_
+        #ifdef __cplusplus
+        extern "C"{
+        #endif
+        void dll_function(const char* szString);
+        #ifdef __cplusplus
+        }
+        #endif
+        #endif
+    这里我们仍然使用之前生成的libdllfun.so.1.0，增加一个新的应用程序cprog.c
+        //cprog.c
+        #include <stdio.h>
+        #include <dlfcn.h> //dlopen, dlsym, dlerror, dlclose的头文件
+        #include <stdlib.h>
+        #include "dll_fun.h"
+        //此例为动态加载动态库
+        int main()
+        {
+               typedef void (*DLL_FUNCTION)(const char*):
+               void* hHandle = NULL;
+               DLL_FUNCTION fpFun = NULL;
+
+               hHandle = dlopen("libdllfun.so", RTLD_LAZY);
+               if(hHandle == NULL)
+                        print("%s\n", dlerror());
+               else
+               {
+                        fpFun = (DLL_FUNCTION)dlsym(hHandle, "dll_function");
+                        char* szErrInfo = dlerror();
+                        if(szErrInfo == NULL)
+                                fpFun("This is the words of the dll function!!!!!!");
+                        else
+                                printf("Error: load dynamic library failed!\n");
+
+                        dlclose(hHandle);
+                }
+
+                return 0;
+        }
+    用如下命令编译运行：
+        gcc -Wall cprog.c -ldllfun -ldl -o cprog 
+        ./cprog
+    方法简介：
+        dlopen("libdllfun.so", RTLD_LAZY)：加载动态库，如果加载失败返回NULL，第二个参数可能有：
+            RTLD_LAZY：lazy模式，直到程序运行到该行才尝试加载
+            RTLD_NOW：马上加载
+            RTLD_GLOBAL：Make symbol libraries visible
+        dlsym(hHandle, "dll_function")：返回函数地址，如果查找函数失败则返回NULL
+    在这种方式下不知道怎么修改动态链接库搜索路径，网上的一种方法是采用修改/etc/ld.so.conf，我试了一下，好像效果不是很好，而且要修改这个文件，感觉总不是太好，而且一样的麻烦，希望有那个好心人能够提供一个比较好的方法，让我也学习一下，谢谢了:)。
+    相关知识：
+        命令ldd appname 可以查看应用程序所依赖的动态库，运行如下命令：
+            ldd cprog
+        可得如下结果：
+            linux-vdso.so.1 => (0x00007fff831ff000)
+            libdllfun.so => /usr/lib/libdllfun.so (0x00007fa1798df000)
+            libdl.so.2 => /lib/libdl.so.2 (0x00007fa1796db000)
+            libc.so.6 => /lib/libc.so.6 (0x00007fa179357000)
+            /lib64/ld-linux-x86-64.so.2 (0x00007fa179afc000)
+        使用命令nm查看输出函数：
+            nm libdllfun.so
+    编译命令简介：
+        假设C文件是cprog.c，C++调用文件是cppprog.cpp，则编译脚本分别是：
+        C语言：
+            gcc -Wall -I/path/to/include/headers -L/path/to/libraries cprog.c -ldllfun -ldl -o cprog
+        C++语言：
+            g++ -Wall -I/path/to/include/headers -L/path/to/libraries cppprog.cpp -ldllfun -ldl -o cppprog
+        参数详解：
+            -I：指定头文件目录
+            -L：指定库目录
+            -ldllfun：调用动态库libdllfun.so.1.0，如果在打包so时没有创建第一个符号链接，那么这个参数会导致编译失败
+            -ldl：编译动态库必须，不然链接不到dlopen等方法
+    C++开发带class的动态库
+    以下几个文件
+        //myclass.h
+        #ifndef __MYCLASS_H__
+        #define __MYCLASS_H__
+
+        class MyClass
+        {
+        public:
+                MyClass();
+                // use virtual otherwise linker will try to perform static linkage
+                virtual void DoSomething();
+        private:
+               int x;
+        };
+        #endif
+
+        //myclass.cpp
+        #include "myclass.h"
+        #include <iostream>
+
+        using namespace std;
+
+        extern "C" MyClass* create_object()
+        {
+                return new MyClass;
+        }
+
+        extern "C" void destroy_object(MyClass* object)
+        {
+                delete object;
+        }
+
+        MyClass::MyClass()
+        {
+                x = 20;
+        }
+
+        void MyClass::DoSomething()
+        {
+                cout << x << endl;
+        }
+
+        //classuser.cpp
+        #include <dlfcn.h>
+        #include <iostream>
+        #include "myclass.h"
+
+        using namespace std;
+
+        int main(int argc, char **argv)
+        {
+                // on Linux, use "./myclass.so" 
+                void* handle = dlopen("./myclass.so", RTLD_LAZY);
+
+                MyClass* (*create)();
+                void (*destroy)(MyClass*);
+
+                create = (MyClass* (*)())dlsym(handle, "create_object");/div>
+                destroy = (void (*)(MyClass*))dlsym(handle, destroy_object");/div>
+
+                MyClass* myClass = (MyClass*)create();
+                myClass->DoSomething();
+
+                destroy( myClass );
+        }
+    编译和运行
+        g++ -fPIC -shared myclass.cpp -o myclass.so
+        g++ classuser.cpp -ldl -o classuser
+        ./classuser

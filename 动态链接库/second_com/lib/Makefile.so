@@ -1,0 +1,7 @@
+libstr.so: strlen.o strnlen.o
+    gcc -fpic -shared -o $@ $^
+    $(RM) $^
+
+.PHONY : clean
+clean :
+    rm -f libstr.so

@@ -1,0 +1,8 @@
+ sudo apt-get install  recordmydesktop gtk-recordmydesktop
+(屏幕录制软件)
+
+ls -la /proc/asound/
+http://share.renren.com/share/247116214/4876996915
+alsamixer
+hw:1,0(card1,device0)
+

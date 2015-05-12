@@ -1,0 +1,2 @@
+g++ -o /home/zhangzhenwei/graduate/答辩材料/开题答辩/fastslam_gui/screenshot/avicreator main.cpp $(pkg-config --libs opencv)
+g++ opencv.cpp -o Test `pkg-config --cflags --libs opencv`

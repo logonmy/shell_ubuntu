@@ -1,0 +1,14 @@
+可以使用命令 kill pid来杀死某个进程，一般情况下，杀死父进程，子进程会继续运行，有些情况下用户希望杀死父进程同时也使子进程消亡，单纯的用（kill 父进程id）做不到，就会留下一些所谓的僵尸进程。
+
+ 
+
+键盘和shell的交互：
+
+Ctrl-c	Kill foreground process 常用 
+Ctrl-z	Suspend foreground process
+Ctrl-d	Terminate input, or exit shell 常用 有时也会使程序退出，例如没有参数的cat命令，从终端读一行显示一行，知道Ctrl+D终结输入并终结进程
+Ctrl-s	Suspend output
+Ctrl-q	Resume output
+Ctrl-o	Discard output
+Ctrl-l	Clear screen
+控制字符都是可以用(stty命令)更改的。可以用stty -a看看终端配置。

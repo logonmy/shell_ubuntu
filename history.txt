@@ -1,0 +1,500 @@
+   51  make clean
+   52  make
+   53  ls
+   54  make clean
+   55  make
+   56  ls
+   57  make clean
+   58  make 
+   59  ls
+   60  ls
+   61  make clean -n
+   62  make clean
+   63  make clean
+   64  ls
+   65  make
+   66  ls
+   67  make clean
+   68  ls
+   69  make
+   70  ls
+   71  make clean
+   72  ls
+   73  make clean
+   74  ls
+   75  make clean
+   76  ls
+   77  ls
+   78  ll
+   79  ./fastslam_gui 
+   80  make clean
+   81  ls
+   82  make clean
+   83  ls
+   84  make
+   85  ls
+   86  make
+   87  make clean
+   88  ls
+   89  ls
+   90  make clean1 
+   91  ls
+   92  ls
+   93  ls
+   94  ls
+   95  sudo mentohust 
+   96  ls
+   97  make clean
+   98  ls
+   99  make clean -n
+  100  make clean 
+  101  ls
+  102  ls
+  103  make clean
+  104  ls
+  105  ls
+  106  make clean
+  107  ls
+  108  make
+  109  ls
+  110  make clean
+  111  ls
+  112  ls
+  113  make clean
+  114  ls
+  115  ls
+  116  make clean
+  117  ls
+  118  ls
+  119  make clean
+  120  ls
+  121  sudo mentohust -k
+  122  exit
+  123  sudo mentohust -u2011300267 -p000267
+  124  sudo mentohust -k
+  125  sudo mentohust -u2011300268 -p000268
+  126  sudo mentohust -k
+  127  sudo mentohust -u2011300242 -p242242
+  128  ls
+  129  cd my_progs/
+  130  ls
+  131  cd g2o/
+  132  caja .
+  133  sudo apt-get install libgtk2.0-dev
+  134  sudo apt-get install pkg-config
+  135  Function diary 
+  136  ls
+  137  cd ../../
+  138  ls
+  139  gedit function.log 
+  140  cd -
+  141  Function opencv_install 
+  142  Function Win3D 
+  143  Function echo_help 
+  144  dpkg -L||grep Function
+  145  dpkg -L|grep Function
+  146  dpkg -l|grep Function
+  147  dpkg -l | grep Function
+  148  dpkg -l || grep Function
+  149  dpkg -L || grep Function
+  150  exit
+  151  sudo chmod 777 Kinect+OpenNI获取深度图和颜色图.rar 
+  152  unrar -e Kinect+OpenNI获取深度图和颜色图.rar 
+  153  ls
+  154  unrar -r Kinect+OpenNI获取深度图和颜色图.rar 
+  155  ls
+  156  unrar Kinect+OpenNI获取深度图和颜色图.rar 
+  157  unrar e Kinect+OpenNI获取深度图和颜色图.rar 
+  158  sudo chmod 777 opencv-3.0.0-beta.zip 
+  159  unzip opencv-3.0.0-beta.zip 
+  160  ll
+  161  cd ../
+  162  sudo chmod 
+  163  sudo chmod 777 -R opencv-3.0.0-beta
+  164  cd opencv-3.0.0-beta/
+  165  ls
+  166  ll
+  167  Function opencv_install 
+  168  dpkg -L | grep opencv
+  169  dpkg -l | grep opencv
+  170  dpkg -l opencv
+  171  dpkg -l grep opencv
+  172  dpkg -l | grep opencv
+  173  ls
+  174  dpkg --cflags
+  175  dpkg -cflags
+  176  man dpkg
+  177  sl
+  178  sls
+  179  cd $Function_Data_Path
+  180  ls
+  181  more LIBS_CONFIG.mk 
+  182  ig --cflags opencv
+  183  pkg-config --cflags opencv
+  184  pkg-config --cflags opencv pkg-config --libs opencv
+  185  ls
+  186  cd /data/zhaoyogn
+  187  ls
+  188  cd /data/
+  189  ls
+  190  sshfs zhaoyong@10.129.3.38:/data .
+  191  ls
+  192  caja
+  193  caja .
+  194  caja .
+  195  apt-cache search opencv
+  196  apt-cache search opencv |grep opencv
+  197  sudo apt-get install libopencv-core-dev
+  198  ls
+  199  cd KINECT/
+  200  ls
+  201  cd OpenNI-unstable/
+  202  ls
+  203  cd Samples/
+  204  ls
+  205  cd MY_OpenNI
+  206  ls
+  207  gedit Makefile 
+  208  ls
+  209  make clean 
+  210  amke
+  211  make
+  212  ls
+  213  ll
+  214  caja .
+  215  make
+  216  make clean
+  217  ls
+  218  make
+  219  ll
+  220  sudo chmod +x openni_test 
+  221  ./openni_test 
+  222  sudo apt-get install vituralbox
+  223  ipconfigure
+  224  history
+  225  ipconfigure
+  226  cofigur
+  227  ipconfi
+  228  ipconfig
+  229  ifconfig
+  230  sudo apt-get install  VirtrualBox
+  231  sudo apt-get install Oracle VirtualBox
+  232   sudo apt-get install virtualbox
+  233  search history|grep mentohust 
+  234  search history | grep mentohust 
+  235  search history || grep mentohust 
+  236  search history  grep mentohust 
+  237  search history grep mentohust 
+  238  search history | grep mentohust 
+  239  history
+  240  sudo mentohust -u2011300242 -p242242
+  241  sudo mentohust -k
+  242  exit
+  243  sudo mentohust -u2011300242 -p242242
+  244  ls -la
+  245  ls -al
+  246  uname -a
+  247  cat /proc/version
+  248  cat /etc/issue
+  249  lsb_release -a
+  250  ls
+  251  cd graduate/
+  252  ls
+  253  cd LSD_SLAM/
+  254  ls
+  255  cd doc/
+  256  ls
+  257  caja .
+  258  evince engel14eccv.pdf 
+  259  sudo apt-get install evince
+  260  evince engel14eccv.pdf 
+  261  evince engel2013iccv.pdf 
+  262  evince schoeps14ismar.pdf 
+  263  sudo mentohust -u2011300242 -p242242
+  264  sudo mentohust -u2011300242 -p242242
+  265  exit
+  266  ifconfig 
+  267  evince schoeps14ismar.pdf 
+  268  cd graduate/LSD_SLAM/doc/
+  269  evince schoeps14ismar.pdf 
+  270  evince engel14eccv.pdf 
+  271  sudo mentohust 
+  272  sudo mentohust -k
+  273  sudo mentohust 
+  274  sudo mentohust -k
+  275  sudo mentohust
+  276  sudo mentohust -k
+  277  sudo mentohust -u2011300267 -phby1398
+  278  sudo mentohust -k
+  279  history | grep mentohust
+  280  sudo mentohust -u2011300264 -phby1398
+  281  sudo mentohust -k
+  282  sudo mentohust -u2011300242 -p242242
+  283  sudo mentohust 
+  284  sudo mentohust -k
+  285  sudo mentohust 
+  286  sudo mentohust 
+  287  ping www.baidu.com
+  288  ping www.baidu.com
+  289  ping www.qq.com
+  290  ping qq.com
+  291  ping qq.com
+  292  history |grep sudo mentohust 
+  293  history | grep mentohust 
+  294   sudo mentohust -u2011300242 -p242242
+  295  sudo mentohust -u2011300242 -p242242
+  296  sudo mentohust -
+  297  sudo mentohust -u2011300242 -p242242
+  298  sudo mentohust -u2011300242 -p242242 -w
+  299  sudo mentohust -k
+  300  sudo mentohust -u2011300242 -p242242 -w
+  301  sudo mentohust -u2011300242 -p242242 -w
+  302  sudo mentohust -k
+  303  sudo mentohust -u2011300242 -p242242 -w
+  304  gedit /etc/mentohust.conf
+  305  sudo gedit /etc/mentohust.conf
+  306  sudo mentohust
+  307  sudo mentohust -k
+  308  sudo mentohust
+  309  sudo mentohust -k
+  310  sudo mentohust
+  311  sudo mentohust -k
+  312  ping http://blog.163.com/guotao_163/blog/static/23682822009630111228268/
+  313  ping blog.163.com/guotao_163/blog/static/23682822009630111228268/
+  314  ping www.baidu.com
+  315  history 
+  316  sudo mentohust 
+  317  ls
+  318  ls
+  319  ls
+  320  ping www.baidu.com
+  321  route -n
+  322  sudo mentohust -k
+  323  sudo mentohust
+  324  sudo mentohust
+  325  sudo mentohust -k
+  326  sudo mentohust 
+  327  history 
+  328  sudo apt-get install virtualbox
+  329  sudo apt-get update 
+  330  sudo apt-get uninstall virtualbox
+  331  sudo apt-get install -e virtualbox
+  332  man install
+  333  remove virtualbox
+  334  virtualbox
+  335  sudo apt-get install virtualbox-qt
+  336  ifconfig 
+  337  ps ax | grep men
+  338  sudo mentohust -k
+  339  sudo mentohust 
+  340  ping www.baidu.com
+  341  ping www.baidu.com
+  342  ping www.baidu.com
+  343  uname -a
+  344  uptime 
+  345  ssh -x 192.168.1.114
+  346  ssh 192.168.1.114
+  347  ssh 192.168.1.114
+  348  history | grep ssh
+  349  HISTSIZE=1000
+  350  EVN
+  351  env
+  352  env | grep HISTORY
+  353  env | grep HOME
+  354  env | grep HISTSIZE
+  355  grep HISTSIZE
+  356  history 
+  357  ifconfig 
+  358  ifconfig | grep inet
+  359  ifconfig | grep inet |grep -v inet6
+  360  ifconfig | grep inet |grep -v inet6 |grep -v 127
+  361  ifconfig | grep inet |grep -v inet6 |grep -v 127 |cut : -f1
+  362  ifconfig | grep inet |grep -v inet6 |grep -v 127 |cut -d: -f1
+  363  ifconfig | grep inet |grep -v inet6 |grep -v 127 |cut -d: -f2
+  364  service sshd stop
+  365  service ssh start 
+  366  service ssh restart 
+  367  chkconfig
+  368  chkconfig --list ssh
+  369  sudo apt-get install chkconfig
+  370  chkconfig --list ssh
+  371  ifconfig 
+  372  ping 10.129.3.1
+  373  route
+  374  ping 10.129.3.1
+  375  sudo mentohust 
+  376  sudo gvim /etc/mentohust.conf 
+  377  sudo mentohust -k
+  378  sudo mentohust 
+  379  ping baidu.com
+  380  sudo gvim /etc/mentohust.conf
+  381  history | grep ssh
+  382  ssh -X hambi@192.168.1.114
+  383   ssh -X zhaoyong@10.129.3.38
+  384  ssh -l
+  385  ssh root>192.168.1.114
+  386  man ssh
+  387  man ssh
+  388  ! ps
+  389  ps ax | grep men
+  390  histsize
+  391  HISTSIZE
+  392  ps -ef | grep sshd
+  393  /etc/ssh/sshd.config
+  394  /etc/ssh/
+  395  cd /etc/ssh/
+  396  ll
+  397  gedit sshd_config 
+  398  sudo gedit sshd_config 
+  399  vim gedit sshd_config 
+  400  ls
+  401  cd my_doc/
+  402  cd ../my_progs/
+  403  ls
+  404  ls
+  405  cd IMU_Test/
+  406  ls
+  407  ./IMU_Test 
+  408  cd my_progs/IMU_Test/
+  409  ./IMU_Test 
+  410  ls
+  411  ls
+  412  ls
+  413  ls
+  414  ls
+  415  ls
+  416  exit
+  417  ssh -V
+  418  ps ax | grep men
+  419  ps ax | grep ssh
+  420  service ssh status 
+  421  ifconfig 
+  422  lcaja
+  423  caja
+  424  ssh -X zhaoyong@10.129.3.38
+  425  ssh hambi@192.168.1.114
+  426  ssh -X zhaoyong@10.129.3.38
+  427  history | grep ssh
+  428    471  vim gedit sshd_config 
+  429  vim gedit sshd_config 
+  430  vim gedit sshd_config 
+  431  vim gedit sshd_config 
+  432  vim gedit sshd_config 
+  433  vim gedit sshd_config 
+  434  vim gedit sshd_config 
+  435  vim Configure.txt 
+  436  vim Configure.txt 
+  437  cd /opt/
+  438  ls
+  439  cd g2o-20141201/
+  440  ls
+  441  more setenv.sh 
+  442  pwd
+  443  sudo cp g2o-20141201.tar.gz /opt/
+  444  cd /opt/
+  445  ll
+  446  sudo tar -xzf g2o-20141201.tar.gz 
+  447  cd -
+  448  cd ~
+  449  gedit .bashrc 
+  450  gvim ~/.bashrc 
+  451  ls
+  452  env | grep g2o\
+  453  env | grep g2o
+  454  ls
+  455  sshfs zhaoyong@10.129.3.38:/data/zhaoyogn
+  456  sshfs zhaoyong@10.129.3.38:/data/zhaoyong /data/like
+  457  ls
+  458  sshfs zhaoyong@10.129.3.38:/data/zhaoyong ./zhaoyong/
+  459  ls
+  460  cd zhaoyong/
+  461  ls
+  462  caja .
+  463  make clean
+  464  make
+  465  qmake
+  466  make
+  467  ll
+  468  make
+  469  more Makefile 
+  470  ll
+  471  cd ..
+  472  ll
+  473  cd lsd_slam-clearn
+  474  ll
+  475  cd lsd_slam_core/
+  476  ls
+  477  ll
+  478  more Makefile
+  479  make
+  480  make clean
+  481  ll
+  482  make
+  483  ll
+  484  ll
+  485  make
+  486  ll
+  487  cd src/
+  488  ll
+  489  ./main_on_images.e 
+  490  ldd main_on_images.
+  491  ldd main_on_images.e 
+  492  apt-cache search suite
+  493  apt-cache search suite | grep suite | grep sparse
+  494  sudo apt-get install libsuitesparse-dev
+  495  sudo apt-get update
+  496  sudo apt-get update
+  497  sudo apt-get update
+  498  ./main_on_images.e 
+  499  dpkg -l | grpe suite | grep sparse
+  500  dpkg -l | grep suite | grep sparse
+  501  dpkg -L libsuitesparse-dev:amd64
+  502  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
+  503  cd
+  504  ls
+  505  cd my_progs/
+  506  ls
+  507  ll
+  508  cd ..
+  509  ll
+  510  cd graduate/
+  511  ll
+  512  cd lsd_slam-clearn
+  513  ls
+  514  cd lsd_slam_core/src/
+  515  ls
+  516  ll
+  517  ldd main_on_images.e 
+  518  cd ..
+  519  ls
+  520  ll
+  521  cd ..
+  522  ls
+  523  ll
+  524  cd required_packages/
+  525  ls
+  526  ll
+  527  unzip -d g2o-src-20141201.zip 
+  528  unzip -x g2o-src-20141201.zip 
+  529  ll
+  530  cd g2o-master/
+  531  ll
+  532  mkdir build
+  533  cd build/
+  534  ls
+  535  cmake .. -DCMKAE_INSTALL_PREFIX=/opt/g2o-20141201
+  536  cmake .. -DCMAKE_INSTALL_PREFIX=/opt/g2o-20141201
+  537  make
+  538  ll
+  539  cd ..
+  540  ls
+  541  cd ..
+  542  ll
+  543  more g2o_build_readme.txt 
+  544  ll
+  545  cd g2o-master/
+  546  ll
+  547  history 
+  548  vim Configure.txt 
+  549  cat history>history.txt
+  550  history>history.txt

@@ -1,0 +1,14 @@
+gurogn | 分类：Linux | 浏览1904次
+我看很多材料上介绍是脚本名，但比方我新建test.sh，在里面echo $0,输出的结果是bash，难道bash就是脚本名？为什么不是test.sh，如何才能输出test.sh?
+分享到：
+2013-09-16 11:24 提问者采纳
+$0 是脚本名称。
+
+不知道你是怎么执行脚本的。 source test.sh　返回的是bash
+sh 或者是　bash　test.sh 返回的是脚本名称。
+追问
+你是对的，为什么sh就可以返回脚本名称，而source返回bash啊
+回答
+bash的帮助里说，bash "test.sh" 这种形式启动时　，$0才被设置成文件名。
+
+source是bash的内建命令，把文件读取到当前bash中执行，相当于在当前bash手动输入命令，所以$0是bash.

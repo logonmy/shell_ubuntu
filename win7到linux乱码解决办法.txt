@@ -1,0 +1,6 @@
+windows下的txt文件传到Linux下中文乱码问题 <转> (2011-03-09 10:59:36)转载▼
+标签： linux 乱码 杂谈	分类： Ubuntu
+之所以出现乱码是因为所压缩的文件中，有的文件是以中文命名。而在windows下中文的编码一般为gbk，而linux下中文的编码一般为utf8，所以在windows下正常打开的文件，到linux下很可能会出现乱码。
+解决办法为：使用命令iconv对文件内容编码进行转换。例如我有一个文件"linux常用命令"在windows下打开正常，而在linux下打开则会乱码，办法为在终端输入： 
+iconv -f gbk -t utf8 linux常用命令.txt > linux常用命令.txt.utf8
+ 之后再打开"linux常用命令.txt.utf8"这个文件，该文见的乱码问题就解决了。

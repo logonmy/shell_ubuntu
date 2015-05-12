@@ -1,0 +1,432 @@
+﻿BODY {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px;font-family:Arial,宋体}
+IMG,FORM,DIV,UL,LI,DL,DT,DD,P,TABLE,TR,TD,H1,H2,H3,H2,H4,H5,INPUT {BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px;list-style:none}
+A:link {COLOR: #134BA0; TEXT-DECORATION: none}
+A:visited {COLOR: #800080; TEXT-DECORATION: none}
+A:hover {COLOR: #CC0000; TEXT-DECORATION: underline}
+A:active {COLOR:#E20202; TEXT-DECORATION: underline}
+/*body{background:#4E7DC1}*/
+
+/*最上方页头*/
+.TopBox{height:30px;background:url('images/TopBox_BG.jpg') repeat-x}
+.TopBox_Box{width:1058px;height:30px;margin:auto}
+.TopBox_Box .ALinkBox{float:left;padding:8px 5px 0px 0px}
+.ALinkBox .ALinkBox_Home{border-right:1px #CCC solid;display:block;background:url('images/home.png') no-repeat left top;padding:0px 10px 0px 20px;line-height:16px}
+.ALinkBox .ALinkBox_Site{border-right:1px #CCC solid;display:block;padding:0px 10px 0px 5px;line-height:16px}
+.ALinkBox A{color:#666;text-decoration:none}
+.ALinkBox A:hover{color:#CC0000;text-decoration:underline}
+.TopBox_Box .ALoginBox{float:right;height:30px}
+.box1{height:30px;background:url('images/a1_headbg.jpg') repeat-x;margin:auto}
+.boxm{width:1058px;margin:auto}
+.box1 .wrapper{float:left;height:30px;padding-left:0px}
+.box1 .wrapper .addforver{float:left;padding-top:8px}
+.box1 .wrapper .addforver A{;background:url('images/home.png') no-repeat left center;padding-left:18px;color:#666;padding-right:5px;border-right:1px #CCC solid}
+.box1 .wrapper .cateion{float:left;padding:10px 20px 8px 45px;background:url('images/a1_cateion.jpg') no-repeat 15px center;cursor:pointer;color:#666;width:75px}
+.box1 .LoginBox{float:right}
+.box1 .LoginBox .LoginReg{padding:8px 10px 0px 0px;height:22px;float:left}
+.box1 .LoginBox .Logined{padding:4px 10px 0px 0px;height:26px;float:left}
+.box1 .LoginBox .Logined strong{color:#CC0000}
+/*常规通用CSS*/
+.WxBox{clear:both;overflow:hidden;width:1058px;background:#FFF;margin:auto;padding:0px 10px 10px 10px}
+.boxco{clear:both;overflow:hidden}
+.LineAp{height:8px;overflow:hidden;font-size:0px}
+.ConBox{width:980px;clear:both;overflow:hidden}
+.NoTitle{padding-top:10px}
+.NoTitle h3{font-family:微软雅黑;font-size:16px}
+.LLine{width:670px;height:10px;overflow:hidden;font-size:0px;float:left;width:670px}
+.index_Line{width:980px;height:10px;overflow:hidden;font-size:0px}
+.wxListBox{width:980px;clear:both;overflow:hidden;background:url('images/Conbg.jpg') repeat-y;border-bottom:1px #DDD solid}
+.CListLeft{float:left;width:748px;border-top:2px #4E7DC1 solid}
+.CArticleBox{width:1058px;clear:both;overflow:hidden;background:url('images/ShowBodyBg.png') repeat-y}
+.CMBox{float:right;width:300px}
+
+/*WEB主页包围*/
+.ConLBox{float:left;width:670px}
+.webLbox{float:left;width:320px}
+.webMbox{float:right;width:340px}
+.webRbox{float:right;width:300px}
+.LConBox{float:left;width:668px;border-left:1px #D8D8D8 solid;border-right:1px #D8D8D8 solid;border-bottom:1px #D8D8D8 solid}
+.LConBoxno{float:left;width:670px;}
+.wRboxLine{width:300px;height:8px;overflow:hidden;font-size:0px}
+
+.Search{float:right;width:229px;overflow:hidden;height:39px;padding-top:5px}
+.SearchBox{width:229px;height:35px;overflow:hidden}
+.SearchBox .KeysBox{width:179px;height:26px;float:left;overflow:hidden}
+.SearchBox .KeysBox input{width:179px;height:26px;border:0px;background:url('images/keyword.jpg');padding:0px 5px 0px 5px;line-height:26px;color:#666}
+.SearchBox .ButtonsBox{width:50px;height:26px;float:left;overflow:hidden}
+.SearchBox .ButtonsBox input{width:50px;height:26px;background:url('images/sButton.jpg');border:0px}
+
+/*头部导航栏*/
+.box_Navigation{width:980px;height:20px;padding-top:10px;color:#999}
+.box_Navigation A{color:#255D8A;font-family:微软雅黑;font-size:13px;padding:0px 2px 0px 2px}
+.box_Navigation A:hover{color:#FFF;background:#255D8A;text-decoration:none}
+/*头部Logo与搜索*/
+.box_LSS{width:1058px;height:33px;padding:10px 0px 5px 0px}
+.box_LSS .LogoBox{float:left;height:30px;padding:0px 10px 0px 0px;overflow:hidden}
+.box_LSS .LogoBox img{float:left}
+.box_LSS .LogoBox h3{font-family:微软雅黑;font-size:20px;padding-top:2px;float:left;cursor:pointer}
+.box_LSS .LogoBox A{color:#01578B}
+.box_LSS .RSS{float:left;padding:11px 0px 0px 0px}
+.box_LSS .RSS A{color:#999}
+.box_LSS .RSS A:hover{color:#CC0000}
+.box_LSS .HotBox{width:550px;height:30px;padding:12px 0px 0px 0px;float:left}
+.box_LSS .HotBox #HotWord{overflow:hidden;height:30px;width:100%;white-space:nowrap}
+.box_LSS .strongbox{height:30px;padding:10px 0px 0px 28px;float:left;background:url('images/home.png') no-repeat 10px 11px;font-family:微软雅黑}
+.box_LSS .CatNameLi{height:30px;padding:8px 80px 0px 0px;float:right;font-family:微软雅黑}
+.box_LSS .HotBox A{color:#666}
+.box_LSS .HotBox A:hover{color:#CC0000}
+.box_LSS .KeyWord{float:right;height:26px;padding-top:6px}
+.box_LSS .KeyWord INPUT{width:169px;height:26px;background:url('images/keyword.jpg');padding:0px 5px 0px 5px;line-height:26px;color:#666}
+.box_LSS .SButton{float:right;height:26px;padding-top:6px}
+.box_LSS .SButton input{width:50px;height:26px;background:url('images/sButton.jpg')}
+.box_LSS .RSSR{float:right;padding:11px 10px 0px 0px}
+.box_LSS .RSSR A{color:#999}
+.box_LSS .RSSR A:hover{color:#CC0000}
+.box_LSS .HotCategory{width:580px;height:30px;padding:10px 0px 0px 0px;float:left}
+/*栏目导航*/
+.Cate_Navigation{width:1058px;height:35px;background:#2185F5;overflow:hidden;}
+.Cate_Navigation h3{float:left;background:url('images/Navigation_Line.jpg') no-repeat right top;color:#FFF}
+.Cate_Navigation h3 A{display:block;padding:12px 10px 6px 10px;font-family:Arial,微软雅黑;font-size:14px;color:#FFF;text-decoration:none}
+.Cate_Navigation h3 A:hover{background:#0970CF}
+
+/*栏目位置*/
+.Posion{width:718px;height:23px;background:url('images/home.png') no-repeat 10px 12px;padding:8px 0px 6px 30px;font-family:微软雅黑;font-size:12px;border-bottom:1px #DDD solid}
+.Posion .PosionLi{float:left;line-height:23px;color:#01578B}
+.Posion .PosionLi A{color:#01578B}
+.Posion .PosionLi span{color:#01578B}
+.Posion .PosionLi A:hover{color:#CC0000;text-decoration:none}
+.Posion .CatNameLi{float:right;padding:2px 10px 6px 0px}
+.CatNameLi A:hover{text-decoration:none}
+.CatNameLi span{font-size:15px;font-family:微软雅黑;color:#FF0000}
+.CatNameLi em{;font-size:12px;font-family:Arial;color:#666}
+.CatNameLi span A{color:#FF0000}
+.CatNameLi em A{color:#666}
+
+/*内容页面*/
+.ArticleBox{width:706px;padding:10px;border-left:1px #D3DFEB solid;overflow:hidden}
+.ArticleBox .avtbox{float:left;width:65px}
+.ArticleBox .avtbox A{display:block;width:50px;height:50px;border:1px #D2DEEA solid;padding:2px}
+.ArticleBox .sTitlebox{float:left;width:658px;height:58px;padding-top:3px}
+.ArticleBox .sTitlebox h1{font-family:微软雅黑;color:#006600}
+.ArticleBox .sTitlebox .sInfo{height:14px;padding-top:7px;color:#999;float:left}
+.ArticleBox .sTitlebox .uinfo{float:right}
+.ArticleBox .sTitlebox .uinfo .Comment{float:left;margin-right:10px;color:#004276;font-weight:bold;height:25px;line-height:25px;background:url('images/comment.jpg') no-repeat left center;padding-left:18px}
+.ArticleBox .sTitlebox .uinfo .ts{float:left;height:25px}
+.ArticleBox .sTitleboxs{float:left;width:726px;height:53px;padding-top:3px}
+.ArticleBox .sTitleboxs h1{font-family:微软雅黑;font-size:24px;color:#006600;padding-bottom:5px}
+.ArticleBox .sTitleboxs .sInfo{height:14px;padding-top:7px;color:#999;float:left}
+.ArticleBox .sTitleboxs .uinfo{float:right}
+.ArticleBox .sTitleboxs .uinfo .Comment{float:left;margin-right:10px;color:#004276;font-weight:bold;height:25px;line-height:25px;background:url('images/comment.jpg') no-repeat left center;padding-left:18px}
+.ArticleBox .sTitleboxs .uinfo .ts{float:left;height:25px;margin-right:10px}
+.ArticleBox .sTitleboxs .uinfo .tg{float:left;height:25px}
+
+.ArticleBox .CateName{float:left;width:726px;height:30px;padding-top:3px}
+.ArticleBox .CateName h1{font-family:微软雅黑;font-size:19px;color:#006600;padding-bottom:5px;float:left}
+.ArticleBox .CateName .RSST{float:right}
+
+
+/*内容页面包围*/
+.Infoper{padding:15px 15px 0px 10px;text-align:right;font-family:微软雅黑;font-size:13px}
+.Infoper A{font-family:微软雅黑;font-size:13px;color:#004276}
+.Infoper A strong{color:#CC0000}
+
+#ArticleBox .d{width:609px;clear:both;overflow:hidden;border:1px #6F6F00 dotted;background:#FFFFCE;padding:10px;margin:10px 0px 20px 0px}
+#ArticleBox .d .dTitle{width:599px;height:40px;}
+#ArticleBox .d .dTitle h3{font-family:微软雅黑;font-size:15px}
+#ArticleBox .d .dLink{width:285px;height:26px;float:left;background:url('images/icons.jpg') no-repeat left 10px;padding-left:10px}
+#ArticleBox .d .dLink A{font-family:微软雅黑;font-size:12px;color:#333}
+#ArticleBox .d .dLink A:hover{color:#CC0000}
+
+#ArticleBox{font-size:14px;line-height:30px;padding:30px 30px 10px 30px}
+#ArticleBox table{border:2px #0EA3DB solid;border-collapse: collapse;background:#FFF;width:100%;margin:10px 0px 10px 0px}
+#ArticleBox table th{border-bottom:1px #CCC solid;background:#E3F4FB;border-left:1px #0EA3DB solid}
+#ArticleBox table td{border-top:1px #CCC solid;border-left:1px #0EA3DB solid}
+#ArticleBox table td{padding-left:10px}
+#ArticleBox p{text-indent:2em;margin-bottom:8px}
+#ArticleBox A{color:#333;border-bottom:1px #333 dotted;text-decoration:none}
+#ArticleBox img{border:1px #CCC solid;padding:5px;background:#FFF}
+.tag{;text-align:right;height:50px;line-height:30px;padding:10px 20px 0px 10px;font-size:14px}
+.tag .share{float:left}
+.tag .share A{width:28px}
+.tag .tagbox{float:right}
+.tag A{padding-right:10px}
+/*相关链接*/
+.aboutlbox{;padding:10px 20px 10px 20px}
+.aboutlbox h3{font-size:14px;font-weight:bold}
+.aboutlbox ul{padding:10px 0px 0px 10px}
+.aboutlbox ul li{;background:url('images/dayicon.jpg') left center no-repeat;height:26px;line-height:26px;padding-left:15px}
+.aboutlbox ul li A{font-size:14px;color:#004276;text-decoration:underline}
+.aboutlbox ul li A:hover{color:#CC0000;text-decoration:none}
+.advrbox{float:right;width:300px;padding-top:10px}
+/*内容页分页*/
+.spageboxs{padding:0px 0px 10px 8px;border-top:1px #D3D3D3 solid;height:50px;}
+#spbox{float:left;padding:10px 0px 0px 10px;color:#999;text-align:left;overflow:hidden}
+#spbox li{padding:10px 10px 10px 10px;width:706px}
+#spbox a {display:inline-block;height:38px;line-height:38px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
+#spbox a.a1 {width:56px; padding:0}
+#spbox a:hover { background:#38A3DB; color:#FFF; text-decoration:none;border:1px #38A3DB solid}
+#spbox span { display:inline-block; height:38px; line-height:38px; background:#38A3DB; border:1px solid #38A3DB; color:#fff; text-align:center;padding:0 10px}
+.page .noPage { display:inline-block; width:56px; height:22px; line-height:22px;  border:1px solid #e3e3e3; text-align:center; color:#a4a4a4; }
+#backindex{float:right;padding:11px 10px 0px 10px;color:#999}
+.callindex{width:629px;float:left;padding:10px 20px 10px 20px}
+#backindex h3{display:inline}
+#backindex h3 A{height:30px;border:1px #CCC solid;display:inline-block;font-family:微软雅黑;font-size:14px;color:#333}
+#backindex h3 A{;background:url('images/back.png') no-repeat 10px center #FFF;padding:8px 10px 0px 25px}
+#backindex h3 A:hover{border:1px #38A3DB solid;background:url('images/backw.png') no-repeat 10px center #38A3DB;color:#FFF;text-decoration:none}
+
+.prenextbox{padding:10px 0px 10px 10px;border-top:1px #D3D3D3 solid;height:50px;}
+.prenextbox li strong{font-family:微软雅黑;font-size:14px}
+.prenextbox li{line-height:26px}
+.prenextbox li A{font-family:微软雅黑;font-size:14px}
+
+/*List分页*/
+.spageboxu{padding:0px 0px 10px 0px;height:50px;}
+#spboxu{float:left;padding:10px 0px 0px 0px;color:#999;text-align:left;overflow:hidden}
+#spboxu li{padding:10px 10px 10px 10px;width:706px}
+#spboxu a {display:inline-block;height:38px;line-height:38px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
+#spboxu a.a1 {width:56px; padding:0}
+#spboxu a:hover { background:#38A3DB; color:#FFF; text-decoration:none;border:1px #38A3DB solid}
+#spboxu span { display:inline-block; height:38px; line-height:38px; background:#38A3DB; border:1px solid #38A3DB; color:#fff; text-align:center;padding:0 10px}
+
+
+.ArtLine{height:2px;background:#4E7DC1;font-size:0px;overflow:hidden}
+/*右侧HOT*/
+.rtLine{height:8px;background:#FFF;font-size:0px;overflow:hidden}
+.hotbox{width:278px;border:1px #E26C63 dotted;background:#FFFFE9;padding:10px;clear:both;overflow:hidden}
+.hotPP{width:278px;float:right;padding-bottom:8px}
+.hotPP LI.APic{width:118px;height:76px;float:left}
+.hotPP LI.APic img{padding:2px;border:1px #CCC solid}
+.hotPP LI.titLink{width:233px;float:right;line-height:20px;height:30px;background:url('images/hot.png') no-repeat left top;padding-left:45px}
+.hotPP LI.titLink A{color:#333}
+.hotPP LI.titLink A:hover{color:#CC0000}
+.hotPP LI.titLink h3{font-family:微软雅黑;font-size:14px;color:#333}
+.hotPP LI.Desc{width:150px;float:right;line-height:22px;color:#777;font-size:12px}
+.hotPP LI.Desc A{color:#CC0000}
+/*右侧All*/
+.WebAllbox{width:288px;padding:38px 5px 5px 5px;border:1px #CCC solid;clear:both;overflow:hidden;background:url('images/Allt.png') no-repeat #E6E6E6}
+.WebAllboxn{background:#FFF;padding:5px}
+.WebAPP{width:278px;float:right;padding-bottom:8px}
+.WebAPP LI.APic{width:118px;height:76px;float:left}
+.WebAPP LI.APic img{padding:2px;border:1px #CCC solid}
+.WebAPP LI.titLink{width:233px;float:right;line-height:20px;height:30px;background:url('images/hot.png') no-repeat left top;padding-left:45px}
+.WebAPP LI.titLink A{color:#333}
+.WebAPP LI.titLink A:hover{color:#CC0000}
+.WebAPP LI.titLink h3{font-family:微软雅黑;font-size:14px;color:#333}
+.WebAPP LI.Desc{width:150px;float:right;line-height:22px;color:#777;font-size:12px}
+.WebAPP LI.Desc A{color:#CC0000}
+
+/*右侧Tab*/
+.rBox{width:298px}
+.spelicBox{width:298px;clear:both;overflow:hidden}
+/*.RTableTItle*/
+.RstabTitle{;background:url('images/tabbg.jpg') repeat-x left -6px;height:17px;padding:0px 0px 10px 0px}
+.RstabTitle li{float:left;height:22px;padding:4px 10px 0px 10px}
+.RstabTitle li h3{font-family:微软雅黑;font-size:12px}
+.RstabTitle li.checked{;background:#FFF;color:#CC0000;border-right:1px #CCC solid;border-top:1px #CCC solid;border-left:1px #CCC solid;}
+.RstabTitle li.check{color:#004B73}
+/*.Tab*/
+.tabTitle{height:32px;background:url('images/Gentitle.jpg') repeat-x left -1px;padding-top:1px;border-left:1px #CCC solid;border-right:1px #CCC solid}
+.tabTitleno{float:left;height:25px;padding-top:7px;padding-left:10px}
+.tabTitleno h3{font-family:微软雅黑;font-size:15px;color:#004276}
+.tabTitleno A{font-family:微软雅黑;font-size:15px;color:#004276}
+.tabTitle .checked{float:right;cursor:pointer;height:25px;padding:6px 10px 0px 10px;background:#FFF;border-left:1px #D8D8D8 solid}
+.tabTitle .checked A{font-family:微软雅黑;font-size:14px;color:#CC0000}
+.tabTitle .checked h3{font-family:微软雅黑;font-size:14px;color:#CC0000}
+.tabTitle .check{float:right;cursor:pointer;height:25px;padding:6px 10px 0px 10px;border-left:1px #D8D8D8 solid}
+.tabTitle .check A{font-family:微软雅黑;font-size:14px;color:#004276}
+.tabTitle .check h3{font-family:微软雅黑;font-size:14px;color:#004276}
+
+
+/*全站推荐*/
+.SitePosid{padding:15px 20px 0px 20px;clear:both;overflow:hidden}
+.SitePosid h3{font-size:14px;display:block}
+.SitePosid .SiteList{float:left}
+.SList{padding:8px 10px 7px 0px;width:340px;float:left}/*常用List列表*//*代栏目的雅黑*/
+.SList li{height:22px;line-height:22px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.SList li A{color:#004276;font-size:12px}
+.SList li A:hover{color:#CC0000}
+.PPListbox{border-left:1px #CCC solid;border-bottom:1px #CCC solid;border-right:1px #CCC solid;clear:both;overflow:hidden}
+.PPList{padding:8px 10px 7px 10px;width:278px;float:right}
+.PPList LI.APic{width:90px;height:92px;float:left}
+.PPList LI.APic img{padding:2px;border:1px #CCC solid}
+.PPList LI.titLink{width:180px;float:right;line-height:20px;height:22px}
+.PPList LI.titLink A{color:#333}
+.PPList LI.titLink A:hover{color:#CC0000}
+.PPList LI.titLink h3{font-family:微软雅黑;font-size:14px;color:#333}
+.PPList LI.Desc{width:180px;float:right;line-height:22px;color:#777;font-size:12px}
+.PPList LI.Desc A{color:#CC0000}
+
+.PPLists{padding:8px 10px 7px 10px;width:340px;float:right;border-left:1px #CCC dotted}
+.PPLists LI.APic{width:90px;height:92px;float:left}
+.PPLists LI.APic img{padding:2px;border:1px #CCC solid}
+.PPLists LI.titLink{width:340px;float:right;height:28px}
+.PPLists LI.titLink A{color:#333}
+.PPLists LI.titLink A:hover{color:#CC0000}
+.PPLists LI.titLink h3{font-family:微软雅黑;font-size:14px;color:#333}
+.PPLists LI.Desc{width:210px;float:right;line-height:22px;color:#777;font-size:12px}
+.PPLists LI.Desc A{color:#CC0000}
+.SLists{padding:8px 10px 7px 0px;width:330px;float:left}/*常用List列表*//*代栏目的雅黑*/
+.SLists li{height:22px;line-height:22px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.SLists li A{color:#004276;font-size:12px}
+.SLists li A:hover{color:#CC0000}
+
+/*页尾Foot*/
+.FootLine{height:10px;background:url('images/bottombg.jpg') no-repeat;font-size:0px}
+.footer{border-top:2px #4E7DC1 solid;padding:10px;text-align:center;line-height:26px;}
+.Foot{width:980px;padding:20px 0px 20px 0px;line-height:26px;text-align:center;color:#333}
+.Foot A{color:#666}
+.Foot A:hover{color:#CC0000}
+
+
+/*List*/
+.ListBox{clear:both;overflow:hidden;padding:15px 1px 15px 1px}
+.ListLbox{float:left;width:130px;border-right:1px #DDD solid}
+.ListLbox .Title{height:30px;line-height:30px;padding-left:10px;border-bottom:1px #DDD dotted}
+.ListLbox .Title h3{font-family:微软雅黑;font-size:14px;color:#333;display:inline}
+.ListLbox .Titles{height:30px;line-height:30px;padding-left:10px;border-bottom:1px #DDD dotted;border-top:1px #DDD dotted}
+.ListLbox .Titles h3{font-family:微软雅黑;font-size:14px;color:#333;display:inline}
+.ListLbox A.CatLink{display:block;height:30px;line-height:30px;padding-left:15px;font-family:微软雅黑;font-size:12px}
+.ListLbox A.CatLink:hover{;background:#2185F5;color:#FFF;text-decoration:none}
+.ListLtj{padding:6px 6px 0px 10px}
+.ListLtj li{line-height:24px;border-bottom:1px #DDD dotted;padding:5px 0px 5px 0px}
+.ListRbox{float:right;width:605px}
+
+.Lst{clear:both;overflow:hidden;border-bottom:1px #DDD dotted;padding:10px 15px 10px 15px}
+.Lst .Lstitle{height:35px;width:710px;float:left}
+.Lst .Lstitle h3{display:inline}
+.Lst .Lstitle span{color:#666}
+.Lst .Lstitle A{font-family:微软雅黑;font-size:16px;color:#0053AB}
+.Lst .Lstitle A:hover{color:#CC0000}
+.Lst .LstImg{height:107px;width:142px;float:left}
+.Lst .LstDesc{float:right;width:560px;line-height:22px;color:#666;font-family:微软雅黑;font-size:12px;height:80px}
+.Lst .LstTag{float:right;width:560px;line-height:22px;color:#666;padding-top:5px;font-family:微软雅黑;font-size:12px}
+.Lst .LstTag A{font-family:微软雅黑;font-size:12px}
+
+.Lsts{clear:both;overflow:hidden;border-bottom:1px #DDD dotted;padding:10px 15px 10px 15px}
+.Lsts .Lstitle{height:35px;width:710px;float:left}
+.Lsts .Lstitle h3{display:inline}
+.Lsts .Lstitle span{color:#666}
+.Lsts .Lstitle A{font-family:微软雅黑;font-size:16px;color:#0053AB}
+.Lsts .Lstitle A:hover{color:#CC0000}
+.Lsts .LstDesc{float:left;width:710px;line-height:22px;color:#666;font-family:微软雅黑;font-size:12px}
+.Lsts .LstTag{float:left;width:710px;line-height:22px;color:#666;padding-top:5px;font-family:微软雅黑;font-size:12px}
+.Lsts .LstTag A{font-family:微软雅黑;font-size:12px}
+
+
+
+/*320图片列表*/
+.PList{width:320px;padding-top:10px}
+.PList .PTLink{height:22px;float:left;width:320px}
+.PList .PTLink A{font-size:14px;color:#004276;font-weight:bold}
+.PList .PTLink A:hover{color:#CC0000}
+.PList .PPicbox{height:80px;width:108px;float:left}
+.PList .PPicbox A{width:100px;height:70px;border:1px #DDD solid;padding:3px;display:block}
+.PList .PPicbox A:hover{border:1px #CC0000 solid;background:#FFFFE9}
+.PList .PPicbox{height:80px;width:108px;float:left}
+.PList .PDesc{float:right;width:205px;line-height:20px;color:#999}
+.PList .PDesc A{color:#CC0000}
+/*最新更新List*/
+.NewList{padding:10px;border-bottom:1px #CCC dotted}
+.NewList li{background:url('images/fang.jpg') no-repeat left center;height:25px;line-height:25px;padding-left:10px}
+.NewList li A{font-size:14px;color:#004276}
+.NewList li A:hover{color:#CC0000}
+/*点击排行列表*/
+.PNList{padding:10px;background:url('images/num.jpg') no-repeat 10px 15px;border-left:1px #CCC solid;border-right:1px #CCC solid;border-bottom:1px #CCC solid}
+.PNList LI{height:24px;line-height:24px;padding-left:25px}
+.PNList LI A{color:#333;font-size:12px}
+.PNList LI A:hover{color:#CC0000}
+/*普通列表border*/
+.TList{padding:8px 10px 7px 10px;border-left:1px #CCC solid;border-right:1px #CCC solid;border-bottom:1px #CCC solid}/*常用List列表*//*代栏目的雅黑*/
+.TList li{height:26px;line-height:26px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.TList li A{color:#004276;font-size:12px}
+.TList li A:hover{color:#CC0000}
+/*普通列表*/
+.TList{padding:8px 10px 7px 10px}/*常用List列表*//*代栏目的雅黑*/
+.TList li{height:26px;line-height:26px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.TList li A{color:#004276;font-size:12px}
+.TList li A:hover{color:#CC0000}
+
+/*HOTList*/
+.HList{clear:both;overflow:hidden;padding-top:5px;border-top:1px #CCC dotted}/*常用List列表*//*代栏目的雅黑*/
+.HList li{height:26px;line-height:26px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.HList li A{color:#333;font-size:12px}
+.HList li A:hover{color:#CC0000;text-decoration:underline}
+/*WebAllIst*/
+.WebAList{clear:both;overflow:hidden;padding-top:5px;border-top:1px #CCC dotted}/*常用List列表*//*代栏目的雅黑*/
+.WebAList li{height:26px;line-height:26px;background:url('images/fang.jpg') no-repeat left center;padding-left:10px}
+.WebAList li A{color:#004276;font-size:12px}
+.WebAList li A:hover{color:#CC0000;text-decoration:underline}
+/*TagList*/
+.TagList{padding:8px 10px 7px 10px;border-left:1px #CCC solid;border-right:1px #CCC solid;border-bottom:1px #CCC solid;line-height:26px}/*常用List列表*//*代栏目的雅黑*/
+.TagList A{padding-right:10px;color:#004276;font-size:12px}
+.TagList A:hover{color:#CC0000}
+.TagList A.hot{font-size:14px;color:#CC0000}
+/*CateList*/
+.CateList{padding:8px 10px 7px 10px;border-left:1px #CCC solid;border-right:1px #CCC solid;border-bottom:1px #CCC solid;line-height:24px}/*常用List列表*//*代栏目的雅黑*/
+.CateList A.Top{font-size:12px;background:#38A3DB;color:#FFF;padding:2px 5px 2px 5px;margin-right:8px}
+.CateList A{font-size:12px;color:#333;padding:2px 5px 2px 5px;margin-right:3px}
+
+/*下载列表*/
+.PDList{padding:0px 10px 10px 10px}
+.PDList LI{height:26px;line-height:26px;padding-left:22px}
+.PDList LI A{color:#333;font-size:12px}
+.PDList LI A:hover{color:#CC0000}
+.pdf{background:url('images/icont.png') no-repeat left 5px}
+.qt{background:url('images/icont.png') no-repeat left -30px}
+.word{background:url('images/icont.png') no-repeat left -75px}
+.doc{background:url('images/icont.png') no-repeat left -75px}
+.chm{background:url('images/icont.png') no-repeat left -114px}
+.ppt{background:url('images/icont.png') no-repeat left -156px}
+.zip{background:url('images/icont.png') no-repeat left -205px}
+.exe{background:url('images/icont.png') no-repeat left -247px}
+.sp{background:url('images/icont.png') no-repeat left -285px}
+.code{background:url('images/icont.png') no-repeat left -324px}
+
+
+/*adv*/
+
+.advyello{width:728px;height:90px;background:#FFFFCE;border:1px #4F4F00 dotted;padding:10px 9px 5px 9px;}
+.adv728a{width:728px;height:90px;padding:10px 10px 0px 10px;}
+.adv728b{width:728px;height:90px;padding:10px 10px 10px 10px;}
+
+.fenzu{width:277px;margin:auto;background:url('images/fenzu.jpg') no-repeat;height:470px;padding:170px 0px 0px 10px}
+.fenzu dd{line-height:22px;height:22px;width:190px;background:url('images/fenzubg.gif') no-repeat;font-size:12px;padding-left:10px}
+
+.CommentBox{padding:0px 15px 0px 15px}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

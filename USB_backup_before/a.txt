@@ -1,0 +1,37 @@
+******************************************************************/ 
+   void DAC(uchar Data) 
+   { 
+     Start(); 
+     Send(AddWr);         //写入芯片地址 
+     Ack(); 
+     Send(0x40);          //写入控制位使能DAC输出 
+     Ack(); 
+     Send(Data);          //写数据 
+     Ack(); 
+     Stop();
+}
+
+
+
+
+void Send(uchar Data) 
+{ 
+   uchar BitCounter=8; 
+   uchar temp; 
+   do 
+     { 
+   temp=Data; 
+   Scl=0; 
+   _nop_();_nop_();_nop_();_nop_();_nop_(); 
+   if((temp&0x80)==0x80) 
+      Sda=1; 
+   else 
+      Sda=0; 
+   Scl=1; 
+   temp=Data<<1; 
+   Data=temp; 
+   BitCounter--; 
+    } 
+   while(BitCounter); 
+       Scl=0; 
+}

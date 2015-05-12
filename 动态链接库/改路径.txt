@@ -1,0 +1,17 @@
+1. 直接创建软连接的方式，将某动态链接库文件链接到 /lib 或者/usr/lib 下。
+ 
+ln -s `pwd`/xxx.so /lib/xxx.so
+ 
+这种方式适合少数固定不变动态链接库文件的调用，但如果文件很多，或者这些文件也是经常存在更新的，这么多比较繁琐。
+ 
+ 
+2. 如果直接把动态链接库文件所在的路径直接加到系统查找库的路径下，这里有两种方式：
+ 
+      1） 更改/etc/ld.so.conf, 加入自己的动态链接库路径，好像需要更新/etc/ld.so.cache; 该方法应该可用，没有尝试过。
+ 
+      2） 更改环境变量LD_LIBRARY_PATH，把自己的动态链接库路径，加入到该环境变量中。
+          export LD_LIBRARY_PATH=/Jenkins/workspace/Mefa_Nightly_regression_Job02/MAIN/mefa_platform/logs_1st_round/mefaImage/simulatorTools:$LD_LIBRARY_PATH
+             在该环境变量中的动态链接库文件会比系统中/lib 或者 /usr/lib 更早调用。
+ 
+             linux重启之后，该环境变量会失效；
+              这种方式更适合自动化的测试的需要。

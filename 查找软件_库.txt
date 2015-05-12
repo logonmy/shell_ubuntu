@@ -1,0 +1,7 @@
+ 540  dpkg -l|grep opencv
+  541  dpkg -L libopencv-calib3d-dev:amd64
+locate 
+  548  gedit main.cpp
+  549  qmake -project
+  550  qt screenshot2avi.pro 
+编译OpenCV: g++ -o /home/zhangzhenwei/graduate/答辩材料/开题答辩/fastslam_gui/screenshot/avicreator main.cpp $(pkg-config --libs opencv)

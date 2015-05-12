@@ -1,0 +1,5 @@
+ctrl+a到行首 
+ctrl+e到行尾 
+ctrl+u快速删到行首 
+ctrl+k快速删除光标到行尾 
+ctrl+l = clear清屏

@@ -1,0 +1,6 @@
+pkg-config --cflags opencv
+或者:
+  1) dpkg -l|grep opencv
+  2) dpkg -L libopencv-calib3d-dev:amd64
+ ----------------------------------------------------------------
+or locate opencv

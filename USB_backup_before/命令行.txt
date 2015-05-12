@@ -1,0 +1,421 @@
+ls
+  170  cd build
+  171  ls
+  172  rm -rf *
+  173  ls
+  174  cmake ..
+  175  sudo apt-get install cmake cmake-gui
+  176  cmake ..
+  177  ll
+  178  make
+  179  ll
+  180  ll
+  181  ll g2o/
+  182  ll g2o/apps/
+  183  ll ../bin
+  184  ls
+  185  ../bin/g2o 
+  186  ../bin/tutorial_slam2d 
+  187  ll
+  188  cd ..
+  189  ls
+  190  ll
+  191  more note.txt 
+  192  more README.txt 
+  193  apt-cache search suitesparse
+  194  sudo apt-get install libsuitesparse-dev
+  195  apt-cache search libqglviewer-qt4-dev
+  196  apt-cache search libqglviewer
+  197  sudo apt-get install libqglviewer-qt4-dev
+  198  more README.txt 
+  199  cd build
+  200  rm -rf *
+  201  ls
+  202  cmake ..
+  203  man make 
+  204  cd
+  205  ls
+  206  vi .bashrc
+  207  cmake ..
+  208  cmake ..
+  209  history
+  210  history
+  211  cmake ..
+  212  cmake ../
+  213  ls
+  214  cd build
+  215  ls
+  216  cmake .
+  217  cmake ..
+  218  make
+  219  ll ../bin
+  220  cmake-gui 
+  221  cmake-gui ..
+  222  bg 1
+  223  dpkg -l | grep qgl
+  224  apt-cache search qgl 
+  225  sudo apt-get install libqglviewer-dev
+  226  apt-cache search chol
+  227  sudo apt-get install libcholmod2.1.2 libsuitesparse-dev
+  228  cmake-gui .. &
+  229  ls
+  230  make clean
+  231  make
+  232  gcc --version
+  233  apt-cache search gcc
+  234  sudo apt-get install gcc-4.4 g++-4.4
+  235  make clean
+  236  make
+  237  rm -rf *
+  238  ls
+  239  cmake-gui ..
+  240  make
+  241  ll ../bin
+  242  make
+  243  make
+  244  make -DVERBOSE=1
+  245  man make
+  246  make -dVERBOSE=1
+  247  man make
+  248  make VERBOSE=1
+  249  make VERBOSE=1 | grep option
+  250  cd /usr/bin/
+  251  ls gcc*
+  252  sudo rm gcc
+  253  sudo rm g++
+  254  sudo ln -s gcc-4.4 gcc
+  255  sudo ln -s g++-4.4 g++
+  256  man moc
+  257  moc -v
+  258  which moc
+  259  ll /usr/bin/moc
+  260  moc
+  261  moc --help
+  262  moc --version
+  263  dpkg -l | grep qt
+  264  sudo mentohust 
+  265  ./hello 
+  266  cmake ..
+  267  cmake ../
+  268  cmake ../
+  269  make
+  270  cmake ../
+  271  make
+  272  ./hello 
+  273  cmake ..
+  274  make
+  275  ./hello 
+  276  cmake ..
+  277  make
+  278  cmake ..
+  279  make
+  280  ./hello 
+  281  cmake ..
+  282  make
+  283  cmake
+  284  cmake ..
+  285  cmake ../
+  286  cmake ..
+  287  cmake ../
+  288  cmake ../
+  289  cmake ..
+  290  cmake ..
+  291  cmake ../
+  292  cmake ..
+  293  cmake ../
+  294  cmake ../
+  295  cmake ../
+  296  cmake ../
+  297  cmake ..
+  298  cmake ../
+  299  ls
+  300  make clean
+  301  make
+  302  ls
+  303  ./pathplan_gui 
+  304  sudo mentohust 
+  305  cmake ..
+  306  make
+  307  cmake ..
+  308  make
+  309  pluma Makefile 
+  310  ls
+  311  make
+  312  ls
+  313  ./fastslam.e 
+  314  cd ..
+  315  ls
+  316  cd pathplan_gui/
+  317  ls
+  318  ./pathplan_gui 
+  319  cd ..
+  320  ls
+  321  ll
+  322  cd g2o/
+  323  ls
+  324  ll
+  325  cd build
+  326  ls
+  327  rm -rf *
+  328  ls
+  329  ll
+  330  cmake ..
+  331  cmake ..
+  332  ls ..
+  333  ls ../g2o
+  334  make
+  335  ll
+  336  cd ..
+  337  ls
+  338  cd ..
+  339  ll
+  340  cd g2o/
+  341  ll
+  342  cd build
+  343  ls
+  344  ll
+  345  rm -rf *
+  346  cmake-gui ..
+  347  ls
+  348  make clean
+  349  make
+  350  make
+  351  dpkg -l 
+  352  dpkg -l | grep qt
+  353  dpkg -L libqt5core5a:amd64
+  354  dpkg -l | grep qt | grep 5
+  355  ll
+  356  ls
+  357  make
+  358  make
+  359  apt-cache search libz
+  360  sudo apt-get install libzip-dev
+  361  dpkg -L libzip-dev
+  362  gvim Makefile 
+  363  gedit Makefile 
+  364  sudo apt-get install gedit gvim-gnome
+  365  sudo apt-get install gedit gvim-gtk
+  366  sudo apt-get install gedit gvim
+  367  sudo apt-get install gedit vim-gtk
+  368  ls
+  369  ll
+  370  ls
+  371  cd ..
+  372  cd ..
+  373  ls
+  374  ll
+  375  ll
+  376  cd g2o/
+  377  kls
+  378  ls
+  379  cd g2o
+  380  ls
+  381  cd build
+  382  ls
+  383  rm -rf *
+  384  cmake ..
+  385  ls
+  386  make
+  387  ll ../bin
+  388  ../bin/slam2d_g2o 
+  389  ll
+  390  ll
+  391  cd ..
+  392  ll
+  393  cd bin
+  394  ls
+  395  ll
+  396  ./tutorial_slam2d 
+  397  ll
+  398  ./ba_demo 
+  399  cd ..
+  400  ll
+  401  ll lib/
+  402  ls
+  403  cd build
+  404  ls
+  405  ll
+  406  ls
+  407  cmake-gui 
+  408  sudo make install 
+  409  ll /usr/local/lib/
+  410  ll
+  411  ../bin/ba_demo 
+  412  gvim ~/.bashrc 
+  413  ls
+  414  ll
+  415  cd bin
+  416  ls
+  417  ./ba_demo 
+  418  ll /usr/local/lib/
+  419  lll
+  420  ls ../lib/
+  421  cd ..
+  422  ls
+  423  cd lib/
+  424  ls
+  425  ll
+  426  sudo cp *.so /usr/local/lib/
+  427  ll
+  428  cd ../bin
+  429  ls
+  430  ./ba_demo 
+  431  ll /usr/local/lib/
+  432  cd /usr/local/lib/
+  433  apt-cache search libcholmod
+  434  sudo apt-get install libcholmod2.1.2
+  435  dpkg -L libcholmod2.1.2
+  436  ll
+  437  cd -
+  438  ll
+  439  ./g2o
+  440  ll
+  441  ./sba_demo 
+  442  cd ..
+  443  ls
+  444  ll
+  445  dpkg -l | grep suite
+  446  dpkg -L libsuitesparse-dev:amd64
+  447  ls
+  448  cd b
+  449  ll
+  450  cd build
+  451  ls
+  452  rm -rf *
+  453  ll
+  454  cmake-gui ..
+  455  make
+  456  ll
+  457  ../bin/ba_demo 
+  458  dpkg -l | grep cholmod
+  459  cd ../bin
+  460  ll
+  461  cd ../lib/
+  462  ll
+  463  ldd libg2o_solver_cholmod.so 
+  464  apt-cache search cholmod
+  465  dpkg -L libsuitesparse-dev
+  466  ll /usr/lib/x86_64-linux-gnu/libcolamd.*
+  467  cd ..
+  468  ll
+  469  gvim CMakeLists.txt 
+  470  cd cmake_modules/
+  471  ls
+  472  ll
+  473  gvim FindSuiteSparse.cmake 
+  474  ll
+  475  cd ..
+  476  ll
+  477  cat /etc/lsb-release 
+  478  ll
+  479  ll
+  480  cd build
+  481  ls
+  482  gvim Makefile 
+  483  ll
+  484  ll
+  485  cd ..
+  486  ll
+  487  cd build
+  488  ls
+  489  make clean
+  490  ll
+  491  make VERBOSE=1
+  492  cd ..
+  493  cd lib/
+  494  ls
+  495  ll
+  496  ldd libg2o_solver_pcg.so 
+  497  ldd libg2o_solver_cholmod.so 
+  498  rm -rf *
+  499  ll
+  500  cd ..
+  501  ll
+  502  cd bin
+  503  ls
+  504  rm -rf *
+  505  ll
+  506  cd ..
+  507  ls
+  508  rm -rf bin.0
+  509  rm -rf build2 build3/
+  510  ll
+  511  cd build/
+  512  ls
+  513  rm -rf *
+  514  ll
+  515  rm -rf .svn/
+  516  ll
+  517  cmake ..
+  518  make
+  519  ls
+  520  ll
+  521  cd ..
+  522  ll
+  523  cd lib/
+  524  ls
+  525  ll
+  526  cd ..
+  527  ls
+  528  ll
+  529  cd bin/
+  530  ll
+  531  ls
+  532  cd ..
+  533  ls
+  534  ll
+  535  cd /usr/local/lib/
+  536  ls
+  537  ll
+  538  sudo rm -rf libg2o_*
+  539  ll
+  540  cd ..
+  541  ls
+  542  cd include/
+  543  ls
+  544  ll
+  545  rm -rf g2o slam_parser 
+  546  sudo rm -rf g2o slam_parser 
+  547  ls
+  548  ll EXTERNAL/
+  549  ll EXTERNAL/csparse/
+  550  rm -rf EXTERNAL
+  551  sudo rm -rf EXTERNAL
+  552  cd ..
+  553  ls
+  554  ll
+  555  cd 
+  556  cd my_progs/g2o/
+  557  ls
+  558  ll
+  559  cd g2o
+  560  ll
+  561  ll
+  562  dpkg -l | grep colamd
+  563* dpkg -L libcolamd2.8.0:amd6
+  564  dpkg -l | grep suite
+  565  dpkg -L libsuitesparse-dev:amd64
+  566  ll
+  567  cd cmake_modules/
+  568  ls
+  569  pluma FindSuiteSparse.cmake &
+  570  ls
+  571  cd ..
+  572  ls
+  573  cd build/
+  574  ls
+  575  rm -rf *
+  576  ll
+  577  cmake ..
+  578  cmake-gui ..
+  579  make
+  580  ll
+  581  ll ../bin/
+  582  ../bin/ba_demo 
+  583  cd ../bin/
+  584  ll
+  585  ldd ba_demo 
+  586  ll
+  587  ./slam2d_g2o 
+  588  ./slam2d_g2o 
+

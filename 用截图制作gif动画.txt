@@ -1,0 +1,2 @@
+508  sudo apt-get install imagemagick(or convert,follow the tips)
+  509  convert -delay 0 *.jpg -loop 0 animated.gif

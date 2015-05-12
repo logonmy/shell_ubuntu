@@ -1,0 +1,4 @@
+Linux安装程序> archive=`awk '/^__ARCHIVE_FOLLOWS__/ {print NR + 1; exit 0; }' mv_install_x86-2014-0711.run`
+Linux安装程序> echo $archive
+152
+Linux安装程序> tail -n +152 mv_install_x86-2014-0711.run > data.tgz

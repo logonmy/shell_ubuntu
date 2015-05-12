@@ -1,0 +1,48 @@
+作用：在执行一个程序的时候如果没有PATH的话，就需要写出路径名（绝对或者相对），如果路径在path中，则可以直接输文件名，系统自动会去寻找。
+
+
+指的是环境变量：
+dingran@ubuntu:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+dingran@ubuntu:~$ which ls
+/bin/ls
+在输入一些命令时，如果没有给出命令的路径，系统则到PATH变量指定的路径下找，按照PATH
+变量里的顺序(冒号:是路径分隔符)，如果想让你自己的程序运行时无需输入路径名，可以将你程序的目录添加到PATH变量中，修改如下：
+用root用户进，编辑.bashrc
+vi ~/.bashrc
+加入
+set PATH=$PATH:dir(dir为你要添加的目录)
+export PATH 
+保存退出
+
+#############################################################################################################################
+
+linux 修改path有3种方法:
+1.直接在命令行里敲PATH=$PATH:/path1:/path2:/pathN,用户登出之后PATH恢复原样.
+2.修改~目录下bash_profile,找到PATH=$PATH:$HOME/bin这一行,直接在后面加:/path1:/path2就行.然后
+source .bash_profile,这个只对当前用户生效
+3.修改/etc/profile文件,在适当位置添加PATH=$PATH:/path1:/path2:/pathN,然后source /etc/profile,这个对所有用户都起作用
+
+##################################============================罗嗦============================##################################################
+1.临时添加路径到目前的PATH
+    #PATH=$PATH:/etc/apache/bin
+使用这种方法,只对当前会话有效，也就是说每当登出或注销系统以后，PATH 设置就会失效
+2.添加全局变量在/etc/profile文件中
+    #vi /etc/profile
+在里面添加
+    export PATH="$PATH:/etc/apache/bin"
+注意：＝ 即等号两边不能有任何空格
+这种方法最好,除非你再次手动强制修改PATH的值，否则将不会被改变
+3.为特定用户修改PATH
+    #vi ~/.bash_profile
+修改PATH行,把/etc/apache/bin添加进去
+这种方法是针对用户起作用 的.
+ 
+#vi ~/.bashrc
+PATH=$PATH:/etc/apache/bin
+export PATH
+这种方法也是针对用户起作用。比如如果是在root权限操作，则root用户有效。
+
+注意：想改变PATH，必须重新登陆才能生效，以下方法可以简化工作：
+如果修改了/etc/profile，那么编辑结束后执行source profile 或 执行"点空格命令" ./profile,PATH的值就会立即生效了。
+这 个方法的原理就是再执行一次/etc/profile shell脚本，注意如果用sh /etc/profile是不行的，因为sh是在子shell进程中执行的，即使PATH改变了也不会反应到当前环境中，但是source是在当前 shell进程中执行的，所以我们能看到PATH的改变。

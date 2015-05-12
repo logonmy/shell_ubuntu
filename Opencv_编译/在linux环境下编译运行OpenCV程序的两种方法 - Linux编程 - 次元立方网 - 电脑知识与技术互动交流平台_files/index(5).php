@@ -1,0 +1,1 @@
+document.write("<script>~function (a, c) { a.write(\'<ins id=\"\' + c + \'\"></ins>\'); var d = a.body || a.getElementsByTagName(\'head\')[0], b = a.createElement(\'script\'); b.type = \'text/javascript\'; b.async = true; b.src = \"http://f2.adpush.cn/ap/adspacejs/54395.js?\" + c; d.insertBefore(b, d.firstChild) }(document, \'QURQVVNI_\' + Math.random());</script>")

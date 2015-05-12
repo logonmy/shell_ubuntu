@@ -1,0 +1,7 @@
+libstr.a: strlen.o strnlen.o
+    $(AR) r $@ $^
+    $(RM) $^
+
+.PHONY : clean
+clean :
+    rm -f libstr.a

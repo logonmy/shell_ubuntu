@@ -1,0 +1,7 @@
+1,上传启动盘ISO文件到Linux服务器上.
+2,打开命令控制台,查看U盘硬件信息
+  fidsk -l
+  /dev/sdb 是U盘，不一定是sdb 或者是sdc 或者sdd 以此类推
+3,使用dd命令制作
+	dd if=xxx.iso of=/dev/sdb
+	xxx.iso 是启动盘的镜

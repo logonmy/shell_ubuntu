@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.it165.net/os/html/201407/8801.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/easyXDM.js"></script><script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ex" async=""></script><script charset="gbk" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/main.js" async="" mod_name="tanxssp-main"></script><script charset="gbk" async="" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/tanxssp.js"></script><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/changyan.js"></script><script type="text/javascript" charset="gbk" id="tanx-s-mm_25014455_2407477_13672514" async="" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ex(1)"></script>
+	<meta charset="gb2312">
+	<title>在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台</title>
+	<meta name="keywords" content="下编,环境,程序">
+	<meta name="description" content="　　原来以为在Ubuntu下安装好了OpenCV之后，自己写个简单的程序应该很容易吧，但是呢，就是为了编译一个简单的显示图片的程序我都快被弄崩溃了。　　在谷歌和上StackOverFlow查看相关问题解答之后，我下面就介绍">
+	<link rel="stylesheet" href="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/show6.0.Css" type="text/css">
+	<script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/it165_pro.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shCore.css"><link type="text/css" rel="stylesheet" href="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shThemeDefault.css"><script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/jquery.min.js" type="text/javascript"></script><script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/tabs6.0.js" type="text/javascript"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/syntaxhighlighter.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shCore.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushBash.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushCpp.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushCSharp.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushCss.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushDelphi.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushDiff.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushGroovy.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushJava.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushJScript.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushPhp.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushPlain.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushPython.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushRuby.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushScala.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushSql.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushVb.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/shBrushXml.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/jquery.sgallery.js"></script><script type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/jq.Slide.js"></script>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+<script type="text/javascript" charset="UTF-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/version.js"></script><script type="text/javascript" charset="UTF-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/cyrljYvoL"></script><script type="text/javascript" charset="UTF-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/event"></script><script type="text/javascript" charset="UTF-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/changyan.v2.0.js"></script><link href="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/bdsstyle.css" rel="stylesheet" type="text/css"><script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/logger.js"></script><style id="changyanCss">#SOHUCS{clear:both;min-height:320;_height:320px;overflow:visible;}#SOHUCS iframe{width:100%;min-height:320px;_height:320px;}</style></head>
+<body style="background:#4E7DC1"><iframe src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/acbeacon2.html" style="width: 0px; height: 0px; display: none;"></iframe><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.it165.net/os/html/201407/8801.html#" class="bds_more">更多...</a></li></ul><p><a href="http://www.it165.net/os/html/201407/8801.html#" class="goWebsite">百度分享</a></p></div></div></div>
+<div class="box1">
+	<div class="boxm">
+		<ul class="wrapper">
+			<li class="addforver"><a href="http://www.it165.net/">次元立方</a></li>
+		</ul>
+		<ul class="LoginBox">
+			<iframe name="loginwin" id="loginwin" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index.html" allowtransparency="true" width="340" height="27" frameborder="0" scrolling="no"></iframe>
+		</ul>
+	</div>
+</div><div class="WxBox">
+	<div class="box_Navigation">
+	<a href="http://www.it165.net/news/">IT资讯</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/pro/">编程</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/database/">数据库</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/safe/">安全</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/os/">系统</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/admin/">服务器</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/os/">嵌入式</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/DPlan/">平面设计</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/DWeb/">网页设计</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/edu/">基础</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/network/">组网</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/qq/">QQ</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/down/">下载</a>&nbsp;|&nbsp;
+	<a href="http://www.it165.net/js/">JS特效</a>&nbsp;|&nbsp;
+</div>	<div style="clear:both;overflow:hidden"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index.php"></script><div style="width:1058px;margin:auto;padding:5px 0px 0px 0px;height:90px">	<div style="float:left"><a target="blank" href="http://www.weimofang.com/"><img alt="" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/weimofang.gif" width="960" height="70"></a></div>	<div style="float:right"><a href="http://www.it165.net/"><img alt="" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/advr.jpg" width="98" height="70"></a></div>  </div></div>	<div class="box_LSS">
+			<div class="LogoBox"><a href="http://www.it165.net/os/"><img alt="操作系统" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/Logo.png" width="27" height="28"><h3>操作系统</h3></a></div>		<div class="strongbox"><a href="http://www.it165.net/">首页</a><span> &gt; </span><a href="http://www.it165.net/os/">操作系统</a> &gt; <a href="http://www.it165.net/os/oslin/">Linux</a> &gt; <a href="http://www.it165.net/os/olbc/">Linux编程</a> &gt;  正文</div>
+		<div class="Search" id="searchbox"><form class="SearchBox" action="http://s.it165.net/" method="get" target="_blank">	<input type="hidden" name="t" value="53" id="t">	<div class="KeysBox"><input class="KeysBox" name="q" type="text"></div>	<div class="ButtonsBox"><input class="ButtonsBox" type="submit" value=" "></div></form>
+		</div>				<div class="CatNameLi"><span><a href="http://www.it165.net/os/">操作系统</a></span> <em><a href="http://www.it165.net/os">http://www.it165.net/os</a></em></div>
+	</div>
+	<div class="LineAp"></div>
+	<div class="CArticleBox">
+		<div class="CListLeft">
+			<div class="ArticleBox">
+				<div class="sTitleboxs">
+					<h1>在linux环境下编译运行OpenCV程序的两种方法</h1>
+					<div class="sInfo">作者：woshijpfgg&nbsp;&nbsp;来源：IT165收集&nbsp;&nbsp;发布日期：2014-07-14 23:19:03</div>
+					<div class="uinfo"><a class="Comment" href="http://www.it165.net/os/html/201407/8801.html#comment_iframe">我来说两句(<span id="comment">0</span>)</a><a class="Comment" href="javascript:;" onclick="add_favorite(&#39;在linux环境下编译运行OpenCV程序的两种方法&#39;);">收藏本文</a></div>
+				</div>
+			</div>
+			<div class="advyello"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(1).php"></script><script type="text/javascript">var sogou_ad_id=254473;var sogou_ad_height=90;var sogou_ad_width=728;</script><script language="JavaScript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/c.js"></script><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ask"></script><div style="display:none">-</div> <div id="starIframe_wrapper_1" style="height:90px;"><iframe id="starIframe1" onload="document.sogou_ads1_loaded=true;" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ct(2).html" width="728" height="90" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div>
+			<ul class="Content">
+				
+				<script type="text/javascript">
+					<!--
+						function add_favorite(title) {
+							$.getJSON('http://www.it165.net/api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
+								if(data.status==1)	{
+									$("#favorite").html('收藏成功');
+									alert("已经收藏");
+								} else {
+									alert("您还未登录");
+								}
+							});
+						}
+					//-->
+					</script>
+				<li id="ArticleBox">
+				<p>　　原来以为在Ubuntu下安装好了OpenCV之后，自己写个简单的程序应该很容易吧，但是呢，就是为了编译一个简单的显示图片的程序我都快被弄崩溃了。</p>
+<p>　　在谷歌和上StackOverFlow查看相关问题解答之后，我下面就介绍Command Line和CMake两种方式。</p>
+<p>　　首先我先粘上我测试的代码吧，文件名为Test.c</p>
+<div class="syntaxhighlighter " id="highlighter_511845"><div class="bar"><div class="toolbar"><a href="http://www.it165.net/os/html/201407/8801.html#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><a href="http://www.it165.net/os/html/201407/8801.html#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.it165.net/os/html/201407/8801.html#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="value">1</code> <code class="plain">#include &lt;highgui.h&gt;</code></span></span></div><div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">2</code></span></span></div><div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">3</code> <code class="keyword">int</code> <code class="plain">main(</code><code class="keyword">int</code> <code class="plain">argc,</code><code class="keyword">char</code> <code class="plain">** argv) {</code></span></span></div><div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">4</code></span></span></div><div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">5</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">IplImage* img = cvLoadImage(argv[</code><code class="value">1</code><code class="plain">],CV_LOAD_IMAGE_COLOR);</code></span></span></div><div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">6</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">cvNamedWindow(</code><code class="string">'Image_show'</code><code class="plain">,CV_WINDOW_AUTOSIZE);</code></span></span></div><div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">7</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">cvShowImage(</code><code class="string">'Image_show'</code><code class="plain">,img);</code></span></span></div><div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">8</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">cvWaitKey(</code><code class="value">0</code><code class="plain">);</code></span></span></div><div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;"><code class="value">9</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">cvReleaseImage(&amp;img);</code></span></span></div><div class="line alt2"><code class="number">10.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="value">10</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="plain">cvDestroyWindow(</code><code class="string">'Image_show'</code><code class="plain">);</code></span></span></div><div class="line alt1"><code class="number">11.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="value">11</code>&nbsp;&nbsp;&nbsp;&nbsp; <code class="keyword">return</code> <code class="value">0</code><code class="plain">;</code></span></span></div><div class="line alt2"><code class="number">12.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="value">12</code> <code class="plain">}</code></span></span></div></div></div>
+<p>　　第一种方法：Command Line（使用命令行参数的方法）</p>
+<div class="syntaxhighlighter " id="highlighter_952544"><div class="bar"><div class="toolbar"><a href="http://www.it165.net/os/html/201407/8801.html#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><a href="http://www.it165.net/os/html/201407/8801.html#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.it165.net/os/html/201407/8801.html#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">gcc Test.c -o Test `pkg-config --cflags --libs opencv`</code></span></span></div><div class="line alt2"><code class="number">2.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">./Test baboon.jpg</code></span></span></div></div></div>
+<p>　　在这里我稍微解释下这条命令的作用吧。</p>
+<p>　　在上面的编译命令中我们其实用到了一个工具“pkg-config”，它主要有以下几个功能：</p>
+检查库的版本号。如果所需要的库的版本不满足要求，它会打印出错误信息，避免链接错误版本的库文件。 获得编译预处理参数，如宏定义，头文件的位置。 获得链接参数，如库及依赖的其它库的位置，文件名及其它一些连接参数。 自动加入所依赖的其它库的设置
+<p>　　所有有了这个工具之后我们的编译就很方便了（不过在此之前你要确保你安装的OpenCV的安装链接库文件的目录下有一个pkgconfig文件夹，在该文件夹里面有个opencv.pc的文件，其实这就是pkg-config下OpenCV的配置文件）。</p>
+<p>　　使用pkg-config时，选项--cflags 它是用来指定程序在编译时所需要头文件所在的目录,选项 --libs则是指定程序在链接时所需要的动态链接库的目录。例如我下面这张图就显示了我电脑上OpenCV的相关目录。</p>
+<p>　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214555127.png" style="width: 650px; height: 427.348066298343px;"></p>
+<p>　　</p>
+<p>　　第二种方法：使用OpenCV推荐的CMake工具</p>
+<p>　　这个方法，我郁闷了很久，试了各种办法，最终还是编译运行成功啦。一把心酸泪啊。</p>
+<p>&nbsp;　 下面我就一步步介绍下步骤吧：</p>
+<p>　　step1:新建一个目录用于存放我们的代码和程序中要处理的相关图片</p>
+<p>　　<img alt="\" height="413" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214555128.png" width="786" style="width: 650px; height: 341.654465592972px;"></p>
+<p>　　step2:添加cmake工具编译时所需的文件CMakeLists.txt</p>
+<p>　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214555129.png" style="width: 650px; height: 468.083961248655px;"></p>
+<p>　　CMakeLists.txt文件中的具体内容如下（注：这个文件你可以到你的OpenCV源代码解压出来的文件夹下的/samples/c/example_cmake/文件夹下拷过来，然后再做修改）。</p>
+<p>　　下面我就简要的介绍下这里面内容的大概意思吧</p>
+<div class="syntaxhighlighter " id="highlighter_615271"><div class="bar"><div class="toolbar"><a href="http://www.it165.net/os/html/201407/8801.html#viewSource" title="view source" class="item viewSource" style="width: 16px; height: 16px;">view source</a><a href="http://www.it165.net/os/html/201407/8801.html#printSource" title="print" class="item printSource" style="width: 16px; height: 16px;">print</a><a href="http://www.it165.net/os/html/201407/8801.html#about" title="?" class="item about" style="width: 16px; height: 16px;">?</a></div></div><div class="lines"><div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">PROJECT(OpenCV_Example)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments">//这是建立一个工程项目（类似于我们VS中建立C++项目一样），括号里面时工程名,工程名我们可以任意给，最后程序编译出来的可执行文件就是这个名字</code></span></span></div><div class="line alt2"><code class="number">02.</code><span class="content"><span class="block" style="margin-left: 0px;">&nbsp;</span></span></div><div class="line alt1"><code class="number">03.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">CMAKE_MINIMUM_REQUIRED(VERSION </code><code class="value">2.6</code><code class="plain">)　　　　</code><code class="comments">//这是对CMake工具最低版本要求，这里我们要检查下我们的CMake工具的版本信息，我们可以使用命令“cmake --version”查看</code></span></span></div><div class="line alt2"><code class="number">04.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="keyword">if</code><code class="plain">(COMMAND cmake_policy)　　　　　　　　　　　　</code></span></span></div><div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><span class="block" style="margin-left: 48px;"><code class="plain">cmake_policy(SET CMP0003 NEW)</code></span></span></div><div class="line alt2"><code class="number">06.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">endif(COMMAND cmake_policy)</code></span></span></div><div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;</code><span class="block" style="margin-left: 8px;">&nbsp;</span></span></div><div class="line alt2"><code class="number">08.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">FIND_PACKAGE( OpenCV REQUIRED )&nbsp;&nbsp; </code><code class="comments">//这是cmake用来查找opencv包用的，不用改</code></span></span></div><div class="line alt1"><code class="number">09.</code><span class="content"><span class="block" style="margin-left: 0px;">&nbsp;</span></span></div><div class="line alt2"><code class="number">10.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain"># Declare the target (an executable)</code></span></span></div><div class="line alt1"><code class="number">11.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">ADD_EXECUTABLE(OpenCV_Example&nbsp; Image_show.c)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments">//这里括号里面的两个参数分别是工程项目名和我们要编译文件名的意思，记住中间一空格键隔开</code></span></span></div><div class="line alt2"><code class="number">12.</code><span class="content"><span class="block" style="margin-left: 0px;">&nbsp;</span></span></div><div class="line alt1"><code class="number">13.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">TARGET_LINK_LIBRARIES(OpenCV_Example ${OpenCV_LIBS})&nbsp; </code><code class="comments">//这是我们链接到OpenCV库的环节，我们只要更改前面第一个参数位我们的工程项目名即可</code></span></span></div><div class="line alt2"><code class="number">14.</code><span class="content"><span class="block" style="margin-left: 0px;">&nbsp;</span></span></div><div class="line alt1"><code class="number">15.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">#MESSAGE(STATUS </code><code class="string">'OpenCV_LIBS: ${OpenCV_LIBS}'</code><code class="plain">)&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="comments">//好了，就修改这么点东西，保存，关闭。</code></span></span></div></div></div>
+<p>　　然后我们就将终端的工作目录切换到我们建立工程文件的这个目录</p>
+<p>　　（注意，千万要注意：你这时一定要查看你安装OpenCV时建立的那个编译文件，有没有带锁的标志（即你编译OpenCV是用root权限编译的），就这点就把我坑惨了，例如的我电脑上显示的就是这样的<img alt="\" height="519" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214555130.png" width="1112" style="width: 650px; height: 303.333333333333px;"></p>
+<p>　　看到上面图片中的build文件夹没，那就是我编译OpenCV源代码时建立的文件夹。）</p>
+<p>　　所以，如果你是以root的权限编译的OpenCV此时你就要以切换到root用户，再切换到当前的工作目录。如果不是用root权限编译的OpenCV编译的话，你就直接切换目录就OK了。</p>
+<p>　　我的电脑是要切换到root状态的</p>
+<p>　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214556132.png" style="width: 650px; height: 327.266387726639px;"></p>
+<p>　　Step3:让后我们输入命令'cmake .'对当前的工程进行编译。啊哦，这时你就会发现你编译时出现了一个Bug</p>
+<p>　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214556133.png" style="width: 650px; height: 166.071428571429px;"></p>
+<p>　　这个警告的大概意思就是：Cmake找不到OpenCV的链接库文件，你需要手动地设置OpenCV_DIR来指向包含库文件的路径。</p>
+<p>　　好吧，这是最蛋疼的地方，就这个问题我google和上StackOverFlow都没有找到答案，只能自己尝试了，不过还是找到网友给的一些提示。</p>
+<p>　　其实通过它给我们的提示我们就是要设置好这个路径。接下来我们通过camke的qt界面进行设置吧。</p>
+<p>　　</p>
+<p>　　Step4：设置OpenCV_DIR</p>
+<p>　　（1）先安装cmake的qt界面 'sudo apt-get install cmake-gui'</p>
+<p>　　（2）打开cmake-gui界面</p>
+<p>　　　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214556134.png" style="width: 650px; height: 577.972972972973px;"></p>
+<p>　　（3）我们这是就在Where is the source code 和 where to build binaries 的选项里选择我们的目录刚才建立包含我们程序的文件路径吧。</p>
+<p>　　　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214557135.png" style="width: 650px; height: 490.269886363636px;"></p>
+<p>　　（4）我们选择cmake界面中的“Add Entry”选项，按照我下面图中的方式输入信息吧，其中alue值就是我OpenCV安装的那个目录（回想下我上面说的）。</p>
+<p>　　　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214557136.png" style="width: 650px; height: 477.887323943662px;"></p>
+<p>　　　　这样我们就点击ok吧，得到下面的图了</p>
+<p>　　　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214558137.png" style="width: 650px; height: 488.423295454545px;"></p>
+<p>　　　　到此OpenCV_DIR就配置完成了，单击下面的Configure和Generate，如果没报错则一切搞定啦。我们可以愉快的回到终端编译我们的程序啦。</p>
+<p>　　（5）编译的方式如图所示</p>
+<p>　　　<img alt="\" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214558138.png" style="width: 650px; height: 469.054054054054px;"></p>
+<p>　　　看到了吗，绿色OpenCV_Example就是我们刚生成的可执行文件，到此大功告成啊。</p>
+<p>　　</p>
+<p>　　　Step5：运行测试吧</p>
+<p>　　<img alt="\" height="527" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/20140714214559139.png" width="1081" style="width: 650px; height: 316.823899371069px;"></p>
+<p>　　好了，搞定啦，睡觉啦!</p>
+<p>出处：http://www.cnblogs.com/woshijpf/</p>
+<p>　　</p>				</li>
+				<script type="text/javascript">
+					<!--
+					$(function(){
+					  $('#ArticleBox img').LoadImage(true, 650, 650,'http://www.it165.net/statics/images/s_nopic.gif');    
+					})
+					//-->
+				</script>
+			</ul>
+			<div class="aboutlbox">
+				<h3>延伸阅读：</h3>
+				<ul>
+																	<li>1、<a target="_blank" href="http://www.it165.net/os/html/201403/7616.html">Ubuntu下编译Ffmpeg静态库</a></li>
+									<li>2、<a target="_blank" href="http://www.it165.net/os/html/201405/8366.html">在Erlang shell怎么在目录A下编译目录B下的文件 并把生成文件统一放置目录C</a></li>
+									<li>3、<a target="_blank" href="http://www.it165.net/os/html/201408/9104.html">centOS64位下编译hadoop2.4.1</a></li>
+									<li>4、<a target="_blank" href="http://www.it165.net/os/html/201109/745.html">java在linux下设置环境变量</a></li>
+									<li>5、<a target="_blank" href="http://www.it165.net/os/html/201204/1878.html">Ubuntu下安装配置python3.2.3集成开发环境Eric5</a></li>
+									<li>6、<a target="_blank" href="http://www.it165.net/os/html/201204/1915.html">CentOS搭建python开发环境</a></li>
+									<li>7、<a target="_blank" href="http://www.it165.net/os/html/201207/2717.html">Linux下设置JDK环境变量的两种方法</a></li>
+									<li>8、<a target="_blank" href="http://www.it165.net/os/html/201208/3029.html">Ubuntu系统如何搭建QT开发环境</a></li>
+																</ul>
+			</div>
+			<div class="tag">
+								<div class="share">
+				<!-- Baidu Button BEGIN -->
+				<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+				<a class="bds_tsina" title="分享到新浪微博" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<a class="bds_tqq" title="分享到腾讯微博" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<a class="bds_renren" title="分享到人人网" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<a class="bds_qzone" title="分享到QQ空间" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<a class="bds_kaixin001" title="分享到开心网" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<a class="bds_hi" title="分享到百度空间" href="http://www.it165.net/os/html/201407/8801.html#"></a>
+				<span class="bds_more"></span>
+				</div>
+				<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=68696" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/bds_s_v2.js"></script>
+				
+				<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+				</script>
+				<!-- Baidu Button END -->
+				</div>
+				<div class="tagbox"><strong>Tag标签：</strong><a target="_blank" href="http://s.it165.net/os/%CF%C2%B1%E0.html">下编</a>&nbsp;&nbsp;<a target="_blank" href="http://s.it165.net/os/%BB%B7%BE%B3.html">环境</a>&nbsp;&nbsp;<a target="_blank" href="http://s.it165.net/os/%B3%CC%D0%F2.html">程序</a>&nbsp;&nbsp;</div>
+			</div>
+			<div class="spageboxs">
+				<div id="spbox"></div>
+				<div id="backindex">
+					<h3><a href="http://www.it165.net/">返回到首页</a></h3>
+						
+					<h3><a href="http://www.it165.net/os/">返回到操作系统</a></h3>
+				</div>			</div>
+			<ul class="prenextbox">
+				<li><strong>上一篇：</strong><a href="http://www.it165.net/os/html/201407/8792.html">linux配置nfs服务</a></li>
+				<li><strong>下一篇：</strong><a href="http://www.it165.net/os/html/201407/8805.html">Linux中gcc编译器的用法</a></li>
+			</ul>
+			<div class="ArtLine"></div>
+			<div class="adv728a"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(2).php"></script><script type="text/javascript">var sogou_ad_id=254882;var sogou_ad_height=90;var sogou_ad_width=728;</script><script language="JavaScript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/c.js"></script><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ask(1)"></script><div style="display:none">-</div> <div id="starIframe_wrapper_2" style="height:90px;"><iframe id="starIframe2" onload="document.sogou_ads2_loaded=true;" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ct(3).html" width="728" height="90" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div>
+			<div class="adv728b"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(3).php"></script><script type="text/javascript">     document.write('<a style="display:none!important" id="tanx-a-mm_25014455_2407477_13672514"></a>');     tanx_s = document.createElement("script");     tanx_s.type = "text/javascript";     tanx_s.charset = "gbk";     tanx_s.id = "tanx-s-mm_25014455_2407477_13672514";     tanx_s.async = true;     tanx_s.src = "http://p.tanx.com/ex?i=mm_25014455_2407477_13672514";     tanx_h = document.getElementsByTagName("head")[0];     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);</script><div id="tanxssp_con_mm_25014455_2407477_13672514" style="display:inline-block;position:relative;width:728px;height:90px;*display:inline;*zoom:1;"><iframe scrolling="no" frameborder="0" marginheight="0" marginwidth="0" border="0" style="width:728px;height:90px;" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/728x90danpin0911.html"></iframe><a id="iconmm_25014455_2407477_13672514" title="我也要申请橱窗推广" target="_blank" href="http://c.alimama.com/" style="overflow:hidden;width:26px;height:17px;right:18px;bottom:0px;display:block;position:absolute;cursor:pointer;z-index:250;">   <span id="icon_smallmm_25014455_2407477_13672514" style="float:none;width:26px;display:block;height:17px;background-repeat:no-repeat;background-image: url(&#39;//gw.alicdn.com/tps/i2/T1oY3VXmNbXXXb8qDc-26-18.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//gw.alicdn.com/tps/i2/T1oY3VXmNbXXXb8qDc-26-18.png&#39;);"></span>   <span id="icon_bigmm_25014455_2407477_13672514" style="float:none;width:110px;height:17px;display: none;background-repeat:no-repeat;background-image: url(&#39;//gw.alicdn.com/tps/i3/T1dt7VXiRaXXbd25o5-110-18.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//gw.alicdn.com/tps/i3/T1dt7VXiRaXXbd25o5-110-18.png&#39;);"></span></a><a id="sxmm_25014455_2407477_13672514" href="javascript:;" style="width:17px;height:17px;right:0px;bottom:0px;display:block;position:absolute;cursor:pointer;z-index:250;">   <span id="sx1mm_25014455_2407477_13672514" style="float:none;width:17px;display:block;height:17px;background-repeat:no-repeat;background-image: url(&#39;//gw.alicdn.com/tps/i4/TB1HRyeGXXXXXbRXXXX1DxgFpXX-17-17.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//gw.alicdn.com/tps/i4/TB1HRyeGXXXXXbRXXXX1DxgFpXX-17-17.png&#39;);"></span>   <span id="sx2mm_25014455_2407477_13672514" style="float:none;width:110px;height:17px;display: none;background-repeat:no-repeat;background-image: url(&#39;//gw.alicdn.com/tps/i3/TB1buFUGXXXXXcIXVXX1DxgFpXX-17-17.png&#39;);*background-image:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=&#39;//gw.alicdn.com/tps/i3/TB1buFUGXXXXXcIXVXX1DxgFpXX-17-17.png&#39;);"></span></a><div id="sxtipmm_25014455_2407477_13672514" style="display:none;width:100px;position:absolute;right:0;bottom:17px;"><div style="width:100px; height:20px;background:#ddd;color:#666;line-height:1.5;text-align: center;">屏蔽此推广内容</div><div style="float:right;margin-right:6px;width: 0;height: 0;border-left: 3px solid transparent;border-right: 3px solid transparent;border-top: 6px solid #ddd;"></div></div></div><a style="display:none!important" id="tanx-a-mm_25014455_2407477_13672514"></a></div>			<div class="ArtLine"></div>
+			<div class="CommentBox" id="#comment_iframe">
+				<!--兼容版，可保证页面完全兼容-->
+<div id="SOHUCS" sid="8801" style="width: 100%; min-height: 52px; overflow: visible;"><iframe name="easyXDM_default1660_provider" id="easyXDM_default1660_provider" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/innerpage.html" frameborder="0" scrolling="no" height="321px" style="height: 321px;"></iframe></div>
+<script>
+  (function(){
+    var appid = 'cyrljYvoL',
+    conf = 'prod_2c3485f27b3b0d5d138546ad112483d2';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+  })()
+</script>
+			</div>
+		</div>
+		<div class="CMBox">
+			<div class="advs300"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(4).php"></script><script type="text/javascript">var sogou_ad_id=155403;var sogou_ad_height=250;var sogou_ad_width=300;</script><script language="JavaScript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/c.js"></script><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ask(2)"></script><div style="display:none">-</div> <div id="starIframe_wrapper_3" style="height:250px;"><iframe id="starIframe3" onload="document.sogou_ads3_loaded=true;" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ct.html" width="300" height="250" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div>			<div class="rtLine"></div>
+			<div class="hotbox">
+																<ul class="hotPP">
+					<li class="titLink"><h3><a target="_blank" title="UNIX环境编程学习笔记（11）文件I/O之文件时间以及utimex函数" href="http://www.it165.net/os/html/201409/9294.html" style="">UNIX环境编程学习笔记（11）文件</a></h3></li>
+					<li class="APic"><a target="_blank" title="UNIX环境编程学习笔记（11）文件I/O之文件时间以及utimex函数" href="http://www.it165.net/os/html/201409/9294.html"><img alt="UNIX环境编程学习笔记（11）文件I/O之文件时间以及utimex函数" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/nopic.gif" width="111" height="70"></a></li>
+					<li class="Desc">lienhua342014-09-161文件的时间每个文件都有三个时间... <a target="_blank" title="UNIX环境编程学习笔记（11）文件I/O之文件时间以及utimex函数" href="http://www.it165.net/os/html/201409/9294.html">详细</a></li>
+				</ul>
+				<ul class="HList">
+																	<li><a target="_blank" title="linux下系统调用API系统命令 内核函数的区别与联系" href="http://www.it165.net/os/html/201409/9288.html" style="">linux下系统调用API系统命令 内核函数的区别</a></li>
+																	<li><a target="_blank" title="UNIX环境编程学习笔记（10）文件I/O之硬链接和符号链接" href="http://www.it165.net/os/html/201409/9287.html" style="">UNIX环境编程学习笔记（10）文件I/O之硬链接</a></li>
+																	<li><a target="_blank" title="Ubuntu下简单配置反编译工具以及其开发环境" href="http://www.it165.net/os/html/201409/9285.html" style="">Ubuntu下简单配置反编译工具以及其开发环境</a></li>
+																	<li><a target="_blank" title="Linux下段错误core文件" href="http://www.it165.net/os/html/201409/9283.html" style="">Linux下段错误core文件</a></li>
+																</ul>
+			</div>			<div class="rtLine"></div>
+			<div class="rkbox">
+				<ul class="tabTitle">
+					<li class="tabTitleno"><h3>文章排行</h3></li>
+					<li id="ph2" class="check" onmousemove="Tab(&#39;ph&#39;,2,2,&#39;check&#39;,&#39;checked&#39;)"><h3>月</h3></li>
+					<li id="ph1" class="check" onmousemove="Tab(&#39;ph&#39;,1,2,&#39;check&#39;,&#39;checked&#39;)"><h3>周</h3></li>
+					<li id="ph0" class="checked" onmousemove="Tab(&#39;ph&#39;,0,2,&#39;check&#39;,&#39;checked&#39;)"><h3>日</h3></li>
+				</ul>
+				<ul class="PNList" id="ph00">
+															<li><a target="_blank" title="使用pthread_exit线程退出函数需注意的问题" href="http://www.it165.net/os/html/201208/3108.html" style="">使用pthread_exit线程退出函数需注意的问题</a></li>
+										<li><a target="_blank" title="Linux编程之ioremap函数的实例解析" href="http://www.it165.net/os/html/201208/3124.html" style="">Linux编程之ioremap函数的实例解析</a></li>
+										<li><a target="_blank" title="ssh框架整合spring 4.0 + struts  2.3.16 + maven ss整合超简单实例" href="http://www.it165.net/os/html/201403/7355.html" style="">ssh框架整合spring 4.0 + struts  ...</a></li>
+										<li><a target="_blank" title="如何构建MIPS交叉编译工具链" href="http://www.it165.net/os/html/201405/8236.html" style="">如何构建MIPS交叉编译工具链</a></li>
+										<li><a target="_blank" title="深入浅出down_interruptible函数" href="http://www.it165.net/os/html/201207/2675.html" style="">深入浅出down_interruptible函数</a></li>
+										<li><a target="_blank" title="利用xcodebuild命令确定SDK版本并编译SGAREnvironment库" href="http://www.it165.net/os/html/201208/3102.html" style="">利用xcodebuild命令确定SDK版本并编译S...</a></li>
+										<li><a target="_blank" title="进程同步之信号量机制（pv操作）及三个经典同步问题" href="http://www.it165.net/os/html/201312/7039.html" style="">进程同步之信号量机制（pv操作）及三个...</a></li>
+										<li><a target="_blank" title="linux标准IO缓冲（apue）" href="http://www.it165.net/os/html/201402/7249.html" style="">linux标准IO缓冲（apue）</a></li>
+										<li><a target="_blank" title="CentOS6.5Linux上面编译Hadoop2.4源码" href="http://www.it165.net/os/html/201406/8714.html" style="">CentOS6.5Linux上面编译Hadoop2.4源码</a></li>
+										<li><a target="_blank" title="内核中的计时器和列表及相应示例代码" href="http://www.it165.net/os/html/201206/2465.html" style="">内核中的计时器和列表及相应示例代码</a></li>
+														</ul>
+				<ul class="PNList" id="ph11" style="display:none">
+															<li><a target="_blank" title="国内npm安装nodejs modules失败的几个解决方案" href="http://www.it165.net/os/html/201403/7618.html" style="">国内npm安装nodejs modules失败的几个...</a></li>
+										<li><a target="_blank" title="Linux编程之ioremap函数的实例解析" href="http://www.it165.net/os/html/201208/3124.html" style="">Linux编程之ioremap函数的实例解析</a></li>
+										<li><a target="_blank" title="深入浅出down_interruptible函数" href="http://www.it165.net/os/html/201207/2675.html" style="">深入浅出down_interruptible函数</a></li>
+										<li><a target="_blank" title="使用pthread_exit线程退出函数需注意的问题" href="http://www.it165.net/os/html/201208/3108.html" style="">使用pthread_exit线程退出函数需注意的问题</a></li>
+										<li><a target="_blank" title="Linux线程之线程 线程组 进程 轻量级进程（LWP）" href="http://www.it165.net/os/html/201305/5123.html" style="">Linux线程之线程 线程组 进程 轻量级...</a></li>
+										<li><a target="_blank" title="Openwrt平台搭建（一）" href="http://www.it165.net/os/html/201407/8790.html" style="">Openwrt平台搭建（一）</a></li>
+										<li><a target="_blank" title="利用xcodebuild命令确定SDK版本并编译SGAREnvironment库" href="http://www.it165.net/os/html/201208/3102.html" style="">利用xcodebuild命令确定SDK版本并编译S...</a></li>
+										<li><a target="_blank" title="Ubuntu下安装eclipse" href="http://www.it165.net/os/html/201405/8326.html" style="">Ubuntu下安装eclipse</a></li>
+										<li><a target="_blank" title="Shell脚本中循环语句for,while,until用法" href="http://www.it165.net/os/html/201307/5759.html" style="">Shell脚本中循环语句for,while,until用法</a></li>
+										<li><a target="_blank" title="UNIX网络编程之epoll 的accept , read, write(重要)" href="http://www.it165.net/os/html/201308/5868.html" style="">UNIX网络编程之epoll 的accept , re...</a></li>
+														</ul>
+				<ul class="PNList" id="ph22" style="display:none">
+															<li><a target="_blank" title="国内npm安装nodejs modules失败的几个解决方案" href="http://www.it165.net/os/html/201403/7618.html" style="">国内npm安装nodejs modules失败的几个...</a></li>
+										<li><a target="_blank" title="Linux编程之ioremap函数的实例解析" href="http://www.it165.net/os/html/201208/3124.html" style="">Linux编程之ioremap函数的实例解析</a></li>
+										<li><a target="_blank" title="使用pthread_exit线程退出函数需注意的问题" href="http://www.it165.net/os/html/201208/3108.html" style="">使用pthread_exit线程退出函数需注意的问题</a></li>
+										<li><a target="_blank" title="Linux线程之线程 线程组 进程 轻量级进程（LWP）" href="http://www.it165.net/os/html/201305/5123.html" style="">Linux线程之线程 线程组 进程 轻量级...</a></li>
+										<li><a target="_blank" title="Openwrt平台搭建（一）" href="http://www.it165.net/os/html/201407/8790.html" style="">Openwrt平台搭建（一）</a></li>
+										<li><a target="_blank" title="Ubuntu下安装eclipse" href="http://www.it165.net/os/html/201405/8326.html" style="">Ubuntu下安装eclipse</a></li>
+										<li><a target="_blank" title="ssh框架整合spring 4.0 + struts  2.3.16 + maven ss整合超简单实例" href="http://www.it165.net/os/html/201403/7355.html" style="">ssh框架整合spring 4.0 + struts  ...</a></li>
+										<li><a target="_blank" title="OpenWRT数据接收过程 Linux内核-OpenWRT" href="http://www.it165.net/os/html/201404/8091.html" style="">OpenWRT数据接收过程 Linux内核-OpenWRT</a></li>
+										<li><a target="_blank" title="Shell脚本中循环语句for,while,until用法" href="http://www.it165.net/os/html/201307/5759.html" style="">Shell脚本中循环语句for,while,until用法</a></li>
+										<li><a target="_blank" title="saltstack的rest接口salt-api开发使用指南" href="http://www.it165.net/os/html/201402/7268.html" style="">saltstack的rest接口salt-api开发使用指南</a></li>
+														</ul>
+			</div>			<div class="rtLine"></div>
+						<div class="rBox">
+				<ul class="tabTitle">
+					<li class="tabTitleno"><h3>下载频道</h3></li>
+					<li class="check"><h3><a target="_blank" href="http://down.it165.net/">更多</a></h3></li>
+				</ul>
+				<ul class="TList">
+															<li><a target="_blank" title="标准Mac应用对话框的替代品 DCOAboutWindow" href="http://www.it165.net/down/html/201402/1541.html" style="">标准Mac应用对话框的替代品 DCOAboutWindow</a></li>
+										<li><a target="_blank" title="磁盘空间管理脚本 dedup.pl" href="http://www.it165.net/down/html/201402/1519.html" style="">磁盘空间管理脚本 dedup.pl</a></li>
+										<li><a target="_blank" title="多监控器演示工具 squint" href="http://www.it165.net/down/html/201402/1518.html" style="">多监控器演示工具 squint</a></li>
+										<li><a target="_blank" title="Nautilus 脚本管理 Masna" href="http://www.it165.net/down/html/201402/1482.html" style="">Nautilus 脚本管理 Masna</a></li>
+										<li><a target="_blank" title="窗口管理器 SlackE18" href="http://www.it165.net/down/html/201402/1481.html" style="">窗口管理器 SlackE18</a></li>
+										<li><a target="_blank" title="图形化tail工具 SwingTail" href="http://www.it165.net/down/html/201311/1476.html" style="">图形化tail工具 SwingTail</a></li>
+										<li><a target="_blank" title="TCP/IP连接诊断工具 Why Can&#39;t I Connect?" href="http://www.it165.net/down/html/201310/1455.html" style="">TCP/IP连接诊断工具 Why Can't I Connect?</a></li>
+										<li><a target="_blank" title="Ubuntu 13.10 全系列发布" href="http://www.it165.net/down/html/201310/1433.html" style="">Ubuntu 13.10 全系列发布</a></li>
+														</ul>
+			</div>			<div class="rtLine"></div>
+			<div style="width:300px;;height:250px"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(5).php"></script><script>~function (a, c) { a.write('<ins id="' + c + '"></ins>'); var d = a.body || a.getElementsByTagName('head')[0], b = a.createElement('script'); b.type = 'text/javascript'; b.async = true; b.src = "http://f2.adpush.cn/ap/adspacejs/54395.js?" + c; d.insertBefore(b, d.firstChild) }(document, 'QURQVVNI_' + Math.random());</script><ins id="QURQVVNI_0.5429203836247325"><iframe marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="300" height="250" id="_um_uuid1420263706611" src="javascript:void(~function(I){I.open();I.write('<script>_um_uuid54395_um_uuid=parent._um_uuid54395_um_uuid;</script><html><body style="background-color:transparent;margin:0px;overflow:hidden" oncontextmenu="return false"><a onclick="_um_uuid54395_um_uuid(1,this,0,event);" onmousemove="_um_uuid54395_um_uuid(1,this,1,event);" onmouseout="_um_uuid54395_um_uuid(1,this,1,event);" onmouseover="_um_uuid54395_um_uuid(1,this,1,event);" onmousedown="_um_uuid54395_um_uuid(1,1,0,event);" onmouseup="_um_uuid54395_um_uuid(1,1,0,event);" target="_blank" href="javascript:;" style="outline:none;hide-focus:expression(this.hideFocus=true)"><img src="http://ubmcmm.baidustatic.com/media/v1/0f0002WgoY6u_eoa3-POqf.gif" border="0px" height="100%px" width="100%px"/></a></body></html>');I.close()}(document))"></iframe></ins></div>			<div class="rtLine"></div>
+			<div class="rBox">
+				<ul class="tabTitle">
+					<li class="tabTitleno"><h3>专题推荐</h3></li>
+				</ul>
+				<div class="PPListbox">
+													<ul class="PPList">
+						<li class="APic"><a target="_blank" href="http://www.it165.net/special/iOSCocos2d/"><img alt="李华明iOS-Cocos2d游戏开发专题" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/thumb_80_80_20121214102450157.jpg" width="80" height="80"></a></li>
+						<li class="titLink"><h3><a target="_blank" href="http://www.it165.net/special/iOSCocos2d/">李华明iOS-Cocos2d游戏</a></h3></li>
+						<li class="Desc">本教程为 李华明 编著的iOS-Cocos2d游戏开发系列教程：教程涵盖关于i...... <a target="_blank" href="http://www.it165.net/special/iOSCocos2d/">详细</a></li>
+					</ul>
+									<ul class="PPList">
+						<li class="APic"><a target="_blank" href="http://www.it165.net/special/Directx/"><img alt="Directx11 游戏编程入门教程" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/thumb_80_80_20120411103408469.jpg" width="80" height="80"></a></li>
+						<li class="titLink"><h3><a target="_blank" href="http://www.it165.net/special/Directx/">Directx11 游戏编程入</a></h3></li>
+						<li class="Desc">专题主要学习DirectX的初级编程入门学习，对Directx11的入门及初学者有...... <a target="_blank" href="http://www.it165.net/special/Directx/">详细</a></li>
+					</ul>
+									<ul class="PPList">
+						<li class="APic"><a target="_blank" href="http://www.it165.net/pro/special/javascript/"><img alt="Javascript 面向对象编程" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/thumb_80_80_20111217103814404.jpg" width="80" height="80"></a></li>
+						<li class="titLink"><h3><a target="_blank" href="http://www.it165.net/pro/special/javascript/">Javascript 面向对象编</a></h3></li>
+						<li class="Desc">"面向对象的JavaScript"这一说法多少有些冗余，因为JavaScript 语言本...... <a target="_blank" href="http://www.it165.net/pro/special/javascript/">详细</a></li>
+					</ul>
+									<ul class="PPList">
+						<li class="APic"><a target="_blank" href="http://www.it165.net/special/win7/"><img alt="Windows7系统入门 优化 技巧技术专题" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/thumb_80_80_20110904032817134.jpg" width="80" height="80"></a></li>
+						<li class="titLink"><h3><a target="_blank" href="http://www.it165.net/special/win7/">Windows7系统入门 优化</a></h3></li>
+						<li class="Desc">Windows7系统专题 无论是升级操作系统、资料备份、加强资料的安全及管...... <a target="_blank" href="http://www.it165.net/special/win7/">详细</a></li>
+					</ul>
+												</div>
+			</div>			<div class="rtLine"></div>
+			<div class="rBox" id="sidebar-follow" style="top: 0px; position: static;">
+			<div class="rBox">
+				<ul class="tabTitle">
+					<li class="tabTitleno"><h3>栏目推荐</h3></li>
+				</ul>
+
+				<div class="CateList">
+																	<a class="Top" href="http://www.it165.net/os/oswin/">Windows</a>
+															<a href="http://www.it165.net/os/owzx/">Windows资讯</a>
+										<a href="http://www.it165.net/os/owrm/">新手入门</a>
+										<a href="http://www.it165.net/os/owjq/">系统技巧</a>
+										<a href="http://www.it165.net/os/owyh/">系统优化</a>
+										<a href="http://www.it165.net/os/owfwq/">服务器技术</a>
+										<a href="http://www.it165.net/os/owwl/">网络技巧</a>
+										<a href="http://www.it165.net/os/owaq/">系统安全</a>
+										<a href="http://www.it165.net/os/owrz/">微软认证</a>
+										<a href="http://www.it165.net/os/owgz/">系统故障</a>
+																							<a class="Top" href="http://www.it165.net/os/oslin/">Linux</a>
+															<a href="http://www.it165.net/os/olzx/">Linux资讯</a>
+										<a href="http://www.it165.net/os/olrz/">Linux认证</a>
+										<a href="http://www.it165.net/os/olaq/">Linux安全</a>
+										<a href="http://www.it165.net/os/olrm/">新手入门</a>
+										<a href="http://www.it165.net/os/olxg/">系统管理</a>
+										<a href="http://www.it165.net/os/olwl/">网络技术</a>
+										<a href="http://www.it165.net/os/oljq/">Linux集群</a>
+										<a href="http://www.it165.net/os/olfwq/">Linux服务器</a>
+										<a href="http://www.it165.net/os/olbc/">Linux编程</a>
+																							<a class="Top" href="http://www.it165.net/os/osyun/">云操作系统</a>
+																												<a class="Top" href="http://www.it165.net/os/oszh/">系统综合</a>
+																												<a class="Top" href="http://www.it165.net/os/osmac/">Mac os</a>
+																												<a class="Top" href="http://www.it165.net/os/osdos/">DOS系统</a>
+																												<a class="Top" href="http://www.it165.net/os/osunix/">虚拟机</a>
+																							</div>
+			</div>
+			<div class="rtLine"></div>
+			<div style="width:300px;;height:250px"><script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(4).php"></script><script type="text/javascript">var sogou_ad_id=155403;var sogou_ad_height=250;var sogou_ad_width=300;</script><script language="JavaScript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/c.js"></script><script type="text/javascript" charset="utf-8" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ask(2)"></script><div style="display:none">-</div> <div id="starIframe_wrapper_4" style="height:250px;"><iframe id="starIframe4" onload="document.sogou_ads4_loaded=true;" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/ct(1).html" width="300" height="250" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div>
+			</div>
+			<script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/sidebar-follow.js" type="text/javascript"></script>   
+			<script>
+			/* <![CDATA[ */
+			(new SidebarFollow()).init({
+				element: 'sidebar-follow',
+				distanceToTop: 0
+			});
+			/* ]]> */
+			</script>		</div>
+	</div>
+	<div class="FootLine"></div>
+		<div class="Foot">
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">次元立方</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">广告服务</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">隐私声明</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">版权申明</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">免责条款</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">网站地图</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">网友投稿</a> -
+		<a target="_blank" href="http://www.it165.net/os/html/201407/8801.html#">联系方式</a>
+		<br>
+		本站内容来自于互联网,仅供用于网络技术学习,学习中请遵循相关法律法规<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5f4298ca86516e3d7b6ad825f8ef6905' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/h.js" type="text/javascript"></script>
+	</div>
+<script language="JavaScript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/api.php"></script>
+<script language="javascript" type="text/javascript" src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/index(6).php"></script></div>
+
+
+<div id="um_uuid_r_w0" style="overflow: visible; display: block; position: fixed; padding: 0px; margin: -170.212765957447px 0px 0px; border: 0px; text-align: left; z-index: 2147483647; width: 120px; height: 240px; right: 0px; top: 70.9219858156028%; background-color: rgb(236, 249, 253);"><a onclick="_um_uuid54393_um_uuid(1,this,0,event);" onmousemove="_um_uuid54393_um_uuid(1,this,1,event);" onmouseout="_um_uuid54393_um_uuid(1,this,1,event);" onmouseover="_um_uuid54393_um_uuid(1,this,1,event);" onmousedown="_um_uuid54393_um_uuid(1,1,0,event);" onmouseup="_um_uuid54393_um_uuid(1,1,0,event);" target="_blank" href="javascript:;" style="outline:none;hide-focus:expression(this.hideFocus=true)"><img src="./在linux环境下编译运行OpenCV程序的两种方法 - Linux编程 - 次元立方网 - 电脑知识与技术互动交流平台_files/0f0000RyuQBzupw1GdVyyf.jpg" border="0px" height="240px" width="120px"></a><span style="position:absolute;width:45px;height:20px;line-height:20px;right:0px;top:-20px;cursor:pointer;text-align:right;display:block"><a target="_self" href="http://www.it165.net/os/html/201407/8801.html#" onclick="javascript:return(um_uuid_r_w_um_uuid54393(&#39;um_uuid_r_w0&#39;),!1);" style="color:blue;font-family:宋体,Arial;font-size:12px;outline:none;hide-focus:expression(this.hideFocus=true);text-decoration:none">[关闭]</a></span></div></body></html>

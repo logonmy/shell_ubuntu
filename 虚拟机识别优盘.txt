@@ -1,0 +1,2 @@
+装增强功能;
+sudo usermod -a -G vboxusers zhangzhenwei;

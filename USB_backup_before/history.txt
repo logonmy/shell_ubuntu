@@ -1,0 +1,93 @@
+sudo cp linux_fonts.tar.gz /usr/share/fonts/
+   51  cd /usr/share/fonts/
+   52  sudo tar xzf linux_fonts.tar.gz
+   53  cd fonts-linux
+   54  sudo mkfontscale
+   55  sudo mkfontdir
+   56  sudo fc-cache
+   57  sudo cp 69-language-selector-zh-cn.conf /etc/fonts/conf.d/
+   58  sudo cp 69 -language-selector-zh-cn.conf /etc/fonts/conf.d/
+   59  sudo cp 69-language-selector-zh-cn.conf /etc/fonts/conf.d/
+   60  sudo cp linux_fonts.tar.gz /usr/share/fonts/
+   61  sudo cp 69-language-selector-zh-cn.conf /etc/fonts/conf.d/
+   62  sudo cp linux_fonts.tar.gz /usr/share/fonts/
+   63  1230
+   64  sudo cp linux_fonts.tar.gz /usr/share/fonts/
+   65  cd /usr/share/fonts/
+   66  sudo tar xzf linux_fonts.tar.gz
+   67  cd fonts-linux
+   68  sudo mkfontscale
+   69  sudo mkfontdir
+   70  sudo fc-cache
+   71  sudo add-apt-repository ppa:fcitx-team/nightly
+   72  sudo apt-get update
+   73  sudo apt-get install fcitx
+   74  sudo mentohust 
+   75  history
+   76  sudo 
+   77  sudo 
+   78  sudo 
+   79  sudo im-config
+   80  sudo mentohust 
+   81  sudo apt-get fcitx-tools
+   82  sudo apt-get install fcitx-tools
+   83  sudo apt-get install dialog
+   84  sudo apt-get install fcitx-bin
+   85  apt-get install ibus ibus-pinyin
+   86  sudo apt-get install ibus ibus-pinyin
+   87  apt-cache search ibus
+   88  sudo apt-get install ibus-table ibus ibus-pinyin ibus-googlepinyin 
+   89  apt-cache search
+   90  apt-cache search fcitx
+   91  sudo apt-get install fcitx-config-gtk2 fcitx-googlepinyin fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-table
+   92  cat /etc/lsb-release 
+   93  sudo mentohust
+   94  fctix
+   95  fcitx
+   96  apt-cache search fcitx
+   97  apt-cache search fcitx
+   98  sudo apt-get install fcitx-frontend-qt4 fcitx-frontend-qt5 fcitx-frontend-all fcitx-ui-classic
+   99  apt-chache search qt4
+  100  apt-cache search qt4
+  101  apt-cache search qt4 || grep qt
+  102  apt-cache search qt4 | grep qt
+  103  apt-cache search qt-creator
+  104  apt-cache search qt creator
+  105  sudo apt-get install libqt4-opengl-dev libqt4-opengl libqt4-dev libqt4-dev-bin libqt4-sql qt4-dev-tools qt4-doc qt4-qmake libqt4-assistant libqt4-core libqt4-gui qt4-doc-html qt4-qtconfig qtcreator 
+  106  df -h
+  107  sudo mount -o loop matu20Xa.iso /mnt
+  108  sudo chmod +x Mathworks.Matlab.R2013a.UNIX.iso
+  109  sudo apt get install libqt4-opengl-dev libqt4-opengl libqt4-dev libqt4-dev-bin libqt4-sql qt4-dev-tools qt4-doc qt4-qmake libqt4-assistant libqt4-core libqt4-gui qt4-doc-html qt4-qtconfig qtcreator 
+  110  sudo apt-get install libqt4-opengl-dev libqt4-opengl libqt4-dev libqt4-dev-bin libqt4-sql qt4-dev-tools qt4-doc qt4-qmake libqt4-assistant libqt4-core libqt4-gui qt4-doc-html qt4-qtconfig qtcreator 
+  111  df -h[2~
+  112  apt-get update 
+  113  sudo apt-get update 
+  114  sudo apt-get update --fix-missing
+
+ ls
+  477  ll /mnt/
+  478  ls
+  479  df -h
+  480  sudo mount -o loop Mathworks.Matlab.R2013a.UNIX.iso /mnt/cdrom/
+  481  df -h
+  482  ls
+  483  sudo umount /mnt/cdrom 
+  484  ls
+  485  sudo mount -o loop Mathworks.Matlab.R2013a.UNIX.iso /mnt/cdrom/
+  486  cd /mnt/cdrom/
+  487  ls
+  488  sudo ./install_linux 
+  489  ll
+  490  sudo ./install
+  491  ldd /mnt/cdrom/bin/glnxa64/libstdc++.so.6.0.13
+  492  ll
+  493  df -h
+  494  ls
+  495  cd
+  496  cd /mnt/cdrom/
+  497  ls
+  498  sudo ./install
+  499  ls
+  500  sudo ./install_linux 
+
+

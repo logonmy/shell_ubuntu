@@ -1,0 +1,3 @@
+ibus-table ibus ibus-pinyin ibus-googlepinyin 
+
+fcitx-config-gtk2 fcitx-googlepinyin fcitx-frontend-gtk2 fcitx-frontend-gtk3 fcitx-table fcitx-frontend-qt4 fcitx-frontend-qt5 fcitx-frontend-all fcitx-ui-classic

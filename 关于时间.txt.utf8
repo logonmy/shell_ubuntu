@@ -1,0 +1,41 @@
+解决Win7和ubuntu双系统时间不对的问题 (2011-08-31 18:25:35)转载▼
+标签： 东八区 双系统 解决办法 ubuntu window 7 时间不对 it	
+装了双系统windows+ubuntu的童鞋可能会遇到这种情况，就是在windows下的时间老是不对，
+即使你调整好，当你登陆过ubuntu后，再重新登陆windows后，时间又会变得不对了，细心地朋友会发现这其中恰好差了8个小时！
+
+这主要是因为安装ubuntu时选择了UTC时间，就是ubuntu一开机总是从Internet获取时间，写入Bios，
+然后在这个时间的基础上+8（根据当时选择的时区东八区），就是此时系统中的显示的时间。
+但是win7就悲剧了，它总是从Bios中读取时间，而这个时间是ubuntu写入的UTC时间，它不会加8个小时。
+所以就出现了这样的情况。
+
+解决办法：
+(1)sudo gedit /etc/default/rcS
+    utc=yes 改成utc=no
+(2)将时间写入BIOS： sudo hwclock --systohc
+
+
+
+###################================================                     ================================###################
+win7总是比ubuntu快8个小时。。只有用在线更新才能解决，过一会又变回去了。 :em20 
+搜索到Windows和Ubuntu时间计算有差异解决方法1： sudo gedit /etc/default/rcS 找到这一行：UTC=yes 把 yes改为no ；
+方法2. 修改 Windows 对硬件时间的对待方式，这样只在 Windows 上修改后就无需在Ubuntu 上设置了。让 Windows 把硬件时间当作 UTC
+开始->运行->CMD，打开命令行程序(Vista则要以管理员方式打开命令行程序方可有权限访问注册表)，在命令行中输入下面命令并回车
+代码:
+Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+http://apps.hi.baidu.com/share/detail/19355968
+我先用的方法2，看到没用，就再用了方法1, :em06 现在win7还是不能显示正确时间。。。
+跪求解决~
+
+#######################################################################
+很少解决这个问题，不过可以交流思路
+
+1. 在windows上设置好时间
+2. 在ubuntu上安装ntpdate. 
+sudo apt-get install ntpdate
+3. 在ubuntu下设置好time zone.
+sudo dpkg-reconfigure tzdata
+4. 执行时间同步：
+ntpdate pool.ntp.org
+
+其他文件的什么default阿，UTC阿，都不用改动
+我的机器没出错过，不管是虚拟机还是实体机，还是服务器。

@@ -1,0 +1,16 @@
+cat /etc/lsb-release 
+   21  cd
+   22  ls
+   23  cd soft/
+   24  ls
+   25  cd net_mentohust/
+   26  ls
+   27  uname -a
+   28  ls
+   29  ll
+   30  sudo cp mentohust /usr/bin/
+   31  sudo chmod +x /usr/bin/mentohust 
+   32  sudocp mentohust.conf /etc/
+   33  sudo cp mentohust.conf /etc/
+   34  ll /etc/mentohust.conf 
+

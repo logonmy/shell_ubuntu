@@ -1,0 +1,1 @@
+libqt4-opengl-dev libqt4-opengl libqt4-dev libqt4-dev-bin libqt4-sql qt4-dev-tools qt4-doc qt4-qmake libqt4-assistant libqt4-core libqt4-gui qt4-doc-html qt4-qtconfig qtcreator 

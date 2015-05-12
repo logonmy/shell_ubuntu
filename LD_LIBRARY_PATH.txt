@@ -1,0 +1,52 @@
+LD_LIBRARY_PATH环境变量主要是用于指定动态链接器（ld）查找ELF可执行文件运行时所依赖的动态库（so）的路径，其内容是以冒号分隔的路径列表。
+
+ld链接器将优先在该变量设置的路径中查找，若未找到则在标准库路径/lib和/usr/lib中继续搜索。
+
+临时设置LD_LIBRARY_PATH环境变量的最佳方式是：
+
+在执行你的程序前，先在bash中通过命令行或脚本来设置，这样你的特殊设置对系统的其它程序的运行而言是隔离的，不会影响其他程序对依赖库的查找路径，因为在bash中设置的环境变量只对本次会话有效。在你下次通过SSH工具连接到系统时，新会话的系统环境变量参数不受上次会话的设置影响。
+
+如：
+
+$ export LD_LIBRARY_PATH="/list/of/library/paths:/another/path"
+$ ./program
+
+
+但是，你如果希望对LD_LIBRARY_PATH环境变量的设置永久生效，上面的方式就不适合了。如果你的所有程序都需要链接到某个自定义的查找路径指定的动态库文件，若某次执行程序前你忘记了设置LD_LIBRARY_PATH环境变量，这样你的程序会链接到其他动态库，可能会导致诡异的结果或意外崩溃，而且在可能存在潜在的安全问题。
+
+如果不考虑上述的各种情况，你可以通过修改home目录下的 .bashrc 文件来设置LD_LIBRARY_PATH环境变量，这样每次当你启用一个会话连接到系统时，系统会自动执行该文件指定的命令，这样免去了每次手动设置相关参数的麻烦。增加如下一行：
+
+export LIBRARY_PATH="/list/of/library/paths:/another/path"
+
+或者为所有用户修改这个值，修改/etc/profile文件即可。
+
+一般情况下，只有当程序所需的依赖库不是系统标准安装的库或对库的版本特定要求时，可以指定 LD_LIBRARY_PATH环境变量实现。
+
+通过下面的命令可以查看可执行文件或库文件本身对所依赖的库的情况：
+
+$ ldd ~/myprogram
+
+输出类似：
+
+librt.so.1 => /lib/librt.so.1 (0x00002b4eca08e000)
+libc.so.6 => /lib/libc.so.6 (0x00002b4eca49f000)
+libpthread.so.0 => /lib/libpthread.so.0 (0x00002b4eca7df000)
+/lib64/ld-linux-x86-64.so.2 (0x00002b4ec9e72000)
+libmylib.so.1 => not found
+
+检查结果表明， 链接器无法找到依赖的库libmylib.so.1
+
+我们假设存在这个库 在~/yprogdir/lib/libmylib.so.1, 现在我们可能通过设置LD_LIBRARY_PATH环境变量以便链接器找到。
+
+$ export LD_LIBRARY_PATH="~/myprogdir/lib/:$LD_LIBRARY_PATH"
+$ ldd ~/myprogram
+
+输出如下：
+
+librt.so.1 => /lib/librt.so.1 (0x00002b4eca08e000)
+libc.so.6 => /lib/libc.so.6 (0x00002b4eca49f000)
+libpthread.so.0 => /lib/libpthread.so.0 (0x00002b4eca7df000)
+/lib64/ld-linux-x86-64.so.2 (0x00002b4ec9e72000)
+libmylib.so.1 => ~/myprogdir/lib/libmylib.so.1 (0x00002b4eca9fa000)
+
+这样动态链接器就可能找到所有需要的库文件 。

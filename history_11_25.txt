@@ -1,0 +1,488 @@
+ 14  git clone https://github.com/avin2/SensorKinect.git
+   15  ./Sample-NiSimpleCreate 
+   16  sudo ./libnimCodecs.so 
+   17  sudo ./org.openni.Samples.UserTracker 
+   18  cd SensorKinect/
+   19  git checkout unstable
+   20  ls -al
+   21  sudo chmod 777 OpenNI_用户手册.pdf 
+   22  history ||grep mentohust
+   23  history ||grep mentohust
+   24  history |grep mentohus
+   25  sudo mentohust -u2011300264 -phby1398
+   26  sudo mentohust -u2011300264 -phby1398
+   27  sudo mentohust -k
+   28  sudo mentohust 
+   29  ls
+   30  ls -al
+   31  cd ../
+   32  sudo chmod 777 -R Map2D/
+   33  cd Map2D/
+   34  ls
+   35  ls -al
+   36  sudo chmod 777 -R Map2D/
+   37  cd Map2D/
+   38  ls
+   39  ls -al
+   40  ./Map2D
+   41  ls
+   42  cd ./OpenNI_old/
+   43  ls
+   44  cd old_2/
+   45  ls
+   46  caja .
+   47  cd ../old
+   48  ls
+   49  cd OpenNI-unstable/
+   50  ls
+   51  cd p
+   52  cd Platform/
+   53  ls
+   54  cd ./Linux/
+   55  ls
+   56  cd B
+   57  cd Bin/
+   58  ls
+   59  cd x64-Release/
+   60  ls
+   61  ./SimpleViewer.net.exe 
+   62  ./RedistMaker 
+   63  git https://github.com/avin2/SensorKinect/tags
+   64  ls -al
+   65  cd ../
+   66  sudo chmod 777 SensorKinect-0.91-5.1.0.25
+   67  cd -
+   68  cd -
+   69  sudo chmod 777 -R SensorKinect-0.91-5.1.0.25
+   70  cd -
+   71  ls -al
+   72  ./RedistMaker
+   73  sudo chmod 777 SensorKinect-0.91-5.1.0.25.tar.gz 
+   74  git clone https://github.com/OpenNI/OpenNI
+   75  ls
+   76  cd OpenNI
+   77  ls
+   78  cd -
+   79  ls
+   80  sudo chmod 777 -R OpenNI
+   81  cd OpenNI
+   82  ls -al
+   83  cd Platform/
+   84  ls
+   85  cd Linux/
+   86  ls
+   87  cd CreateRedist/
+   88  ls
+   89  sudo ./RedistMaker
+   90  cd ../Redist/
+   91  ls
+   92  cd OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
+   93  ls
+   94  sudo ./install.sh 
+   95  cd ../../../../
+   96  cd ../
+   97  ls
+   98  cd SensorKinect-0.91-5.1.0.25/
+   99  ls -al
+  100  cd SensorKinect-0.91-5.1.0.25/
+  101  ls
+  102  cd Platform/
+  103  ls
+  104  cd Linux/
+  105  ls
+  106  cd CreateRedist/
+  107  ls
+  108  sudo ./RedistMaker 
+  109  cd ../
+  110  ls
+  111  cd CreateRedist/
+  112  ls
+  113  cd ../
+  114  ls
+  115  cd ../
+  116  ls
+  117  cd ../
+  118  ls
+  119  cd Platform/
+  120  ls
+  121  cd Linux/
+  122  ls
+  123  cd Bin/
+  124  ls
+  125  cd
+  126  cd -
+  127  cd x64-Release/
+  128  ls
+  129  cd -
+  130  cd -
+  131  ls
+  132  cd ../../\
+  133  cd ../../
+  134  ls
+  135  cd Install/
+  136  ls
+  137  cd ../
+  138  ls
+  139  cd Build/
+  140  ls
+  141  make
+  142  cd CreateRedist/
+  143  ls
+  144  sudo ./RedistMaker 
+  145  sudo ./install.sh 
+  146  make
+  147  ls -al
+  148  cd P
+  149  cd Platform/
+  150  ls
+  151  cd Linux/CreateRedist/
+  152  ls
+  153  sudo ./RedistMaker 
+  154  cd ../
+  155  ls
+  156  cd -
+  157  ls
+  158  sudo ./install.sh 
+  159  ls -al
+  160  ./install.sh 
+  161  sudo apt-get install libusb-1.0-0-dev freeglut3-dev g++
+  162  mkae
+  163  make
+  164  sudo chmod 777 -R SensorKinect-0.9
+  165  sudo chmod 777 -R SensorKinect-0.92-5.1.2.1
+  166  cd SensorKinect-0.92-5.1.2.1/
+  167  ls -al
+  168  cd Platform/
+  169  cd Linux/CreateRedist/
+  170  ls
+  171  sudo ./RedistMaker 
+  172  sudo ./RedistMaker 
+  173  sudo ./RedistMaker 
+  174  caja .
+  175  sudo chmod 777 SensorKinect-0.93-5.1.2.1.tar.gz 
+  176  ifconfig 
+  177  service ssh start
+  178  search ssh
+  179  apt-cache search ssh
+  180  apt-cache search ssh|grep ssh
+  181  ins ssh-contact-service
+  182  sudo apt-get install ssh-contact-service
+  183  ls
+  184  ssh zhaoyong@10.129.3.38
+  185  ssh -X zhaoyong@10.129.3.38
+  186  exit
+  187  sudo mentohust 
+  188  sudo ./install.sh 
+  189  sudo ./RedistMaker 
+  190  sudo ./RedistMaker
+  191  cd ../Redist/
+  192  ls
+  193  cd OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
+  194  ls
+  195  sudo ./install.sh 
+  196  cd ../
+  197  cd ../
+  198  ls
+  199  cd Bin/
+  200  ls
+  201  cd x64-Release/
+  202  ls
+  203  sudo ./Sample-NiConvertXToONI 
+  204  sudo ./Sample-NiConvertXToONI --start
+  205  ls
+  206  sudo ./org.openni.Samples.SimpleViewer 
+  207  sudo ./SimpleRead.net.exe 
+  208  sudo ./Sample-NiSimpleCreate 
+  209  ls
+  210  sudo ./niLicense 
+  211  sudo ./niLicense -r
+  212  sudo ./NiSkeletonBenchmark 
+  213  sudo ./Sample-NiSimpleViewer 
+  214  ls
+  215  ./Sample-NiSimpleRead 
+  216  ./Sample-NiSimpleRead 
+  217  sudo ./RedistMaker
+  218  cd ../
+  219  ls
+  220  cd Bin/x64-Release/
+  221  ls
+  222  sudo ./Sample-NiSimpleRead 
+  223  sudo ./Sample-NiSimpleRead 
+  224  make
+  225  qt ../../../../Source/XnDeviceSensorV2/XnSensorDepthGenerator.cpp
+  226  ../../../../Source/XnDeviceSensorV2/XnSensorDepthGenerator.cpp
+  227  cd ../../../../Source/XnDeviceSensorV2/XnSensorDepthGenerator.cpp
+  228  cd ../../../../
+  229  ls
+  230  cd ../../../../Source/XnDeviceSensorV2/
+  231  ls
+  232  cd ../../../../Source/XnDeviceSensorV2/
+  233  sudo zip -r OpenNI安装总结/
+  234  sudo zip -r OpenNI安装总结.zip OpenNI安装总结/
+  235  sudo chmod 777 OpenNI安装总结.zip 
+  236  sudo zip -r OpenNI安装总结.zip OpenNI安装总结/
+  237  sudo chmod 777 OpenNI安装总结.zip 
+  238  sudo modprobe -r gspca_kinect
+  239  lsusb 
+  240  sudo zip -r OpenNI安装总结.zip OpenNI安装总结/
+  241  sudo chmod 777 OpenNI安装总结.zip 
+  242  sudo chmod 777 -R KINECT/
+  243  cd KINECT/
+  244  ls -al
+  245  caja .
+  246  ls
+  247  ./Sample-NiSimpleViewer 
+  248  ./Sample-NiSimpleViewer 
+  249  mkdir $KINECT
+  250  sudo mkdir $KINECT
+  251  sudo mkdir KINECT
+  252  cd KINECT/
+  253  sudo apt-get install g++ python libusb-1.0-0-dev freeglut3-dev
+  254  sud apt-get install doxygen graphviz mono-complete
+  255  sudo apt-get install doxygen graphviz mono-complete
+  256  sudo apt-get install openjdk-6-jdk
+  257  git clone git://github.com/ph4m/SensorKinect.git
+  258  sudo git clone git://github.com/ph4m/SensorKinect.git
+  259  ls
+  260  cd SensorKinect/
+  261  ls
+  262  cd P
+  263  cd Platform/
+  264  ls
+  265  cd Linux/
+  266  LS
+  267  ls
+  268  cd CreateRedist/
+  269  ls
+  270  sudo ./install.sh 
+  271  sudo ./RedistMaker 
+  272  cd ../
+  273  ls
+  274  cd Redist/
+  275  ls
+  276  cd Sensor-Bin-Linux-x64-v5.1.2.1/
+  277  ls
+  278  sudo ./install.sh 
+  279  sudo ./RedistMaker 
+  280  sudo mentohust -k
+  281  sudo mentohust 
+  282  exit
+  283  g++ OpenNI.cpp -o OpenNI
+  284  apt-cache search OpenNI.h
+  285  apt-cache search OpenNI
+  286  sudo apt-get install libopenni-dev
+  287  sudo apt-get install openni-doc
+  288  qmake -project
+  289  qmake
+  290  make
+  291  make
+  292  make
+  293  sudo mentohust -k
+  294  sudo mentohust 
+  295  g++ a.cpp -o a
+  296  sudo mentohust -k
+  297  sudo mentohust 
+  298  sudo mentohust -k
+  299  exit
+  300  sudo mentohust 
+  301  ls
+  302  config_shell 
+  303  ls
+  304  cd Data/
+  305  ls
+  306  ls
+  307  gedit LIBS_CONFIG.mk 
+  308  $Function_Data_Path/
+  309  ls
+  310  cd my_progs/
+  311  ls
+  312  cd fastslam_gui_2014_11_1/
+  313  ls
+  314  gedit Makefile 
+  315  qmake -project
+  316  qmake
+  317  make clean
+  318  ls
+  319  make
+  320  make
+  321  make clean
+  322  make
+  323  make clean
+  324  ls
+  325  make clena
+  326  make clean
+  327  make
+  328  ls
+  329  make clean
+  330  make
+  331  ls
+  332  make clean
+  333  make
+  334  ls
+  335  make clean
+  336  make 
+  337  ls
+  338  ls
+  339  make clean -n
+  340  make clean
+  341  make clean
+  342  ls
+  343  make
+  344  ls
+  345  make clean
+  346  ls
+  347  make
+  348  ls
+  349  make clean
+  350  ls
+  351  make clean
+  352  ls
+  353  make clean
+  354  ls
+  355  ls
+  356  ll
+  357  ./fastslam_gui 
+  358  make clean
+  359  ls
+  360  make clean
+  361  ls
+  362  make
+  363  ls
+  364  make
+  365  make clean
+  366  ls
+  367  ls
+  368  make clean1 
+  369  ls
+  370  ls
+  371  ls
+  372  ls
+  373  sudo mentohust 
+  374  ls
+  375  make clean
+  376  ls
+  377  make clean -n
+  378  make clean 
+  379  ls
+  380  ls
+  381  make clean
+  382  ls
+  383  ls
+  384  make clean
+  385  ls
+  386  make
+  387  ls
+  388  make clean
+  389  ls
+  390  ls
+  391  make clean
+  392  ls
+  393  ls
+  394  make clean
+  395  ls
+  396  ls
+  397  make clean
+  398  ls
+  399  sudo mentohust -k
+  400  exit
+  401  sudo mentohust -u2011300267 -p000267
+  402  sudo mentohust -k
+  403  sudo mentohust -u2011300268 -p000268
+  404  sudo mentohust -k
+  405  sudo mentohust -u2011300242 -p242242
+  406  ls
+  407  cd my_progs/
+  408  ls
+  409  cd g2o/
+  410  caja .
+  411  sudo apt-get install libgtk2.0-dev
+  412  sudo apt-get install pkg-config
+  413  Function diary 
+  414  ls
+  415  cd ../../
+  416  ls
+  417  gedit function.log 
+  418  cd -
+  419  Function opencv_install 
+  420  Function Win3D 
+  421  Function echo_help 
+  422  dpkg -L||grep Function
+  423  dpkg -L|grep Function
+  424  dpkg -l|grep Function
+  425  dpkg -l | grep Function
+  426  dpkg -l || grep Function
+  427  dpkg -L || grep Function
+  428  exit
+  429  sudo chmod 777 Kinect+OpenNI获取深度图和颜色图.rar 
+  430  unrar -e Kinect+OpenNI获取深度图和颜色图.rar 
+  431  ls
+  432  unrar -r Kinect+OpenNI获取深度图和颜色图.rar 
+  433  ls
+  434  unrar Kinect+OpenNI获取深度图和颜色图.rar 
+  435  unrar e Kinect+OpenNI获取深度图和颜色图.rar 
+  436  sudo chmod 777 opencv-3.0.0-beta.zip 
+  437  unzip opencv-3.0.0-beta.zip 
+  438  ll
+  439  cd ../
+  440  sudo chmod 
+  441  sudo chmod 777 -R opencv-3.0.0-beta
+  442  cd opencv-3.0.0-beta/
+  443  ls
+  444  ll
+  445  Function opencv_install 
+  446  dpkg -L | grep opencv
+  447  dpkg -l | grep opencv
+  448  dpkg -l opencv
+  449  dpkg -l grep opencv
+  450  dpkg -l | grep opencv
+  451  ls
+  452  dpkg --cflags
+  453  dpkg -cflags
+  454  man dpkg
+  455  sl
+  456  sls
+  457  cd $Function_Data_Path
+  458  ls
+  459  more LIBS_CONFIG.mk 
+  460  ig --cflags opencv
+  461  pkg-config --cflags opencv
+  462  pkg-config --cflags opencv pkg-config --libs opencv
+  463  ls
+  464  cd /data/zhaoyogn
+  465  ls
+  466  cd /data/
+  467  ls
+  468  sshfs zhaoyong@10.129.3.38:/data .
+  469  ls
+  470  caja
+  471  caja .
+  472  caja .
+  473  apt-cache search opencv
+  474  apt-cache search opencv |grep opencv
+  475  sudo apt-get install libopencv-core-dev
+  476  ls
+  477  cd KINECT/
+  478  ls
+  479  cd OpenNI-unstable/
+  480  ls
+  481  cd Samples/
+  482  ls
+  483  cd MY_OpenNI
+  484  ls
+  485  gedit Makefile 
+  486  ls
+  487  make clean 
+  488  amke
+  489  make
+  490  ls
+  491  ll
+  492  caja .
+  493  make
+  494  make clean
+  495  ls
+  496  make
+  497  ll
+  498  sudo chmod +x openni_test 
+  499  ./openni_test 
+  500  sudo apt-get install vituralbox
+

@@ -1,0 +1,348 @@
+在linux下编写动态链接库的步骤
+
+类似Windows系统中的动态链接库，Linux中也有相应的共享库用以支持代码的复用。Windows中为*.dll，而Linux中为*.so，我来详细的告诉你如何在linux下编写动态库,以及如何使用它.
+在linux下编写动态链接库的步骤:
+ 
+1.      编写库的头文件和源文件.
+2.      把所有涉及到的源文件用如下方式编译为目标文件:
+ 
+g++/gcc -g -c -fPIC -o library1.o library1.cpp
+g++/gcc -g -c -fPIC -o library2.o library2.cpp
+      ......
+......
+（注释：-fPIC指通过这个选项来生成与位置无关的代码，可以在任何地址被连接和装载，-c指只编译而不连接原程序）
+ 
+3.      把所有的目标文件链接为动态库:
+ 
+g++/gcc -g -shared -Wl,-soname,lib***.so -o lib***.so.1.0.0 library1.o library2.o ....  -lc
+                
+    （注释：-lc选项，表示使用c语言库，一般都要用到）
+ 
+4.      建立一个库名链接
+ 
+ln -s lib***.so.1.0.0 lib***.so
+ 
+现在你就可以引用库了.下面我分别给出简单例子告诉你如何动态和静态使用动态库:
+假如你的应用程序源代码叫testlib.cpp
+采用\如下方式编译:
+ 
+      g++ -g -o testlib testlib.cpp -ldl
+            
+    （注释：-ldl选项，表示生成的对象模块需要使用共享库）
+ 
+////////这个例子告诉你如何动态的调用.so库
+testlib.cpp
+#include <dlfcn.h>
+#include <iostream.h>
+#include ...
+int main()
+{
+       void *handle=NULL;
+       //define a pointer which will point to the function in the lib you want to use.
+       YourFuntionType (*pFunc)(YourFunctionPerameterList........);
+       //open the lib you want to use.
+       handle=dlopen("/../../../yourlib.so",RTLD_LAZY);
+       if(handle==NULL)
+       {
+              cout<<"failed loading library!"<<endl;
+              return -1;
+       }
+       dlerror();
+       //try to load the function in lib
+       pFunc=(YourFuntionType(*)(YourFunctionPerameterList))dlsym(handle,"YourFuntionName");
+       if(dlerror()!=NULL)
+       {
+              cout<<"Loading function in lib error!"<<endl;
+              return -1;
+       }
+       //now you can use the funtion like this
+       (*pFunc)(YourFuntionPerameterList);
+       return 0;
+} 
+ 
+（注释：dlopen()
+第一个参数：指定共享库的名称，将会在下面位置查找指定的共享库。
+－环境变量LD_LIBRARY_PATH列出的用分号间隔的所有目录。
+－文件/etc/ld.so.cache中找到的库的列表，用ldconfig维护。
+－目录usr/lib。
+－目录/lib。
+－当前目录。（这里就是这种情况）
+ 
+第二个参数：指定如何打开共享库。
+－RTLD_NOW：将共享库中的所有函数加载到内存
+－RTLD_LAZY：             会推后共享库中的函数的加载操作，直到调用dlsym()时方加载某函数
+dlsym()
+          调用dlsym时，利用dlopen()返回的共享库的phandle以及函数名称作为参数，返回要加载函数的入口地址。
+       dlerror()
+    该函数用于检查调用共享库的相关函数出现的错误。
+）
+ 
+特别需要注意的几点问题:
+1.      当你想用c++写动态库的时候,记住千万别忘了在头文件里面加上如下内容,否则生成的库在动态调用的时候会出问题!!!!!!!
+ #ifdef __cplusplus
+       extern "C" {
+#endif
+....
+....
+   #ifdef __cplusplus
+}
+#endif
+ 
+2.      当你的库中包括与omniORB3相关的东西的时候,一定要在makefile中加上 -D__x86__ -D__OSVERSION=4
+ 
+/////////////这个例子告诉你如何静态调用.so库
+首先你得确保你的应用程序能够找到你的.so库,这可以有几种方法来实现.
+方法一:
+1.你可以把YourLib.so.1.0.0 和YourLib.so放到/usr/lib中,然后执行命令:ldconfig,这样你就可以在你的应用程序中直接调用你库中的函数了,当然你 得把库的头文件包含到你的应用程序中
+2.编译你的应用程序
+g++/gcc -g -o yourapp yourapp.cpp –lYourLib
+ 
+方法二:
+1.你也可以采用在系统中设置环境变量的办法来实现. 在root目录下:
+vi .bash_profile
+然后添加LD_LIBRARY=/../YourDirIncludingYourLib
+然后注消一次,环境变量就生效了,这样你就可以在你的应用程序中直接调用库中的函数了,同样你得有头文件.
+2.编译你的应用程序
+g++/gcc -g -o yourapp yourapp.cpp –lYourLib
+ 
+方法三:
+你可以直接采用在编译链接的时候告诉系统你的库在什么地方
+       g++/gcc -g -o yourapp yourapp.cpp -L/YourDirIncludingYourLib –lYourLib
+/////////////////////////////////
+假如你的库中有个函数:int eat(.....)
+那么采用如下方式调用它
+yourapp.cpp
+#include "YourLib.h"
+int main()
+{
+       eat();
+       return 0;
+}
+ 
+是不是很easy?对了在静态调用的时候好像不存在上面的"注意1"的问题,不过鉴于保险起见,最好还是按照标准的方式写c++头文件吧,这绝对是个好习惯.
+
+下面通过一个简单的例子开始介绍Linux标准对象。 
+我们的标准对象文件含有一个函数，不需要声明export导出符号，只需要编译器设置即可。如下:
+设建立一个tools.h文件以及tools.c文件
+/*
+** tools.h
+*/
+#include "stdio.h"
+#include "stdlib.h"
+void draw();
+void write();
+void sign();
+void show();
+/*
+**tools.c
+*/
+#include "tools.h"
+void draw()
+{
+    printf("draw some graphics.\n");
+}
+void write()
+{
+    printf("write some characters.\n");
+}
+void sign()
+{
+    printf("sign your name.\n");
+}
+void show()
+{
+    printf("A picture by xufeng.\n");
+    draw();
+    write();
+    printf("A picture is finished.\n"); 
+}
+按照如下编译：
+ 
+$ gcc -fPIC -shared -o libmytools.so tools.c
+执行生成一个libmytools.so文件，按照Linux标准对象的命名惯例，应该在库名称之前加上"lib"前缀，尽管不是必须的。编译开关-fPIC代表函数符号可以重定向，-shared代表编译结果是一个标准对象。
+ 
+不同于Win32DLL，Linux标准对象中的所有函数都是直接导出的，都可以被调用程序所访问。下面我们编写调用程序：
+/*
+** test.c
+*/
+#include "tools.h"
+main()
+{
+    show();
+    printf("success!\n");
+}
+按照如下gcc编译：
+ 
+$ gcc -o test test.c ./libmytools.so
+ 
+编译生成test可执行文件。如上编译条件的最后一条需要是所调用的标准对象文件名，注意必须含有路径。如果只是使用libmyso.so，则必须确保这个文件在可访问的PATH下面。本例所使用的文件名"./libmytools.so"是当前路径下的，使用了相对路径。
+ 
+ 
+###############################################################################
+Linux下文件的类型是不依赖于其后缀名的，但一般来讲：
+    .o,是目标文件,相当于windows中的.obj文件
+    .so 为共享库,是shared object,用于动态连接的,和dll差不多
+    .a为静态库,是好多个.o合在一起,用于静态连接
+    .la为libtool自动生成的一些共享库，vi编辑查看，主要记录了一些配置信息。可以用如下命令查看 
+*.la文件的格式   $file *.la 
+       *.la: ASCII English text
+    所以可以用vi来查看其内容。
+    ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+    创建.a库文件和.o库文件：
+    [yufei@localhost perl_c2]$ pwd
+    /home/yufei/perl_c2 
+    [yufei@localhost perl_c2]$ cat mylib.c
+    #include <stdio.h>
+    #include <string.h>
+    void hello(){
+            printf("success call from perl to c library\n");
+    }
+    [yufei@localhost perl_c2]$ cat mylib.h
+    extern void hello();
+    [yufei@localhost perl_c2]$ gcc -c mylib.c
+    [yufei@localhost perl_c2]$ dir
+    mylib.c mylib.h mylib.o
+    [yufei@localhost perl_c2]$ ar -r mylib.a mylib.o
+    ar: 正在创建 mylib.a
+    [yufei@localhost perl_c2]$ dir
+    mylib.a mylib.c mylib.h mylib.o
+    ＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠
+   
+
+###############################################################################
+动态链接库*.so的编译与使用
+ 
+    动态库*.so在Linux下用c和c++编程时经常会碰到，最近在网站找了几篇文章介绍动态库的编译和链 
+接，总算搞懂了这个之前一直不太了解得东东，这里做个笔记，也为其它正为动态库链接库而苦恼的兄弟 
+们提供一点帮助。 
+1、动态库的编译 
+    下面通过一个例子来介绍如何生成一个动态库。这里有一个头文件：so_test.h，三个.c文件： 
+test_a.c、test_b.c、test_c.c，我们将这几个文件编译成一个动态库：libtest.so。 
+    so_test.h： 
+    #include <stdio.h>
+    #include <stdlib.h>
+    void test_a();
+    void test_b();
+    void test_c(); 
+    test_a.c： 
+    #include "so_test.h"
+    void test_a()
+    {
+        printf("this is in test_a...\n");
+    } 
+    test_b.c： 
+    #include "so_test.h"
+    void test_b()
+    {
+        printf("this is in test_b...\n");
+    } 
+    test_c.c： 
+    #include "so_test.h"
+    void test_c()
+    {
+        printf("this is in test_c...\n");
+    } 
+    将这几个文件编译成一个动态库：libtest.so
+    $ gcc test_a.c test_b.c test_c.c -fPIC -shared -o libtest.so 
+2、动态库的链接 
+    在1、中，我们已经成功生成了一个自己的动态链接库libtest.so，下面我们通过一个程序来调用这 
+个库里的函数。程序的源文件为：test.c。
+    test.c： 
+    #include "so_test.h"
+    int main()
+    {
+        test_a();
+        test_b();
+        test_c();
+        return 0; 
+    }
+    l         将test.c与动态库libtest.so链接生成执行文件test：
+    $ gcc test.c -L. -ltest -o test 
+    l         测试是否动态连接，如果列出libtest.so，那么应该是连接正常了 
+    $ ldd test
+    l         执行test，可以看到它是如何调用动态库中的函数的。
+3、编译参数解析
+    最主要的是GCC命令行的一个选项:
+              -shared 该选项指定生成动态连接库（让连接器生成T类型的导出符号表，有时候也生成 
+弱连接W类型的导出符号），不用该标志外部程序无法连接。相当于一个可执行文件 
+    l         -fPIC：表示编译为位置独立的代码，不用此选项的话编译后的代码是位置相关的所以动 
+态载入时是通过代码拷贝的方式来满足不同进程的需要，而不能达到真正代码段共享的目的。 
+    l         -L.：表示要连接的库在当前目录中 
+    l         -ltest：编译器查找动态连接库时有隐含的命名规则，即在给出的名字前面加上lib，后 
+面加上.so来确定库的名称 
+    l         LD_LIBRARY_PATH：这个环境变量指示动态连接器可以装载动态库的路径。 
+    l         当然如果有root权限的话，可以修改/etc/ld.so.conf文件，然后调用 /sbin/ldconfig来 
+达到同样的目的，不过如果没有root权限，那么只能采用输出LD_LIBRARY_PATH的方法了。
+4、注意
+          调用动态库的时候有几个问题会经常碰到，有时，明明已经将库的头文件所在目录 通过 “-I 
+” include进来了，库所在文件通过“-L”参数引导，并指定了“-l”的库名，但通过ldd命令察看时， 
+就是死活找不到你指定链接的so文件，这时你 要作的就是通过修改LD_LIBRARY_PATH或 
+者/etc/ld.so.conf文件来指定动态库的目录。通常这样做就可以解决库无法链接的问题 了。 
+    makefile里面怎么正确的编译和连接生成.so库文件，然后又是在其他程序的makefile里面如何编译 
+和连接才能调用这个库文件的函数????
+    答:
+           你需要告诉动态链接器、加载器ld.so在哪里才能找到这个共享库,可以设置环境变量把库的 
+路径添加到库目录/lib和/usr/lib，LD_LIBRARY_PATH=$(pwd),这种方法采用命令行方法不太方便,一种替 
+代方法
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^注释^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    LD_LIBRARY_PATH可以在/etc/profile还是 ~/.profile还是 ./bash_profile里设置，或者.bashrc里 
+， 
+    改完后运行source /etc/profile或 . /etc/profile
+    更好的办法是添入/etc/ld.so.conf, 然后执行 /sbin/ldconfig 
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^注释^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    是把库路径添加到/etc/ld.so.conf，然后以root身份运行ldconfig
+          也可以在连接的时候指定文件路径和名称 -I -L. 
+          GCC=gcc
+    CFLAGS=-Wall -ggdb -fPIC
+    #CFLAGS=
+    all: libfunc test
+    libfunc:func.o func1.o
+            $(GCC) -shared -Wl,-soname,libfunc.so.1 -o libfunc.so.1.1 $<
+            ln -sf libfunc.so.1.1 libfunc.so.1
+            ln -sf libfunc.so.1 libfunc.so
+    ***********************************************注释************************************************
+    ln -s是用来创建软链接，也就相当于windows中的快捷方式，在当前目录中创建上一级目录中的文件 
+ttt的命名为ttt2软链接的命令是ln -s ../ttt ttt2,如果原文件也就是ttt文件删除的话，ttt2也变成了 
+空文件。
+    ln -d是用来创建硬链接，也就相当于windows中文件的副本，当原文件删除的时候，并不影响“副本 
+”的内容。 
+    编译目标文件时使用gcc的-fPIC选项，产生与位置无关的代码并能被加载到任何地址：
+    gcc –fPIC –g –c liberr.c –o liberr.o
+    使用gcc的-shared和-soname选项；
+    使用gcc的-Wl选项把参数传递给连接器ld；
+    使用gcc的-l选项显示的连接C库，以保证可以得到所需的启动（startup）代码，从而避免程序在使 
+用不同的，可能不兼容版本的C库的系统上不能启动执行。
+    gcc –g –shared –Wl,-soname,liberr.so –o liberr.so.1.0.0 liberr.o –lc 
+    建立相应的符号连接：
+    ln –s liberr.so.1.0.0 liberr.so.1;
+    ln –s liberr.so.1.0.0 liberr.so; 
+    在MAKEFILE中：
+    $@
+        表示规则中的目标文件集。在模式规则中，如果有多个目标，那么，"$@"就是匹配于目标中模式 
+定义的集合。
+    $%
+       仅当目标是函数库文件中，表示规则中的目标成员名。例如，如果一个目标是"foo.a(bar.o)"， 
+那么，"$%"就是"bar.o"，"$@"就是"foo.a"。如果目标不是函数库文件（Unix下是[.a]，Windows下是 
+[.lib]），那么，其值为空。
+    $<
+        依赖目标中的第一个目标名字。如果依赖目标是以模式（即"%"）定义的，那么"$<"将是符合模 
+式的一系列的文件集。注意，其是一个一个取出来的。
+    $?
+        所有比目标新的依赖目标的集合。以空格分隔。
+    $^
+        所有的依赖目标的集合。以空格分隔。如果在依赖目标中有多个重复的，那个这个变量会去除重 
+复的依赖目标，只保留一份。
+    ***********************************************注释************************************************
+    test: test.o libfunc
+            $(GCC) -o test test.o -L. -lfunc
+    %.o:%.c
+            $(GCC) -c $(CFLAGS) -o $@ $<
+    clean:
+            rm -fr *.o
+            rm -fr *.so*
+            rm -fr test 
+    要生成.so文件，cc要带-shared 参数；要调用.so的文件，比如libfunc.so,可以在cc命令最后加上 
+-lfunc，还要视情况加上-L/usr/xxx 指出libfunc.so的路径；这样，在你要编译的源文件中就可以调用 
+libfunc.so这个库文件的函数.
+           前面的都说的差不多了，最后提醒一下最好提供一个接口头文件
+           动态加载,用dlopen,dlclose,dlsym
