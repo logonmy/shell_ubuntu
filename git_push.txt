@@ -1,0 +1,8 @@
+ echo "# Shell" >> README.md
+  523  cat README.md 
+  524  git init 
+  525  git add .
+  526  git commit -m "first commit"
+  527  git remote add origin git@github.com:zzwlinux/Shell.git
+  528  git push -u origin master 
+
