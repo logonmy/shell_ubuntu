@@ -1,0 +1,39 @@
+
+对于那些职业玩树莓派的人来说，鼠标不会太过于依赖。基本上用的是键盘，用键盘控制PC，所以和朋友几个在对树莓派装载完系统之后就开始找桌面的快捷键，几人也找到一个方法去设置桌面快捷键。这里就分享在各位电子发烧友们。
+      #vim ~/.config/openbox/lxde-rc.xml
+按esc输入：250 //跳行至250
+其中文本格式为：
+    <keybind key="W-e">
+    <action name="Execute">
+    <command>pcmanfm</command>
+    </action>
+    </keybind>ps：其中key为对应快捷组合键大写字母W=win,S=shift,C=ctrl,A=alt,小写字母就是键盘的字母键name则是快捷键类型，系统定义很多类型，execute就是执行程序，其他就参考一下rc，xml。command则是要执行的程序。
+我们就按这个格式添加一个快捷键，例如要添加win+g来启动gvim：
+
+     <keybind key="W-g">
+     <action name="Execute">
+     <command>gvim</command>
+     </action>
+     </keybind>
+接着reboot重启这个快捷键就启用了！
+
+1. 打开LXDE配置文件
+
+sudo vim ~/.config/openbox/lxde-rc.xml
+
+
+2.在<keyboard>(…)</keyboard>部分增加如下内容
+
+<keybind key=”C-A-t″>
+  <action=”Execute">
+    <command>lxterminal</command>
+  </action>
+</keybind>
+
+3.重起系统
+
+sudo reboot
+
+
+这样就可以像Ubuntu一样用Ctrl+Alt+T来打开LxTerminal了
+

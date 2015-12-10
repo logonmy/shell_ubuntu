@@ -1,0 +1,1 @@
+没法这样干！！ linux 下 系统头文件是unistd.h  , 要使用curse库，请包含curse.h. 它主要用于 图形， 例如移动光标。。  这两个头文件 包含类似 windows.h的功能。

@@ -1,0 +1,100 @@
+C++基础知识--类的复制控制
+引：一道经常见到的面试题 ，已知类String的原型为：
+
+class String
+{
+public:
+     String(const char *str = NULL);// 普通构造函数
+     String(const String &other);    // 复制构造函数
+     ~ String(void);    // 析构函数
+     String & operate =(const String &other);// 重载赋值操作符
+private:
+     char *m_data;
+
+}; 
+请实现上述String的四个函数。
+
+这道题涉及到了类型的复制构造函数，赋值操作符和析构函数的实现，其中有许多要注意的地方。参考c++ primer第13章
+
+1. 复制构造函数
+
+     它是一种特殊的构造函数，单个形参，该形参为对该类型的引用（常为const），当定义一个新对象并用铜类型的对象进行初始化时，将显示的调用复制构造函数，当把该类型的对象传递给函数或从函数返回该类型的对象时，将隐式的调用复制构造函数。
+
+  a.为什么形参必须为引用？考虑如下代码
+
+复制代码
+class A
+{
+private:
+int value;
+public:
+A(int n){value=n;}
+A(A other){value=other.value;}
+void functionA(){};
+~A(){}
+};
+int main(void)
+{
+A a = 10;
+A b = a;
+b.functionA();
+
+}
+复制代码
+通常，这段代码会显示编译错误的，假设能编译执行，那么由于A(A other)是值传递，在执行A b = a 时，会调用A（A other）并把a当作形参复制到实参（隐式调用A(A other)），即出现了在复制构造函数中调用构造函数，形成无条件递归。所以C++标准不允许复制构造函数为值传递。正确形式应为：A(const A& other)。
+
+b.何时需要自定义复制构造函数？
+
+   如果我们没有定义复制构造函数，编译器会为我们合成一个（即便定义了其他构造函数），默认行为为逐个成员初始化为原对象的副本。
+
+  当类中有指针，或有成员在构造时需要分配其他资源，通常需要定义复制构造函数。这其中有涉及到对象的深拷贝和浅拷贝，如果一个类拥有资源（A如char *str 指向一个字符数组），当这个类的对象发生复制过程时，资源再次分配（B:str=new char[length+1]; if(str!=NULL);strcpy(str,A.str);），这个过程就是深拷贝，反之，没有再次分配资源（B：str=A.str），就是浅拷贝；
+
+ 类禁止复制时，需要定义复制构造函数（声明为private）。
+
+ 通过以上，则String的复制构造函数可以定义如下：
+
+String::String(const String& other)
+{
+      int length = strlen(other.m_data);
+      m_data = new char[length+1]; //注意'\0'
+      strcpy(m_data, other.m_data);    
+}
+ 
+
+ 
+
+2.重载赋值操作符
+
+赋值操作符以this(隐藏)和同类型对象的const引用作为形参。返回对同类型的引用。通常一个类定义复制构造函数的同时需要定义赋值操作符。
+
+a.在赋值之前，需要释放当前对象的资源，否则会形成内存泄露；又因为如此，在这之前需要判断传入的参数和当前对象是否是同一个实例，否则delete时会造成严重错误。
+
+复制代码
+String& String::operator=(const String& other)
+{
+if(this == &other)
+{
+return *this;
+}
+delete[] m_data;
+int length = strlen(other.m_data);
+m_data  = new char[lenght+1];
+if(m_data != NULL)
+{
+strcpy(m_data,other.m_data);
+}
+return *this;
+}
+//可能有更好更安全的实现，以后再说 
+复制代码
+3.析构函数
+    a.销对象时会调用析构函数。对于动态分配的对象，只有指向该对象的指针被删除时才撤销。析构函数通常释放在构造函数或在对象生命周期内获取的资源;
+
+    b.默认析构函数（编译器总会生成），它按成员在类中声明的次序的逆序撤销成员（非static）。但默认析构函数不删除指针指向的对象；
+
+    c.析构函数没有返回值，没有形参，所以不能重载它。
+
+String::~String()
+{
+delete [] mdata;
+}

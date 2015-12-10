@@ -1,0 +1,54 @@
+
+4. 在编译时链接库
+
+创建了自己的库，以后要用到相关函数的时候，只需在代码中声明所要用的函数（必须和库中定义得相同）。在链接的时候，需要给出库的名称和位置：
+
+g++ file1.o file2.o -o program.exe -L**** -l****
+
+-L 后紧跟库文件所在的目录地址，-l 后紧跟库名。
+
+编译器在链接的时候会在所指定的目录地址下寻找名为 lib****.a 的库文件。
+ 
+
+传统意义上的编译程序分两步走 —— 编译和链接：
+
+1.编译(compile)：指用编译器(compiler)将源代码(source code)生成二进制目标文件(object file)，在Windows下也就是 .obj 文件，UNIX下是 .o 文件。编译时，编译器需要的是语法的正确，函数与变量的声明的正确，编译器只检测程序语法，和函数、变量是否被声明，函数并不需要被定义。
+
+    UNIX下g++的语法为:
+        g++ -c file.cpp
+
+    -c 是compile的意思，此命令将会生成 file.o 的目标文件。
+
+2.链接(link)：找到所要用到函数所在的目标文件，并把它们链接在一起合成为可执行文件(executable file)。链接时，要确保编译器能找到所有被用到了的函数所在的目标文件。
+
+    g++ file1.o file2.o -o program.exe
+
+    -o 是指定生成的可执行文件名称(output)。若不给出，默认的名称为 a.out
+
+上述两部通常也可以合在一起完成：
+
+    g++ file1.cpp file2.cpp -o program.exe
+
+这完全等同于上面两步的结合，会先生成目标文件，然后链接成 file.exe
+
+3. 库 (library)
+
+对于一个源文件很多的大项目，为了避免重复编译，也为了方便编译器链接，通常会把一些常用到的目标文件打包(archive)，于是就成为了传说中的库文件(library)。在Windows下这种包叫“库文件”（Library File)，也就是 .lib 文件，在UNIX下，是Archive File，也就是 .a 文件。
+
+UNIX 所要用到的命令：
+1）ar -- create, modify, and extract from archives.
+@Usage: ar cr lib****.a file1.o file2.o
+**** 为自定义的库文件名。
+标签 c （create）：如果库不存在，则创建库；
+标签 r （replace）：如果库中已存在要添加的对象文件，则旧的对象文件将被替换。
+
+实际上 ar 只是一个打包工具，是archive（打包）的首字母。它将一系列的目标文件首位连接在一起，并内嵌一个索引表，使得编译器能够方便地找到所需要的函数。一般来说，由于函数索引表的存在，对库的链接要比对一般的对象文件的链接更快。如果 ar 未能完成此项索引表工作，还可以手动用以下的 ranlib 命令创建索引表。
+
+2) ranlib -- generate index to archive.
+@Usage: ranlib lib****.a
+
+3) nm -- list symbols from object files.
+
+nm可以用来显示 ranlib 所构建的索引表。你将会看到所有库里的函数名（除了模板函数template function）。
+
+

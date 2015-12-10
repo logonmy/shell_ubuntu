@@ -1,0 +1,428 @@
+ubuntu 编写自己的ls命令
+ 
+
+ls 命令可以说是Linux下最常用的命令之一。它有众多的选项，其中有很多是很有用的，你是否熟悉呢？要学习如何编写 ls 命令，首先我们要先了解它怎么使用。
+
+我们在 Linux常用命令和vi,gdb的使用 第一节中就已经提到过 ls 命令的使用，下面我们先就 ls 命令做详细的介绍
+
+1.ls命令详细介绍
+
+下面列出了 ls 命令的绝大多数选项。 　　
+　　-a 列出目录下的所有文件，包括以 . 开头的隐含文件。 
+　　-b 把文件名中不可输出的字符用反斜杠加字符编号(就象在C语言里一样)的形式列出。 
+　　-c 输出文件的 i 节点的修改时间，并以此排序。 
+　　-d 将目录象文件一样显示，而不是显示其下的文件。 
+　　-e 输出时间的全部信息，而不是输出简略信息。 
+　　-f -U 对输出的文件不排序。 
+　　-g 无用。 
+　　-i 输出文件的 i 节点的索引信息。 
+　　-k 以 k 字节的形式表示文件的大小。 
+　　-l 列出文件的详细信息。 
+　　-m 横向输出文件名，并以“，”作分格符。 
+　　-n 用数字的 UID,GID 代替名称。 
+　　-o 显示文件的除组信息外的详细信息。 
+　　-p -F 在每个文件名后附上一个字符以说明该文件的类型，“*”表示可执行的普通 
+　　文件；“/”表示目录；“@”表示符号链接；“|”表示FIFOs；“=”表示套 
+　　接字(sockets)。 
+　　-q 用?代替不可输出的字符。 
+　　-r 对目录反向排序。 
+　　-s 在每个文件名后输出该文件的大小。 
+　　-t 以时间排序。 
+　　-u 以文件上次被访问的时间排序。 
+　　-x 按列输出，横向排序。 
+　　-A 显示除 “.”和“..”外的所有文件。 
+　　-B 不输出以 “~”结尾的备份文件。 
+　　-C 按列输出，纵向排序。 
+　　-G 输出文件的组的信息。 
+　　-L 列出链接文件名而不是链接到的文件。 
+　　-N 不限制文件长度。 
+　　-Q 把输出的文件名用双引号括起来。 
+　　-R 列出所有子目录下的文件。 
+　　-S 以文件大小排序。 
+　　-X 以文件的扩展名(最后一个 . 后的字符)排序。 
+　　-1 一行只输出一个文件。 
+　　--color=no 不显示彩色文件名 
+　　--help 在标准输出上显示帮助信息。 
+　　--version 在标准输出上输出版本信息并退出。
+
+ ---------------------------------------------------------------------
+
+2.ls命令实现过程用到的函数
+
+函数原型：
+
+1）int stat(const char *path, struct stat *buf);
+
+　　stat函数 将path（文件）的属性信息保存在 buf结构体中
+
+2）struct passwd *getpwuid(uid_t uid);
+
+　　getpwuid函数是通过用户的uid查找用户的passwd数据,其中包括username
+
+3）struct group *getgrgid(gid_t gid);
+
+　　getgrgid函数通过用户组gid指定的组识别码逐一搜索组文件，找到时便将该组的数据以group结构返回。
+
+4）struct tm *localtime(const time_t *timep);
+
+ 　　localtime函数把从1970-1-1零点零分到当前时间系统所偏移的秒数时间转换为日历时间 。并且此函数获得的tm结构体的时间，是已经进行过时区转化为本地时间。
+
+5)  DIR *opendir(const char *name);
+
+　　opendir()函数的作用是：打开目录句柄，返回一个文件描述符。
+
+6)  struct dirent *readdir(DIR *dirp);
+
+　　readdir()函数读取一个目录文件描述符的信息，将信息返回到dirent结构体中。
+
+ 
+
+struct stat 内容：
+
+复制代码
+/* The stat structure.  */
+struct stat {
+    unsigned long   st_dev;        /* Device.  */
+    unsigned long   st_ino;        /* File serial number.  */
+    unsigned int    st_mode;       /* File mode.  */
+    unsigned int    st_nlink;      /* Link count.  */
+    unsigned int    st_uid;        /* User ID of the file's owner.  */
+    unsigned int    st_gid;        /* Group ID of the file's group. */
+    unsigned long   st_rdev;       /* Device number, if device.  */
+    unsigned long   __pad1;
+    long            st_size;       /* Size of file, in bytes.  */
+    int             st_blksize;    /* Optimal block size for I/O.  */
+    int             __pad2;
+    long            st_blocks;     /* Number 512-byte blocks allocated. */
+    int             st_atime;      /* Time of last access.  */
+    unsigned int    st_atime_nsec;
+    int             st_mtime;      /* Time of last modification.  */
+    unsigned int    st_mtime_nsec;
+    int             st_ctime;      /* Time of last status change.  */
+    unsigned int    st_ctime_nsec;
+    unsigned int    __unused4;
+    unsigned int    __unused5;
+};
+复制代码
+struct stat中的st_mode值各个位代表的意思：
+
+复制代码
+       The following flags are defined for the st_mode field:
+　　　　　　/*  是什么类型的文件  */
+           S_IFMT     0170000   bit mask for the file type bit fields
+           S_IFSOCK   0140000   socket
+           S_IFLNK    0120000   symbolic link
+           S_IFREG    0100000   regular file
+           S_IFBLK    0060000   block device
+           S_IFDIR    0040000   directory
+           S_IFCHR    0020000   character device
+           S_IFIFO    0010000   FIFO
+           S_ISUID    0004000   set UID bit
+           S_ISGID    0002000   set-group-ID bit (see below)
+           S_ISVTX    0001000   sticky bit (see below)
+　　　　　　/*  是否有可读写权限  */
+           S_IRWXU    00700     mask for file owner permissions
+           S_IRUSR    00400     owner has read permission
+           S_IWUSR    00200     owner has write permission
+           S_IXUSR    00100     owner has execute permission
+           S_IRWXG    00070     mask for group permissions
+           S_IRGRP    00040     group has read permission
+           S_IWGRP    00020     group has write permission
+           S_IXGRP    00010     group has execute permission
+           S_IRWXO    00007     mask for permissions for others (not in group)
+           S_IROTH    00004     others have read permission
+           S_IWOTH    00002     others have write permission
+           S_IXOTH    00001     others have execute permission
+复制代码
+struct passwd 内容：
+
+复制代码
+/* The passwd structure.  */
+struct passwd
+{
+  char *pw_name;          /* Username.  */
+  char *pw_passwd;        /* Password.  */
+  __uid_t pw_uid;         /* User ID.  */
+  __gid_t pw_gid;         /* Group ID.  */
+  char *pw_gecos;         /* Real name.  */
+  char *pw_dir;           /* Home directory.  */
+  char *pw_shell;         /* Shell program.  */
+};
+复制代码
+struct group 内容：
+
+复制代码
+/* The group structure.     */
+struct group
+  {
+    char *gr_name;         /* Group name.    */
+    char *gr_passwd;       /* Password.    */
+    __gid_t gr_gid;        /* Group ID.    */
+    char **gr_mem;         /* Member list.    */
+  };
+复制代码
+struct tm 内容：
+
+复制代码
+/* Used by other time functions.  */
+struct tm
+{
+  int tm_sec;            /* Seconds.    [0-60] (1 leap second) */
+  int tm_min;            /* Minutes.    [0-59] */
+  int tm_hour;            /* Hours.    [0-23] */
+  int tm_mday;            /* Day.        [1-31] */
+  int tm_mon;            /* Month.    [0-11] */
+  int tm_year;            /* Year    - 1900.  */
+  int tm_wday;            /* Day of week.    [0-6] */
+  int tm_yday;            /* Days in year.[0-365]    */
+  int tm_isdst;            /* DST.        [-1/0/1]*/
+
+#ifdef    __USE_BSD
+  long int tm_gmtoff;        /* Seconds east of UTC.  */
+  __const char *tm_zone;    /* Timezone abbreviation.  */
+#else
+  long int __tm_gmtoff;        /* Seconds east of UTC.  */
+  __const char *__tm_zone;    /* Timezone abbreviation.  */
+#endif
+};
+复制代码
+struct dirent内容：
+
+复制代码
+struct dirent
+  {
+#ifndef __USE_FILE_OFFSET64
+    __ino_t d_ino;
+    __off_t d_off;
+#else
+    __ino64_t d_ino;
+    __off64_t d_off;
+#endif
+    unsigned short int d_reclen;
+    unsigned char d_type;
+    char d_name[256];        /* We must not include limits.h! */
+  };
+复制代码
+ 
+
+ ---------------------------------------------------------------------
+
+3.ls命令的实现
+
+1）首先获得文件的属性
+
+const char *path由main函数传入：
+
+int main(int argc, char **argv)
+获取文件argv[1]的属性信息，并保存在st结构体中：
+
+if(stat(argv[1], &st) < 0)
+    {
+        perror("stat");
+        return -1;
+    }
+2）判断是否是目录
+
+    if((st.st_mode & S_IFMT) == S_IFDIR)
+        display_dir(argv[1]);
+    else
+        display_file(argv[1], argv[1]);
+如果是文件则直接获取文件信息即可，如果是目录则要进入到目录中进行遍历，我们封装两个函数display_file()和display_dir()来分别实现
+
+3）目录与文件的实现
+
+【display_file()】
+
+a.由属性信息获得文件的类型 
+
+用stat结构体中的st_mode与掩码S_IFMT相与，得到文件类型：
+
+复制代码
+switch(st.st_mode & S_IFMT)    
+    {
+    case S_IFREG:  printf("-");    break;
+    case S_IFDIR:  printf("d");    break;
+    case S_IFLNK:  printf("l");    break;
+    case S_IFBLK:  printf("b");    break;
+    case S_IFCHR:  printf("c");    break;
+    case S_IFIFO:  printf("p");    break;
+    case S_IFSOCK: printf("s");    break;
+    }
+复制代码
+ b.由属性信息获得文件的可读写权限
+
+复制代码
+    for(i = 8; i >= 0; i--)
+    {    
+        if(st.st_mode & (1 << i))
+        {
+            switch(i%3)
+            {
+            case 2: printf("r"); break;
+            case 1: printf("w"); break;
+            case 0: printf("x"); break;
+            }
+        }
+        else
+            printf("-");
+    }
+复制代码
+c.由属性信息获得文件的owner和所在的group信息
+
+pw = getpwuid(st.st_uid);
+gr = getgrgid(st.st_gid);
+d.最后文件所以信息可以打印
+
+printf("%2d %s %s %4ld", st.st_nlink, pw->pw_name, gr->gr_name, st.st_size);
+
+tm = localtime(&st.st_ctime);
+printf(" %04d-%02d-%02d %02d:%02d",tm->tm_year + 1900, tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min);
+
+printf(" %s\n", filename);
+ 
+
+【display_dir()】
+
+获取目录文件描述符，并且读取目录信息，判断目录不为空则继续读取。如果读取到的是目录，则递归调用，否则直接调用display_file()即可。
+
+复制代码
+    dir = opendir(dirname);
+    while((dirent = readdir(dir)) != NULL)
+    {
+        strcpy(buf, dirname);
+        strcat(buf, "/");
+        strcat(buf, dirent->d_name);
+        if(stat(buf, &st))
+        {
+            perror("stat");
+            return -1;
+        }
+
+        if(dirent->d_name[0] != '.')
+            display_file(buf, dirent->d_name);
+    }
+复制代码
+ 
+
+ ---------------------------------------------------------------------
+
+4.结果显示
+
+查看文件(display_file)结果：
+
+linux@ubuntu:~/test$ ./a.out stat.c 
+-rw-r--r-- 1 linux linux 15316 2012-06-19 14:05 stat.c
+查看文件夹(display_dir)结果：
+
+linux@ubuntu:~/test$ ./a.out .
+-rw-r--r-- 1 linux linux 1508 2012-06-19 14:40 ls.c
+-rw-r--r-- 1 linux linux 1635 2012-06-19 14:12 ls-bak.c
+-rwxrw-rw- 1 linux linux 1777 2012-06-19 15:02 ls_t.c
+-rw-r--r-- 1 linux linux 15316 2012-06-19 14:05 stat.c
+-rwxr-xr-x 1 linux linux 7632 2012-06-19 15:14 a.out
+ 
+
+附：ls 命令实现的完整代码
+
+复制代码
+#include <stdio.h>
+#include <sys/types.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <unistd.h>
+#include <grp.h>
+#include <pwd.h>
+#include <time.h>
+
+int display_file(char *path, char *filename)
+{
+    struct stat st;
+    int i;
+    struct passwd *pw;
+    struct group *gr;
+    struct tm *tm;
+    stat(path, &st);
+
+    switch(st.st_mode & S_IFMT)    
+    {
+    case S_IFREG:  printf("-");    break;
+    case S_IFDIR:  printf("d");    break;
+    case S_IFLNK:  printf("l");    break;
+    case S_IFBLK:  printf("b");    break;
+    case S_IFCHR:  printf("c");    break;
+    case S_IFIFO:  printf("p");    break;
+    case S_IFSOCK: printf("s");    break;
+    }
+
+    for(i = 8; i >= 0; i--)
+    {    
+        if(st.st_mode & (1 << i))
+        {
+            switch(i%3)
+            {
+            case 2: printf("r"); break;
+            case 1: printf("w"); break;
+            case 0: printf("x"); break;
+            }
+        }
+        else
+            printf("-");
+    }
+
+    pw = getpwuid(st.st_uid);
+    gr = getgrgid(st.st_gid);
+
+    printf("%2d %s %s %4ld", st.st_nlink, pw->pw_name, gr->gr_name, st.st_size);
+
+    tm = localtime(&st.st_ctime);
+    printf(" %04d-%02d-%02d %02d:%02d",tm->tm_year + 1900, tm->tm_mon + 1, tm->tm_mday, tm->tm_hour, tm->tm_min);
+
+    printf(" %s\n", filename);
+
+    return 0;
+}
+
+int display_dir(char *dirname)
+{
+    DIR *dir;
+    struct dirent *dirent;
+    struct stat st;
+    char buf[1024];
+
+    dir = opendir(dirname);
+    while((dirent = readdir(dir)) != NULL)
+    {
+        strcpy(buf, dirname);
+        strcat(buf, "/");
+        strcat(buf, dirent->d_name);
+        if(stat(buf, &st))
+        {
+            perror("stat");
+            return -1;
+        }
+
+        if(dirent->d_name[0] != '.')
+            display_file(buf, dirent->d_name);
+    }
+}
+
+int main(int argc, char **argv)
+{
+    struct stat st;
+    char buf[1024];
+
+    if(stat(argv[1], &st) < 0)
+    {
+        perror("stat");
+        return -1;
+    }
+
+    if((st.st_mode & S_IFMT) == S_IFDIR)
+        display_dir(argv[1]);
+    else
+        display_file(argv[1], argv[1]);
+
+    return 0;
+}
+

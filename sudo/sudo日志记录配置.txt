@@ -1,0 +1,41 @@
+Ubuntu Linux sudo日志记录配置
+
+[日期：2013-11-02]	来源：Linux社区  作者：ganglia	[字体：大 中 小]
+
+ 
+环境：Ubuntu 12.04 server。
+
+sudo权限分配使用visudo来管理。示例在/usr/share/doc/sudo/examples/sample.sudoers下有。
+
+因为Ubuntu 12.04中使用的是rsyslog(Remote System Log)，是syslog的升级版，但是使用方法跟syslog相同，在网上找到的很多资料都说修改/etc/syslog.conf文件（这是很多其他版本的linux和早期版本中ubuntu中用的），实际上修改/etc/rsyslog.conf是一样的。
+
+1.配置/etc/rsyslog.conf
+在其中加入一行：local2.debug /var/log/sudo.log（中间用tab分隔）
+
+2.root用户执行visudo修改/etc/sudoers文件：
+在其中添加：
+
+##
+# Override built-in defaults
+##
+Defaults                syslog=auth
+Defaults>ALL            !set_logname
+Defaults:FULLTIMERS    !lecture
+Defaults:millert        !authenticate
+Defaults@SERVERS        log_year, logfile=/var/log/sudo.log
+Defaults!PAGERS        noexec
+
+Defaults logfile=/var/log/sudo.log
+
+3.重启rsyslog
+service rsyslog restart
+
+ 
+
+
+4.检验
+可以看到在/var/log下面生成了sudo.log文件，对于错误的sudo操作的记录如下：
+
+tsli@ubuntu:/usr/lib$ sudo ls
+[sudo] password for tsli: 
+tsli is not in the sudoers file.  This incident will be reported.

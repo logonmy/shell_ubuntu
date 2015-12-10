@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0065)http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="360doc" name="classification">
+    
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://www.360doc.cn/article/11818366_282292764.html">
+    <meta content="ld,path,library" name="keywords">
+    <meta content="linux下LD_LIBRARY_PATH的作用与设置" name="description">
+    <meta name="mobile-agent" content="format=html5;url=http://www.360doc.cn/article/11818366_282292764.html">
+
+    <meta content="www.360doc.com" name="author">
+
+    <title>
+        linux下LD_LIBRARY_PATH的作用与设置
+    </title>
+    <link href="./linux下LD_LIBRARY_PATH的作用与设置_files/bdsstyle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/jquery1.js"></script>
+    <script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/jQuery.md5.js"></script>
+    
+    <script type="text/javascript" language="javascript">
+        window.onerror = ignoreError;
+        function ignoreError() {
+            return true;
+        }
+    </script>
+
+    <link href="./linux下LD_LIBRARY_PATH的作用与设置_files/wzhead-cleaned.css" rel="stylesheet" type="text/css">
+    <link href="./linux下LD_LIBRARY_PATH的作用与设置_files/wz20130912-cleaned.css" rel="stylesheet" type="text/css">
+
+
+    
+
+    <script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/indexhead.js"></script><script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/chat.js"></script><script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/chatuserlist.js"></script><link rel="stylesheet" type="text/css" href="./linux下LD_LIBRARY_PATH的作用与设置_files/chat.css">
+    <script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/showarticlefollow20130912.js"></script>
+<link href="./linux下LD_LIBRARY_PATH的作用与设置_files/bdsstyle(1).css" rel="stylesheet" type="text/css"><script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/EssayforIE120425.js"></script></head>
+<body style="font-family: Arial, Helvetica, sans-serif;" onmouseup="setDragEnd()" onmousemove="DragDiv();" onclick="delAllDiv(event)"><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_renren rrw">人人网</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_douban db">豆瓣网</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_thx thx">和讯微博</a></li><li><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="bds_more">更多...</a></li></ul><p><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" class="goWebsite">百度分享</a></p></div></div></div>
+
+
+    <span id="LayerLogin"></span>
+    <div style="position: fixed; width: 100%; z-index: 1000;">
+        <div class="mainnav">
+            <div class="mainnav1">
+                <div class="lf360" style="padding-left: 5px;">
+                    <img src="./linux下LD_LIBRARY_PATH的作用与设置_files/logoo.gif">
+                </div>
+                <div style="width: 625px; padding-top: 0px; padding-left: 4px; position: absolute;">
+                    <table height="34" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr id="daohangtr">
+                                <td style="width: 185px; _width: 0px; *width: 0px !important;"></td>
+                                <td class="navwz1" width="95">
+                                    <a href="http://www.360doc.com/index.html">首&nbsp;页</a>
+                                </td>
+                                <td width="100" class="  navwz1">
+                                    <a href="http://www.360doc.com/readroom.html">阅览室</a>
+                                </td>
+                                <td width="88" class="  navwz1">
+                                    <a href="http://www.360doc.com/weekstar.html">馆友</a>
+                                </td>
+                                <td width="132" class="  navwz1">
+                                    <a href="http://www.360doc.com/my360doc.aspx">我的图书馆</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="rt360" style="padding-top: 6px; width: 133px; padding-left: 38px;" id="outerdiv"><div class="denglbj lan2"><div style=" width:43px; float:left; text-align:center;" onmouseover="this.style.backgroundColor=&#39;#e5e5e5&#39;;this.parentNode.className=&#39;denglbj2 lan2&#39;" onmouseout="this.style.backgroundColor=&#39;#fcfcfc&#39;;this.parentNode.className=&#39;denglbj lan2&#39;"><a href="javascript:void(0)" onclick="loginnew()">登录</a></div><div style=" width:1px; float:left; "></div><div style="width:46px; float:left;text-align:center; margin-left:1px;*margin-left:0px;" onmouseover="this.style.backgroundColor=&#39;#e5e5e5&#39;;this.parentNode.className=&#39;denglbj3 lan2&#39;" onmouseout="this.style.backgroundColor=&#39;#fcfcfc&#39;;this.parentNode.className=&#39;denglbj lan2&#39;" id="regdiv"><a href="http://www.360doc.com/register.aspx?refer=800" target="_blank">注册</a></div><div class="boxwid xinngdui" id="bfdiv"><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#"><img id="imgbfabc" src="./linux下LD_LIBRARY_PATH的作用与设置_files/5.gif"></a></div><div style=" position: absolute; margin-left:35px; *margin-left:-95px;_margin-left:-93px; width:96px;display:none;z-index:200;" id="func"><div class="tugduo3" id="divfunc" style="cursor:pointer;float:right; width:41px;"><div style=" height:26px; width:39px; border:1px solid #d4d4d4; border-bottom:none; background-color:#fff;"></div></div><div class="tipzhu3  right hui2" id="layerdiv"><ul><li><a href="http://www.360doc.com/advice.html" target="_blank">留言交流</a></li><li><a href="http://www.360doc.com/helpnew.html" target="_blank">网文摘手</a></li><li><a href="http://www.360doc.com/mobilapp.htm" target="_blank">手机客户端</a></li><li style=" border:none;"><a href="http://www.360doc.com/help.html" target="_blank">帮助</a></li></ul></div></div></div></div>
+                <div class=" rt360" style="padding-top: 6px; padding-right: 0px;">
+                    <div class="lf360 serch">
+                        <input name="input2" class="serchpt" id="txtSearchword" onkeydown="ongosearch()" onkeyup="showIntelliSense()" onfocus="if(this.value==&#39;搜文章 找馆友&#39;) this.value=&#39;&#39;;this.style.color=&#39;#272727&#39;" onblur="if(!this.value) {this.value=&#39;搜文章 找馆友&#39;;this.style.color=&#39;#b2b2b2&#39;;}" onpaste="showIntelliSense1()" type="text" value="搜文章 找馆友">
+                    </div>
+                    <div class="lf360 ssuo">
+                        <a id="searchlinkid" href="javascript:gosearch();"></a>
+                    </div>
+                    <div id="divsearch" style="margin-top: 25px; margin-left: 1px; display: none; position: absolute; z-index: 100;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navxt">
+        </div>
+    </div>
+    <div style="height: 44px; _height: 0px; width: 100%;"></div>
+
+    <div class="both">
+    </div>
+    <div id="docTotalInfo" class="mainzt" style="width: 1047px;">
+        <table class="index_main" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td align="left" valign="top" width="727px">
+                        <div id="ADAboveArtContent"><iframe marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="728" height="90" src="./linux下LD_LIBRARY_PATH的作用与设置_files/aboveConentAD2.html"></iframe></div>
+                        <div style="height: 7px;">
+                        </div>
+                        <table border="0" cellpadding="0" cellspacing="0" class="mainbj6" id="docArtClass">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; text-align: center;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <table style="width: 100%; text-align: left;" border="0" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="biaoti">
+                                                                        <div class="biaoti2 lf360">
+                                                                            linux下LD_LIBRARY_PATH的作用与设置
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="height: 32px;">
+
+
+                                                                        <div style="width: 670px; height: 28px; padding-left: 26px; color: #777b7a;">
+                                                                            <table>
+                                                                                <tbody><tr>
+                                                                                    <td>收藏人：<span class="name" onclick="wzhitnew(1);"><a href="http://www.360doc.com/userhome/11818366" target="_blank">叫我二当家</a></span>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="btzctsg" id="spanfollowstatus"><div class="gzbt1"><a onclick="gzuser(11818366);wzhitnew(2);" href="javascript:void(0)"></a></div></div>
+                                                                                        <script>isfollow(11818366);</script>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="ytdh1"><a onclick="doctalk();wzhitnew(106);" href="javascript:void(0)"></a></div>
+
+                                                                                    </td>
+
+                                                                                </tr>
+                                                                            </tbody></table>
+                                                                        </div>
+
+
+
+
+                                                                        <div class="wztopxx">
+                                                                            <div style="float: left; height: 28px; padding-top: 7px;">
+                                                                                <table cellpadding="0" cellspacing="0" style="position: relative; z-index: 4">
+                                                                                    <tbody>
+                                                                                        <tr>
+
+                                                                                            <td>
+                                                                                                2013-05-01&nbsp;|&nbsp;阅：<span id="360doc_Readnum">2005</span>&nbsp;&nbsp;<span style="position: relative;">转：<span onclick="wzhitnew(3)" id="360doc_saverNum"><span style="cursor:pointer;" onclick="javascript:ShowSaverUser();">11</span></span><span id="360doc_saverUser"><div id="sameArtOuter" style="display: none; position: absolute; height: 305px; width: 144px; left: 0px; margin-top: 15px; z-index: 100000;"><div id="sameArt" style=" overflow-y: auto;  height:300px;overflow-x: hidden; z-index: 100;right:0px;margin-top:-10px;" onclick="event.cancelBubble=true;"></div></div></span></span>&nbsp;&nbsp;
+
+
+
+                                                                                            </td>
+
+                                                                                            <td>
+                                                                                                <div style="position: relative;">
+                                                                                                    &nbsp;|&nbsp;<span id="docsource">&nbsp;&nbsp;<a onclick="wzhitnew(14);" href="http://www.360doc.com/userhome/11818366" target="_blank">来源</a></span>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="display: none; margin-left: 48px;" id="zihaoboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont3" onclick="ChangeArtSize(3, this); wzhitnew(15); " name="radio" type="radio" value="1">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(3,this);wzhitnew(15); " style="cursor: pointer;">
+                                                                                                            大
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont2" onclick="ChangeArtSize(2, this); wzhitnew(16); " name="radio" type="radio" value="2">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(2,this);wzhitnew(16); " style="cursor: pointer;">
+                                                                                                            中
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunbt">
+                                                                                                            <input id="artdocfont1" onclick="ChangeArtSize(1, this); wzhitnew(17); " name="radio" type="radio" value="3">
+                                                                                                        </div>
+                                                                                                        <div class="lf360 danxunwz" onclick="ChangeArtSize(1,this);wzhitnew(17); " style="cursor: pointer;">
+                                                                                                            小
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="sekuaibox" style="margin-left: 76px; display: none;" id="sekuaiboxID">
+                                                                                                    <div style="padding-top: 10px; padding-left: 5px;">
+                                                                                                        <img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr1.gif" id="docArtC1" onclick="ChangeArtClass(1,this);wzhitnew(18);" style="cursor: pointer;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr2.gif" id="docArtC2" onclick="ChangeArtClass(2,this);wzhitnew(19);" style="cursor: pointer;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr3.gif" id="docArtC3" onclick="ChangeArtClass(3,this);wzhitnew(20);" style="cursor: pointer;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr4.gif" id="docArtC4" onclick="ChangeArtClass(4,this);wzhitnew(21);" style="cursor: pointer;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr5.gif" id="docArtC5" onclick="ChangeArtClass(5,this);wzhitnew(22);" style="cursor: pointer;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/cr6-1.gif" id="docArtC6" onclick="ChangeArtClass(6,this);wzhitnew(23);" style="cursor: pointer;">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img onmouseover="changedivdisplay(1);" src="./linux下LD_LIBRARY_PATH的作用与设置_files/wz1.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <div style="padding-left: 10px;" onmouseover="changedivdisplay(2);">
+                                                                                                    <a href="javascript:void(0)">
+                                                                                                        <img src="./linux下LD_LIBRARY_PATH的作用与设置_files/wz2.gif"></a>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                            <td>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" onclick=" setTimeout(showShareLayer, 10);wzhitnew(4);">分享</a>&nbsp;</td>
+                                                                                            <td>
+                                                                                                <a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" onclick="  setTimeout(showShareLayer, 10);wzhitnew(5);">
+                                                                                                    <img style="cursor: pointer;" src="./linux下LD_LIBRARY_PATH的作用与设置_files/tb10.gif"></a><div class="fenxiang" id="fenxiangLayer" style="display: none; border: none; width: 110px; margin-left: -28px; _margin-left: -40px;"><div style="border:1px solid #cbcbcb; height:240px; width:108px;"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn"><table cellpadding="0" cellspacing="0" width="108" style=" background-color:#fff; "><tbody><tr><td width="12"></td><td height="29" onclick="wzhitnew(6);"><a class="bds_qzone" href="javascript:void(0);" title="分享到QQ空间">&nbsp;&nbsp;&nbsp;&nbsp;腾讯空间</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(9);"><a class="bds_tsina" href="javascript:void(0);" title="分享到新浪微博">&nbsp;&nbsp;&nbsp;&nbsp;新浪微博</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(10);"><a class="bds_tqq" href="javascript:void(0);" title="分享到腾讯微博">&nbsp;&nbsp;&nbsp;&nbsp;腾讯微博</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(7);"><a class="bds_renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(8);"><a class="bds_kaixin001" href="javascript:void(0);" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(11);"><a class="bds_tsohu" href="javascript:void(0);" title="分享到搜狐微博">&nbsp;&nbsp;&nbsp;&nbsp;搜狐微博</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail();wzhitnew(12);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer();wzhitnew(13);">&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                            <div id="resavelayer1" class="rt360"><div class="zswdbtn1"><a href="javascript:void(0);" onclick="SaveArt();wzhitnew(24);"></a></div><div style="position: absolute; z-index: 100000;" id="fuzhitishidiv"><div style="position: absolute; z-index: 2001;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/tuanceng.gif" usemap="#Map2"><map name="Map2" id="Map2"><area shape="rect" coords="288,23,307,42" href="javascript:void(0);" onclick="document.getElementById(&#39;fuzhitishidiv&#39;).innerHTML=&#39;&#39;;document.getElementById(&#39;fuzhitishidiv&#39;).style.display=&#39;none&#39;;"></map></div></div></div>
+
+
+                                                                            <div id="shareweixinabove" class="rt360"> <div class="fxwx2bt"><a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(65);"></a></div></div>
+
+
+                                                                            <table cellpadding="0" cellspacing="0" style="text-align: center; margin: 0px auto;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <div id="AlertArt1" style="display: none; position: absolute;">
+                                                                                            </div>
+                                                                                            <div id="SendToFriends1" style="display: none; position: absolute; z-index: 100;">
+                                                                                            </div>
+                                                                                            <div class="lf360 zcbutton" style="margin-left: 100px;">
+                                                                                            </div>
+                                                                                            <div class="lf360">
+                                                                                                &nbsp;&nbsp;
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        
+                                                        <table class="wenzhangcss" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="xiantao">
+                                                                        </div>
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left" valign="top" width="670px" style="height: 200px;">
+                                                                        <span id="articlecontent" onmousedown="newhighlight = true;" onmouseup="NewHighlight(event)">
+                                                                            <table>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td width="670px" style="position: relative;">
+
+                                                                                            <p><span style="LINE-HEIGHT: 26px; FONT-FAMILY: Arial; COLOR: rgb(51,51,51); FONT-SIZE: 14px">本文来自CSDN博客，转载请标明出处。</span> </p>
+<p sizcache="0" sizset="35"> 英文原文： <a href="http://www.wiredrevolution.com/system-administration/how-to-correctly-use-ld_library_path">http://www.wiredrevolution.com/system-administration/how-to-correctly-use-ld_library_path</a>  
+       </p>
+<p>            <span style="FONT-FAMILY: &#39;Microsoft YaHei&#39;"> LD_LIBRARY_PATH环境变量主要是用于指定动态链接器（ld）查找ELF可执行文件运行时所依赖的动态库（so）的路径，其内容是以冒号分隔的路径列表。</span></p><p><span style="background-color: rgb(255, 255, 0);"><span style="font-family: &#39;Microsoft YaHei&#39;; ">ld链接器将优先在该变量设置</span><span style="font-family: &#39;Microsoft YaHei&#39;; ">的路径中查找，若未找到则在标准库路径/lib和/usr/lib中继续搜索。</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">        <span style="COLOR: #ff0000">临时设置LD_LIBRARY_PATH环境变量的最佳方式是：</span></span></p><p><span style="font-family: &#39;Microsoft YaHei&#39;; ">在执行你的程序前，先在bash中通过命令行或脚本来设置，这样你的特殊设置对系统的其它程序的运行而言是隔离的，不会影响其他程序对依赖库的查找路径，因为在bash中设置的环境变量只对本次会话有效。在你下次通过SSH工具连接到系统时，新会话的系统环境变量参数不受上次会话的设置影响。</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       
+ 如：</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       <span style="COLOR: #009900"> $ export 
+LD_LIBRARY_PATH="/list/of/library/paths:/another/path"<br>        $ 
+./program</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       
+ </span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">        <span style="COLOR: #ff0000">但是，你如果希望对</span><span style="COLOR: #ff0000">LD_LIBRARY_PATH环境变量的设置永久生效，上面的方式就不适合了</span>。如果你的所有程序都需要链接到某个自定义的查找路径指定的动态库文件，若某次执行程序前你忘记了设置LD_LIBRARY_PATH环境变量，这样你的程序会链接到其他动态库，可能会导致诡异的结果或意外崩溃，而且在可能存在潜在的安全问题。</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       
+如果不考虑上述的各种情况，你可以通过修改<span style="background-color: rgb(255, 255, 0);">home目录下的 .bashrc 文件来设置LD_LIBRARY_PATH环境变量</span>，这样每次当你启用一个会话连接到系统时，系统会自动执行该文件指定的命令，这样免去了每次手动设置相关参数的麻烦。增加如下一行：</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">      <span style="COLOR: #009900">export 
+LIBRARY_PATH="/list/of/library/paths:/another/path"</span></span></p><p><span style="font-family: &#39;Microsoft YaHei&#39;; "><span style="COLOR: #009900">或者为所有用户修改这个值，修改/etc/profile文件即可。</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">     
+ 一般情况下，只有当程序所需的依赖库不是系统标准安装的库或对库的版本特定要求时，可以指定 LD_LIBRARY_PATH环境变量实现。</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">     
+ 通过下面的命令可以查看可执行文件或库文件本身对所依赖的库的情况：</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">      <span style="COLOR: #009900">$ ldd 
+~/myprogram</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; "></span><span style="font-family: &#39;Microsoft YaHei&#39;; ">      输出类似：</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">      <span style="WHITE-SPACE: pre"><span style="COLOR: #009900"></span></span><span style="COLOR: #009900">librt.so.1 =&gt; /lib/librt.so.1 (0x00002b4eca08e000)<br><span style="WHITE-SPACE: pre"></span>libc.so.6 =&gt; 
+/lib/libc.so.6 
+(0x00002b4eca49f000)<br><span style="WHITE-SPACE: pre"></span>libpthread.so.0 
+=&gt; /lib/libpthread.so.0 (0x00002b4eca7df000)<br><span style="WHITE-SPACE: pre"></span>/lib64/ld-linux-x86-64.so.2 
+(0x00002b4ec9e72000)<br><span style="WHITE-SPACE: pre"></span>libmylib.so.1 
+=&gt; not found</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">        检查结果表明， 
+链接器无法找到依赖的库libmylib.so.1   
+ </span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       
+ 我们假设存在这个库 在~/yprogdir/lib/libmylib.so.1, 现在我们可能通过设置LD_LIBRARY_PATH环境变量以便链接器找到。</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">        <span style="COLOR: #009900">$ export 
+LD_LIBRARY_PATH="~/myprogdir/lib/:$LD_LIBRARY_PATH"<br>        $ ldd 
+~/myprogram</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">       
+ 输出如下：</span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; "><span style="COLOR: #009900">        <span style="WHITE-SPACE: pre"></span>librt.so.1 
+=&gt; /lib/librt.so.1 (0x00002b4eca08e000)<br><span style="WHITE-SPACE: pre"></span>        libc.so.6 
+=&gt; /lib/libc.so.6 (0x00002b4eca49f000)<br><span style="WHITE-SPACE: pre"></span>       
+ libpthread.so.0 =&gt; /lib/libpthread.so.0 (0x00002b4eca7df000)<br><span style="WHITE-SPACE: pre"></span>       
+ /lib64/ld-linux-x86-64.so.2 (0x00002b4ec9e72000)<br><span style="WHITE-SPACE: pre"></span>       
+ libmylib.so.1 =&gt; ~/myprogdir/lib/libmylib.so.1 
+(0x00002b4eca9fa000)</span></span></p>
+<p><span style="font-family: &#39;Microsoft YaHei&#39;; ">           
+ 这样动态链接器就可能找到所有需要的库文件 。</span></p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div id="viewerPlaceHolder" style="width: 717px; height: 700px; display: none;">
+                                                                            </div>
+                                                                        </span>
+                                                                        <table>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <a name="anchordoc1" id="anchordoc1"></a>
+                                                                        <div style="height: 28px">
+                                                                            <div style="font-size: 14px; color: #797b7a; float: left;">
+                                                                                来自：<span class="name" onclick="wzhitnew(59)"><a href="http://www.360doc.com/userhome/11818366" target="_blank">叫我二当家</a></span>&nbsp;&gt;&nbsp;<span id="cname" onclick="wzhitnew(60)"><a href="http://www.360doc.com/userhome.aspx?userid=11818366&cid=5" target="_blank">《linux系统管理》</a></span>
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="btzctsg" id="spanfollowstatus1"><div class="gzbt1"><a onclick="gzuser(11818366);wzhitnew(61);" href="javascript:void(0)"></a></div></div>
+                                                                                <script>isfollow(11818366);</script>
+
+                                                                            </div>
+                                                                            <div style="float: left;">
+                                                                                <div class="ytdh1"><a onclick="doctalk();wzhitnew(107);" href="javascript:void(0)"></a></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                            <div class="modlist lf360 list" style="padding-top: 0px;">
+                                                                                <ul>
+                                                                                    <div id="lastart"><div class="shangyp">上一篇：<a href="http://www.360doc.com/content/13/0501/21/11818366_282289708.shtml" target="_blank" onclick="wzhitnew(57);">如何修改linux PATH的值</a></div></div>
+                                                                                    <div id="nextart">下一篇：<a href="http://www.360doc.com/content/13/0501/23/11818366_282311775.shtml" target="_blank" onclick="wzhitnew(58);">Linux 之 /etc/profile、~/.bash_profile 等几...</a></div>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="left">
+                                                                        <div style="padding-top: 12px;">
+                                                                            <div id="docAdBelowContent"><iframe marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="650" height="120" src="./linux下LD_LIBRARY_PATH的作用与设置_files/docAdBelowContent1.html"></iframe></div>
+
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="text-align: left;">
+                                                                        <div style="padding-top: 15px; width: 670px;">
+                                                                            <table style="width: 670px;" cellpadding="0" cellspacing="0">
+                                                                                <tbody>
+                                                                                    <tr>
+
+                                                                                        <td style="width: 530px;">
+                                                                                            <div class=" lf360" style="cursor: pointer" onmouseover="ChangeBtnStyle(1);" onmouseout="ChangeBtnStyle(2);">
+                                                                                                <div class="zscbt">
+                                                                                                    <a href="javascript:void(0);" onclick="SaveArt();wzhitnew(26);">
+                                                                                                        <div id="zscbtword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            转藏到我的图书馆
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                            <div style="margin-left: 10px; cursor: pointer;" class="lf360 xhmainbox" id="sendflowerdiv" onclick="Showflowerlayer(&quot;sendedLayer1&quot;);wzhitnew(27)" onmouseover="ChangeFlowerBtnStyle(1);" onmouseout="ChangeFlowerBtnStyle(2);">
+
+                                                                                                <div id="flowimg2" class="lf360 ">
+                                                                                                    <div style="padding-left: 10px; padding-top: 10px;">
+                                                                                                        <img id="flowimg3" src="./linux下LD_LIBRARY_PATH的作用与设置_files/huahuanew.gif">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="flowimg5" class="lf360 xianhua">
+                                                                                                    献花(<span id="articleflowernum">0</span>)<div id="flowernumadd" class="addtionone">
+                                                                                                        +1
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(3);" onmouseout="ChangeBtnStyle(4);">
+                                                                                                <div class="fxwxbt">
+
+                                                                                                    <a href="javascript:void(0);" onclick="shareWeixin();wzhitnew(64);">
+                                                                                                        <div id="fxwxword" class="lf360 xianhua" style="padding-left: 38px;">
+                                                                                                            分享到微信
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+
+
+
+
+
+                                                                                            <div class="lf360" style="cursor: pointer; padding-left: 10px;" onmouseover="ChangeBtnStyle(5);" onmouseout="ChangeBtnStyle(6);">
+                                                                                                <div class="ywzwbt">
+
+                                                                                                    <a id="ywzwa" href="http://www.baidu.com/s?wd=ld+path+library&tn=SE_hldp01010_6r0gix1f" onclick="wzhitnew(100);" target="_blank">
+                                                                                                        <div id="ywzwword" class="lf360 xianhua" style="padding-left: 44px;">
+                                                                                                            以文找文
+                                                                                                        </div>
+                                                                                                    </a>
+
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                        <td style="vertical-align: bottom; font-size: 12px;" width="140">
+                                                                                            <div class="rt360" id="sharediv2"><table style=" vertical-align: text-bottom;" border="0" cellpadding="0" cellspacing="0"> <tbody><tr><td><div style="height:20px; width:105px;"><div style="float:left;"><span style="font-size:12px; line-height:16px; color:#959595;">分享：</span></div><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn2" style="float:left;"><span onclick="wzhitnew(28);"><a class="bds_qzone" title="分享到QQ空间" href="javascript:void(0);"></a></span><span onclick="wzhitnew(31);"><a class="bds_tsina" title="分享到新浪微博" href="javascript:void(0);"></a></span><span onclick="wzhitnew(32);"><a class="bds_tqq" title="分享到腾讯微博" href="javascript:void(0);"></a></span></div></div></td><td width="24"><a><img style="cursor:pointer;" src="./linux下LD_LIBRARY_PATH的作用与设置_files/tb10.gif" onclick="setTimeout(showShareLayer2, 10);wzhitnew(34);"></a><div id="fenxiangLayer1" class="fenxiang" style=" margin-left:-100px;*margin-left:-120px!important; margin-top:5px;*margin-top:16px!important;display:none;z-index:1000;"><div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare share-bar-btn"><table cellpadding="0" cellspacing="0" width="108" style=" background-color:#fff; "><tbody><tr><td width="12"></td><td height="29" onclick="wzhitnew(29);"><a class="bds_renren" href="javascript:void(0);" title="分享到人人网">&nbsp;&nbsp;&nbsp;&nbsp;人人网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(30);"><a class="bds_kaixin001" href="javascript:void(0);" title="分享到开心网">&nbsp;&nbsp;&nbsp;&nbsp;开心网</a></td></tr><tr><td width="12"></td><td height="29" onclick="wzhitnew(33);"><a class="bds_tsohu" href="javascript:void(0);" title="分享到搜狐微博">&nbsp;&nbsp;&nbsp;&nbsp;搜狐微博</a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);" onclick="showdivemail1();wzhitnew(35);"><div class="bds_py">&nbsp;&nbsp;&nbsp;&nbsp;推荐给朋友</div></a></td></tr><tr><td width="12"></td><td height="29"><a href="javascript:void(0);"><div class="bds_jubao" onclick="showAlertLayer1();wzhitnew(36);">&nbsp;&nbsp;&nbsp;&nbsp;举报</div></a></td></tr></tbody></table></div></div></td></tr></tbody></table><div id="AlertArt2" style="display:none; position:absolute;"></div><div id="SendToFriends2" style="display:none;position:absolute;z-index:1000;"></div></div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="lswzbox" style="padding-top: 10px;">
+                            <div>
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody>
+                                        <tr>
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    类似文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                                <a href="http://www.360doc.com/relevant/282292764_more.shtml" target="_blank" onclick="wzhitnew(38)">更多</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul>
+                                                                
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/0627/17/1317564_220802675.shtml" target="_blank" onclick="wzhitnew(37)">LD_LIBRARY_PATH</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/0322/11/9057021_196558658.shtml" target="_blank" onclick="wzhitnew(37)">小知识备忘</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/1110/10/1317564_246980387.shtml" target="_blank" onclick="wzhitnew(37)">LD_LIBRARY_PATH环境变量 和 编译时使用...</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/1110/11/1317564_246983551.shtml" target="_blank" onclick="wzhitnew(37)">设置 Linux 的 LD_LIBRARY_PATH 变量</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/10/1109/14/4910_67903776.shtml" target="_blank" onclick="wzhitnew(37)">[转]error while loading shared librar...</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/11/0726/14/3234041_135932617.shtml" target="_blank" onclick="wzhitnew(37)">交叉移植tesseract过程记述以及总结（在...</a></span></li>
+                                                                    
+                                                                        <li style="height: 30px; line-height: 30px;"><span>
+                                                                            <a href="http://www.360doc.com/content/12/0103/22/1317564_177086155.shtml" target="_blank" onclick="wzhitnew(37)">[转]gcc头文件库文件搜索路径问题</a></span></li>
+                                                                    
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td width="330" valign="top">
+                                                <div class="lswz" style="margin-left: 9px; height: 300px;">
+                                                    <div class="lstwtop">
+                                                        <div class="lswztit">
+                                                            <div class=" lf360">
+                                                                <div class="titwx1">
+                                                                    热搜文章
+                                                                </div>
+                                                            </div>
+                                                            <div class="rt360" style="padding-top: 5px; padding-right: 9px;">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modlist2 list">
+                                                            <ul> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=3-12%e5%b2%81%e6%9c%80%e5%a5%bd%e7%9a%84%e6%95%b0%e5%ad%a6%e4%b9%a6%ef%bc%8c%e4%b8%96%e7%95%8c%e8%8e%b7%e5%a5%96%e7%9a%849%e5%a5%97%e4%bc%98%e7%a7%80%e6%95%b0%e5%ad%a6%e5%88%86%e5%b9%b4%e9%be%84%e8%af%bb%e7%89%a9%ef%bc%81&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="3-12岁最好的数学书，世界获奖的9套优秀数学分年龄读物！">3-12岁最好的数学书，世界获奖的9套优秀数...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%b8%ad%e5%9b%bd%e5%8e%86%e5%8f%b2%e4%b9%85%e8%bf%9c%e7%9a%84%e5%90%8d%e5%ae%b4%e4%b9%8b%e4%b8%80%ef%bc%9a%e6%b4%9b%e9%98%b3%e6%b0%b4%e5%b8%ad%e5%85%a8%e8%a7%a3%e6%9e%90%2c%e6%af%8f%e9%81%93%e8%8f%9c%e9%83%bd%e6%98%af%e4%bc%a0%e8%af%b4&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="中国历史久远的名宴之一：洛阳水席全解析,每道菜都是传说">中国历史久远的名宴之一：洛阳水席全解析,...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e6%ad%a5%e9%aa%a4%e8%af%a6%e8%a7%a3%ef%bc%81%e6%95%99%e4%bd%a0%e5%a6%82%e4%bd%95%e5%ad%a6%e4%bc%9a%e8%ae%b0%e5%bf%86%e8%8b%b1%e8%af%ad%e5%8d%95%e8%af%8d%ef%bc%8c%e6%89%be%e5%88%b0%e8%8b%b1%e8%af%ad%e5%ad%a6%e4%b9%a0%e6%96%b9%e6%b3%95&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="步骤详解！教你如何学会记忆英语单词，找到英语学习方法">步骤详解！教你如何学会记忆英语单词，找...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e7%94%b5%e8%84%91%e5%b0%8f%e6%8a%80%e5%b7%a7%ef%bc%9a%e6%96%b0%e6%89%8b%e5%bf%85%e5%a4%87%e7%9a%84%e8%af%be%e7%a8%8b%e4%b9%8b%e3%80%8aPS%e6%8a%a0%e5%9b%be%e4%ba%94%e6%b3%95%e3%80%8b%e5%9b%be%e6%96%87%e6%95%99%e7%a8%8b&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="电脑小技巧：新手必备的课程之《PS抠图五法》图文教程">电脑小技巧：新手必备的课程之《PS抠图五...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%bd%a0%e4%b8%ba%e4%bb%80%e4%b9%88%e6%88%90%e4%b8%8d%e4%ba%86%e9%a6%96%e5%af%8c%ef%bc%9f14%e4%b8%aa%e7%bb%86%e8%8a%82%e9%80%8f%e8%a7%86%e6%9d%8e%e5%98%89%e8%af%9a%e7%9a%84%e6%80%a7%e6%a0%bc%e7%a7%98%e5%af%86&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="你为什么成不了首富？14个细节透视李嘉诚的性格秘密">你为什么成不了首富？14个细节透视李嘉诚...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=38%e4%b8%aa%e6%9c%80%e5%b8%b8%e7%94%a8%e7%9a%84%e5%b9%b3%e8%a1%a1%e7%a9%b4%e4%bd%8d(%e7%9c%9f%e4%ba%ba%e5%9b%be%e8%a7%a3%2c%e5%80%bc%e5%be%97%e7%8f%8d%e8%97%8f)%e5%af%b9%e5%81%a5%e5%ba%b7%e5%be%88%e6%9c%89%e7%94%a8&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="38个最常用的平衡穴位(真人图解,值得珍藏)对健康很有用">38个最常用的平衡穴位(真人图解,值得珍藏)...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e4%b8%ad%e5%9b%bd%e7%9a%87%e5%b8%9d%e8%b6%a3%e9%97%bb%e5%bd%95%e2%80%94%e5%8d%97%e6%b1%89%e7%9a%87%e5%b8%9d%e7%9a%84%e5%8f%8d%e8%85%90%e5%a5%87%e6%8b%9b%3a%e8%a6%81%e5%bd%93%e5%a4%a7%e8%87%a3%e5%85%88%e8%a6%81%e8%a2%ab%e9%98%89%e5%89%b2&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="中国皇帝趣闻录—南汉皇帝的反腐奇招:要当大臣先要被阉割">中国皇帝趣闻录—南汉皇帝的反腐奇招:要当...</a></span></li> <li style="height: 30px; line-height: 30px;"><span><a href="http://www.baidu.com/s?wd=%e8%a5%bf%e6%b8%b8%e8%ae%b0%e9%9a%90%e8%ba%ab%e5%b9%95%e5%90%8e%e7%9a%84%e5%a4%a7%e7%89%8c%e7%a5%9e%e4%bb%99%2c%e4%bb%99%e7%95%8c%e7%9a%84%e6%b0%b4%e5%88%b0%e5%ba%95%e6%9c%89%e5%a4%9a%e6%b7%b1%e5%91%a2&tn=SE_hldp01010_6r0gix1f" target="_blank" onclick="wzhitnew(106)" title="西游记隐身幕后的大牌神仙,仙界的水到底有多深呢">西游记隐身幕后的大牌神仙,仙界的水到底有...</a></span></li></ul>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="background-color: #fafafa; width: 670px; height: 317px; margin-top: 10px;">
+                                    <div style=" padding-top:7px; padding-left:12px; height:182px;"> <div style=" height:30px;"><div class="titwx3 lf360">猜你喜欢</div><div class=" rt360" style=" padding-right:18px;"><img onclick="changefiveart(&quot;19999&quot;,&quot;19999&quot;);wzhitnew(62);" src="./linux下LD_LIBRARY_PATH的作用与设置_files/hyz.gif" onmouseover="this.src=&quot;http://pubimage.360doc.com/wz/hyza.gif&quot;" onmouseout="this.src=&quot;http://pubimage.360doc.com/wz/hyz.gif&quot;" width="76" height="24" style="cursor:pointer;"></div></div><table cellpadding="0" cellspacing="0"><tbody><tr id="fivearttdid"><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0823/08/479061_309259407.shtml" target="_blank"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/479061_201309021143310903.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0823/08/479061_309259407.shtml" target="_blank">处世分寸的把握</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0102/05/10101824_257592501.shtml" target="_blank"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/10101824_201308281736550962.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0102/05/10101824_257592501.shtml" target="_blank">人生修养杂论</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0211/12/6816362_351590596.shtml" target="_blank"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/351590596_201402241555150772.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0211/12/6816362_351590596.shtml" target="_blank">叶子上的微雕世界(太神奇了!)</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/14/0118/21/868418_346265561.shtml" target="_blank"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/346265561_201401300953080968.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/14/0118/21/868418_346265561.shtml" target="_blank">世界上最著名的教育孩子的方法</a></div></td><td valign="top" width="131"><div><a onclick="wzhitnew(39);" href="http://www.360doc.com/content/13/0130/18/1724486_263286100.shtml" target="_blank"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/263286100_201310231549160092.jpg" width="114" height="86"></a></div><div class="lan twentit"><a onclick="wzhitnew(40);" href="http://www.360doc.com/content/13/0130/18/1724486_263286100.shtml" target="_blank">年夜饭桌上的10道美味蒸鱼</a></div></td></tr></tbody></table></div>
+                                    <div style="padding-left: 12px;">
+                                        <iframe marginwidth="0" marginheight="0" frameborder="0" scrolling="no" width="650" height="100" src="./linux下LD_LIBRARY_PATH的作用与设置_files/artadali4.html"></iframe>
+                                    </div>
+                                    <div id="adabtest" style="display: none;">
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div id="Reflction" style="padding-top: 15px; padding-left: 15px;">
+                                    <div id="360docRefTN" style="display: none;"></div>
+                                    <div id="360docRefCT"></div>
+                                    <div id="360docRefPB" align="center" style="display: none;"></div>
+                                </div>
+                                <a name="sf"></a>
+                                
+                                <div id="ReflectionPart"><div style=" height:206px; margin:0px 0px;"><div class="plbox"><div class="plmain"><div class="titwx" style=" height:23px;">发表评论：</div><div class="deluwx">您好，请&nbsp;<span><a href="javascript:void(0);" onclick="ReflectionLoginform();wzhitnew(45);">登录</a></span>&nbsp;或者&nbsp;<span><a href="http://www.360doc.com/register.aspx?refer=53&reurl=showweb/0/0/282292764.aspx" onclick="InsertLogData(4);wzhitnew(46);">注册</a></span>&nbsp;后再进行评论 </div><div class=" rt360"><div style=" float:left; color:#959595; width:90px; "><div style="padding-top:4px;">其它帐号登录：</div></div><div style=" float:left ; width:70px;"><img onclick="toSNSLogin(&#39;smb&#39;);wzhitnew(47);" style="cursor:pointer;" src="./linux下LD_LIBRARY_PATH的作用与设置_files/tb25.gif">&nbsp;&nbsp;&nbsp;<img onclick="toSNSLogin(&#39;qq&#39;);wzhitnew(48);" style="cursor:pointer;" src="./linux下LD_LIBRARY_PATH的作用与设置_files/tb26.gif">&nbsp;&nbsp;&nbsp;<img onclick="toSNSLogin(&#39;rr&#39;);wzhitnew(49);" style="cursor:pointer;" src="./linux下LD_LIBRARY_PATH的作用与设置_files/tb27.gif"></div> </div> </div></div></div></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td align="center" valign="top" width="18px"></td>
+                    <td align="left" valign="top" width="252px">
+                        
+
+
+<div style="height: 98px" id="artrightad1"><iframe marginwidth="0" id="Iframeadabtest" marginheight="0" frameborder="0" scrolling="no" width="300" height="90" src="./linux下LD_LIBRARY_PATH的作用与设置_files/ad1_300.html" allowtransparency="true"></iframe></div>
+
+
+    <div id="artrightnewarticle" class="remenwz" style="height: 219px; width: 300px;"><div class="rementop"><div class="titwx" style=" padding-top:10px; padding-left:24px;">最新文章</div></div><div class="modlist3 list" style=" padding-left:15px;"><ul><li><span><a href="http://www.360doc.com/content/14/0806/14/11818366_399839157.shtml" target="_blank" onclick="wzhitnew(51)">使用 Eclipse 调试 Java 程序的 10 个...</a></span></li><li><span><a href="http://www.360doc.com/content/14/0718/17/11818366_395322529.shtml" target="_blank" onclick="wzhitnew(51)">Twitter storm单机环境的安装与配置</a></span></li><li><span><a href="http://www.360doc.com/content/14/0718/16/11818366_395305096.shtml" target="_blank" onclick="wzhitnew(51)">sudo环境变量的继承</a></span></li><li><span><a href="http://www.360doc.com/content/14/0716/19/11818366_394868169.shtml" target="_blank" onclick="wzhitnew(51)">在Ubuntu 64位OS上运行hadoop2.2.0[重...</a></span></li><li><span><a href="http://www.360doc.com/content/14/0716/19/11818366_394867807.shtml" target="_blank" onclick="wzhitnew(51)">Ubuntu下安装jdk7</a></span></li><li><span><a href="http://www.360doc.com/content/14/0523/16/11818366_380254996.shtml" target="_blank" onclick="wzhitnew(51)">修改接口ecs_geoip()，根据IP获取具体...</a></span></li></ul> <div class=" rt360" style=" padding-right:23px;"><a href="http://www.360doc.com/userhome/11818366" target="_blank" onclick="wzhitnew(52);">更多</a></div></div></div>
+
+
+<div class="both" style="padding-top: 10px; height: 260px;">
+   <iframe id="ifartad1" height="250px" width="300px" frameborder="0" scrolling="no" src="./linux下LD_LIBRARY_PATH的作用与设置_files/ad2_300.html"></iframe>
+    <div style="height: 10px;">
+    </div>
+</div>
+
+<div class="remenwz" id="artrighthotarticle" style="width: 300px;">
+    <div class="rementop">
+        <div class="titwx" style="padding-top: 10px; padding-left: 24px;">
+            热门文章</div>
+    </div>
+    <div class="modlist3 list" style="padding-left: 15px;">
+        <ul>
+            
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/0210/20/17132703_447770747.shtml" target="_blank" onclick="wzhitnew(55)">爱要让你听见——甜言蜜语的正确使用...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/0324/22/17753496_457783397.shtml" target="_blank" onclick="wzhitnew(55)">明星读书大盘点：男神女神都爱看什么...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0217/18/14805704_353294375.shtml" target="_blank" onclick="wzhitnew(55)">暖心漫画：儿子，有一天你会长大……&lt;...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0424/13/9733632_371697424.shtml" target="_blank" onclick="wzhitnew(55)">揭晓中国历史上被太监害死的八位皇帝...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/1016/21/5052258_417522939.shtml" target="_blank" onclick="wzhitnew(55)">图说：史上最全60个经典管理学定律</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0320/13/15661058_362147180.shtml" target="_blank" onclick="wzhitnew(55)">日媒揭秘：事业无成的男士十大特征</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/1106/13/6017453_423053985.shtml" target="_blank" onclick="wzhitnew(55)">穷人学技术 , 富人学心术！人生必修课...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0828/10/9613109_405281586.shtml" target="_blank" onclick="wzhitnew(55)">儿童简笔画集粹</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/13/1013/12/6814736_321114585.shtml" target="_blank" onclick="wzhitnew(55)">揭秘“银缕玉衣”真容：塞生殖器和肛...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/13/1028/15/7432085_324799091.shtml" target="_blank" onclick="wzhitnew(55)">智能手机也能让平板电脑无线上网</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/14/0104/22/7607720_342677280.shtml" target="_blank" onclick="wzhitnew(55)">德国摄影师镜头下睡觉的中国人*(欢迎...</a></span></li>
+                
+                    <li><span>
+                        <a href="http://www.360doc.com/content/15/0128/14/7436990_444458818.shtml" target="_blank" onclick="wzhitnew(55)">【“面霸”必备！面试经典60题】</a></span></li>
+                
+        </ul>
+        <div class=" rt360" style="padding-right: 23px;">
+            <a href="http://www.360doc.com/readroom.html" target="_blank" onclick="wzhitnew(56)">更多&gt;&gt;</a></div>
+    </div>
+</div>
+
+<div class="both" style="padding-top: 10px;">
+    <iframe id="ifartad2" height="250px" width="300px" frameborder="0" scrolling="no" src="./linux下LD_LIBRARY_PATH的作用与设置_files/ad3_300.html"></iframe>
+</div>
+<br>
+
+
+ <iframe id="ifartrightsogou" height="328px" width="300px" frameborder="0" scrolling="no" src="./linux下LD_LIBRARY_PATH的作用与设置_files/artrightadsogou300.html"></iframe>
+
+
+
+<script>
+    function change(pro_name, i) {
+        var pro = document.getElementById(pro_name); 
+        var pro_arr = pro.getElementsByTagName("span");
+
+        for (var m = 0; m < pro_arr.length; m++) {
+            pro_arr[m].className = "unclecked link_black";
+        }
+        pro_arr[i].className = "checked link_bai";
+
+        if (i == 1) {
+            document.getElementById("qh_ul_1").style.display = "";
+            document.getElementById("qh_ul_0").style.display = "none";
+        }
+        else if (i == 0) {
+            document.getElementById("qh_ul_1").style.display = "none";
+            document.getElementById("qh_ul_0").style.display = "";
+        }
+    }
+</script>
+
+                        <div class="both" id="divad5" style="padding-top: 11px; zoom: 1; top: 55px; left: 1174px;">
+                            <div id="divad4" style="">
+                                <div>
+                                    <iframe id="ifartad" height="250px" width="300px" frameborder="0" scrolling="no" src="./linux下LD_LIBRARY_PATH的作用与设置_files/ad4_300.html"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(2);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                            <div style="clear: both;" id="divad6">
+                                <div id="adfloatbaidu">
+                                    <iframe id="ifartadfloadbaidu" height="250px" width="300px" frameborder="0" scrolling="no" src="./linux下LD_LIBRARY_PATH的作用与设置_files/ad5_300.html"></iframe>
+                                </div>
+                                <div class="ggwz">
+                                    <a href="javascript:void(0);" onclick="closead(3);">关闭</a>
+                                </div>
+                                <div style="height: 13px;">
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="hidden" id="docarttitle" value="linux%e4%b8%8bLD_LIBRARY_PATH%e7%9a%84%e4%bd%9c%e7%94%a8%e4%b8%8e%e8%ae%be%e7%bd%ae">
+    <input type="hidden" id="artreadroomid" value="0">
+    <script>var asw='ld+path+library'</script>
+    <div id="docdiviframe"></div>
+
+
+    <script language="javascript" type="text/javascript">
+        var appName = navigator.appName.toLowerCase();
+        if (appName.indexOf("microsoft internet explorer") > -1) {
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemIE20130911.js?t=2015041601'></sc" + "ript>");
+        }
+        else {
+
+            document.write("<scr" + "ipt type='text/javascript' src='http://www.360doc.com/js/StickySystemOther20130911.js?t=2015041601'></sc" + "ript>");
+        }
+    </script><script type="text/javascript" src="./linux下LD_LIBRARY_PATH的作用与设置_files/StickySystemOther20130911.js"></script>
+
+    <script>GerLookingUserInfo(1,11818366,1,1,'-1',-1,10,0);OutputSource('http%3a%2f%2fwww.360doc.com%2fuserhome%2f11818366');OutputCategory(11818366,5,'%e3%80%8alinux%e7%b3%bb%e7%bb%9f%e7%ae%a1%e7%90%86%e3%80%8b');OutputLastNextArt('%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9linux+PATH%e7%9a%84%e5%80%bc','http://www.360doc.com/content/13/0501/21/11818366_282289708.shtml',0);OutputLastNextArt('Linux+%e4%b9%8b+%2fetc%2fprofile%e3%80%81%7e%2f.bash_profile+%e7%ad%89%e5%87%a0...','http://www.360doc.com/content/13/0501/23/11818366_282311775.shtml',1);</script>
+
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd86954201130d615136257dde062a503' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="./linux下LD_LIBRARY_PATH的作用与设置_files/h.js" type="text/javascript"></script>
+
+    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6857724" src="./linux下LD_LIBRARY_PATH的作用与设置_files/bds_s_v2.js"></script>
+
+    <script type="text/javascript">
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);
+    </script>
+    <!-- Baidu Button END -->
+    <script src="./linux下LD_LIBRARY_PATH的作用与设置_files/logger.js"></script>
+
+
+
+
+<div id="goTop2" style="left: 1498.5px; display: none;"><div id="goTop"><a href="http://www.360doc.com/content/13/0501/21/11818366_282292764.shtml#" id="go_top"></a></div><div id="goTop1"><a href="javascript:void(0);" id="go_top1"></a></div><div><div id="artweixinDiv" style="position: relative;display:none;"><div style="position: absolute; z-index: 2001;margin-left:-220px;*margin-left:-244px;!important;margin-top:-34px;*margin-top:-134px;!important;"><img src="./linux下LD_LIBRARY_PATH的作用与设置_files/wzweixin.gif"></div></div><div id="goTop3" onmouseover="document.getElementById(&#39;artweixinDiv&#39;).style.display=&#39;&#39;;" onmouseout="document.getElementById(&#39;artweixinDiv&#39;).style.display=&#39;none&#39;;"><a href="javascript:void(0);" id="go_top3"></a></div></div></div></body></html>

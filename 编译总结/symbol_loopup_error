@@ -1,0 +1,28 @@
+******************************************************************************************************************************************************
+1. In Makefile:
+	LFLAGS        = -m64 -Wl,-O1 -Wl,-rpath,/home/zhenweizhang/Downloads/libQGLViewer-2.6.2/QGLViewer
+	LIBS          = $(SUBLIBS)  -L/usr/X11R6/lib64 -L/usr/lib/x86_64-linux-gnu -lQGLViewer -lpthread  -lglut -lGLU -lGL -lm -lQtXml -lQtOpenGL -lQtGui -lQtCore #-L../../designerPlugin/ -lqglviewerplugin
+******************************************************************************************************************************************************
+2. complite passed,but run the execute terminal show error:
+	“./test: symbol lookup error: ./test: undefined symbol: ……”
+******************************************************************************************************************************************************
+3. correct:
+	LFLAGS        = -m64 -Wl,-O1 -Wl,-rpath,-L/usr/lib/x86_64-linux-gnu 
+	LIBS          = $(SUBLIBS)  -L/usr/X11R6/lib64 -L/usr/lib/x86_64-linux-gnu -lQGLViewer -lpthread  -lglut -lGLU -lGL -lm -lQtXml -lQtOpenGL -lQtGui -lQtCore #-L../../designerPlugin/ -lqglviewerplugin
+
+
+今天调试一段程序，运行时提示：
+“./test: symbol lookup error: ./test: undefined symbol: ……”
+
+费了半天劲，终于发现问题的原因：
+test程序使用的动态库存放的位置和Makefile里编译的动态库存位置不同。
+
+定位过程如下：
+#ldd test
+……
+libttt.so => /mylib/lib/libttt.so
+……
+而Makefile中 LIBS=../../lib/libttt.so,和上面的路径不同。
+
+解决方法如下：
+将make生成的libttt.so拷贝到/mylib/lib/libttt.so，修改即生效。

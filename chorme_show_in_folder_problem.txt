@@ -1,0 +1,9 @@
+$ sudo apt-get install libfile-mimeinfo-perl
+$ mimeopen -d /home/moose/Documents
+Please choose a default application for files of type inode/directory
+
+1) Caja  (caja-folder-handler)
+2) Other...
+
+use application #1
+Opening "/home/moose/Documents" with Caja  (inode/directory)

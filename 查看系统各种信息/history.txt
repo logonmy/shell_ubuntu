@@ -1,0 +1,12 @@
+sudo dumpe2fs /dev/sda1 | grep 'Filesystem created:'
+  490  ifconfig 
+  491  ifconfig | grep MAC
+  492  ifconfig | grep mac
+  493  ifconfig | awk '/eth/{print $1,$5}'
+  494  sudo lshw -C network
+  495  sudo lshw -c network | grep serial
+  496  sudo dumpe2fs /dev/sda1 | grep 'Filesystem created:'
+  497   hdparm -I /dev/sda
+  498  sudo  hdparm -I /dev/sda
+  499  sudo  hdparm -I /dev/sda1
+

@@ -1,0 +1,30 @@
+ ssh scp等消除每次问yes/no方法 2010-02-21 14:48:42
+分类： LINUX
+用命令 ssh -l username hostname
+Are you sure you want to continue connecting (yes/no)? 
+1、这个是ssh安全认证是的一个RSA认证。此处必须选择yes才能连接。
+第一次yes后，他会询问你是否永久把这个RSA认证加入本地，选择yes后，以后不会再出现提醒。
+每次登陆只需要输入密码即可。
+
+2、也可以不用输入1中的yes，但是需要修改本机配置。
+    /etc/ssh/ssh_config 中的
+#  StrictHostKeyChecking ask 改成
+   StrictHostKeyChecking no 
+     这样多此一举的询问就不在了。
+
+
+==============================================================================
+ ssh 登录出现Are you sure you want to continue connecting (yes/no)?解决方法
+分类： shell 2013-06-06 23:45 4768人阅读 评论(0) 收藏 举报
+ssh 登录出现Are you sure you want to continue connecting (yes/no)?解决方法
+1,可以使用ssh -o 的参数进行设置
+例如: ssh -o StrictHostKeyChecking=no root@192.168.111.22
+2,修改/etc/ssh/ssh_config
+将其中的# StrictHostKeyChecking ask 改成 StrictHostKeyChecking no
+出现登录慢的解决方法:
+先用ssh root@192.168.111.22 -vvv 查看出现在那一步比较慢
+例如:出现 debug1: Unspecified GSS failure. Minor code may provide more information
+No credentials cache found
+均可以通过 ssh -o 的参数进行设置
+出现如上问题可以使用: -o GSSAPIAuthentication=no
+例如 : ssh -o GSSAPIAuthentication=no root@192.168.111.22

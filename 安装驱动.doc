@@ -1,0 +1,125 @@
+在Ubuntu系统下安装NVIDIA（英伟达）显卡驱动
+浏览：4333 |更新：2013-09-22 19:22
+本文主要介绍在Ubuntu Linux下安装英伟达显卡驱动的简单步骤：
+
+开始之前先要查看显卡驱动是否装好。
+
+在系统终端输入命令：glxinfo｜　grep rendering
+
+如果出现“direct rendering:yes”,则已安装。
+
+下载驱动
+
+百度搜索英伟达官网，在官网中下载符合你显卡的驱动包（Linux版）。
+
+删除原驱动包
+
+终端输入命令：sudo apt-get --purge remove nvidia-glx-new
+
+然后删除/lib/linux-restricted-modules/2.6.22-14-generic/文件夹下面带有nvidia字样的内容。
+
+再删除/etc/init.d/nvidia-glx和/etc/init.d/nvidia-kernel
+
+输入命令
+
+sudo apt-get install build-essential pkg-config xserver-xorg-dev linux-headers-'uname -r'
+
+备份 
+
+sudo cp /etc/default/linux-restricted-modules-common \ etc/default/linux-restricted-modules-common.backup
+
+sudo cp /etc/X11/xorg.conf /etc/X11/xorg.conf.backup
+
+禁止系统使用默认的驱动
+
+sudo gedit /etc/default/linux-restricted-modules-common
+
+在最后的双引号中添加nv nvidia_new，即把文件中的“”，改成“nv nvidia_new”
+
+如果前面第二步删除完整了其实也可以不用执行这一步。
+
+停止GDM进程
+
+sudo /etc/init.d/gdm stop
+
+按Ctrl+Alt+F1，登录后进入下一步。
+
+进入下好的驱动所在目录（用ls命令确认文件在不在）
+
+sudo sh NVIDIA-Linux-x86-100.14.19-pkg1.run
+
+安装过程中，
+
+如果提示有旧驱动，询问是否删除旧驱动，选Yes；
+
+如果提示缺少某某模块（modules），询问是否上网下载，选no；
+
+如果提示编译模块，询问是否进行编译，选ok；
+
+如果提示将要修改Xorg.conf，询问是否允许，选Yes；
+
+接下来就是等待安装完成。
+
+安装完成就回到终端，重启GDM
+
+sudo /etc/init.d/gdm restart
+
+好了，当看到NV的logo后，安装成功。
+
+如果实在不想看NVIDIA的LOGO,可以修改 /etc/X11/xorg.conf
+
+在Section "Device"中添加Option "NoLogo" "True"
+
+
+++++++++++++++++++++++++++++++++++++++++++++=======================            ==============================++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Ubuntu 14.04 Nvidia显卡驱动安装及设置
+更换主板修复grub 引导后，无法从Nvidia进入系统（光标闪烁）， 可能是显卡驱动出了问题。
+
+1. 进入BIOS设置， 从集成显卡进入系统
+
+将显示器连接到集显的VGI口， 并在BIOS中设置用集显显示， 一般来说可以成功进入系统。
+
+2. 完全写在Nvidia驱动 （参考）
+
+执行下列命令干干净净卸载nvidia驱动， 
+
+sudo apt-get remove --purge nvidia-*
+sudo apt-get install ubuntu-desktop
+sudo rm /etc/X11/xorg.conf
+echo 'nouveau' | sudo tee -a /etc/modules
+3. 重启电脑， 进入系统，ctrl+alt+f1进入tty， 关闭lightdm
+
+sudo service lightdm stop
+重新安装驱动，这里安装的是340
+
+输入下列命令添加驱动源
+
+sudo add-apt-repository ppa:xorg-edgers/ppa
+sudo apt-get update
+安装340版驱动
+
+sudo apt-get install nvidia-340
+4. (非必须步骤，如果已经能正常进入桌面则不用理会后面的步骤) 重启电脑，进入BIOS，禁用Intel核心显卡，选择Nvidia显卡启动  (参考1 ， 参考2)
+
+这时进入系统后，可能分辨率不对，执行下列命令查看现在采用的驱动
+
+prime-select query
+如果输出intel， 则执行下列命令
+
+sudo update-alternatives --config i386-linux-gnu_gl_conf
+选择nvidia-340-uvm那一项
+
+sudo update-alternatives --config x86_64-linux-gnu_gl_conf
+同样选择nvidia-340-uvm那一项
+
+最后执行更新系统
+
+sudo ldconfig -n
+sudo update-initramfs -u
+选择nvidia驱动
+
+sudo prime-select nvidia
+6. 重启， 应该就可以正常使用了。
+

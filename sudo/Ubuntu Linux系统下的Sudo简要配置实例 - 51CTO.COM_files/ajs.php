@@ -1,0 +1,3 @@
+var OX_40be13eb = '';
+OX_40be13eb += "<"+"a href=\'//gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2477__zoneid=254__cb=9708e5c0fc__oadest=http%3A%2F%2Fcloud.51cto.com%2Fexp%2Fallmobilize%2F\' target=\'_blank\'><"+"font color=\'red\'>原生App与HTML5的对决<"+"/font><"+"/a><"+"div id=\'beacon_9708e5c0fc\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg3.51cto.com/www/delivery/lg.php?bannerid=2477&amp;campaignid=560&amp;zoneid=254&amp;loc=1&amp;referer=http%3A%2F%2Fos.51cto.com%2Fart%2F200709%2F57169.htm&amp;cb=9708e5c0fc\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_40be13eb);

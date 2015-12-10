@@ -1,0 +1,38 @@
+awk 'NR%2==0' coord.cpp >coord1.cpp
+
+########################+++++++++     如何打印文本的偶数行和奇数行呢？      +++++++++##########################
+
+在cu上看到了一篇帖子讨论的相当详细。http://bbs2.chinaunix.net/viewthread.php?tid=1526506&extra=&page=1
+下面就把这些方法总结下来。
+along@along-laptop:~/code/shell$ cat file
+
+awk实现：
+一：
+1,awk 'NR%2==1' file
+2,awk 'NR%2==0' file
+二：（这是直接将偶数行和奇数行分别打印到了file2和file1中，这种方法有缺陷就是在file2中始终会打印
+     最后一行，这个应该改进。不过这也是一种思想，我就把这种方法放在这里了。）
+awk '{print $0 > "file1"; getline; print $0 > "file2"; }' file
+三：
+1.awk 'NR%2' file
+2.awk '!(NR%2)' file
+四：
+1.awk 'i=i?0:1' file
+2.awk '!(i=i?0:1)' file
+五：
+1.awk 'i=!i' file
+2.awk '!(i=!i)' file
+解释：
+awk 'var=xx'应该说等价于awk 'xx{print}{var=xx}'
+awk 'i=!i'  == >  awk '!i{print}{i=!i}
+line 1: !0{print}{i=!0}==> {print;i=1}
+line 2: !1{print}{i=!1}==> {i=0}
+line 3: !0{print}{i=!0}==> {print;i=1}
+sed实现
+一：
+1.sed -n 'p;n' file
+2.sed -n 'n;p' file
+二：(这种方法更通用一点)
+1.sed -n '1~2p' file
+2.sed -n '2~2p' file
+关于sed的模式空间的问题以及G,g,H,h的问题可以在我的另外一篇文章中找到我的总结。

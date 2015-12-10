@@ -1,0 +1,12 @@
+说到数据的存储,这一直就是一个值得关注的问题,Mat_<uchar>对应的是CV_8U,
+Mat_<uchar>对应的是CV_8U,Mat_<char>对应的是CV_8S,Mat_<int>对应的是CV_32S,
+Mat_<float>对应的是CV_32F,Mat_<double>对应的是CV_64F,对应的数据深度如下:
+? CV_8U ­ 8­bit unsigned integers ( 0..255 )
+? CV_8S ­ 8­bit signed integers ( ­128..127 )
+? CV_16U ­ 16­bit unsigned integers ( 0..65535 )
+? CV_16S ­ 16­bit signed integers ( ­32768..32767 )
+? CV_32S ­ 32­bit signed integers ( ­2147483648..2147483647 )
+? CV_32F ­ 32­bit ?oating­point numbers ( ­FLT_MAX..FLT_MAX, INF, NAN )
+? CV_64F ­ 64­bit ?oating­point numbers ( ­DBL_MAX..DBL_MAX, INF, NAN )
+这里还需要注意一个问题,很多OpenCV的函数支持的数据深度只有8位和32位的,所以要少使
+用CV_64F,

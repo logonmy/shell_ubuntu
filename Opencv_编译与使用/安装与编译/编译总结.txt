@@ -1,0 +1,98 @@
+cmake生成make文件
+cmake -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
+检查输出：不能有error；FFMPEG ： YES；Python, TBB, OpenGL, V4L, OpenGL and Qt are detected。如果有问题要重新安装对应的包再cmake
+
+编译（需要很长时间）
+make
+
+安装
+sudo make install
+
+配置
+sudo gedit /etc/ld.so.conf.d/opencv.conf
+打开一个空文件，添加以下一行内容
+/usr/local/lib
+保存推出
+
+执行配置
+sudo ldconfig
+
+环境变量
+sudo gedit /etc/bash.bashrc
+
+添加以下两行并保存
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
+
+注销或重启
+
+
+#############################################################################################################################################################################################################
+下载Opencv2.3.0到/home/lg解压后进入Opencv2.3.0的目录下（这里的opencv与以前版本1.0的不一样，没有configure文件，所以我们执行不了 ./configure命令） ：#mkdir build#cd build#cmake -D CMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/usr/local -D BUILD_PYTHON_SUPPORT=ON.. （这条命令解析可以参考cmake教程， 但是记住这里的第二个选项，我们将opencv安装在/usr/local目录下的）#make#make install到这opencv编译完成，接下去看看opencv这个工具能正常使用。
+
+
+ 顺便说一下， 经常遇见apt-get命令，这是在ubuntu下使用获取软件包的命令， fedora使用的是yum， 记住了， 否则经常出现使用apt-get却获取不了软件包的情况。
+方法1：在/etc/ld.so.conf.d下新建一个文件opencv.conf，里面输入/usr/local/lib
+方法2：在/etc/ld.so.conf文件中加入/usr/local/lib这一行
+然后执行#ldconfig(root权限下）
+#cp /usr/local/lib/pkconfig/opencv.pc /usr/lib/pkgconfig
+(或者是输入这个命令 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH)
+
+
+#################################################################     我 采 用 这 个      ####################################################################################################################
+修改/etc/ld.so.conf
+
+添加一行/usr/local/lib
+
+# ldconfig (root用户)
+
+然后将/usr/local/lib/pkgconfig中的opencv.pc 拷贝到/usr/lib/pkgconfig中,(如果不做这步,根本编译不起)
+
+可以采用这个操作
+
+# cp /usr/local/lib/pkgconfig/opencv.pc /usr/lib/pkgconfig
+
+
+#################################################################################################################################################################################################################################
+4.  cmake编译OpenCV源码，所有的lib文件都会被安装到/usr/local目录下
+
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local
+
+
+
+5.  安装
+
+make
+
+sudo make install
+
+环境变量pkg_config_path 提供编译时和运行时库的路径查询。pkg-config 是通过库提供的一个 .pc 文件获得库的各种必要信息的，包括版本信息、编译和链接需要的参数等。这些信息可以通过 pkg-config 提供的参数单独提取出来直接供编译器和 链接器使用。使用 pkg-config 的 --cflags 参数可以给出在编译时所需要的选项，而 --libs 参数可以给出 链接时的选项。
+
+在上述opencv 的安装结束后，pkg-config 的读取目录 /usr/local/lib/pkgconfig/ 下已经有opencv.pc。
+
+
+
+6. 更新环境变量：
+
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig/
+
+
+
+
+
+
+#######################################################################################################################################################################################################################
+
+
+5 现在需要配置必要的库。运行 sudo gedit /etc/ld.so.conf.d/opencv.conf
+
+添加，/usr/local/lib,到文件  opencv.conf  文件或许是空的，不影响。
+
+6  运行此命令  sudo ldconfig
+
+7 现在运行这条命令 sudo gedit /etc/bash.bashrc，添加下面两行到文件的末尾并保存。
+
+1 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+2 export PKG_CONFIG_PATH
+
+

@@ -1,0 +1,2 @@
+sudo updatedb #locate -i opengl #不区分大小写
+这样就能更新;

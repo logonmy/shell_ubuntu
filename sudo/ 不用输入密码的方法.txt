@@ -1,0 +1,94 @@
+http://www.jb51.net/os/Ubuntu/63313.html
+
+
+Linux/Ubuntu sudo不用输入密码的方法
+来源：互联网 作者：佚名 时间：10-13 22:16:40 【大 中 小】
+打开上网客户端、新立得，这些涉及到系统的都要输入密码，对于我们大多数人来说，用Linux无非是做桌面应用，对安全性没必要搞得跟服务器一些
+
+ 
+
+打开上网客户端、新立得，这些涉及到系统的都要输入密码，对于我们大多数人来说，用Linux无非是做桌面应用，对安全性没必要搞得跟服务器一些。
+
+解决办法一： 
+
+在启动时进入安全模式，这时是用root登录的，执行： 
+
+chmod 740 /etc/sudoers 
+
+然后打开/etc/sudoers这个文件，把最后一行： 
+
+%admin ALL=(ALL) 
+改为 
+%%admin ALL=(ALL) NOPASSWD: NOPASSWD: ALL 
+
+保存退出。 
+
+执行： 
+chmod 0440 /etc/sudoers 
+
+reboot your ubuntu.OK! 
+
+解决方法二：
+
+Ubuntu默认不能直接用root帐户登录,必须从第一个创建的用户(既安装时创建的那个用户)通过su或sudo来获得root权限。在Ubuntu中对系统进行操作很多时候都要使用这个命令，由此可见对于新来说很有必要来认识这个命令。这或许不太方便，但这样增加了安全性，避免用户由于误操作而损坏系统。
+
+sudo
+格式：sudo [其它命令]
+
+sudo既为Super user do的意思。sudo在这个过程中只起一个调用root用户的作用，本次操作完成后，其作用就消失，如果要使用调用root权限操作的命令就必须再次使用sudo。些过程中系统会要求用户输入密码，此密码就是安装系统时你输入你那个密码，注意：这个密码在输入你时候不会像在Windows里输密码那样输入一位密码就有一个*号，这样的目的就是为了使密码更安全，因为不知道你密码有几位这样无疑给密码破译者增加了难度。:）
+
+例：
+
+我们要更改当前目录下upload.tar.gz的权限就要用到sudo。如果还要对当前目录下的另外一个文件eva.tar.gz更改权限就要再次用到sudo。
+
+ownlinux@server:/var/www$ sudo chmod 777 upload.tar.gz
+[sudo] password for ownlinux: （此时输入你的密码）
+ownlinux@server:/var/www$ sudo chmod 777 eva.tar.gz
+[sudo] password for ownlinux:
+
+补充：
+
+通常我们并不以root身份登录，但是当我们执行某些命令 (command)时需要用到root权限，我们通常都是用"sudo command"来执行command。由于使用Ubuntu，所以经常都都用sudo，而使用sudo时，又得输入密码，所以我就寻找sudo不输入密码的方法。前阵子google了一下，很容容易找到一个方法，但是对其不够理解，今天，仔细研究了一下/etc/sudoers这个文件，对于如何实现自己的需求就非常清楚了。网上说看到的资料往往写得不清楚，所以我根据自己的需求好好整理了一下。 
+
+假设我的用户名为jay（属于 admin组），使sudo不用密码的方法如下。 
+运行命令：sudo visudo 或者 sudo vi /etc/sudoers，如果vi来编辑，则保存时记得用"wq!"强制保存，否则会提示只读不能保存的。 
+就会编辑/etc/sudoers这个文件。 默认情况我们会看到有"%admin ALL=(ALL) ALL"一句话，就是允许admin组在所有主机上执行所有命令，当然是需要passwd的。 
+
+1. 如果想把admin组的用户都sudo不用密码那么可以将这一行换为："%admin ALL=(ALL) NOPASSWD: NOPASSWD ALL"即可。 
+2. 如果仅仅想让jay用户sudo不需密码，则可添加"jay ALL = NOPASSWD: ALL"这样一行。 
+3. 如果让jay用户sudo不用密码即可执行某几个命令，可这样写"jay ALL = NOPASSWD: /usr/bin/abc.sh, /usr/sbin/adduser" 
+4. 欲知其他更多配置方式，请运行"man sudoers"看帮助文档吧。 
+
+注意：我自己的一个配置没生效，找原因还找了阵子，写到这里吧。 
+
+我添加"jay ALL = NOPASSWD: ALL"这样一行；但是，jay执行sudo时还是需要输入密码，这是为什么？ 
+
+原来是，我这一行在"%admin ALL=(ALL) ALL"组策略之前前，后面的组配置覆盖了前面的配置，而jay属于admin组，所以需要密码。 
+
+这时，只需要将%admin行用#注释掉即可。OK！然后立马就生效了，可能执行sudo时系统都会去读取/etc/sudoers的，所以立即就生效了。 
+
+另外，附带公司某服务器的一个/etc/sudoers配置： 
+
+
+复制代码代码如下:
+
+Defaults env_reset 
+Defaults syslog=auth 
+Defaults log_year,logfile=/var/log/sudo.log 
+User_Alias ABC = abc 
+Cmnd_Alias DEFAULT=/bin/*,/sbin/ldconfig,/sbin/ifconfig,/usr/sbin/useradd,/usr/sbin/userdel,/bin/rpm,/usr/bin/yum,/sbin/service,/sbin/chkconfig,sudoedit /etc/rc.local,sudoedit /etc/hosts,sudoedit /etc/ld.so.conf,/bin/mount,sudoedit /etc/exports,/usr/bin/passwd [!-]*,!/usr/bin/passwd root,/bin/su - [!-]*,!/bin/su - root,!/bin/su root,/bin/bash,/usr/sbin/dmidecode,/usr/sbin/lsof,/usr/bin/du,/usr/bin/python,/usr/sbin/xm,sudoedit /etc/profile,sudoedit /etc/bashrc,/usr/bin/make,sudoedit /etc/security/limits.conf,/etc/init.d/*,/usr/bin/ruby 
+ABC ALL=(ALL)NOPASSWD:DEFAULT 
+
+通过修改/etc/sudoers 
+sudo vi /etc/sudoers 
+把/etc/sudoers里面最后一行 
+%admin ALL=(ALL) 
+改为 
+%admin ALL=(ALL) NOPASSWD: NOPASSWD: ALL 
+然后强制保存 wq 就OK 
+
+上面说的并不准确，要注意以下几点。 
+
+编辑/etc/sudoers文件使用“超级用户终端”，而不能使用普通的终端。“超级用户终端”启动通过右键“编辑菜单”命令添加。 
+
+编辑完之后使用wq!而不是wq退出

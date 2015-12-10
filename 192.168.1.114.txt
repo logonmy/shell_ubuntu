@@ -1,2 +1,0 @@
-挂载：
- sshfs zhaoyong@10.129.63.239:/data/zhaoyong ./zhaoyong/

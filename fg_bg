@@ -1,0 +1,64 @@
+Unixshell浅讲(fg 与 bg) 2009-01-06 15:42:08
+分类： Linux
+1. 输出入转向 
+在 UNIX 中，每一个 process 均有三个特殊的 file descriptor , 标准输入( standard input )、标准输出 ( standard output )、标准错误输出( standard error )。这三个平常是接受 terminal 的输入，而由 terminal 显示出去。但是UNIX 提供使用者可以使用一般的档案或 pipe 来取代这些标准输出入设备。在tcsh 里头，使用者可以利用">"和"<"来进行输出入转向的工作。 
+输出转向: 
+command > file 
+你可以将一个指令的输出结果转向到一个档案，让此档案储存这个 command的输出结果。 
+但是请注意，如果 file 已经存在在系统中，则 file 将会被盖过。也就是原先 file 的内容将会消失。 
+command >& file 
+与 > 相同，但是这个格式表示连 standard error 一起转向。在 UNIX 中，standard error 在 programer 的习惯是用来显示 error 的发生，因此如果没有被转向时， standard output 的结果将会被转向到 file ，而 standard error 的结果仍将显示在 terminal 上。 
+command >> file 
+此格示代表将 standard output 的结果 append 到 file 中。如果 file 已存在在系统中，则 standard output 的结果将会加到 file 的末端，如果 file原先并不存在，则 file 将会被开启而将 standard output 的结果存至 file中。 
+command >>& filE 
+同上，不过此格式代表连 standard error 一起 append 到 file 之中。 
+输入转向 
+command < file 
+一般程式须要自终端机输入资料，而你可以将程式所要输入的资料统一编入档案中，利用转向一并输入。 
+set ignoreeeof 
+由於转向输出会有将现有档案 overwrite 的危险，csh 与 tcsh 提供使用者一个方式来避免。 
+当你执行 set ignoreeeof 之後，如有输出转向到已存在之档案时，它会发出一个档案已存在的讯息。 而在处理 append 转向上，如果已经 set ignoreeeof ，则当要 append 一个不存在的档案，将会出现一个 error messege 。 
+然而如果我们当真是要转向盖过一个已存在的档案，或者是要 append 一个不存在的档案时，又要如何呢? 
+我们只要在 ">" ">&" ">>" ">>&" 後面加上惊叹号"!"，成为 ">!" , ... 就可以了。
+2. Pipe 
+如同前面说的转向，Pipe 也是在标准输出入和标准示误装置间作取代动作，如此一来可以将某一个程式的输出连到另一个程式的输入中。其语法如下: 
+command1 | command2 [ | command3 ....] 
+command1 |& command2 [ |& command3 ....] <--- 连 standard error 一起 pipe
+3. 前景与背景 
+在 sh 下面，一个新产生的 process 可以经由 command 後面的符号;和&来分别前景和背景。如以下语法 
+command 
+这表示产生一个 foreground 的 process ，你要等到它结束才能再下另一个指令。 
+command & 
+这样表示产生一个 background 的 process ，它会给你一个类似以下的讯息: 
+[1] 21304 
+然後就出现下一个提示号，以供你给下一个指令。然後在这个 background 的process 结束的时候再给你一个如下面的讯息，告诉你它把这个 process 执行完毕了。 
+[1] Done command 
+command1 ; command2 ; command3 
+这样表示你要求系统连续执行 command1 , command2 , command3 三个指令，其中 command2 要等待 command1 ， command3 要等待 command2 ，而你要等待 command3 执行完毕才能下指令。 
+command1 & command2 & command3 & 
+这样表示你要求系统连续执行 command1 , command2 , command3 三个指令，而这三个指令都放在背景执行，彼此之间不需等待。 
+fg 与 bg 
+也许你会问，一个已经执行的 process 可不可以由前景换背景，或由背景换前景呢? 
+可以的。一个在前景执行的 process ，你可以按 Ctl-Z 将 process 暂停，系统会给你一个讯息: 
+Suspended 
+然後出现提示号。此时你可以使用 fg 将其恢复前景执行，或按 bg 将其改为背景执行。 
+而如果有一个 background 的 process , 你也可以用 fg 指令将其呼叫到前景来。首先你需用 jobs 指令来观查目前有多少在背景下的 proesses，然後根据它所显示出来的 job id 来决定将那一个 process 放到前景。如使用 
+％ fg ％3 # 将第三个 job 放到 foreground 。
+4. 别名 alias 
+在 csh 与 tcsh 中，提供 alias 的功能，使得使用者可以将常用却冗长的指令以其他的名字存起，不过不须像储存变数一样要在前面加一个"$"。 
+alias 的格式: 
+alias aliasname string .... 
+alias aliasname string \!* string 
+前面的一个格式是把 aliasname 直接用来取代後面的 string ，然後如有任何跟在後面的 argument 将会出现的其後。如下例: 
+％ alias la ls -Fa 
+例中的 la . 相当於 ls -F . ，然而如果仅是如此并不足够，因此有後面的另一种格式。後面的格式中的 \!* 代表将来会出现在 aliasname 後面的所有参数，如下例: 
+％ alias dir ls -Flag \!* | more 
+例中的 dir doc 相当於 ls -Flag doc | more ，这样可提供使用者在设计上更大的弹性。
+5. tcsh 的初始设定档 
+tcsh 有两个 initial 档，一个是 $HOME/.tcshrc , 一个是 $HOME/.login 。 
+每一个 tcsh 在被开启时，它都会去执行所有位於 .tcshrc 中的命令，因此你可以把所有的 alias , 变数设定都放到 .tcshrc 里面去。在tcsh 起动的时候便会自动的去执行这些对於你的环境的初始设定。 
+.login 只有在 tcsh 本身是一个 login shell 的时候才会执行，它多半用来设定一些只需在 login 的时候要执行的命令，如环境变数的设定，因环境变数在设定之後，只要是其子 process 均会取得其环境，因此不须在每次开启 shell 的时候都重覆执行。 
+tcsh 另有一个结束设定档，称为 .logout ，是在每一个 login shell 结束，logout 所要执行的动作，其编辑的方法跟 .login , .tcshrc 完全一模一样。 
+source 指令 
+如果要重新执行 .tcshrc 的内容，可以利用 source 指令来达到，此时就相当於把该档案中的所有内容重新在命令列输入一遍。如下: 
+％ source .login

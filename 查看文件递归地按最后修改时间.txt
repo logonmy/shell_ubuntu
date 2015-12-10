@@ -1,0 +1,42 @@
+ls -lt |more
+
+sudo ls -Rlt |more
+
+########################################## Great ########################################## 
+ls按时间排序输出文件列表
+ 
+首先，ls --help查看ls相关的与时间排序相关的参数：
+ 
+> ls --help|grep -E "time|sort"
+如果不指定 -cftuSUX 或 --sort 任何一个选项，则根据字母大小排序。
+  -c                         配合 -lt：根据 ctime 排序及显示 ctime (文件
+                               配合 -l：显示 ctime 但根据名称排序
+                               否则：根据 ctime 排序
+  -f                         do not sort, enable -aU, disable -lst
+      --full-time            like -l --time-style=full-iso
+  -r, --reverse              reverse order while sorting
+  -S                         sort by file size
+      --sort=WORD            extension -X, none -U, size -S, time -t,
+                             version -v, status -c, time -t, atime -u,
+      --time=WORD            with -l, show time as WORD instead of modification
+                             time: atime, access, use, ctime or status; use
+                             specified time as sort key if --sort=time
+      --time-style=STYLE     with -l, show times using style STYLE:
+  -t                         sort by modification time
+可以看到-c按创建时间ctime排序，-t按修改时间mtime排序，默认都是将最近的文件排在前面，-r可以实现逆序排序，即将最近的文件排在后面，--sort=WORD可订制排序键值。
+ 
+常用组合如下：
+ 
+> ls -alt # 按修改时间排序
+> ls --sort=time -la # 等价于> ls -alt
+> ls -alc # 按创建时间排序
+> ls -alu # 按访问时间排序
+ 
+# 以上均可使用-r实现逆序排序
+> ls -alrt # 按修改时间排序
+> ls --sort=time -lra # 等价于> ls -alrt
+> ls -alrc # 按创建时间排序
+> ls -alru # 按访问时间排序
+ 
+# 也可以查找指定类型的文件，然后指定按时间排序
+> find . -name *.php|xargs ls -alt

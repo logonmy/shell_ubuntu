@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0063)http://www.cnblogs.com/flysnail/archive/2012/05/16/2504266.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" type="text/javascript" src="./locate命令的使用 - 陈朋 - 博客园_files/ca-pub-4210569241504288.js"></script><script async="" src="./locate命令的使用 - 陈朋 - 博客园_files/analytics.js"></script>
+
+<title>locate命令的使用 - 陈朋 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="./locate命令的使用 - 陈朋 - 博客园_files/blog-common.css">
+<link id="MainCss" type="text/css" rel="stylesheet" href="./locate命令的使用 - 陈朋 - 博客园_files/bundle-fighting.css">
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/flysnail/rss">
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/flysnail/rsd.xml">
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/flysnail/wlwmanifest.xml">
+<script src="./locate命令的使用 - 陈朋 - 博客园_files/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'flysnail', cb_enable_mathjax=false;</script>
+<script src="./locate命令的使用 - 陈朋 - 博客园_files/blog-common.js" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<center>
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/flysnail/"><img id="blogLogo" src="./locate命令的使用 - 陈朋 - 博客园_files/logo.gif" alt=""></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/flysnail/">陈朋</a></h1>
+<h2>彪悍的人生不需要解释</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<!--done-->
+			<ul id="navList">
+				<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+				<li><a href="http://q.cnblogs.com/" target="_blank">博问</a></li>
+                <li><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a></li>
+				<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/flysnail/">首页</a></li>
+				<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+				<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E9%99%88%E6%9C%8B">联系</a></li>
+				<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+				<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/flysnail/rss">订阅</a>
+				<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/flysnail/rss"><img src="./locate命令的使用 - 陈朋 - 博客园_files/xml.gif" alt="订阅"></a></li>
+			</ul>
+
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 69&nbsp;
+文章- 13&nbsp;
+评论- 3&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div class="clear"></div>
+	<div id="topicList">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class="postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="./locate命令的使用 - 陈朋 - 博客园_files/locate命令的使用 - 陈朋 - 博客园.html">locate命令的使用</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>使用locate命令，遇到了这样的情况：<br>当前目录下有一个文件，而使用这个命令时却查找不到这个文件，上网查了一下，找到了原因，就在下面。</p>
+<p><br>1. find</p>
+<p>find是最常见和最强大的查找命令，你可以用它找到任何你想找的文件。</p>
+<p>find的使用格式如下：</p>
+<p>　　$ find &lt;指定目录&gt; &lt;指定条件&gt; &lt;指定动作&gt;</p>
+<p>　　- &lt;指定目录&gt;： 所要搜索的目录及其所有子目录。默认为当前目录。</p>
+<p>　　- &lt;指定条件&gt;： 所要搜索的文件的特征。</p>
+<p>　　- &lt;指定动作&gt;： 对搜索结果进行特定的处理。</p>
+<p>如果什么参数也不加，find默认搜索当前目录及其子目录，并且不过滤任何结果（也就是返回所有文件），将它们全都显示在屏幕上。</p>
+<p>find的使用实例：</p>
+<p>　　$ find . -name 'my*'</p>
+<p>搜索当前目录（含子目录，以下同）中，所有文件名以my开头的文件。</p>
+<p>　　$ find . -name 'my*' -ls</p>
+<p>搜索当前目录中，所有文件名以my开头的文件，并显示它们的详细信息。</p>
+<p>　　$ find . -type f -mmin -10</p>
+<p>搜索当前目录中，所有过去10分钟中更新过的普通文件。如果不加-type f参数，则搜索普通文件+特殊文件+目录。</p>
+<p>2. locate</p>
+<p>locate命令其实是“find -name”的另一种写法，但是要比后者快得多，<strong>原因在于它不搜索具体目录，而是搜索一个数据库（/var/lib/locatedb）</strong>，这个数据库中含有本地所有文件信息。Linux系统自动创建这个数据库，并且每天自动更新一次，所以使用locate命令查不到最新变动过的文件。为了避免这种情况，可以在使用locate之前，<strong>先使用updatedb命令，手动更新数据库</strong>。</p>
+<p>locate命令的使用实例：</p>
+<p>　　$ locate /etc/sh</p>
+<p>搜索etc目录下所有以sh开头的文件。</p>
+<p>　　$ locate ~/m</p>
+<p>搜索用户主目录下，所有以m开头的文件。</p>
+<p>　　$ locate -i ~/m</p>
+<p>搜索用户主目录下，所有以m开头的文件，并且忽略大小写。</p>
+<p>3. whereis</p>
+<p>whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。</p>
+<p>whereis命令的使用实例：</p>
+<p>　　$ whereis grep</p>
+<p>4. which</p>
+<p>which命令的作用是，在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。也就是说，使用which命令，就可以看到某个系统命令是否存在，以及执行的到底是哪一个位置的命令。</p>
+<p>which命令的使用实例：</p>
+<p>　　$ which grep</p>
+<p>5. type</p>
+<p>type命令其实不能算查找命令，它是用来区分某个命令到底是由shell自带的，还是由shell外部的独立二进制文件提供的。如果一个命令是外部命令，那么使用-p参数，会显示该命令的路径，相当于which命令。</p>
+<p>type命令的使用实例：</p>
+<p>　　$ type cd</p>
+<p>系统会提示，cd是shell的自带命令（build-in）。</p>
+<p>　　$ type grep</p>
+<p>系统会提示，grep是一个外部命令，并显示该命令的路径。</p>
+<p>　　$ type -p grep</p>
+<p>加上-p参数后，就相当于which命令。</p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory">分类: <a href="http://www.cnblogs.com/flysnail/category/339903.html">Linux</a></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info"><div id="green_channel">
+<a href="javascript:void(0);" id="green_channel_digg" onclick="DiggIt(2504266,cb_blogId,1);green_channel_success(this,&#39;谢谢推荐！&#39;);">好文要顶</a>
+<a id="green_channel_follow" onclick="c_follow();" href="javascript:void(0);">关注我</a>
+<a id="green_channel_favorite" onclick="AddToWz(cb_entryId);return false;" href="javascript:void(0);">收藏该文</a><a id="green_channel_contact" href="http://msg.cnblogs.com/send/%E9%99%88%E6%9C%8B" target="_blank">联系我</a>
+<a id="green_channel_weibo" href="javascript:void(0);" title="分享至新浪微博" onclick="ShareToTsina()"><img src="./locate命令的使用 - 陈朋 - 博客园_files/icon_weibo_24.png" alt=""></a>
+<a id="green_channel_wechat" href="javascript:void(0);" title="分享至微信" onclick="shareOnWechat()"><img src="./locate命令的使用 - 陈朋 - 博客园_files/wechat.png" alt=""></a>
+</div>
+<div id="author_profile">
+<div id="author_profile_info" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/flysnail/" target="_blank"><img src="./locate命令的使用 - 陈朋 - 博客园_files/sample_face.gif" class="author_avatar" alt=""></a>
+<div id="author_profile_detail" class="author_profile_info">
+<a href="http://home.cnblogs.com/u/flysnail/">陈朋</a><br>
+<a href="http://home.cnblogs.com/u/flysnail/followees">关注 - 50</a><br>
+<a href="http://home.cnblogs.com/u/flysnail/followers">粉丝 - 24</a>
+</div>
+</div>
+<div class="clear"></div>
+<div id="author_profile_honor"></div>
+<div id="author_profile_follow">
+    <a href="javascript:void(0);" onclick="c_follow();return false;">+加关注</a>
+</div>
+</div>
+<div id="div_digg">										
+    <div class="diggit" onclick="votePost(2504266,&#39;Digg&#39;)">
+        <span class="diggnum" id="digg_count">1</span>
+    </div>
+	<div class="buryit" onclick="votePost(2504266,&#39;Bury&#39;)"> 
+		<span class="burynum" id="bury_count">0</span>
+	</div>
+	<div class="clear"></div>	
+	<div class="diggword" id="digg_tips">
+    (请您对文章做出评价)
+    </div>	
+</div>
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"><a href="http://www.cnblogs.com/flysnail/archive/2012/05/11/2495468.html" class="p_n_p_prefix">« </a> 上一篇：<a href="http://www.cnblogs.com/flysnail/archive/2012/05/11/2495468.html" title="发布于2012-05-11 10:07">头文件类型的选择</a><br><a href="http://www.cnblogs.com/flysnail/archive/2012/05/23/2514331.html" class="p_n_p_prefix">» </a> 下一篇：<a href="http://www.cnblogs.com/flysnail/archive/2012/05/23/2514331.html" title="发布于2012-05-23 10:23">GZip压缩的实例</a><br></div>
+</div>
+
+
+		</div>
+		<div class="postDesc">posted @ <span id="post-date">2012-05-16 16:43</span> <a href="http://www.cnblogs.com/flysnail/">陈朋</a> 阅读(<span id="post_view_count">6958</span>) 评论(<span id="post_comment_count">0</span>)  <a href="http://i.cnblogs.com/EditPosts.aspx?postid=2504266" rel="nofollow">编辑</a> <a href="http://www.cnblogs.com/flysnail/archive/2012/05/16/2504266.html#" onclick="AddToWz(2504266);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=87578,cb_entryId=2504266,cb_blogApp=currentBlogApp,cb_blogUserGuid='43bb23cd-8269-e011-a53f-842b2b196315',cb_entryCreatedDate='2012/5/16 16:43:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="http://www.cnblogs.com/flysnail/archive/2012/05/16/2504266.html#" onclick="return RefreshPage();">刷新页面</a><a href="http://www.cnblogs.com/flysnail/archive/2012/05/16/2504266.html#top">返回顶部</a></div>
+<div id="comment_form_container"><div class="login_tips">注册用户登录后才能发表评论，请 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return login(&#39;commentform&#39;);">登录</a> 或 <a rel="nofollow" href="javascript:void(0);" class="underline" onclick="return register();">注册</a>，<a href="http://www.cnblogs.com/">访问</a>网站首页。</div></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.ucancode.com/index.htm" target="_blank">【推荐】50万行VC++源码: 大型组态工控、电力仿真CAD与GIS源码库</a><br><a href="http://www.rongcloud.cn/" target="_blank">【推荐】融云即时通讯云－专注为 App 开发者提供IM云服务</a><br><a href="https://www.jpush.cn/" target="_blank">【福利】极光推送-富媒体+大数据驱动精准推送，完全免费开放啦</a><br></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"><a href="http://www.gcpowertools.com.cn/products/componentone.htm?utm_source=cnblogs&utm_medium=blogpage&utm_term=bottom&utm_content=C1&utm_campaign=community" target="_blank"><img width="300" height="250" src="./locate命令的使用 - 陈朋 - 博客园_files/24442-20151030141701419-628671799.gif" alt=""></a></div>
+<div id="under_post_news"><div class="itnews c_ad_block"><b>最新IT新闻</b>:<br> ·  <a href="http://news.cnblogs.com/n/532543/" target="_blank">传百度文学12亿卖身完美世界 两年赚10亿</a><br> ·  <a href="http://news.cnblogs.com/n/532542/" target="_blank">传365金融平台资金无法提现 相关人员已经失联</a><br> ·  <a href="http://news.cnblogs.com/n/532541/" target="_blank">双十一小米华为互指对方刷单</a><br> ·  <a href="http://news.cnblogs.com/n/532540/" target="_blank">科学家设想利用离子发动机畅游宇宙</a><br> ·  <a href="http://news.cnblogs.com/n/532539/" target="_blank">人民日报：电商打假不能像打地鼠</a><br>» <a href="http://news.cnblogs.com/" title="IT新闻" target="_blank">更多新闻...</a></div></div>
+<div id="google_ad_c2" class="c_ad_block"><a href="http://e.jikexueyuan.com/html5.html?hmsr=cnb_banner_html5_09.14" target="_blank"><img width="468" height="60" src="./locate命令的使用 - 陈朋 - 博客园_files/24442-20150914101329570-406117032.jpg" alt=""></a></div>
+<div id="under_post_kb"><div class="itnews c_ad_block" id="kb_block"><b>最新知识库文章</b>:<br><div id="kb_recent"> ·  <a href="http://kb.cnblogs.com/page/532236/" target="_blank">被误解的MVC和被神化的MVVM</a><br> ·  <a href="http://kb.cnblogs.com/page/530046/" target="_blank">再谈设计和编码</a><br> ·  <a href="http://kb.cnblogs.com/page/531270/" target="_blank">什么时候应该避免写代码注释？</a><br> ·  <a href="http://kb.cnblogs.com/page/529677/" target="_blank">持续集成是什么？</a><br> ·  <a href="http://kb.cnblogs.com/page/530389/" target="_blank">人，技术与流程</a><br></div>» <a href="http://kb.cnblogs.com/" target="_blank">更多知识库文章...</a></div></div>
+<div id="google_ad_c3" class="c_ad_block">
+    <script async="" src="./locate命令的使用 - 陈朋 - 博客园_files/adsbygoogle.js"></script>
+<!-- C3_BlogPost -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-4210569241504288" data-ad-slot="3239908880" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: topicList 文章列表容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"><div id="profile_block">昵称：<a href="http://home.cnblogs.com/u/flysnail/">陈朋</a><br>园龄：<a href="http://home.cnblogs.com/u/flysnail/" title="入园时间：2011-04-18">4年6个月</a><br>粉丝：<a href="http://home.cnblogs.com/u/flysnail/followers/">24</a><br>关注：<a href="http://home.cnblogs.com/u/flysnail/followees/">50</a><div id="p_b_follow"><a href="javascript:void(0);" onclick="cnblogs.UserManager.FollowBlogger(&#39;43bb23cd-8269-e011-a53f-842b2b196315&#39;)">+加关注</a></div></div></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style=""><table id="blogCalendar" class="Cal" cellspacing="0" cellpadding="0" title="日历">
+	<tbody><tr><td colspan="7"><table class="CalTitle" cellspacing="0">
+		<tbody><tr><td class="CalNextPrev"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2012/04/01&#39;);return false;">&lt;</a></td><td align="center">2012年5月</td><td class="CalNextPrev" align="right"><a href="javascript:void(0);" onclick="loadBlogCalendar(&#39;2012/06/01&#39;);return false;">&gt;</a></td></tr>
+	</tbody></table></td></tr><tr><th class="CalDayHeader" align="center" abbr="日" scope="col">日</th><th class="CalDayHeader" align="center" abbr="一" scope="col">一</th><th class="CalDayHeader" align="center" abbr="二" scope="col">二</th><th class="CalDayHeader" align="center" abbr="三" scope="col">三</th><th class="CalDayHeader" align="center" abbr="四" scope="col">四</th><th class="CalDayHeader" align="center" abbr="五" scope="col">五</th><th class="CalDayHeader" align="center" abbr="六" scope="col">六</th></tr><tr><td class="CalOtherMonthDay" align="center">29</td><td class="CalOtherMonthDay" align="center">30</td><td align="center">1</td><td align="center">2</td><td align="center">3</td><td align="center">4</td><td class="CalWeekendDay" align="center">5</td></tr><tr><td class="CalWeekendDay" align="center">6</td><td align="center">7</td><td align="center">8</td><td align="center">9</td><td align="center">10</td><td align="center"><a href="http://www.cnblogs.com/flysnail/archive/2012/05/11.html"><u>11</u></a></td><td class="CalWeekendDay" align="center">12</td></tr><tr><td class="CalWeekendDay" align="center">13</td><td align="center">14</td><td align="center">15</td><td align="center"><a href="http://www.cnblogs.com/flysnail/archive/2012/05/16.html"><u>16</u></a></td><td align="center">17</td><td align="center">18</td><td class="CalWeekendDay" align="center">19</td></tr><tr><td class="CalWeekendDay" align="center">20</td><td align="center">21</td><td align="center">22</td><td align="center"><a href="http://www.cnblogs.com/flysnail/archive/2012/05/23.html"><u>23</u></a></td><td align="center">24</td><td align="center">25</td><td class="CalWeekendDay" align="center">26</td></tr><tr><td class="CalWeekendDay" align="center">27</td><td align="center">28</td><td align="center">29</td><td align="center">30</td><td align="center">31</td><td class="CalOtherMonthDay" align="center">1</td><td class="CalOtherMonthDay" align="center">2</td></tr><tr><td class="CalOtherMonthDay" align="center">3</td><td class="CalOtherMonthDay" align="center">4</td><td class="CalOtherMonthDay" align="center">5</td><td class="CalOtherMonthDay" align="center">6</td><td class="CalOtherMonthDay" align="center">7</td><td class="CalOtherMonthDay" align="center">8</td><td class="CalOtherMonthDay" align="center">9</td></tr>
+</tbody></table></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"><div id="sidebar_search" class="sidebar-block">
+<div id="sidebar_search" class="mySearch">
+<h3 class="catListTitle">搜索</h3>
+<div id="sidebar_search_box">
+<div id="widget_my_zzk" class="div_my_zzk"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="input_my_zzk">&nbsp;<input onclick="zzk_go()" type="button" value="找找看" id="btnZzk" class="btn_my_zzk"></div>
+<div id="widget_my_google" class="div_my_zzk"><input type="text" name="google_q" id="google_q" onkeydown="return google_go_enter(event)" class="input_my_zzk">&nbsp;<input onclick="google_go()" type="button" value="谷歌搜索" class="btn_my_zzk"></div>
+</div>
+</div>
+
+</div><div id="sidebar_shortcut" class="sidebar-block">
+<div class="catListLink">
+<h3 class="catListTitle">常用链接</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/flysnail/p/" title="我的博客的随笔列表">我的随笔</a></li><li><a href="http://www.cnblogs.com/flysnail/MyComments.html" title="我发表过的评论列表">我的评论</a></li><li><a href="http://www.cnblogs.com/flysnail/OtherPosts.html" title="我评论过的随笔列表">我的参与</a></li><li><a href="http://www.cnblogs.com/flysnail/RecentComments.html" title="我的博客的评论列表">最新评论</a></li><li><a href="http://www.cnblogs.com/flysnail/tag/" title="我的博客的标签列表">我的标签</a></li>
+<li><a id="itemListLink" onclick="this.blur();WarpClass(&#39;itemListLink&#39;, &#39;itemListLin_con&#39;);return false;" href="http://www.cnblogs.com/flysnail/archive/2012/05/16/2504266.html#">更多链接</a></li>
+</ul>
+<div id="itemListLin_con" style="display:none;">
+<ul>
+
+</ul>
+</div>
+</div></div><div id="sidebar_toptags" class="sidebar-block">
+<div class="catListTag">
+<h3 class="catListTitle">我的标签</h3>
+<ul>
+<li><a href="http://www.cnblogs.com/flysnail/tag/%E9%A9%B1%E5%8A%A8/">驱动</a>(1)</li>
+</ul>
+</div></div><div id="sidebar_categories">
+<div class="catListPostCategory">
+<h3 class="catListTitle">随笔分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_0_Link_0" href="http://www.cnblogs.com/flysnail/category/296533.html">C++(23)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_1" href="http://www.cnblogs.com/flysnail/category/393280.html">COM(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_2" href="http://www.cnblogs.com/flysnail/category/370783.html">Data Structure</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_3" href="http://www.cnblogs.com/flysnail/category/324029.html">Debug(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_4" href="http://www.cnblogs.com/flysnail/category/309971.html">GIS(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_5" href="http://www.cnblogs.com/flysnail/category/307881.html">IO File(4)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_6" href="http://www.cnblogs.com/flysnail/category/341841.html">java(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_7" href="http://www.cnblogs.com/flysnail/category/339903.html">Linux(5)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_8" href="http://www.cnblogs.com/flysnail/category/392487.html">Linux Develop(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_9" href="http://www.cnblogs.com/flysnail/category/300338.html">MFC Controler(2)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_10" href="http://www.cnblogs.com/flysnail/category/371398.html">mongodb(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_11" href="http://www.cnblogs.com/flysnail/category/393308.html">Python(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_12" href="http://www.cnblogs.com/flysnail/category/307880.html">STL(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_13" href="http://www.cnblogs.com/flysnail/category/296631.html">Windows开发(6)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_14" href="http://www.cnblogs.com/flysnail/category/296629.html">笔试(C++)(3)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_15" href="http://www.cnblogs.com/flysnail/category/342554.html">计算机图形学(1)</a> </li>
+
+<li><a id="CatList_LinkList_0_Link_16" href="http://www.cnblogs.com/flysnail/category/339485.html">网络(2)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListPostArchive">
+<h3 class="catListTitle">随笔档案</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_1_Link_0" href="http://www.cnblogs.com/flysnail/archive/2015/04.html">2015年4月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_1" href="http://www.cnblogs.com/flysnail/archive/2014/01.html">2014年1月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_2" href="http://www.cnblogs.com/flysnail/archive/2013/09.html">2013年9月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_3" href="http://www.cnblogs.com/flysnail/archive/2013/03.html">2013年3月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_4" href="http://www.cnblogs.com/flysnail/archive/2012/10.html">2012年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_5" href="http://www.cnblogs.com/flysnail/archive/2012/07.html">2012年7月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_6" href="http://www.cnblogs.com/flysnail/archive/2012/06.html">2012年6月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_7" href="http://www.cnblogs.com/flysnail/archive/2012/05.html">2012年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_8" href="http://www.cnblogs.com/flysnail/archive/2012/04.html">2012年4月 (10)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_9" href="http://www.cnblogs.com/flysnail/archive/2012/03.html">2012年3月 (8)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_10" href="http://www.cnblogs.com/flysnail/archive/2012/02.html">2012年2月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_11" href="http://www.cnblogs.com/flysnail/archive/2011/12.html">2011年12月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_12" href="http://www.cnblogs.com/flysnail/archive/2011/11.html">2011年11月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_13" href="http://www.cnblogs.com/flysnail/archive/2011/10.html">2011年10月 (2)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_14" href="http://www.cnblogs.com/flysnail/archive/2011/09.html">2011年9月 (3)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_15" href="http://www.cnblogs.com/flysnail/archive/2011/07.html">2011年7月 (5)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_16" href="http://www.cnblogs.com/flysnail/archive/2011/06.html">2011年6月 (1)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_17" href="http://www.cnblogs.com/flysnail/archive/2011/05.html">2011年5月 (4)</a> </li>
+
+<li><a id="CatList_LinkList_1_Link_18" href="http://www.cnblogs.com/flysnail/archive/2011/04.html">2011年4月 (4)</a> </li>
+
+</ul>
+
+</div>
+
+<div class="catListArticleCategory">
+<h3 class="catListTitle">文章分类</h3>
+
+<ul>
+
+<li><a id="CatList_LinkList_2_Link_0" href="http://www.cnblogs.com/flysnail/category/395005.html">成长计划(1)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_1" href="http://www.cnblogs.com/flysnail/category/301359.html">电脑硬件(2)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_2" href="http://www.cnblogs.com/flysnail/category/395004.html">面经(1)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_3" href="http://www.cnblogs.com/flysnail/category/301358.html">磨石(3)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_4" href="http://www.cnblogs.com/flysnail/category/300832.html">随记(2)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_5" href="http://www.cnblogs.com/flysnail/category/329083.html">童话(2)</a> </li>
+
+<li><a id="CatList_LinkList_2_Link_6" href="http://www.cnblogs.com/flysnail/category/339904.html">系统(1)</a> </li>
+
+</ul>
+
+</div>
+
+</div><div id="sidebar_recentcomments" class="sidebar-block"><div id="recent_comments_wrap">
+<div class="catListComment">
+<h3 class="catListTitle">最新评论</h3>
+
+	<div id="RecentCommentsBlock"><ul>
+    <li class="recent_comment_title"><a href="http://www.cnblogs.com/flysnail/archive/2011/09/21/2184114.html#3254303">1. Re:关于stack around the variable “” was corrupted问题</a></li>
+    <li class="recent_comment_body">这个应该是对未申请的堆栈进行了操作</li>
+    <li class="recent_comment_author">--星云星空</li>
+</ul>
+</div>
+</div>
+</div></div><div id="sidebar_topviewedposts" class="sidebar-block"><div id="topview_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">阅读排行榜</h3>
+	<div id="TopViewPostsBlock"><ul><li><a href="http://www.cnblogs.com/flysnail/archive/2011/09/21/2184114.html">1. 关于stack around the variable “” was corrupted问题(36620)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2012/06/15/2550835.html">2. linux/eclipse/c++ 动态库的创立与调用(7687)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2012/06/25/2561319.html">3. Linux下libxml2的使用(7020)</a></li><li><a href="./locate命令的使用 - 陈朋 - 博客园_files/locate命令的使用 - 陈朋 - 博客园.html">4. locate命令的使用(6958)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2011/10/25/2223721.html">5. 大端序和小端序(6150)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topcommentedposts" class="sidebar-block"><div id="topfeedback_posts_wrap">
+<div class="catListFeedback">
+<h3 class="catListTitle">评论排行榜</h3>
+	<div id="TopFeedbackPostsBlock"><ul><li><a href="http://www.cnblogs.com/flysnail/archive/2011/09/21/2184114.html">1. 关于stack around the variable “” was corrupted问题(3)</a></li></ul></div>
+</div>
+</div></div><div id="sidebar_topdiggedposts" class="sidebar-block"><div id="topdigg_posts_wrap">
+<div class="catListView">
+<h3 class="catListTitle">推荐排行榜</h3>
+<div id="TopDiggPostsBlock"><ul><li><a href="http://www.cnblogs.com/flysnail/archive/2011/09/21/2184114.html">1. 关于stack around the variable “” was corrupted问题(2)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2012/07/11/2586716.html">2. Google C++编程风格指南(2)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2012/10/25/2738348.html">3. C++中调用汇编的方法(1)</a></li><li><a href="./locate命令的使用 - 陈朋 - 博客园_files/locate命令的使用 - 陈朋 - 博客园.html">4. locate命令的使用(1)</a></li><li><a href="http://www.cnblogs.com/flysnail/archive/2011/07/01/2095297.html">5. ofstream 解决中文路径问题(1)</a></li></ul></div>
+</div></div></div></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+		<div class="clear"></div>
+	</div><!--end: sideBar 侧边栏容器 -->
+</div><!--end: home 自定义的最大容器 -->
+		<div class="clear"></div>
+<div id="footer">
+	
+<!--done-->
+Copyright ©2015 陈朋
+</div><!--end: footer -->
+</center>
+
+
+</body></html>

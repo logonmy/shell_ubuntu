@@ -1,0 +1,16 @@
+ubuntu系统是以桌面应用为主的linux操作系统，拥有实用的界面，并且完全免费。所以越来越多的用户开始使用ubuntu系统，而更多有关ubuntu系统的技巧也在用户的使用中摸索出来，下面是Ubuntu上改变sudo默认timeout时间的方法。
+
+出于安全考虑， Ubuntu 从系统的安装开始默认就是禁用 root 帐号，所有需要管理员的操作都可以用 sudo 命令来代替。而 Ubuntu 的 sudo timeout 时间默认为 5 分钟，当然如果你觉得时间太短或者对于总是输入密码感觉有点厌烦的话，完全可以改变 sudo 的默认 timeout 时间，方法如下：
+
+sudo visudo 
+找到下面行
+
+defaults env_reset 
+改变此行为下面这样
+
+Defaults env_reset , timestamp_timeout=x 
+x 就是代表时间，你可以设置为 10 或 30 ，表示10分钟或半小时。
+
+另外也可以设置为 -1 ，这样当你在注销或退出 terminal 之前，都会记住密码。当这样做的时候，有时为了安全考虑，你也可以运行以下命令来强制退出 sudo 。
+
+sudo -K 

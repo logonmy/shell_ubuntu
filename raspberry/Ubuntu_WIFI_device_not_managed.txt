@@ -1,0 +1,23 @@
+I had the same problem, I solved it by commenting the lines where the unmanaged device was mentioned, by mac address, in /etc/NetworkManager/NetworkManager.conf.
+
+[main]
+plugins=ifupdown,keyfile
+dns=dnsmasq
+
+[ifupdown]
+managed=false
+
+[keyfile]
+unmanaged-devices=mac:00:26:2d:fd:5c:e0
+changed to
+
+[main]
+plugins=ifupdown,keyfile
+dns=dnsmasq
+
+[ifupdown]
+managed=false
+
+\#[keyfile]
+
+\#unmanaged-devices=mac:00:26:2d:fd:5c:e0

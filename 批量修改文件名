@@ -1,0 +1,73 @@
+ Linux下批量修改文件名(rename)
+分类： Linux 2010-12-28 12:49 12915人阅读 评论(1) 收藏 举报
+linux正则表达式perl扩展脚本测试
+1.rename命令批量修改文件名, 其实linux下可以使用别的办法来批量修改文件名, 不过rename实在太方便了
+
+比如把所有的表为cdb1_* 修改为cdb_*的
+在本目录下
+只需要# rename 'cdb1' 'cdb' *
+
+以前都是写个for循环来做...想想多傻啊, 呵呵
+
+rename还有更多的功能, 建议man rename下
+
+From:http://www.hao32.com/unix-linux/42.html
+
+2.批量更改文件名 rename
+
+通过 man rename 命令可以得知,rename 命令其实是一个 Perl 脚本命令,
+它专用于批量地给多文件重命名(rename multiple files)。
+
+命令格式: 
+rename [ -v ] [ -n ] [ -f ] perlexpr [ files ] 
+perlexpr 是一种 Perl 脚本格式的正则表达式。
+参数:
+-v, --verbose 
+Verbose: print names of files successfully renamed.
+详细模式:打印成功更改的文件名列表
+-n, --no-act 
+No Action: show what files would have been renamed.
+测试模式:并不真正的执行命令,而只是显示哪些文件名应该怎么进行
+更改,用于测试模式。
+-f, --force 
+Force: overwrite existing files.
+强制模式:在更改文件名,如果更改后的文件已经存在时覆盖已经存在
+的文件。
+
+rename 的典型应用: 
+
+0. 批量更改文件扩展名 
+$ ls 
+1.txt 2.txt 3.txt 4.txt 
+$ rename 's//.txt//.ext/' * 
+$ ls 
+1.ext 2.ext 3.ext 4.ext 
+1. 批量删除文件扩展名 
+$ ls 
+1.txt 2.txt 3.txt 4.txt 
+$ rename 's//.txt//' * 
+$ ls 
+1 2 3 4 
+2. 批量添加文件扩展名 
+   $ ls 
+1 2 3 4 
+$ rename 's/$//.txt/' * 
+$ ls 
+1.txt 2.txt 3.txt 4.txt 
+3. 按自己的方式批量重命名文件 
+$ ls 
+1.ext 2.ext 3.ext 4.ext 
+$ rename 's/(/d)/第$1 章/' * 
+$ ls 
+第 1 章.ext 第 2 章.ext 第 3 章.ext 第 4 章.ext 
+
+3.
+
+方法1：把文件名拆分处理，可以任意修改文件名
+find -name '*.log' -printf %f//n|awk -F'.' '{print $1}'|xargs -i{} mv {}.log xiyun_{}.log
+方法2：利用rename
+一般的linux下的rename命令比较简单
+rename 'test' 'xiyun' '*.log'
+把文件名中的某部分字符串替换掉
+ubuntu下的rename命令支持正则表达式，因此功能更强大。
+方法3：直接利用find和xargs和mv，中间不用awk，这样只能添加后缀名，不能修改文件名。

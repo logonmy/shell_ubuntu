@@ -1,0 +1,676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0040)http://os.51cto.com/art/200709/57169.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/v4.js" charset="utf-8" id="UYScript"></script><script async="" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/analytics.js"></script><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/saved_resource" charset="utf-8" id="uyan_script"></script><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/id.php" charset="utf-8"></script>
+
+<meta http-equiv="x-ua-compatible" content="ie=7">
+
+<title>Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM</title>
+<meta name="description" content="Sudo 是一个允许系统管理员授权让普通用户执行部分或全部root命令的工具。这样可以减少root登陆提高系统安全性。 ">
+<meta name="keywords" content="Sudo,Ubuntu,Linux,命令">
+<!--<base target="_blank">--><base href="." target="_blank">
+<link href="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/grid.css" rel="stylesheet" type="text/css">
+<link type="text/css" rel="stylesheet" href="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/art_master_top.css">
+<link href="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/css3.css" rel="stylesheet" type="text/css">
+<script language="javaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/base_art.js"></script>
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/index_1_down.js"></script>
+<style type="text/css">
+.bds_tools a{ padding:0; margin:0;}
+</style>
+<style type="text/css"></style><link href="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bdsstyle.css" rel="stylesheet" type="text/css"><script charset="utf-8" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lightapp.js" async="" name="baidu-tc-cerfication"></script><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/logger.js"></script></head>
+<body><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div><iframe frameborder="0" style="display: none;"></iframe><div id="bdshare_s" style="display: block;"><iframe id="bdsIfr" style="position:absolute;display:none;z-index:9999;" frameborder="0"></iframe><div id="bdshare_l" style="display: none;"><div id="bdshare_l_c"><h6>分享到</h6><ul><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_mshare mshare">一键分享</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_qzone qqkj">QQ空间</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_tsina xlwb">新浪微博</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_bdysc bdysc">百度云收藏</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_renren rrw">人人网</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_tqq txwb">腾讯微博</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_bdxc bdxc">百度相册</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_kaixin001 kxw">开心网</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_tqf txpy">腾讯朋友</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_tieba bdtb">百度贴吧</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_douban db">豆瓣网</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_tsohu shwb">搜狐微博</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_bdhome bdhome">百度新首页</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_sqq sqq">QQ好友</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_thx thx">和讯微博</a></li><li><a href="http://os.51cto.com/art/200709/57169.htm#" class="bds_more">更多...</a></li></ul><p><a href="http://os.51cto.com/art/200709/57169.htm#" class="goWebsite">百度分享</a></p></div></div></div>
+<!-- 导航 开始-->
+<script id="allmobilize" charset="utf-8" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/allmobilize.min.js"></script><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="http://os.51cto.com/art/200709/57169.htm#">
+<div id="home_top">    <div class="top_nav">        <div class="left" style="width:400px"><div class="logo_51cto" title="51CTO.COM - 技术成就梦想 -  中国领先的IT技术网站"></div><a href="http://www.51cto.com/">首页</a><img width="16" height="25" align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/top_bg_xian.gif" style="padding-top: 2px;"><a onmouseover="show(1,this);" onmouseout="popupClose();" href="http://www.51cto.com/col/35/" target="_blank">技术频道<img align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/top_bg_xian.gif"><a onmouseover="show(2,this);" onmouseout="popupClose();" href="http://www.51cto.com/" target="_blank">51CTO旗下网站<img align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a><img width="16" height="25" align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/top_bg_xian.gif"><a href="http://www.51cto.com/about/map.htm" target="_blank">地图</a> <a href="http://www.51cto.com/about/rss.html" target="_blank"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/143749870.gif" style="vertical-align:middle; margin-bottom: 5px; margin-left:5px;"></a>       </div>        <div class="right">            <div class="more"><a href="http://shop.51cto.com/" target="_blank">云特卖</a> <img width="27" height="16" align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/top_shequ.gif">社区：<a href="http://edu.51cto.com/" target="_blank" style="color:#CC0000">学院</a><a href="http://down.51cto.com/" target="_blank">下载</a><a href="http://bbs.51cto.com/" target="_blank">论坛</a><a href="http://blog.51cto.com/" target="_blank">博客</a><a onmouseover="show(3,this)" onmouseout="popupClose()" href="javascript:viod(0);">更多<img align="absmiddle" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/nav_ico1.gif" style="padding-left: 4px;"></a>            </div>            <span id="login_status"><div class="login" style="padding-top:8px; text-align:right;"><a href="http://edu.51cto.com/top" style="background:none"><img style="margin-top:-3px" id="dia" align="absmiddle" width="20" title="今天你领学分了吗？" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/dia.gif"></a><a href="http://home.51cto.com/?reback=http%253A%252F%252Fos.51cto.com%252Fart%252F200709%252F57169.htm" target="_self">登录</a><a href="http://ucenter.51cto.com/reg_01.php?reback=http%253A%252F%252Fos.51cto.com%252Fart%252F200709%252F57169.htm" target="_self">注册</a></div></span>                </div>    </div></div>
+<div class="subMenu1" id="s1" onmouseover="popupNoClose();" onmouseout="popupClose();" style="display: none;">
+<ul>
+<li><a href="http://network.51cto.com/" target="_blank">网络</a></li>
+<li><a href="http://netsecurity.51cto.com/" target="_blank">安全</a></li>
+<li><a href="http://developer.51cto.com/" target="_blank">开发</a></li>
+<li><a href="http://database.51cto.com/" target="_blank">数据库</a></li>
+<li><a href="http://server.51cto.com/" target="_blank">服务器</a></li>
+<li><a href="http://os.51cto.com/" target="_blank">系统</a></li>
+<li><a href="http://virtual.51cto.com/" target="_blank">虚拟化</a></li>
+<li><a href="http://cloud.51cto.com/" target="_blank">云计算</a></li>
+<li><a href="http://developer.51cto.com/embed/" target="_blank">嵌入式</a></li>
+<li><a href="http://mobile.51cto.com/" target="_blank">移动开发</a></li>
+</ul>
+</div> 
+<div class="subMenu2" id="s2" onmouseover="popupNoClose()" onmouseout="popupClose()" style="display: none;">
+<ul>
+<li><a href="http://www.51cto.com/" target="_blank" title="中国领先的IT技术网站">51CTO.COM</a></li>
+<li><a href="http://www.cioage.com/" target="_blank" title="中国首个专门服务于CIO的专业网站">CIOage.com</a></li>
+<li><a href="http://www.watchstor.com/" target="_blank" title="领先的中文存储网络媒体">WatchStor.com</a></li>
+<li><a href="http://www.hc3i.cn/" target="_blank" title="中国首家专注于数字医疗及医疗信息化的专业网站">HC3i.cn</a></li>
+</ul>
+</div>
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/jquery-1.8.3.min.js"></script>
+<script>
+$(function(){
+	$(".bann").height(265);	 
+	$(".bann").css("background-color","white");
+	$(".hot").css("top","450px");
+	//$(".fixfloat").css("height","640px");
+	$(".g_13").find(".focus").css("height","640px");
+});
+var edunum=2;
+$(function(){
+	$("#change").click(function(){
+		$("#edu > ul").css("display","none");
+		var eduid='edu'+edunum;
+		$("#" + eduid).css("display","block");	
+		if(edunum<4){
+			edunum++;	
+		}else{
+			edunum=1;	
+		}							
+	});  
+});
+</script>
+
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/head_art_more1.js"></script><div class="subMenu3" id="s3" onmouseover="popupNoClose()" onmouseout="popupClose()" style="z-index: 9999; position: absolute; display: none; top: 30px; left: 1392px;">
+<ul>
+<li><a href="http://home.51cto.com/" target="_blank">家园</a></li>
+<li><a href="http://edu.51cto.com/" target="_blank">学院</a></li>
+<li><a href="http://blog.51cto.com/" target="_blank">博客</a></li>
+<li><a href="http://bbs.51cto.com/" target="_blank">论坛</a></li>
+<li><a href="http://down.51cto.com/" target="_blank">下载</a></li>
+<li><a href="http://selftest.51cto.com/" target="_blank">自测</a></li>
+<li><a href="http://doctor.51cto.com/" target="_blank">门诊</a></li>
+<li><a href="http://blog.51cto.com/newsletter/" target="_blank">周刊</a></li>
+<li><a href="http://book.51cto.com/" target="_blank">读书</a></li>
+<li><a href="http://g.51cto.com/" target="_blank">技术圈</a></li>
+</ul>
+</div>
+
+<!-- 登陆信息 -->
+<!-- 导航 结束--> 
+ <div class="g_39 mb10">
+	<div id="tonglanad" class="fl"><script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad.php"></script><iframe width="760" height="90" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/6(1).html" align="left"></iframe></div>
+	<div id="list4" class="fr">
+		<ul>
+			<li id="wordlinkad1"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs.php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2477__zoneid=254__cb=9708e5c0fc__oadest=http%3A%2F%2Fcloud.51cto.com%2Fexp%2Fallmobilize%2F" target="_blank"><font color="red">原生App与HTML5的对决</font></a><div id="beacon_9708e5c0fc" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad2"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg1.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2389__zoneid=255__cb=9d52f87a1f__oadest=http%3A%2F%2Fbbs.51cto.com%2Fthread-1166722-1.html" target="_blank"><font color="red">吐槽也拿奖,谈IT运维背后的故事</font></a><div id="beacon_9d52f87a1f" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad3"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2385__zoneid=256__cb=29194f00a0__oadest=http%3A%2F%2Fwww.ruijie.com.cn%2Fcp%2Fykt%2F%3Futm_source%3D51CTO%26utm_medium%3D%25E7%25BD%2591%25E7%25BB%259C%25E5%2586%2585%25E9%25A1%25B5%26utm_campaign%3D%25E4%25BA%2591%25E8%25AF%25BE%25E5%25A0%2582%26utm_adgroup%3Dwenzilian" target="_blank"><font color="red">云课堂，让学生爱上每一堂课</font></a><div id="beacon_29194f00a0" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+			<li id="wordlinkad4"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(3).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2134__zoneid=257__cb=e0e4979474__oadest=http%3A%2F%2Fserver.51cto.com%2Fexp%2Funitedstack2015%2F" target="_blank"><font color="red">OpenStack为何这么火？</font></a><div id="beacon_e0e4979474" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(3).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</li>
+		</ul>
+	</div>
+<br class="dle">
+</div>
+
+<div class="g_39 menu">
+<div class="subNav_logo">
+<a href="http://os.51cto.com/" target="_blank"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/caozuoxitong_logo.gif" border="0"></a></div>
+<div class="subNav_l">
+<a href="http://os.51cto.com/col/543/" target="_blank">新闻</a> | 
+<a href="http://os.51cto.com/linux/" target="_blank">Linux</a> | 
+<a href="http://os.51cto.com/windows/" target="_blank">Windows</a> | 
+<a href="http://os.51cto.com/col/975/" target="_blank">浏览器</a> | 
+<a href="http://os.51cto.com/col/610/" target="_blank">开源</a> | 
+<a href="http://os.51cto.com/col/545/" target="_blank">运维</a> | 
+<a href="http://publish.51cto.com/list/519/" target="_blank">全部</a> | 
+<a href="http://os.51cto.com/art/201106/266501.htm" target="_blank">投稿指南</a> | 
+<a href="http://os.51cto.com/art/201109/292676.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/143749870.gif" width="15" height="16" alt="RSS"> RSS订阅</a>
+</div>
+  
+<div class="search fr">
+<dl>
+<form name="searchform" action="http://www.51cto.com/php/search.php" target="_blank" method="post" style="margin:0px; padding:0px;">
+<dt class="fl"><input name="keyword" type="text" class="searchInput f14 input" value="请输入关键字" onfocus="doempty(this, &#39;请输入关键字&#39;);" onblur="doempty(this, &#39;请输入关键字&#39;);"></dt>
+<dd class="fl"><input type="image" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/search.gif"></dd></form>
+</dl>
+</div>
+<br class="dle">
+</div>
+<div class="g_39 b3-s-4273B3 rel">
+<!--width : 26*25 - 15 = 635px-->
+<div class="g_26 fl m_l">
+<div class="brief bgF8F8F8">
+<p class="crumb ">您所在的位置：<a href="http://os.51cto.com/">操作系统</a> &gt; <a href="http://os.51cto.com/col/523/">Linux</a> &gt; <a href="http://os.51cto.com/col/1326/">发行版</a> &gt; <a href="http://os.51cto.com/col/1363/">Ubuntu</a> &gt;  <b>Ubuntu Linux系统下的Sudo简要配置实例</b> </p>
+<h1>Ubuntu Linux系统下的Sudo简要配置实例</h1>
+<div class="msg">
+<div>2007-09-27 11:24  kit  赛迪网 <span class="f12-a"><a href="http://os.51cto.com/art/200709/57169.htm#commment" target="_self"></a></span> 字号：<span class="f14-b"><a href="javascript:setfont(12);" target="_self">T</a></span> | <span class="f16-b"><a href="javascript:setfont(16);" target="_self">T</a></span></div>
+<div class="artHd" id="books" style="padding:5px 25px;display:none;"><script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/getBookData.php"></script></div>
+<div class="fav"><a href="javascript:favorBox('open');" title="一键收藏，随时查看，分享好友！" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/Fav.gif" alt="一键收藏，随时查看，分享好友！" border="0"></a></div>
+</div>
+<div class="brieftext">
+<p class="f14 green">Sudo 是一个允许系统管理员授权让普通用户执行部分或全部root命令的工具。这样可以减少root登陆提高系统安全性。 </p>
+<p class="ad">AD：<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/keywords_ad_new.js"></script>
+</p>
+</div>
+</div>
+<div class="tag bgF8F8F8" id="indexlist" style="display:none;">
+<ul id="indexliststr">
+</ul>
+<br class="dle">
+</div>
+<div class="content bgF8F8F8 f14">
+<div id="content">
+<p></p><p>Sudo 是一个允许系统管理员授权让普通用户执行部分或全部root命令的工具。这样可以减少root登陆提高系统安全性。 </p>
+<p><strong>Sudo特点：</strong> </p>
+<p>1.可以限制特定的用户在特定的主机上运行指定的命令 </p>
+<p>2.有非常详细的日志纪录 </p>
+<p>3.sudo使用时间戳文件来执行类似"检票"系统。当用户使用sudo并且输入密码后，用户默认获得了一张存活期为5分钟的票(这个数值可以在编译的时候更改)，超过5分钟不用的话就需要重新输入密码才能使用 </p>
+<p><strong>sudo安装过程：</strong></p>
+<p>编者注：一般系统都默认有安装 </p>
+<p>配置文件/etc/sudoers： </p>
+<p><strong>以下简略介绍该文件的配置项</strong>(root使用visudo编辑该文件) </p>
+<p><strong>第一部分：</strong></p>
+<p># Host alias specification(主机别名定义，用于定义多台住机) </p>
+<p>格式：Host_Alias SERVER = 192.168.0.1/255.255.255.0 </p>
+<p>Host_Alias SERVER1 = 172.17.1.1 </p>
+<p><strong>第二部分：</strong></p>
+<p># User alias specification(用户别名定义，用于定义多组用户) </p>
+<p>格式：User_Alias ADMIN = test,jack,tom </p>
+<p>User_Alias TEST = user1 </p>
+<p><strong>第三部分：</strong></p>
+<p># Cmnd alias specification (命令别名定义，定义用户执行命令列表) </p>
+<p>格式：Cmnd_Alias CAT = /bin/cat /etc/sudoers </p>
+<p>Cmnd_Alias Ls = /bin/ls /root </p>
+<p><strong>第四部分：</strong></p>
+<p># Override built in defaults(增加日志纪录功能) </p>
+<p><a href="mailto:Defaults@SERVER">Defaults@SERVER</a> log_host, logfile=/var/log/sudo.log </p>
+<p>#为host alise里的主机增加一个附加日志，如果这个日志需要保存多年，则可使用log_year，这样在日志纪录的时候将纪录详细的年份 </p>
+<p>解释配置实例： </p>
+<p>[test@redflag test]$ sudo cat /etc/sudoers </p>
+<p># sudoers file. </p>
+<p># </p>
+<p># This file MUST be edited with the 'visudo' command as root. </p>
+<p># </p>
+<p># See the sudoers man page for the details on how to write a sudoers file. </p>
+<p># </p>
+<p># Host alias specification </p>
+<p>Host_Alias SERVER = 172.17.196.10 #配置主机172.17.196.10别名SERVER;Host_Alias前不能有空格 </p>
+<p># User alias specification </p>
+<p>User_Alias ADMIN = test,jack #配置用户组ADMIN，所属用户test,jack </p>
+<p># Cmnd alias specification </p>
+<p>Cmnd_Alias CT = /bin/cat /etc/sudoers,/bin/cat /etc/shadow </p>
+<p>Cmnd_Alias CA = /bin/ls /root </p>
+<p>#配置命令别名CT，可以执行cat etc/sudoers,cat /etc/shadow 命令，CA可执行 la /root命令 </p>
+<p># Defaults specification </p>
+<p># User privilege specification </p>
+<p>root ALL=(ALL) ALL </p>
+<p>test SERVER=CT,CA #配置test用户可以在SERVER执行cat /etc/sudoers,/cat /etc/shadow，ls </p>
+<p><strong>/root 命令</strong> </p>
+<p># test ALL=(ALL) NOPASSWD: ALL(配置test可以执行所有的root命令，且使用sudo时不需要输入密码) </p>
+<p># Override built in defaults </p>
+<p><a href="mailto:Defaults@SERVER">Defaults@SERVER</a> log_host, logfile=/var/log/sudo.log </p>
+<p>#配置日志纪录到主机SERVER的/var/log/sudo.log文件 </p>
+<p># Uncomment to allow people in group wheel to run all commands </p>
+<p># %wheel ALL=(ALL) ALL </p>
+<p># Same thing without a password </p>
+<p># %wheel ALL=(ALL) NOPASSWD: ALL </p>
+<p># Samples </p>
+<p># %users ALL=/sbin/mount /cdrom,/sbin/umount /cdrom </p>
+<p># %users localhost=/sbin/shutdown -h now </p>
+<p><strong>日志文件：</strong></p>
+<p>截取/var/log/sudo.log的一段纪录如下： </p>
+<p>Mar 3 15:13:14 : test : HOST=redflag : command not allowed ; TTY=pts/0 ; </p>
+<p>PWD=/home/test ; USER=root ; COMMAND=/bin/ls /root </p>
+<p>Mar 3 15:13:18 : test : HOST=redflag : command not allowed ; TTY=pts/0 ; </p>
+<p>PWD=/home/test ; USER=root ; COMMAND=/bin/su - </p>
+<p>Mar 3 15:13:56 : test : HOST=redflag : TTY=pts/0 ; PWD=/home/test ; USER=root ; </p>
+<p>COMMAND=/bin/cat /etc/sudoers </p>
+<p>Mar 3 15:14:10 : test : HOST=redflag : TTY=pts/0 ; PWD=/home/test ; USER=root ; </p>
+<p>COMMAND=/bin/ls /root </p>
+<p>Mar 3 16:27:30 : test : HOST=redflag : TTY=pts/0 ; PWD=/home/test ; USER=root ; </p>
+<p>COMMAND=/bin/cat /etc/sudoers </p>
+<p>Mar 3 16:29:47 : test : HOST=redflag : command not allowed ; TTY=pts/0 ; </p>
+<p>PWD=/home/test ; USER=root ; COMMAND=/bin/cat /var/log/sudo.log </p>
+<p><strong>配置中碰到的问题：</strong> </p>
+<p>1、主机名配置错误导致sudo不能执行和日志纪录。 </p>
+<p>错误提示：Sorry, user test is not allowed to execute '/bin/cat /etc/sudoers' as root on </p>
+<p>localhost.localdomain. </p>
+<p>解决：将其中的localhost改为真实主机名字或IP即可 </p>
+<p>test localhost=/sbin/cat /etc/sudoers </p>
+<p><a href="mailto:Defaults@localhost">Defaults@localhost</a> log_host /var/log/sudo.log </p>
+<p>2、命令别名列表中命令错误导致sudo不能执行 </p>
+<p>错误提示：[jackyu@localhost jackyu]$ sudo cat /etc/sudoers </p>
+<p>Sorry, user jackyu is not allowed to execute '/bin/cat /etc/sudoers' as root on </p>
+<p>localhost.localdomain. </p>
+<p>解决：由于在Cmnd alias里定义的时候命令书写有误(Cmnd_Alias CAT = /bin/cat -n /etc/sudoers). </p>
+<p>执行：sudo cat -n /etc/sudoers </p>
+<p><strong>[注]：</strong>不管在Cmnd alias里还是在# User privilege specification中指定命令，使用sudo运行时必须一摸一样，否则将出错。比如在Cmnd alias里指定某用户职能运行 /bin/cat /etc/sudoers,如果该用户登录后运行 sudo /cat -n /etc/sudoers将会出错！</p>
+<p><font size="4">【相关文章】</font></p>
+<ul type="disc">
+<li><a href="http://os.51cto.com/art/200709/56114.htm" target="_blank"><u><font color="blue">Linux操作系统下将用户加入Sudo组的方法</font></u></a></li></ul>
+<ul type="disc">
+<li><a href="http://os.51cto.com/art/200608/29670.htm" target="_blank"><u><font color="blue">利用sudo命令为Ubuntu分配管理权限</font></u></a></li></ul>
+<ul type="disc">
+<li><a href="http://www.51cto.com/art/200512/15197.htm" target="_blank"><u><font color="blue">Fedora对sudo升级</font></u></a></li></ul><div align="right">【责任编辑：<a class="ln" href="mailto:liubing@51cto.com">刘兵</a> TEL：（010）68476606】</div><br> 
+<p class="blank10"></p> 
+ 
+ 
+
+
+<div class="f12"> <span class="fl">原文：<a href="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM.html" class="blue"><b>Ubuntu Linux系统下的Sudo简要配置实例</b></a></span> <span class="fr"><a href="http://os.51cto.com/">返回操作系统首页</a></span> </div>
+<p class="blank1"></p>
+</div>
+<hr style="border-top: #555555 1px solid; height: 1px; border-right: medium none; border-bottom: medium none; border-left: medium none">
+<div style="width: 600px; background: #ffffff"><img width="350" height="140" border="0" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioL1XEfU6zvaQOAAEVZjYGFoI181.jpg" alt=""></div>
+<hr style="border-top: #555555 1px solid; height: 1px; border-right: medium none; border-bottom: medium none; border-left: medium none">
+<iframe width="600" height="239" frameborder="0" scrolling="no" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bulkfollow.html"></iframe>
+<div class="tips">
+<div style="float:left;">
+<span style="float:left; margin-top:4px;">分享到：</span>
+<!-- Baidu Button BEGIN -->
+    <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="margin-right:5px; float:left;">
+        <a class="bds_qzone" title="分享到QQ空间" href="http://os.51cto.com/art/200709/57169.htm#"></a>
+        <a class="bds_tsina" title="分享到新浪微博" href="http://os.51cto.com/art/200709/57169.htm#"></a>
+        <a class="bds_tqq" title="分享到腾讯微博" href="http://os.51cto.com/art/200709/57169.htm#"></a>
+        <a class="bds_renren" title="分享到人人网" href="http://os.51cto.com/art/200709/57169.htm#"></a>
+        <a class="bds_t163" title="分享到网易微博" href="http://os.51cto.com/art/200709/57169.htm#"></a>
+        <span class="bds_more"></span>
+		<a class="shareCount" href="http://os.51cto.com/art/200709/57169.htm#" title="累计分享0次">0</a>
+
+</div>
+<!--<div class="fl"> 
+    </div>
+--><script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=585532" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bds_s_v2.js"></script>
+
+<script type="text/javascript">
+	var bds_config = {'snsKey':{'tsina':'2378297317'}};
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+
+
+</div><div class="fr blue"><a href="javascript:AddFavorite(document.location.href,document.title);" target="_self">收藏</a>|<a href="javascript:window.print();" target="_self">打印</a>|<a id="msnqqcopy" title="分享本资源给好友" target="_self">复制</a></div>
+</div>
+</div>
+<!--内容 end-->
+<div class="topbiaoqing">
+<div class="biaoqing fixfloat pad">
+<ul>
+<li><a href="javascript:getcountscom(57169,1)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq1.jpg"></a>
+<div><a href="javascript:getcountscom(57169,1)" target="_self">给力</a></div>
+<span id="57169_1">(0票)</span></li>
+<li><a href="javascript:getcountscom(57169,2)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq2.jpg"></a>
+<div><a href="javascript:getcountscom(57169,2)" target="_self">动心</a></div>
+<span id="57169_2">(0票)</span></li>
+<li><a href="javascript:getcountscom(57169,3)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq3.jpg"></a>
+<div><a href="javascript:getcountscom(57169,3)" target="_self">废话</a></div>
+<span id="57169_3">(0票)</span></li>
+<li><a href="javascript:getcountscom(57169,4)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq4.jpg"></a>
+<div><a href="javascript:getcountscom(57169,4)" target="_self">专业</a></div>
+<span id="57169_4">(0票)</span></li>
+<li><a href="javascript:getcountscom(57169,5)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq5.jpg"></a>
+<div><a href="javascript:getcountscom(57169,5)" target="_self">标题党</a></div>
+<span id="57169_5">(0票)</span></li>
+<li><a href="javascript:getcountscom(57169,6)" target="_self"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/bq6.jpg"></a>
+<div><a href="javascript:getcountscom(57169,6)" target="_self">路过</a></div>
+<span id="57169_6">(0票)</span></li>
+</ul>
+</div>
+<script language="javascript"> 
+getcountscom(57169,11);
+
+</script>
+</div>
+<p class="blank10"></p>
+<!--reltag end-->
+
+<p class="blank10"></p>
+<div class="uyan">
+<div id="uyan_frame"><iframe id="uyan_ifr_6561099" scrolling="no" frameborder="0" style="display: block !important; width: 100% !important; border: 0px none !important; overflow: hidden !important; height: 456px;" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/saved_resource.html"></iframe></div>
+<script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/uyan.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/plugin.client.js" charset="utf-8"></script>
+</div>
+<!--box end-->
+
+<div class="bor">
+<div class="titbg pl15">关于<a href="http://www.51cto.com/php/search.php?keyword=Sudo" target="_blank" class="underline">Sudo</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=Ubuntu" target="_blank" class="underline">Ubuntu</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=Linux" target="_blank" class="underline">Linux</a>&nbsp;&nbsp;<a href="http://www.51cto.com/php/search.php?keyword=%C3%FC%C1%EE" target="_blank" class="underline">命令</a>的更多文章</div>
+<div class="reltag">
+<ul class="fl list02">
+  <li><a href="http://os.51cto.com/art/201311/418897.htm" title="融合Win 7、OS X、WP 7的Ubuntu会是什么样子？">融合Win 7、OS X、WP 7的Ubuntu会是什么样</a></li><li><a href="http://os.51cto.com/art/201311/418876.htm" title="Devyn的Linux内核专题：配置PCI和ACPI">Devyn的Linux内核专题：配置PCI和ACPI</a></li><li><a href="http://os.51cto.com/art/201311/418865.htm" title="Linux 下用来查询安装包信息的RPM选项">Linux 下用来查询安装包信息的RPM选项</a></li><li><a href="http://os.51cto.com/art/201311/418860.htm" title="OpenSUSE 13.1：拥抱64位ARM 提升开源质量">OpenSUSE 13.1：拥抱64位ARM 提升开源质量</a></li><li><a href="http://os.51cto.com/art/201311/418858.htm" title="Linux企业级桌面版：Ubuntu vs Windows">Linux企业级桌面版：Ubuntu vs Windows</a></li>
+</ul>
+<div class="fr">
+<div class="h5 f12"><a href="http://os.51cto.com/art/201311/418740.htm" title="系统频道热点推荐：Linux远程管理工具来袭"><b>系统频道热点推荐：Linux远程管理工具来袭</b></a></div>
+<a href="http://os.51cto.com/art/201311/418740.htm" title="系统频道热点推荐：Linux远程管理工具来袭"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioOVKRuGChd1LIAAAQFpQ7OUc096.jpg" alt="系统频道热点推荐：Linux远程管理工具来袭" width="100" height="80" border="0"></a>
+<p class="c666">年关将至，互联网行业的盛会也接踵而来，11月19日，红帽2013高峰<a class="blue" href="http://os.51cto.com/art/201311/418740.htm" title="系统频道热点推荐：Linux远程管理工具来袭">[详细]</a></p>
+</div>
+</div></div>
+
+<p class="blank10"></p>
+
+
+
+<div class="relart fl bor">
+<div class="titbg">
+<h3 class="fl t1">栏目热门</h3>
+<a href="http://os.51cto.com/click/1363" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+  
+	  <li><a href="http://os.51cto.com/art/201310/413730.htm" title="Ubuntu 13.10 俏丽的蝾螈安装体验">Ubuntu 13.10 俏丽的蝾螈安装体验</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/201310/413240.htm" title="Ubuntu 13.10日趋完善：一个伟大的Linux桌面系统">Ubuntu 13.10日趋完善：一个伟大的Linux桌</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/201310/413079.htm" title="图文教程：桌面版 Ubuntu 13.04升级至Ubuntu 13.10">图文教程：桌面版 Ubuntu 13.04升级至Ubunt</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/201310/413649.htm" title="Ubuntu 13.10 改进 Linux 服务器部署">Ubuntu 13.10 改进 Linux 服务器部署</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/201310/414787.htm" title="Ubuntu 13.10 安装“纯净版”要做的8件事">Ubuntu 13.10 安装“纯净版”要做的8件事</a></li>
+	  
+</ul>
+</div>
+<div class="cathot fr bor">
+<div class="titbg">
+<h3 class="fl t1">同期最新</h3>
+<a href="http://os.51cto.com/col/1363" class="tmore">更多&gt;&gt;</a></div>
+<ul>
+	
+	  <li><a href="http://os.51cto.com/art/200709/57126.htm" title="微软DRM软件不好用 前员工被迫改用Ubuntu的MCE">微软DRM软件不好用 前员工被迫改用Ubuntu的</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/200709/56719.htm" title="Ubuntu开启root用户及其它登录问题的解决">Ubuntu开启root用户及其它登录问题的解决</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/200709/56541.htm" title="Ubuntu系统英文Locale下使用中文输入法">Ubuntu系统英文Locale下使用中文输入法</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/200709/56538.htm" title="Ubuntu系统下安装和配置PostgreSQL 8.1">Ubuntu系统下安装和配置PostgreSQL 8.1</a></li>
+	  
+	  <li><a href="http://os.51cto.com/art/200709/56536.htm" title="VMWare虚拟机上安装Ubuntu Linux的方法">VMWare虚拟机上安装Ubuntu Linux的方法</a></li>
+	  
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1"><a href="http://os.51cto.com/">操作系统</a></h3>
+<span class="pl10">频道导航</span></div>
+ <ul class="xtlist">
+<li><span class="tit">生产环境</span>
+<div><a href="http://os.51cto.com/linux/">Linux</a>
+|<a href="http://os.51cto.com/windows/">Windows</a>
+|<a href="http://os.51cto.com/col/522/">Unix</a>
+|<a href="http://os.51cto.com/col/545/">运维教程</a>
+|<a href="http://os.51cto.com/art/201011/233915.htm">Linux运维趋势</a>
+</div>
+</li>
+<li class="last"><span class="tit">OS前沿</span>
+<div><a href="http://os.51cto.com/col/975/">浏览器</a>
+|<a href="http://os.51cto.com/col/610/">开源技术</a>
+|<a href="http://os.51cto.com/windows7/">Windows 7</a>
+|<a href="http://os.51cto.com/windows2008/">Server 08</a>
+|<a href="http://os.51cto.com/col/1417/">移动OS</a>
+</div>
+</li>
+</ul> 
+</div> 
+<p class="blank10"></p>
+<div class="leftbotcon">
+<div class="bor jdlist">
+<div class="titbg">
+<h3 class="t2">热点推荐</h3></div>
+<ul>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/153546162.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://mobile.51cto.com/mobile-182392.htm">Android开发应用详解</a></div></li>
+<li><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/133620622.jpg"></a> 
+<div class="name"><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-t-4&#39;]);" href="http://developer.51cto.com/art/201106/266369.htm">那些性感的让人尖叫的程序员</a></div></li>
+<li><a href="http://developer.51cto.com/art/200907/133407.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/134217922.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/200907/133407.htm">HTML5 下一代Web开发标准详解</a></div></li>
+<li><a href="http://developer.51cto.com/art/201104/257581.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/123123954.jpg"></a> 
+<div class="name"><a href="http://developer.51cto.com/art/201104/257581.htm">高性能WEB开发应用指南</a></div></li>
+<li><a href="http://os.51cto.com/art/200706/49181.htm"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/195816929.jpg"></a> 
+<div class="name"><a href="http://os.51cto.com/art/200706/49181.htm">Ubuntu开源技术交流频道</a></div></li></ul></div>
+<p class="blank10"></p>
+<div class="bor hotTag"><strong>热门标签：</strong> <a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-2]);" href="http://os.51cto.com/windows/">windows频道</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/">移动开发</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://cloud.51cto.com/">云计算</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://mobile.51cto.com/mobile/objc/">objective-c</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://network.51cto.com/art/200909/151122.htm">tp-link路由器设置图解</a><a onclick="javascript: _gaq.push([&#39;_trackPageview&#39;, &#39;/51cto/neirong/d-w&#39;]);" href="http://developer.51cto.com/art/200907/133407.htm">html5</a> </div></div>
+<div class="leftbotbox"> </div>
+</div>
+<!--left end-->
+<div class="g_13 fr">
+<div class="focus fixfloat" style="height: 640px;"> 
+ <img width="298" style="border: 1px solid #CCCCCC; margin:5px 0px 5px;" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/weixin.jpg"><div class="hot" style="top: 450px;">
+<ul>
+<li class="tit"><em>头条</em> <a href="http://os.51cto.com/art/201404/436123.htm">《Linux运维趋势》2014年3月号</a> </li>
+<li class="con"><dl><dt><a href="http://os.51cto.com/art/201404/436123.htm"><img border="0" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKiom1NQ9GeQrr8PAAA25JsoaFM408.jpg"></a></dt>
+<dd>本期重点推荐：转角遇到Zabbix：企业级分布式系统监控部署 </dd>
+</dl></li></ul><ol class="hotlist"><li><a href="http://os.51cto.com/art/201402/430615.htm">《Linux运维趋势》2014年2月号</a></li><li><a href="http://os.51cto.com/art/201312/426165.htm">《Linux运维趋势》2013年12月号</a></li></ol></div>
+<p id="hzh_one">
+<script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(1).js" type="text/javascript"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(2).php"></script><iframe width="300" height="260" noresize="" scrolling="No" frameborder="0" marginheight="0" marginwidth="0" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/6.html" align="left"></iframe>
+</p>
+</div>
+<div class="rank">
+<div class="tlt">
+      <h3>文章排行</h3>
+      <a onmouseover="change_top10(3);" id="top_3">本月</a><a onmouseover="change_top10(2);" id="top_2">本周</a><a onmouseover="change_top10(1);" class="myon" id="top_1">24小时</a> </div>
+ <div id="top10_1" style="display: block;" class="list"><ul>
+<li><a href="http://os.51cto.com/art/201205/336386.htm" target="_blank" title="OpenStack的架构详解">OpenStack的架构详解</a>
+</li><li><a href="http://os.51cto.com/art/201502/464820.htm" target="_blank" title="2014年12月桌面操作系统份额统计数据">2014年12月桌面操作系统份额统计数据</a>
+</li><li><a href="http://os.51cto.com/art/201405/439494.htm" target="_blank" title="安装 Kali Linux 后需要做的 20 件事">安装 Kali Linux 后需要做的 20 件事</a>
+</li><li><a href="http://os.51cto.com/art/201101/244090.htm" target="_blank" title="如何在Linux中查看所有正在运行的进程">如何在Linux中查看所有正在运行的进程</a>
+</li><li><a href="http://os.51cto.com/art/201206/345410.htm" target="_blank" title="打造自动翻墙的路由器">打造自动翻墙的路由器</a>
+</li><li><a href="http://os.51cto.com/art/201205/335402.htm" target="_blank" title="Linux下SSH命令使用方法详解">Linux下SSH命令使用方法详解</a>
+</li><li><a href="http://os.51cto.com/art/201001/177866.htm" target="_blank" title="Linux下RPM软件包的安装及卸载">Linux下RPM软件包的安装及卸载</a>
+</li><li><a href="http://os.51cto.com/art/201405/439158.htm" target="_blank" title="教程：Ubuntu 14.04 和 Windows 8.1 双">教程：Ubuntu 14.04 和 Windows 8.1 双</a>
+</li><li><a href="http://os.51cto.com/art/201502/464741.htm" target="_blank" title="20条Linux命令面试问答">20条Linux命令面试问答</a>
+</li><li><a href="http://os.51cto.com/art/201312/426047.htm" target="_blank" title="Fedora 20 安装试用体验">Fedora 20 安装试用体验</a>
+</li></ul></div>
+<div id="top10_2" style="display: none;" class="list"><ul>
+<li><a href="http://os.51cto.com/art/201501/464378.htm" target="_blank" title="Windows 10 中文技术预览版个人试用报">Windows 10 中文技术预览版个人试用报</a>
+</li><li><a href="http://os.51cto.com/art/201502/464662.htm" target="_blank" title="12 个最佳的免费网络监控工具">12 个最佳的免费网络监控工具</a>
+</li><li><a href="http://os.51cto.com/art/201501/464494.htm" target="_blank" title="微软太低调：DirectX 12已经悄悄诞生了">微软太低调：DirectX 12已经悄悄诞生了</a>
+</li><li><a href="http://os.51cto.com/art/201502/464741.htm" target="_blank" title="20条Linux命令面试问答">20条Linux命令面试问答</a>
+</li><li><a href="http://os.51cto.com/art/201501/464492.htm" target="_blank" title="Windows 10预览版暗藏全新浏览器！">Windows 10预览版暗藏全新浏览器！</a>
+</li><li><a href="http://os.51cto.com/art/201502/464636.htm" target="_blank" title="Linux之父Linus说：并行计算基本上就是">Linux之父Linus说：并行计算基本上就是</a>
+</li><li><a href="http://os.51cto.com/art/201502/464668.htm" target="_blank" title="【博文推荐】全面解读一个自动化运维管">【博文推荐】全面解读一个自动化运维管</a>
+</li><li><a href="http://os.51cto.com/art/201502/464633.htm" target="_blank" title="Linux 什么时候才能足够完美？">Linux 什么时候才能足够完美？</a>
+</li><li><a href="http://os.51cto.com/art/201502/464740.htm" target="_blank" title="如何快速在CentOS 7中安装Jetty服务器">如何快速在CentOS 7中安装Jetty服务器</a>
+</li><li><a href="http://os.51cto.com/art/201501/464534.htm" target="_blank" title="如何在终端下以后台模式运行Linux程序">如何在终端下以后台模式运行Linux程序</a>
+</li></ul></div>
+<div id="top10_3" style="display: none;" class="list"><ul>
+<li><a href="http://os.51cto.com/art/201501/463207.htm" target="_blank" title="当美国工程师用上朝鲜“红星3”操作系">当美国工程师用上朝鲜“红星3”操作系</a>
+</li><li><a href="http://os.51cto.com/art/201501/463090.htm" target="_blank" title="Windows 10玩死Windows 8.1？">Windows 10玩死Windows 8.1？</a>
+</li><li><a href="http://os.51cto.com/art/201501/464248.htm" target="_blank" title="【博文推荐】CentOS6.6+Puppet3.7.3分">【博文推荐】CentOS6.6+Puppet3.7.3分</a>
+</li><li><a href="http://os.51cto.com/art/201501/463201.htm" target="_blank" title="IE被抛弃！Windows 10全新浏览器截图曝">IE被抛弃！Windows 10全新浏览器截图曝</a>
+</li><li><a href="http://os.51cto.com/art/201501/463336.htm" target="_blank" title="想玩BGP路由器么？无需花钱去买，本文">想玩BGP路由器么？无需花钱去买，本文</a>
+</li><li><a href="http://os.51cto.com/art/201501/463525.htm" target="_blank" title="微软“斯巴达”浏览器界面一瞥：或登陆">微软“斯巴达”浏览器界面一瞥：或登陆</a>
+</li><li><a href="http://os.51cto.com/art/201501/463517.htm" target="_blank" title="只为好玩：这就是 Linux 之父的成功学">只为好玩：这就是 Linux 之父的成功学</a>
+</li><li><a href="http://os.51cto.com/art/201501/463845.htm" target="_blank" title="Windows 7 SP1 技术支持明天结束">Windows 7 SP1 技术支持明天结束</a>
+</li><li><a href="http://os.51cto.com/art/201501/464168.htm" target="_blank" title="关于Win 10你必须知道的几件事：“开始">关于Win 10你必须知道的几件事：“开始</a>
+</li><li><a href="http://os.51cto.com/art/201501/463085.htm" target="_blank" title="下一个Win7？用户对Win10的热情令人惊">下一个Win7？用户对Win10的热情令人惊</a>
+</li></ul></div>
+ 
+ </div>
+<p class="blank1"></p>
+
+<div class="bor">
+<div class="titbg">
+<h3 class="fl t1">热点专题</h3>
+<a href="http://os.51cto.com/speclist/1363" class="tmore">更多&gt;&gt;</a></div>
+<ul class="plist01">
+<li><a href="http://os.51cto.com/art/201308/407863.htm" title="17次史诗级的 Windows 自动更新崩溃故障"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioOVIU29OQRVI1AAAM3xz36UA401.jpg" alt="17次史诗级的 Windows 自动更新崩溃故障" width="100" height="80"></a>
+<h5><a href="http://os.51cto.com/art/201308/407863.htm" title="17次史诗级的 Windows 自动更新崩溃故障">17次史诗级的 Windows</a></h5>
+<div class="c666">那些由“补丁周二”引发的大麻烦已经成为传说，但却依</div>
+</li><li><a href="http://os.51cto.com/art/201308/407399.htm" title="系统频道8月第3周热点推荐：Windows 8.1正式版的福音"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioJlIN68rRSQIBAAAOTe4hDu8084.jpg" alt="系统频道8月第3周热点推荐：Windows 8.1正式版的福音" width="100" height="80"></a>
+<h5><a href="http://os.51cto.com/art/201308/407399.htm" title="系统频道8月第3周热点推荐：Windows 8.1正式版的福音">系统频道8月第3周热点</a></h5>
+<div class="c666">日前，微软宣布 Windows 8.1 企业预览版开放下载，很</div>
+</li><li><a href="http://os.51cto.com/art/201308/407184.htm" title="《Linux运维趋势》2013上半年汇总"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioJlILeZDTp0uuAAAQhcn63Bk685.jpg" alt="《Linux运维趋势》2013上半年汇总" width="100" height="80"></a>
+<h5><a href="http://os.51cto.com/art/201308/407184.htm" title="《Linux运维趋势》2013上半年汇总">《Linux运维趋势》201</a></h5>
+<div class="c666">《Linux运维趋势》是针对 Linux/Unix 系统运维人员的</div>
+</li> 
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tagCloud">
+<div class="tlt">
+<h3>热点标签</h3>
+</div>
+<div class="taglist"><a title="IIS服务" href="http://os.51cto.com/art/201104/256478.htm">IIS服务</a>
+<a title="Windows 8" href="http://os.51cto.com/art/201104/256380.htm">Windows 8</a>
+<a title="浏览器战报" href="http://os.51cto.com/art/201103/250662.htm">浏览器战报</a>
+
+<a title="Ubuntu 11.04" href="http://os.51cto.com/art/201101/244030.htm">Ubuntu 11.04</a>
+<a title="运维秘诀" href="http://os.51cto.com/art/201101/244021.htm">运维秘诀</a>
+<a title="活动目录" href="http://os.51cto.com/art/201012/236185.htm">活动目录</a>
+<a title="Linux管理员" href="http://os.51cto.com/art/201104/253193.htm">Linux管理员</a>
+<a title="Fedora 15" href="http://os.51cto.com/art/201103/246763.htm">Fedora 15</a>
+<a title="Linux运维趋势" href="http://os.51cto.com/art/201011/233915.htm">Linux运维趋势</a>
+<a title="开源社区" href="http://os.51cto.com/art/201010/230570.htm">开源社区</a></div>
+</div>
+<div class="rss">
+<ul>
+<li class="lin f12-c"><a href="http://news.51cto.com/col/1323/"><strong>点击这里查看样刊</strong></a></li>
+<li>
+<dl>
+<dt> </dt>
+<dd><a href="http://home.51cto.com/index.php?s=/Subscribe"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/dingy.gif"></a></dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">全站热点</h3>
+</div>
+<div class="webhot fixfloat">
+<ul>
+
+<li>
+  <a href="http://os.51cto.com/art/201309/410354.htm" title="《Linux运维趋势》2013年8月号"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioOVIxUnDx2NdyAAAvXm-YIrc692.png"></a>
+  <div><a href="http://os.51cto.com/art/201309/410354.htm" title="《Linux运维趋势》2013年8月号">《Linux运维趋势》2013年8月号</a></div>
+</li>
+
+<li>
+  <a href="http://mobile.51cto.com/market-408462.htm" title="App营销之ASO应用商店优化攻略"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wKioOVIdcyXiY1CVAABFnIenMdo436.jpg"></a>
+  <div><a href="http://mobile.51cto.com/market-408462.htm" title="App营销之ASO应用商店优化攻略">App营销之ASO应用商店优化攻略</a></div>
+</li>
+
+</ul>
+</div>
+<p class="blank1"></p>
+<ul class="list03">
+
+<li><a href="http://server.51cto.com/Storage-412131.htm" title="是否应该在存储网络中使用FCoE？">是否应该在存储网络中使用FCoE？</a></li>
+
+<li><a href="http://book.51cto.com/art/201309/412077.htm" title="构建实时Web应用：基于HTML5 WebSocket、PHP和jQuery">构建实时Web应用：基于HTML5 WebSock</a></li>
+
+<li><a href="http://os.51cto.com/art/201309/412022.htm" title="系统频道推荐：十一黄金周，你如何安排？">系统频道推荐：十一黄金周，你如何安</a></li>
+
+<li><a href="http://book.51cto.com/art/201309/411997.htm" title="深度探索Linux操作系统：系统构建和原理解析">深度探索Linux操作系统：系统构建和</a></li>
+
+<li><a href="http://book.51cto.com/art/201309/411934.htm" title="Linux软件管理平台设计与实现">Linux软件管理平台设计与实现</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1">读书</h3>
+</div>
+  
+<div class="catbook"><a href="http://book.51cto.com/art/200711/60312.htm" title="The Ruby Way（第二版）中文版"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/135108703.gif" width="66" height="98" border="0"></a>
+<h5><a href="http://book.51cto.com/art/200711/60312.htm">The Ruby Way（第二版）中文版</a></h5>
+<div class="c666 text">本书采用“如何解决问题”的方式阐述Ruby编程，涵盖了以下内容：Ruby术语和基本原理；数字、字符串等低级数据类型的操作；正则表</div>
+</div>
+
+
+<ul class="list03">
+
+<li><a href="http://book.51cto.com/art/200707/51411.htm" title="网管员必读—网络应用">网管员必读—网络应用</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/51412.htm" title="网管员必读—网络基础">网管员必读—网络基础</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/51413.htm" title="JSP应用开发详解（第二版）">JSP应用开发详解（第二版）</a></li>
+
+<li><a href="http://book.51cto.com/art/200707/51414.htm" title="基于Project2003的项目管理">基于Project2003的项目管理</a></li>
+
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="bor">
+<div class="titbg">
+<h3 class="t1 fl">博文推荐</h3>
+<a class="tmore" href="http://blog.51cto.com/">更多&gt;&gt;</a></div>
+
+<ul class="list03">
+ <li><a href="http://haolloyin.blog.51cto.com/1177454/333257/" target="_blank" title="（Dynamic Proxy）动态代理模式的Java实现">（Dynamic Proxy）动态代理模式的Jav</a></li><li><a href="http://zwaitt.blog.51cto.com/676359/333220/" target="_blank" title="百度之旅">百度之旅</a></li><li><a href="http://mrask99.blog.51cto.com/369086/333214/" target="_blank" title="Sccm2007电脑分组管理技巧">Sccm2007电脑分组管理技巧</a></li><li><a href="http://shenzhoulong.blog.51cto.com/1191789/333199/" target="_blank" title="读取xml文件的方式（29）">读取xml文件的方式（29）</a></li>
+</ul>
+</div>
+<p class="blank10"></p>
+<div class="tj">
+<div class="tlt">
+<h3>最新热帖</h3>
+<a class="more" href="http://bbs.51cto.com/hotthreads.php">更多&gt;&gt;</a></div>
+<ul>
+<li><a href="http://bbs.51cto.com/thread-26429-1.html" target="_blank" title="通用WAP网站生成系统(PowerDiamond) v.1">通用WAP网站生成系统(PowerDiamond) </a></li><li><a href="http://bbs.51cto.com/thread-11063-1.html" target="_blank" title="八类大学毕业生求职时不受欢迎">八类大学毕业生求职时不受欢迎</a></li><li><a href="http://bbs.51cto.com/thread-6946-1.html" target="_blank" title="IT人为什么难以拿到高薪？【转帖】">IT人为什么难以拿到高薪？【转帖】</a></li><li><a href="http://bbs.51cto.com/thread-4333-1.html" target="_blank" title="想去外企上班">想去外企上班</a></li>
+</ul>
+</div>
+<div class="picAD">
+<script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(3).js" type="text/javascript"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(4).php"></script><script type="text/javascript"> var cpro_id = 'u708626';</script><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/c.js" type="text/javascript"></script><div id="BAIDU_DUP_wrapper_u708626_0"><div style="margin:0 auto;width:300px;height:250px;position:relative;"><iframe id="cproIframe_u708626_1" width="300" height="250" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/acom.html" align="center,center" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" allowtransparency="true"></iframe></div></div><script charset="utf-8" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/acom"></script>
+</div>
+</div>
+<p class="blank1"></p> 
+<!--leftbotcon end-->
+</div> 
+<div class="subweb">
+<h4>51CTO旗下网站</h4>
+<div>
+<a target="_blank" href="http://www.51cto.com/">领先的IT技术网站 51CTO</a>
+<a target="_blank" href="http://www.watchstor.com/">领先的中文存储媒体 WatchStor</a>
+<a target="_blank" href="http://www.cioage.com/">中国首个CIO网站 CIOage</a>
+<a target="_blank" href="http://www.hc3i.cn/">中国首家数字医疗网站 HC3i</a>
+</div>
+</div>
+<div id="ft"><div id="foot" align="center"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/copy_right.js"></script>Copyright&#169;2005-2015 <a href="http://www.51cto.com/">51CTO.COM</a> 版权所有 未经许可 请勿转载<div style="display:none;"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=b6e2d52e9f0660b9fbaf0f2029c046c0" target="_blank"><img border="0" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/21.gif" width="20" height="20"></a></div></div></div>
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/count.js"></script><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/count.php"></script>
+<script type="text/javascript">
+
+	$("#uyan_cmt_list").next().remove();	
+	$("#uyan_cmt_list").next().css("display","none");	
+</script>
+<style>
+.Nfloat {
+    position: fixed;
+    right: 2%;
+    top: 35%;
+    z-index: 801;
+}
+</style>
+
+
+<!-- 新监测代码 -->
+<!-- 新监测代码 -->
+<div id="MyMoveAd" style="display: none; height: 2px;">
+<span id="wordlink_1"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink1.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs.php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2477__zoneid=254__cb=9708e5c0fc__oadest=http%3A%2F%2Fcloud.51cto.com%2Fexp%2Fallmobilize%2F" target="_blank"><font color="red">原生App与HTML5的对决</font></a><div id="beacon_9708e5c0fc" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg.php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_2"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink2.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(1).php"></script><a href="http://gg1.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2389__zoneid=255__cb=9d52f87a1f__oadest=http%3A%2F%2Fbbs.51cto.com%2Fthread-1166722-1.html" target="_blank"><font color="red">吐槽也拿奖,谈IT运维背后的故事</font></a><div id="beacon_9d52f87a1f" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(1).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_3"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink3.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(2).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2385__zoneid=256__cb=29194f00a0__oadest=http%3A%2F%2Fwww.ruijie.com.cn%2Fcp%2Fykt%2F%3Futm_source%3D51CTO%26utm_medium%3D%25E7%25BD%2591%25E7%25BB%259C%25E5%2586%2585%25E9%25A1%25B5%26utm_campaign%3D%25E4%25BA%2591%25E8%25AF%25BE%25E5%25A0%2582%26utm_adgroup%3Dwenzilian" target="_blank"><font color="red">云课堂，让学生爱上每一堂课</font></a><div id="beacon_29194f00a0" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(2).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="wordlink_4"><script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/wordlink4.js"></script><script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ajs(3).php"></script><a href="http://gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2134__zoneid=257__cb=e0e4979474__oadest=http%3A%2F%2Fserver.51cto.com%2Fexp%2Funitedstack2015%2F" target="_blank"><font color="red">OpenStack为何这么火？</font></a><div id="beacon_e0e4979474" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/lg(3).php" width="0" height="0" alt="" style="width: 0px; height: 0px;"></div>
+</span>
+<span id="pinglun"><script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/getArtCount.php"></script>0</span>
+<span id="tonglan"></span>
+<span id="wordlink"><script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(5).js"></script></span>
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/ad(5).js"></script>
+<span id="bookss"><script language="JavaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/getBookData.php"></script></span>
+</div>   
+<script language="javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/favorite.js"></script>
+
+<script language="javaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/dialog_utf8.js"></script>
+<script language="javaScript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/mail.js"></script>  
+<script type="text/javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/favorbox.js"></script>
+<script language="javascript" src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/clipboard.js"></script>
+<script language="javaScript"> 
+	var thistid=57169; 
+	
+	//收藏按钮
+	var favor_url = 'http://os.51cto.com/art/200709/57169.htm';  // 如：http://bbs.51cto.com/thread-789649-1.html
+	var favor_title = 'Ubuntu Linux系统下的Sudo简要配置实例';       //  
+	
+	//绑定复制按钮
+	copy('msnqqcopy', 'http://os.51cto.com/art/200709/57169.htm', '分享到MSN/QQ的链接复制成功!');
+//	copy('bbscopy', '[url=http://os.51cto.com/art/200709/57169.htm][u]Ubuntu Linux系统下的Sudo简要配置实例[/u][/url]', '分享到论坛的UBB代码复制成功!');
+
+</script><div style="position: absolute; left: 1057px; top: 4633px; width: 34px; height: 12px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="http://images.51cto.com/images/art/newart1012/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" width="34" height="12" name="ZeroClipboardMovie_1" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=34&amp;height=12" wmode="transparent"></div> 
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/index.php" charset="utf-8"></script>
+<script src="./Ubuntu Linux系统下的Sudo简要配置实例 - 51CTO.COM_files/count(1).php" language="javascript"></script>
+<script language="javascript">
+document.getElementById('books').innerHTML = document.getElementById("bookss").innerHTML; 
+</script>
+
+
+
+</body></html>

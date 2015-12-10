@@ -1,0 +1,1059 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0044)http://codingstandards.iteye.com/blog/788984 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站</title>
+    <meta name="description" content="我使用过的Linux命令之dmidecode - 查看硬件信息  本文链接：http://codingstandards.iteye.com/blog/788984       （转载请注明出处）  用途说明  dmidecode命令用来查看硬件信息。第一次看到这个命令，是在IBM的网站上看到的《“懒惰” Linux 管理员的 10 个关键技巧 》的技巧10 - 随机信息收集。在此之前，我们清查机器 ...">
+    <meta name="keywords" content="Linux, Socket, Web, Cache, Rack 我使用过的Linux命令之dmidecode - 查看硬件信息">
+    <link rel="shortcut icon" href="http://codingstandards.iteye.com/images/favicon.ico" type="image/x-icon">
+    <link rel="search" type="application/opensearchdescription+xml" href="http://codingstandards.iteye.com/open_search.xml" title="ITeye">
+    <link href="http://codingstandards.iteye.com/rss" rel="alternate" title="Bash @ Linux" type="application/rss+xml">
+    <link href="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/blog.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/green.css" media="screen" rel="stylesheet" type="text/css">
+    <script type="text/javascript" async="" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/ga.js"></script><script type="text/javascript" async="" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/ga.js"></script><script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/application.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/SyntaxHighlighter.css" media="screen" rel="stylesheet" type="text/css">
+  <script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/shCoreCommon.js" type="text/javascript"></script>
+<script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/hotkey.js" type="text/javascript"></script>
+  <script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/code_favorites.js" type="text/javascript"></script>
+<script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/weiboshare.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="blog_site_nav">
+  <a href="http://www.iteye.com/" class="homepage">首页</a>
+  <a href="http://www.iteye.com/news">资讯</a>
+  <a href="http://www.iteye.com/magazines">精华</a>
+  <a href="http://www.iteye.com/forums">论坛</a>
+  <a href="http://www.iteye.com/ask">问答</a>
+  <a href="http://www.iteye.com/blogs">博客</a>
+  <a href="http://www.iteye.com/blogs/subjects">专栏</a>
+  <a href="http://www.iteye.com/groups">群组</a>
+  <a href="http://codingstandards.iteye.com/blog/788984#" onclick="return false;" id="msna"><u>更多</u> <small>▼</small></a>
+  <div class="quick_menu" style="display:none;">
+    <a target="_blank" href="http://job.iteye.com/iteye">招聘</a>
+    <a href="http://www.iteye.com/search">搜索</a>
+  </div>
+</div>
+
+      <div id="user_nav">
+      <a href="http://codingstandards.iteye.com/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="http://codingstandards.iteye.com/login">登录</a>
+    <a href="http://codingstandards.iteye.com/signup" class="nobg">注册</a>
+  </div>
+
+    </div>
+
+    <div id="page">
+      <div id="branding" class="clearfix">
+        <div id="blog_name">
+          <h1><a href="http://codingstandards.iteye.com/">Bash @ Linux</a></h1>
+        </div>
+        <div id="fd"></div>
+        <div id="blog_navbar">
+          <ul>
+            <li class="blog_navbar_for"><a href="http://codingstandards.iteye.com/"><strong>博客</strong></a></li>
+            <li><a href="http://codingstandards.iteye.com/weibo">微博</a></li>
+            <li><a href="http://codingstandards.iteye.com/album">相册</a></li>
+            <li><a href="http://codingstandards.iteye.com/link">收藏</a></li>
+            <li><a href="http://codingstandards.iteye.com/blog/guest_book">留言</a></li>
+            <li><a href="http://codingstandards.iteye.com/blog/profile">关于我</a></li>
+          </ul>
+    
+          <div class="search">
+            <form action="http://codingstandards.iteye.com/blog/search" method="get">
+              <input class="search_text" id="query" name="query" style="margin-left: 10px;width: 110px;" type="text" value="">
+              <input class="submit_search" type="submit" value="">
+            </form>
+          </div> 
+          <div id="fd"></div>         
+        </div>
+      </div>
+      
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style="display:none">
+  <a href="http://codingstandards.iteye.com/" class="p-author" target="_blank">codingstandards</a>
+</div>
+
+
+<div class="blog_main">
+  <div class="blog_title">
+    <h3>
+      <a href="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站.html">我使用过的Linux命令之dmidecode - 查看硬件信息</a>
+      <em class="actions">      </em>
+    </h3>
+    <ul class="blog_categories"><strong>博客分类：</strong> <li><a href="http://codingstandards.iteye.com/category/126457">Linux命令</a></li> </ul>
+        <div class="news_tag"><a href="http://www.iteye.com/blogs/tag/Linux">Linux</a><a href="http://www.iteye.com/blogs/tag/Socket">Socket</a><a href="http://www.iteye.com/blogs/tag/Web">Web</a><a href="http://www.iteye.com/blogs/tag/Cache">Cache</a><a href="http://www.iteye.com/blogs/tag/Rack">Rack</a>&nbsp;</div>
+  </div>
+
+  <div id="blog_content" class="blog_content">
+    <h1>我使用过的Linux命令之dmidecode - 查看硬件信息</h1>
+<p>本文链接：<a href="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站.html">http://codingstandards.iteye.com/blog/788984</a>
+
+&nbsp;&nbsp; （转载请注明出处）</p>
+<h2>用途说明</h2>
+<p>dmidecode命令用来查看硬件信息。第一次看到这个命令，是在IBM的网站上看到的《“懒惰” Linux 管理员的 10 个关键技巧 》的技巧10 - 随机信息收集。在此之前，我们清查机器的硬件信息时，都需要跑到机房才行，而这个机房并不在我们这个城市。<strong>DMI</strong>
+
+，即Desktop Management Interface。也有被称为SMBIOS，即System Management BIOS。</p>
+<h2>常用参数</h2>
+<p>较低版本的dmidecode命令不支持参数，因此要看信息的话，要用more/less/grep来配合才能更好些。</p>
+<p>较高版本的dmidecode命令有如下参数：</p>
+<p>-h 查看帮助信息。</p>
+<p>-q&nbsp; 不显示未知设备。</p>
+<p>-t type&nbsp;&nbsp; 查看指定类型的信息，比如bios,system,memory,processor等。</p>
+<p>-s keyword&nbsp;&nbsp; 查看指定的关键字的信息，比如system-manufacturer, system-product-name, system-version, system-serial-number等。</p>
+<h2>使用示例</h2>
+<h3>示例一 不是每台Linux服务器都能看到硬件信息<br>
+</h3>
+<p>[root@web186 root]# <span style="color: #0000ff;">dmidecode</span>
+
+<br>
+
+# dmidecode 2.2<br>
+
+[root@web186 root]# man dmidecode<br>
+
+man: 没有那个文件或目录<br>
+
+Failed to open the message catalog man on the path NLSPATH=&lt;none&gt;<br><br>
+
+No manual entry for dmidecode<br>
+
+[root@web186 root]# <span style="color: #0000ff;">lsb_release -a</span>
+
+<br>
+
+LSB Version:&nbsp;&nbsp;&nbsp; 1.3<br>
+
+Distributor ID: RedHatEnterpriseAS<br>
+
+Description:&nbsp;&nbsp;&nbsp; Red Hat Enterprise Linux AS release 3 (Taroon Update 4)<br>
+
+Release:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br>
+
+Codename:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TaroonUpdate4<br>
+
+[root@web186 root]#</p>
+<p><span style="color: #ff0000;">这台机器是台工控机，安装的是RHEL3.4。</span>
+
+</p>
+<h3>示例二 非root用户无法获取硬件信息</h3>
+<p>[web@hnweb1 ~]$ <span style="color: #0000ff;">dmidecode</span>
+
+<br>
+
+-bash: dmidecode: command not found<br>
+
+[web@hnweb1 ~]$ <span style="color: #0000ff;">whereis dmidecode</span>
+
+<br>
+
+dmidecode: /usr/sbin/dmidecode<br>
+
+[web@hnweb1 ~]$ <span style="color: #0000ff;">/usr/sbin/dmidecode</span>
+
+<br>
+
+/dev/mem: Permission denied<br>
+
+[web@hnweb1 ~]$</p>
+<p>&nbsp;</p>
+<h3>示例三 服务器DELL2950的硬件信息</h3>
+<p>[root@sunrise root]# <span style="color: #0000ff;">dmidecode</span>
+
+<br>
+
+# dmidecode 2.2<br><strong>SMBIOS 2.4 present.</strong>
+
+<br>
+
+62 structures occupying 3131 bytes.<br>
+
+Table at 0xCFFBC000.<br>
+
+Handle 0xDA00<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 218, 11 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OEM-specific Type<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Header And Data:<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DA 0B 00 DA B2 00 17 00 0E 20 00<br>
+
+Handle 0x0000<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 0, 24 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor: Dell Inc.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: 1.1.0<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Release Date: 06/21/2006<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Address: 0xF0000<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Runtime Size: 64 kB<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ROM Size: 1024 kB<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Characteristics:<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ISA is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PCI is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PNP is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS is upgradeable<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS shadowing is allowed<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ESCD support is available<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boot from CD is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selectable boot is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EDD is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Japanese floppy for Toshiba 1.2 MB is supported (int 13h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.25"/360 KB floppy services are supported (int 13h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.25"/1.2 MB floppy services are supported (int 13h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.5"/720 KB floppy services are supported (int 13h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Print screen service is supported (int 5h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 8042 keyboard services are supported (int 9h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial services are supported (int 14h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Printer services are supported (int 17h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CGA/mono video services are supported (int 10h)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACPI is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USB legacy is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS boot specification is supported<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Function key-initiated network boot is supported<br>
+
+Handle 0x0100<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 1, 27 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: <strong>Dell Inc.</strong>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Name: <strong>PowerEdge 2950</strong>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: DYG822X<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UUID: 44454C4C-5900-1047-8038-C4C04F323258<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wake-up Type: Power Switch<br>
+
+Handle 0x0200<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 2, 9 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Base Board Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: Dell Inc.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product Name: 0CW954<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: A00<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: ..CN137406AU00PR.<br>
+
+Handle 0x0300<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 3, 21 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chassis Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: Dell Inc.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: Rack Mount Chassis<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lock: Present<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: DYG822X<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Asset Tag: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Boot-up State: Safe<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Power Supply State: Safe<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thermal State: Safe<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Security Status: Unknown<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OEM Information: 0x00000000<br><strong>Heigth: 2 U</strong>
+
+<br>
+
+Number Of Power Cords: Unspecified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Contained Elements: 0<br>
+
+Handle 0x0400<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 4, 40 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Processor Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket Designation: CPU1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: Central Processor<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Family: Xeon<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: Intel<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID: F6 06 00 00 FF FB EB BF<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature: Type 0, Family 6, Model F, Stepping 6<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flags:<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FPU (Floating-point unit on-chip)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VME (Virtual mode extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DE (Debugging extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSE (Page size extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TSC (Time stamp counter)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MSR (Model specific registers)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAE (Physical address extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCE (Machine check exception)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CX8 (CMPXCHG8 instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; APIC (On-chip APIC hardware supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEP (Fast system call)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTRR (Memory type range registers)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PGE (Page global enable)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCA (Machine check architecture)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CMOV (Conditional move instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAT (Page attribute table)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSE-36 (36-bit page size extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLFSH (CLFLUSH instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DS (Debug store)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACPI (ACPI supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MMX (MMX technology supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FXSR (Fast floating-point save and restore)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SSE (Streaming SIMD extensions)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SSE2 (Streaming SIMD extensions 2)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SS (Self-snoop)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTT (Hyper-threading technology)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TM (Thermal monitor supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SBF (Signal break on FERR)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: <strong>Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5130&nbsp; @ 2.00GHz</strong>
+
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Voltage: 1.4 V<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; External Clock: 1333 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max Speed: 3600 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Speed: 2000 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status: Populated, Enabled<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upgrade: &lt;OUT OF SPEC&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L1 Cache Handle: 0x0700<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L2 Cache Handle: 0x0701<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L3 Cache Handle: 0x0702<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Asset Tag: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part Number: Not Specified</p>
+<p><span style="color: #ff0000;">上面是关于CPU的。</span>
+
+</p>
+<p><span style="color: #ff0000;">中间省略掉很多输出。</span>
+
+<br>
+
+Handle 0x0D00<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 13, 22 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BIOS Language Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Installable Languages: 1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en|US|iso8859-1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Currently Installed Language: en|US|iso8859-1<br>
+
+Handle 0x1000<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 16, 15 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Physical Memory Array<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Location: System Board Or Motherboard<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Use: System Memory<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error Correction Type: Multi-bit ECC<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum Capacity: 32 GB<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error Information Handle: Not Provided<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number Of Devices: 8<br>
+
+Handle 0x1100<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 17, 28 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Memory Device<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Array Handle: 0x1000<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Error Information Handle: Not Provided<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Width: 72 bits<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data Width: 64 bits<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Size: 1024 MB<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form Factor: &lt;OUT OF SPEC&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set: 1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Locator: DIMM1 <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bank Locator: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: &lt;OUT OF SPEC&gt;<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type Detail: Synchronous<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Speed: 667 MHz (1.5 ns)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: 855180898551<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: 050C4921<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Asset Tag: 560639<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part Number: 72T128420HFN3SA&nbsp;&nbsp; <br><span style="color: #ff0000;">上面这一段是关于内存的。</span>
+
+</p>
+<p><span style="color: #ff0000;">中间省略掉不少输出。</span>
+
+<br>
+
+Handle 0x7F00<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DMI type 127, 4 bytes.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End Of Table<br>
+
+[root@sunrise root]# <span style="color: #ff0000;"><span style="color: #0000ff;">dmidecode | grep 'Serial Number'</span>
+
+&nbsp;&nbsp; </span>
+
+&lt;== 查看机器序列号<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: DYG822X<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: ..<strong>CN137406AU00PR</strong>
+
+.<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: DYG822X<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: Not Specified<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: 050C4921<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: 050C4926<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: 050C4520<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number: 050C4624<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+[root@sunrise root]# dmidecode -t processor<br>
+
+-t: No such file or directory</p>
+<p><span style="color: #ff0000;">较低版本的dmidecode不支持-t参数。</span>
+
+<br>
+
+[root@sunrise root]# dmidecode -h<br>
+
+-h: No such file or directory</p>
+<p><span style="color: #ff0000;">较低版本的dmidecode无法查看帮助信息。</span>
+
+<br>
+
+[root@sunrise root]# dmidecode | grep CPU<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket Designation: CPU1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5130&nbsp; @ 2.00GHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket Designation: CPU2<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Intel(R) Xeon(R) CPU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5130&nbsp; @ 2.00GHz</p>
+<p><span style="color: #ff0000;">只能通过grep之类的方式去查询了。</span>
+
+<br>
+
+[root@sunrise root]# dmidecode -q<br>
+
+-q: No such file or directory</p>
+<p><span style="color: #ff0000;">较低版本的dmidecode不支持-q参数。</span>
+
+<br>
+
+[root@sunrise root]# </p>
+<p>&nbsp;</p>
+<h3>示例四 一台工控机上较新版本的dmidecode可支持参数查询</h3>
+<p>[root@web ~]# <span style="color: #0000ff;">dmidecode -h</span>
+
+<br>
+
+Usage: dmidecode [OPTIONS]<br>
+
+Options are:<br>
+
+&nbsp;-d, --dev-mem FILE&nbsp;&nbsp;&nbsp;&nbsp; Read memory from device FILE (default: /dev/mem)<br>
+
+&nbsp;-h, --help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display this help text and exit<br>
+
+&nbsp;-q, --quiet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Less verbose output<br>
+
+&nbsp;-s, --string KEYWORD&nbsp;&nbsp; Only display the value of the given DMI string<br>
+
+&nbsp;-t, --type TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only display the entries of given type<br>
+
+&nbsp;-u, --dump&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do not decode the entries<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; --dump-bin FILE&nbsp;&nbsp;&nbsp; Dump the DMI data to a binary file<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; --from-dump FILE&nbsp;&nbsp; Read the DMI data from a binary file<br>
+
+&nbsp;-V, --version&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display the version and exit</p>
+<p><span style="color: #ff0000;">不仅可以通过-h参数看到帮助信息，而且man dmidecode也可以看到手册页。</span>
+
+<br>
+
+[root@web ~]# <span style="color: #0000ff;">lsb_release -a</span>
+
+<br>
+
+LSB Version:&nbsp;&nbsp;&nbsp; :core-3.1-ia32:core-3.1-noarch:graphics-3.1-ia32:graphics-3.1-noarch<br>
+
+Distributor ID: RedHatEnterpriseServer<br>
+
+Description:&nbsp;&nbsp;&nbsp; Red Hat Enterprise Linux Server release 5.5 (Tikanga)<br>
+
+Release:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5.5<br>
+
+Codename:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tikanga<br>
+
+[root@web ~]# <span style="color: #0000ff;">dmidecode -t processor</span>
+
+<br>
+
+# dmidecode 2.10<br>
+
+SMBIOS 2.4 present.<br><br>
+
+Handle 0x0005, DMI type 4, 35 bytes<br>
+
+Processor Information<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Socket Designation: Socket 775<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type: Central Processor<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Family: Core 2 Duo<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Manufacturer: Intel<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID: F6 06 00 00 FF FB EB BF<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Signature: Type 0, Family 6, Model 15, Stepping 6<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Flags:<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FPU (Floating-point unit on-chip)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VME (Virtual mode extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DE (Debugging extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSE (Page size extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TSC (Time stamp counter)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MSR (Model specific registers)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAE (Physical address extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCE (Machine check exception)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CX8 (CMPXCHG8 instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; APIC (On-chip APIC hardware supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEP (Fast system call)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MTRR (Memory type range registers)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PGE (Page global enable)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MCA (Machine check architecture)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CMOV (Conditional move instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PAT (Page attribute table)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PSE-36 (36-bit page size extension)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CLFSH (CLFLUSH instruction supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DS (Debug store)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ACPI (ACPI supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MMX (MMX technology supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FXSR (Fast floating-point save and restore)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SSE (Streaming SIMD extensions)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SSE2 (Streaming SIMD extensions 2)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SS (Self-snoop)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HTT (Hyper-threading technology)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TM (Thermal monitor supported)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PBE (Pending break enabled)<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Intel(R) Core(TM)2<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Voltage: 1.2 V<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; External Clock: 266 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Max Speed: 4000 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Current Speed: 2394 MHz<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Status: Populated, Enabled<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upgrade: ZIF Socket<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L1 Cache Handle: 0x000B<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L2 Cache Handle: 0x000C<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; L3 Cache Handle: Not Provided<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serial Number:&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Asset Tag:&nbsp; <br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Part Number:&nbsp; <br><br>
+
+[root@web ~]#</p>
+<h2>问题思考</h2>
+<p>1. 怎样升级Linux系统上的dmidecode，以便看到详细的硬件信息？</p>
+<h2>相关资料</h2>
+<p>【1】飘渺的风 <a href="http://huanxiangwu.com/449/linux-dmidecode">Linux硬件信息查看工具dmidecode</a>
+
+</p>
+<p>【2】IBM <a href="http://www.ibm.com/developerworks/cn/linux/l-10sysadtips/">“懒惰” Linux 管理员的 10 个关键技巧</a>
+
+</p>
+<p>【3】lamp fans notes <a href="http://hi.baidu.com/fans_lamp/blog/item/9ceab3d4a5e943ce51da4bd5.html">Dmidecode linux下 获取一些硬件参数的命令（转）</a>
+
+</p>
+<p>【4】Linux-Wiki.cn <a href="http://www.linux-wiki.cn/index.php?title=%E6%9F%A5%E7%9C%8B%E7%A1%AC%E4%BB%B6%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF&variant=zh-cn">查看硬件详细信息</a>
+
+</p>
+<p>【5】Linux纪录地 <a href="http://blog.chinaunix.net/u3/109137/showart.php?id=2254408">linux有用但不常用小工具(dmidecode\ethtool\ulimit\等)</a>
+
+</p>
+<p>&nbsp;</p>
+<p>返回 <a href="http://codingstandards.iteye.com/blog/786653">我使用过的Linux命令系列总目录</a>
+</p>
+<p>&nbsp;</p>
+  </div>
+
+  
+
+  
+  
+  <iframe src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/187.html" scrolling="no" width="468" height="60" frameborder="0"></iframe>
+  
+  <div id="bottoms" class="clearfix">
+    <div id="digg_bottom" class="clearfix"><div class="digged"><strong>0</strong> <br>顶</div><div class="digged"><strong>0</strong> <br>踩</div></div>
+    <div id="share_weibo">分享到：
+      <a data-type="sina" href="javascript:;" title="分享到新浪微博"><img src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/sina.jpg"></a>
+      <a data-type="qq" href="javascript:;" title="分享到腾讯微博"><img src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/tec.jpg"></a>
+    </div>
+  </div>
+
+  <div class="blog_nav">
+    <div class="pre_next">
+      <a href="http://codingstandards.iteye.com/blog/790088" class="next" title="我使用过的Linux命令之cd - 更改当前工作目录">我使用过的Linux命令之cd - 更改当前工作 ...</a>
+      |
+      <a href="http://codingstandards.iteye.com/blog/787861" class="pre" title="我使用过的Linux命令之cp - 复制文件">我使用过的Linux命令之cp - 复制文件</a>
+    </div>
+  </div>
+  <div class="blog_bottom">
+    <ul>
+      <li>2010-10-19 21:38</li>
+      <li>浏览 8893</li>
+      <li><a href="http://codingstandards.iteye.com/blog/788984#comments">评论(0)</a></li>
+      
+      
+      <li>分类:<a href="http://www.iteye.com/blogs/category/os">操作系统</a></li>      
+      <li class="last"><a href="http://www.iteye.com/wiki/blog/788984" target="_blank" class="more">相关推荐</a></li>
+    </ul>
+  </div>
+
+  <div class="blog_comment">
+    <h5>评论</h5>
+    <a id="comments" name="comments"></a>
+    
+    
+    
+  </div>
+
+  <div class="blog_comment">
+    <h5>发表评论</h5>
+            <p style="text-align:center; margin-top:30px;margin-bottom:0px;"><a href="http://codingstandards.iteye.com/login" style="background-color:white;"> <img src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/login_icon.png" style="vertical-align:middle; margin-right: 10px;"></a><a href="http://codingstandards.iteye.com/login">  您还没有登录,请您登录后再发表评论 </a></p>
+      </div>
+</div>
+
+
+<script type="text/javascript">
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+
+  $$('#main .blog_content pre[name=code]').each(function(pre, index){ // blog content
+    var post_id = 788984;
+    var location = window.location;
+    source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+    pre.writeAttribute('codeable_id', post_id);
+    pre.writeAttribute('codeable_type', "Blog");
+    pre.writeAttribute('source_url', source_url);
+    pre.writeAttribute('pre_index', index);
+    pre.writeAttribute('title', '我使用过的Linux命令之dmidecode - 查看硬件信息');
+  });
+
+  fix_image_size($$('div.blog_content img'), 700);
+
+  function processComment() {
+    $$('#main .blog_comment > div').each(function(comment){// comment
+      var post_id = comment.id.substr(2);
+      $$("#"+comment.id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + comment.id;
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('codeable_type', "BlogComment");
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', '我使用过的Linux命令之dmidecode - 查看硬件信息');
+      });
+    });
+  }
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'BlogComment'},
+      onSuccess:function(response){editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+
+  code_favorites_init();
+  processComment();
+  new WeiboShare({share_buttons: $('share_weibo'), img_scope: $('blog_content')});
+</script>
+
+
+
+
+        </div>
+
+        <div id="local">
+          <div class="local_top"></div>
+          <div id="blog_owner">
+  <div id="blog_owner_logo"><a href="http://codingstandards.iteye.com/"><img alt="codingstandards的博客" class="logo" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/4a0c99e4-45c7-353e-9273-7e05051ff0a1.jpg" title="codingstandards的博客: Bash @ Linux" width=""></a></div>
+  <div id="blog_owner_name">codingstandards</div>
+</div>
+
+          <div id="blog_actions">
+            <ul>
+              <li>浏览: 1525904 次</li>
+              <li>性别: <img alt="Icon_minigender_1" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/icon_minigender_1.gif" title="男"></li>
+              <li>来自: 上海</li>
+              <li><img src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/offline.gif"></li>
+              
+            </ul>
+          </div>
+          <div id="user_visits" class="clearfix">
+            <h5>最近访客 <span style="font-weight:normal;font-size:12px;padding-left:30px;"><a href="http://codingstandards.iteye.com/blog/user_visits">更多访客&gt;&gt;</a></span></h5>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://yn3829.iteye.com/" target="_blank"><img alt="yn3829的博客" class="logo" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/user-logo-thumb.gif" title="yn3829的博客: 行者日志" width="48px"></a></div>
+                <div class="left"><a href="http://yn3829.iteye.com/" target="_blank" title="yn3829">yn3829</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://jiang045184.iteye.com/" target="_blank"><img alt="jiang045184的博客" class="logo" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/user-logo-thumb.gif" title="jiang045184的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://jiang045184.iteye.com/" target="_blank" title="jiang045184">jiang045184</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://no-studio.iteye.com/" target="_blank"><img alt="no_studio的博客" class="logo" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/user-logo-thumb.gif" title="no_studio的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://no-studio.iteye.com/" target="_blank" title="no_studio">no_studio</a></div>
+              </div>
+            
+              <div class="user_visit">
+                <div class="logo"><a href="http://hustmall.iteye.com/" target="_blank"><img alt="hustmall的博客" class="logo" src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/user-logo-thumb.gif" title="hustmall的博客: " width="48px"></a></div>
+                <div class="left"><a href="http://hustmall.iteye.com/" target="_blank" title="hustmall">hustmall</a></div>
+              </div>
+            
+          </div>
+
+          
+
+                      <div id="blog_menu">
+              <h5>文章分类</h5>
+              <ul>
+                <li><a href="http://codingstandards.iteye.com/">全部博客 (225)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/126457">Linux命令 (121)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/96957">Bash脚本 (14)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/173253">Bash问答 (4)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/132834">Server配置 (11)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/130387">超越IT (7)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/175241">Bash基础 (30)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/179464">Linux问题 (14)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/181603">MySQL管理 (4)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/182657">Linux基础 (2)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/183919">MongoDB使用 (4)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/184152">Linux学习 (2)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/196236">MySQL要点 (0)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/200930">MySQL问题 (2)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/200931">MySQL优化 (1)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/226728">MySQL配置 (1)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/228011">Nginx使用 (1)</a></li>
+                
+                  <li><a href="http://codingstandards.iteye.com/category/259460">Remote Bridge (2)</a></li>
+                
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>社区版块</h5>
+              <ul>
+                <li><a href="http://codingstandards.iteye.com/blog/news">我的资讯</a> (0)</li>
+                <li>
+                  <a href="http://codingstandards.iteye.com/blog/post">我的论坛</a> (0)
+                </li>
+                <li><a href="http://codingstandards.iteye.com/blog/answered_problems">我的问答</a> (0)</li>
+              </ul>
+            </div>
+            <div id="month_blogs">
+              <h5>存档分类</h5>
+              <ul>
+                
+                  <li><a href="http://codingstandards.iteye.com/blog/monthblog/2013-02">2013-02</a> (2)</li>
+                
+                  <li><a href="http://codingstandards.iteye.com/blog/monthblog/2013-01">2013-01</a> (2)</li>
+                
+                  <li><a href="http://codingstandards.iteye.com/blog/monthblog/2012-12">2012-12</a> (2)</li>
+                
+                <li><a href="http://codingstandards.iteye.com/blog/monthblog_more">更多存档...</a></li>
+              </ul>
+            </div>
+            
+            
+
+            <div id="guest_books">
+              <h5>最新评论</h5>
+              <ul>
+                
+                <li>
+                  <a href="http://107x.iteye.com/" target="_blank" title="107x">107x</a>： 
+                  不错，谢谢！<br>
+                  <a href="http://codingstandards.iteye.com/blog/975686#bc2362073">我使用过的Linux命令之mysql - MySQL客户端命令行工具</a>
+                </li>
+                
+                <li>
+                  <a href="http://linuxfs.iteye.com/" target="_blank" title="linuxfs">linuxfs</a>： 
+                  declare -p var,这个只有在var被赋值的情况下才 ...<br>
+                  <a href="http://codingstandards.iteye.com/blog/1150109#bc2357415">我使用过的Linux命令之declare - 声明shell变量（不知道没关系、知道了就更好的内建命令）</a>
+                </li>
+                
+                <li>
+                  <a href="http://zzzyyyy999.iteye.com/" target="_blank" title="zzzyyyy999">zzzyyyy999</a>： 
+                  博主加油哇！你坚持写，我们坚持看！<br>
+                  <a href="http://codingstandards.iteye.com/blog/786653#bc2357298">我使用过的Linux命令系列总目录（4.17更新，94篇）</a>
+                </li>
+                
+                <li>
+                  <a href="http://miaojihao.iteye.com/" target="_blank" title="miaojihao">miaojihao</a>： 
+                  说的很有道理<br>
+                  <a href="http://codingstandards.iteye.com/blog/1344833#bc2353893">MySQL性能优化小记：MySQL子查询很慢的问题</a>
+                </li>
+                
+                <li>
+                  <a href="http://hgsunyong.iteye.com/" target="_blank" title="hgsunyong">hgsunyong</a>： 
+                  详细.mark下<br>
+                  <a href="http://codingstandards.iteye.com/blog/835485#bc2345207">我使用过的Linux命令之telnet - 基于TELNET协议的远程登录工具</a>
+                </li>
+                
+              </ul>
+            </div>
+
+            <div class="local_bottom"></div>
+          
+        </div>
+      </div>
+
+      <div id="footer" class="clearfix">
+        <div id="copyright">
+          <hr>
+          声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。<br>
+          © 2003-2015 ITeye.com.   All rights reserved.  [ 京ICP证110151号  京公网安备110105010620 ]
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script><img src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/saved_resource" width="0" height="0">
+
+<script src="./我使用过的Linux命令之dmidecode - 查看硬件信息 - Bash @ Linux - ITeye技术网站_files/tracking.js" type="text/javascript"></script>
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19005601-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+      
+    
+  
+
+</body></html>

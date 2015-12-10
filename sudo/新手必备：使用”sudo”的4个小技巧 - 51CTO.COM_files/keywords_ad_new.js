@@ -1,0 +1,1 @@
+//document.write('<a href="http://mobile.51cto.com/mobile/mdsa06/" target="_blank" style="text-decoration: none;color:red">51CTO开启企业运维技术盛宴_嘀嘀、新浪、白鹭齐聚MDSA线下沙龙，赶紧报名吧！</a>');

@@ -1,0 +1,10 @@
+Two Steps:
+   1).just modify /etc/networking/interfaces like the file on the same folder(named interfaces)
+   *** what you need to change is
+        	---1) wpa-ssid
+	        ---2) wpa-psk
+   2).sudo service networking restart
+
+
+and then you raspberry_pi will connet your AP ,and you can use ssh to login it.
+

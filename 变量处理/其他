@@ -1,0 +1,237 @@
+ shell 变量替换
+分类： 技术 2011-02-17 14:45 4895人阅读 评论(0) 收藏 举报
+shell脚本nullc
+1，参数替换:
+
+ 
+
+                   不含有“:”的，只要定义了，就生效，不管是否为空
+                   含有“:”的，即使定义了，但是为空就不生效
+                   用来替换的内容可以是字符串、一个变量、命令的输出
+                   被替换的内容是变量，如$a、$1等
+ 
+         1)默认值替换，如果变量$var没有定义，则整体值为default字符串，但var变量本身并没有被设置：
+                   ${var-default}                    如果var定义了，但为空，则还使用$var，即为空
+                   ${var:-default}          如果var定义了，但为空，则使用default字符串
+                   例如（以下例子为顺序执行）：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# unset b
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# a=                      # 定义了$a，但为空
+                   [root@fx_local2 ~]# echo ${a-CBA}          # 用字符串CBA替换$a
+                                                                 # 没有被替换，输出空，因为$a为空
+                   [root@fx_local2 ~]# echo ${a:-CBA}
+                   CBA                                       # 已经被替换，没有输出空，使用了CBA来替换
+                   [root@fx_local2 ~]# echo $a            # 看一下$a的值是否被设置
+                                                                 # 还是空，因为$a本身并没有被设置
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# unset a             # 删除$a
+                   [root@fx_local2 ~]# echo ${a:-CBA}
+                   CBA
+                   [root@fx_local2 ~]# echo ${a-CBA}
+                   CBA
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# b=CCC
+                   [root@fx_local2 ~]# echo ${a-$b} # 用变量$b替换$a
+                   CCC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a-$(pwd)}     # 用命令pwd替换$a
+                   /root
+                   #--------------------------------------------------------------------------------#
+                   或者在脚本中使用：${1-deault}等
+         2)默认值设置，包含默认值替换的所有功能（标准输出一样），不同在于，如果变量$var没有定义，则在输出default字符串的同时，$var也被设置成default字符串
+                   ${var=default}           如果var定义了，但为空，则还使用$var，即为空
+                   ${var:=default}                   如果var定义了，但为空，则将$var设置成default字符串
+ 
+                   例如：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# unset b
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# a=ABC
+                   [root@fx_local2 ~]# echo ${a=CBA}
+                   ABC
+                   [root@fx_local2 ~]# echo $a
+                   ABC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${b=CBA}       # $b没有值
+                   CBA                                       # 则输出CBA，即被替换的值
+                   [root@fx_local2 ~]# echo $b
+                   CBA                                       # 并且$b的值也被设置成了CBA
+ 
+         3)已有变量替换（并非设置），和默认值替换相反
+                   ${var+new_var}
+                   ${var:+new_var}
+                   例如：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# unset b
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# a=ABC             # 定义了$a
+                   [root@fx_local2 ~]# echo ${a+CBA}
+                   CBA                                       # 整体输出了CBA，被替换的值
+                   [root@fx_local2 ~]# echo $a
+                   ABC                                       # $a本身并没有被设置
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${b+CBA}         # $b是一个不存在的变量
+                                                                 # 输出空
+                   [root@fx_local2 ~]# echo $b
+                                                                 # 输出空，证明$b本身没有被设置
+ 
+         4)标准错误替换，当变量没有定义的时候，输出标准错误
+                   ${a?}
+                   ${a?:}
+                   ${a?AAA} AAA为作为标准错误输出的内容
+                   ${a?:AAA}
+ 
+                   例如：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# unset b
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# a=pwd
+                   [root@fx_local2 ~]# echo ${a?}
+                   pwd
+                   [root@fx_local2 ~]# ${a}
+                   /root
+                   [root@fx_local2 ~]# ${a?}
+                   /root
+                   [root@fx_local2 ~]# : ${a?}               # 空命令后面跟${a?}，则无标准输出
+                   [root@fx_local2 ~]# echo $?
+                   0                                            # 此时状态值为0，表示$a有值
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# ${b?}
+                   -bash: b: parameter null or not set
+                   [root@fx_local2 ~]# : ${b?}
+                   -bash: b: parameter null or not set
+                   [root@fx_local2 ~]# echo ${b?}
+                   -bash: b: parameter null or not set
+                   [root@fx_local2 ~]# (${b?}) >/dev/null 2>&1
+                   [root@fx_local2 ~]# echo $?
+                   1                                            # 以上这些的状态值都是1
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# ${b?AAA}
+                   -bash: b: AAA                               # 错误信息变成了AAA
+                   #--------------------------------------------------------------------------------#
+                   或者一种灵活的用法：
+                   ${1?"Usage: $0 ARGUMENT"}
+ 
+ 
+         2，字符串匹配处理：
+ 
+         1)字符串长度：
+                   ${#var}     表示$var的长度
+                   ${#2}         表示脚本的第二个参数的长度
+                   ${#@}       表示脚本的所有参数的个数，等效于$#
+                   另外，数组中某个元素的长度 ${#array[n]}
+ 
+         2)字符串的前后截取，pattern一般是个命令行glob，匹配的即为被去掉的字符：
+                   ${var#pattern}                   最短头匹配截取
+                   ${var##Pattern}                 最大头匹配截取
+                   ${var%Pattern}                  最短尾匹配截取
+                   ${var%%Pattern}               最大尾匹配截取
+ 
+                   例如：
+ 
+                   [root@fx_local2 ABS]# unset a
+                   [root@fx_local2 ABS]# a=AAABBBCCC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# echo $a
+                   AAABBBCCC
+                   [root@fx_local2 ABS]# echo ${a#A}         # 并没有用glob，从头去掉一个“A”
+                   AABBBCCC
+                   [root@fx_local2 ABS]# echo ${a#AA}
+                   ABBBCCC
+                   [root@fx_local2 ABS]# echo ${a#AAA}
+                   BBBCCC
+                   [root@fx_local2 ABS]# echo ${a##AAA}
+                   BBBCCC                                        # 以上在没有glob的时候，#与##是相同的
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# echo ${a%CC}     # 从尾去掉两个“C”（或者说一个“CC”）
+                   AAABBBC
+                   [root@fx_local2 ABS]# echo ${a%%BBCCC}
+                   AAAB                                             # %与%%的原理同上一样
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# echo ${a#BB}
+                   AAABBBCCC                                # 本是从头，但字符在中间就不行了
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# echo ${a##*A}    # 这里用到了glob
+                   BBBCCC                                        # 因为是最大头匹配，所以其中*A等效于AAA
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# a=/home/wwy/bin/ABS/zero.sh                  
+                   [root@fx_local2 ABS]# echo ${a%.*}       # 匹配右边数第一个“.”右边的字符
+                   /home/wwy/bin/ABS/zero
+                   [root@fx_local2 ABS]# echo ${a%%.*}
+                   /home/wwy/bin/ABS/zero                          # 因为只有一个“.”，所以%与%%是一样的
+                   [root@fx_local2 ABS]# echo ${a#*.}        # 匹配左边数第一个“.”左边的字符
+                   sh
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ABS]# echo ${a%/*}     # 最短尾匹配，从右往左看
+                   /home/wwy/bin/ABS                          # /* 即为从右往左看的第一个/的右边
+                   [root@fx_local2 ABS]# echo ${a##*/}     # 最长头匹配，从左往右看
+                   zero.sh                                          # */ 即为从左往右看的最后一个/的左边
+ 
+         3)字符串位置，postion为第几个位置，此位置前面的字符为被匹配的（被删除的），length表示剩下的字符的长度：
+                   ${var:postion}  # 从左往右看，匹配postion位置之左的，留下之后的
+                   ${var:(-postion)} # 从右往左看，匹配postion位置之左的，()是为了避免和${var-default}冲突
+                   ${var:postion:length} # 匹配postion位置之前的同时，显示之后的长度为length
+                  
+                   例如：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# a=123456789
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a:5}
+                   6789                                               # 第五个字符之前的被删除了（被匹配）
+                   [root@fx_local2 ~]# echo ${a:(-2)}
+                   89                                          # 倒数第二个字符之前的被删除了（被匹配）
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a:5:2} 
+                   67                                          # 删除之后，只输出了剩下的前两位
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a:5:0}
+                                                                 # 这样就什么都不剩了
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a:5:1}
+                   6                                            # 只剩下第一个，此方法即，显示第五个字符
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# b=3
+                   [root@fx_local2 ~]# echo ${a:`echo 5`:$b}      # 也可以这样     
+                   678
+                  
+         4)字符串替换，分第一个替换和全局替换，前缀替换后缀替换，同样支持glob：
+                   ${var/Pattern/Replacement}            # 第一次匹配的被替换，类似：sed 's/Pattern/Replacement/'
+                   ${var//Pattern/Replacement}          # 全局的匹配被替换，类似：sed 's/Pattern/Replacement/g'
+                   ${var#/prefix/Replacement}             # 前缀替换
+                   ${var%/suffix/Replacement}             # 后缀替换
+ 
+                   例如：
+                   [root@fx_local2 ~]# unset a
+                   [root@fx_local2 ~]# a=ABCxxABC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a/x/X}  # 等效于：sed 's/x/X/'  <<<$a
+                   ABCXxABC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a//x/X}          # 等效于：sed 's/x/X/g' <<<$a
+                   ABCXXABC
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a/#ABC/ZZZ}
+                   ZZZxxABC                                     # 前面的ABC被替换
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${a/%ABC/ZZZ}
+                   ABCxxZZZ                                     # 后面的ABC被替换
+ 
+         5)得到变量名，输出所有前缀一样的变量名，不支持glob：
+                  ${!var_prefix*} 或 ${!var_prefix@}
+                  
+                   例如：
+                   [root@fx_local2 ~]# xyz111=something # 第一两个变量，值随意
+                   [root@fx_local2 ~]# xyz222=something
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# echo ${!xyz*}  # 输出所有xyz为前缀的变量名
+                   xyz111 xyz222
+                   [root@fx_local2 ~]# echo ${!xyz@}         # 同样的效果
+                   xyz111 xyz222
+                   #--------------------------------------------------------------------------------#
+                   [root@fx_local2 ~]# Axyz333=somthing
+                   [root@fx_local2 ~]# echo ${!xyz@}  
+                   xyz111 xyz222                             # Axyz并没有输出
+                   [root@fx_local2 ~]# echo ${!Axyz@}       # 应该这样
+                   Axyz333
+版权声明：本文为博主原创文章，未经博主允许

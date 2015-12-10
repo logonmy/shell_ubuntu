@@ -1,0 +1,19 @@
+sudo gedit /etc/ld.so.conf.d/opencv.conf  #添加opencv  lib库所在路径：/usr/local/lib ，保存
+
+sudo ldconfig    #进行配置
+
+更新配置文件：sudo gedit /etc/bash.bashrc
+
+在末尾添加：
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+
+export PKG_CONFIG_PATH
+
+四.测试Sample
+
+进入到sample/c目录下：
+
+./facedetect --cascade="/usr/local/share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml" --scale=.5 ./lena.jpg
+
+输出人脸检测结果，ok。

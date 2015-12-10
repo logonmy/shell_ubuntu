@@ -1,0 +1,2 @@
+禁止删除本文件和以C_PAN开头的其它文件,否则"一键GHOST"将无法使用
+Don't delete this file, otherwise "1KEY GHOST" is not used.

@@ -1,0 +1,12 @@
+<p style="text-align:center"><img src=""></p>
+
+
+
+#############################
+表现层代码：
+<div id="container">
+   <img src="1.png" height="50" width="50">
+</div>
+结构层：body{text-align:center;}
+这样就可以居中显示了
+##############################

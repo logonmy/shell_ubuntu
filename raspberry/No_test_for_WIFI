@@ -1,0 +1,7 @@
+Ubuntu's WiFi say "device not managed"
+Step 1 : Go to the Terminal ( Applications->Accessories->Terminal ) and type sudo gedit /etc/NetworkManager/nm-system-settings.conf
+Step 2 : A window would now popup displaying the contents of the nm-system-settings.conf file
+Step 3 : Now Change "managed=false" to "managed=true"
+Step 4 : Save the file and close the window
+Step 5 : Now back in the terminal type sudo killall nm-system-settings
+Step 6 : Thats it, your network interface should now be detected and it should attempt to connect to a network.

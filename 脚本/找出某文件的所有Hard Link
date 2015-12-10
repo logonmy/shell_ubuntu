@@ -1,0 +1,6 @@
+1、找出某文件的所有Hard Link
+ls -i /path/to/file
+find / -inum <file-inode>
+或者：
+find / -samefile /path/to/file
+

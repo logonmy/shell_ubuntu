@@ -1,0 +1,11 @@
+ubuntu 12.04下gedit查看txt中文乱码解决办法 (2012-06-18 17:47:27)转载 ▼
+标签： 杂谈	分类： Ubuntu
+由于我不能要求别人保存txt文件时必须用utf-8，那我只能自己找解决办法：
+
+打开终端输入：
+
+gsettings set org.gnome.gedit.preferences.encodings auto-detected "['GB18030', 'GB2312', 'GBK', 'UTF-8', 'BIG5', 'CURRENT', 'UTF-16']"
+
+gsettings set org.gnome.gedit.preferences.encodings shown-in-menu "['GB18030', 'GB2312', 'GBK', 'UTF-8', 'BIG5', 'CURRENT', 'UTF-16']"
+
+解决乱码问题.

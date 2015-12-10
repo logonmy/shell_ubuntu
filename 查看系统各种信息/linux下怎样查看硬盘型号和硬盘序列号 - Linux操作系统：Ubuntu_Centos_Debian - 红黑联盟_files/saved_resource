@@ -1,0 +1,2194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中国网页游戏领导平台_9377游戏_9377游戏平台 -好游戏尽在9377.com</title>
+    <meta name="keywords" content="网页游戏,9377,最新网页游戏,网页游戏大全,网页游戏平台" />
+    <meta name="description" content="9377网页游戏（www.9377.com）是中国最火爆的网页游戏运营平台之一，为广大玩家提供最新网页游戏以及最好玩的网页游戏排行榜，给广大玩家提供最好的服务。目前，9377平台运营着多款最火爆的网页游戏，获得业界一致好评！想找最新的网页游戏，快来9377网页游戏平台吧！9377网页游戏平台，中国网页游戏领导平台_好游戏尽在9377.com！" />
+    <meta property="qc:admins" content="0767356077613776375" />
+    <meta property="wb:webmaster" content="a66b8764e570c6f1" />
+    <link href="http://cdnsource.9377.com/style/cms_style_2015/common.css?20150521152313" rel="stylesheet" type="text/css" />
+    <link href="http://cdnsource.9377.com/style/cms_style_2015/style.css?20150521152313" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://cdnsource.9377.com/js/ajax.js?20150521152313"></script>
+    <script type="text/javascript" src="http://cdnsource.9377.com/js/comon_2015.js?20150521152313"></script>
+    <script type="text/javascript" src="http://cdnsource.9377.com/js/jquery.SuperSlide.2.1.1.js?20150521152313"></script>
+</head>
+<body>
+<!--i.n.d.e.x-->
+<!-- 头部导航部分 start -->    
+<script type="text/javascript">
+	function check_search(form) {
+		var keywords = $(form).find('input[name="q"]').val(); 
+		if( !keywords || keywords == '搜索你喜欢的游戏' ) {
+			alert('请输入搜索关键字。');
+			$(form).find('input[name="q"]').focus();
+			return false;
+		}
+
+		return true;
+	}
+</script>
+<div class="top_sub_nav">
+	<div class="wrapper" style="*z-index:9999">
+        <div class="all_games_up" id="all_game_div" style="display: none;">
+            <ul class="all_games_list">
+            			<li><a href="http://lt.9377.com" target="_blank">雷霆之怒</a>
+									<em class="h_icon">荐</em>
+							</li>
+						<li><a href="http://my.9377.com" target="_blank">魅影传说</a>
+									<em class="h_icon">荐</em>
+							</li>
+						<li><a href="http://cycs.9377.com/" target="_blank">赤月传说</a>
+									<em class="h_icon">荐</em>
+							</li>
+						<li><a href="http://ly.9377.com" target="_blank">烈焰</a>
+									<em class="h_icon">荐</em>
+							</li>
+						<li><a href="http://sg2.9377.com" target="_blank">盛世三国2</a>
+									<em class="n_icon">新</em>
+							</li>
+						<li><a href="http://mu.9377.com" target="_blank">奇迹来了</a>
+									<em class="n_icon">新</em>
+							</li>
+						<li><a href="http://lhzs.9377.com" target="_blank">烈火战神</a>
+									<em class="h_icon">荐</em>
+							</li>
+						<li><a href="http://jz.9377.com" target="_blank">剑踪</a>
+							</li>
+						<li><a href="http://tlcs.9377.com" target="_blank">屠龙传说</a>
+							</li>
+						<li><a href="http://wxwz.9377.com" target="_blank">武侠外传</a>
+							</li>
+						<li><a href="http://cycs.9377.com/" target="_blank">赤月经典版</a>
+									<em class="n_icon">新</em>
+							</li>
+						<li><a href="http://www.9377.com/ogzq/" target="_blank">欧冠足球</a>
+							</li>
+						<li><a href="http://hg.9377.com/" target="_blank">黑暗之光</a>
+							</li>
+						<li><a href="http://zrzs.9377.com/" target="_blank">逐日战神</a>
+							</li>
+						<li><a href="http://tlz.9377.com/" target="_blank">屠龙战</a>
+							</li>
+						<li><a href="http://zt.9377.com" target="_blank">战天</a>
+									<em class="n_icon">新</em>
+							</li>
+						<li><a href="http://jieji.9377.com" target="_blank">街机三国</a>
+							</li>
+						<li><a href="http://sxd.9377.com/" target="_blank">神仙道</a>
+							</li>
+						<li><a href="http://sg.9377.com/" target="_blank">盛世三国</a>
+							</li>
+						<li><a href="http://rxzj.9377.com/" target="_blank">热血战纪</a>
+							</li>
+						<li><a href="http://wj.9377.com/" target="_blank">问剑</a>
+							</li>
+						<li><a href="http://qh.9377.com" target="_blank">枪魂</a>
+							</li>
+						<li><a href="http://nz.9377.com/" target="_blank">怒斩</a>
+							</li>
+						<li><a href="http://ah.9377.com" target="_blank">暗黑屠龙</a>
+							</li>
+						<li><a href="http://aszt.9377.com/" target="_blank">傲视遮天</a>
+							</li>
+						<li><a href="http://cy.9377.com/" target="_blank">赤月</a>
+							</li>
+						<li><a href="http://dpcq.9377.com/" target="_blank">斗破苍穹2</a>
+							</li>
+			            </ul>
+        </div>
+        <div class="clearfix">
+            <div class="sub_nav_left">
+                <a href="http://www.9377.com/downloads.php?game=aszt&amp;item=mini&amp;lm=&amp;uid=&amp;url=http%3A%2F%2Fcdnsource.9377.com%2Fjs%2F9377%25E6%25B8%25B8%25E6%2588%258F%25E4%25B8%25AD%25E5%25BF%2583.exe"><em class="c_web_icon"></em>把9377保存到桌面</a>
+                <a href="javascript:;" onclick="if(document.all){document.body.style.behavior = 'url(#default#homepage)'; document.body.setHomePage('http://www.9377.com'); }else{ alert('浏览器不支持此操作, 请手动设为首页'); }"><em class="c_home_icon"></em>设为首页</a>
+                <a href="javascript:;" onclick="try{ window.external.addFavorite('http://www.9377.com', '9377游戏平台'); } catch(e) {  try{ window.sidebar.addPanel('9377游戏平台', 'http://www.9377.com', ''); }catch (e) { alert('加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.');  } }"><em class="c_add_icon"></em>加入收藏</a>
+            </div>
+            <div class="sub_nav_search">
+            	<form method="post" action="http://www.9377.com/search.php" onsubmit="return check_search($(this));">
+	                <input class="search_txt input_focus" type="text" name="q" value="搜索你喜欢的游戏"/>
+	                <input class="search_btn" type="submit" value=" " />
+                </form>
+            </div>
+            <div class="sub_nav_right">
+            	<span id="top_login_tips">
+	                <a href="http://www.9377.com/login.php"><em class="c_login_icon"></em>登录</a>　|　
+	                <a href="http://www.9377.com/register.php">注册</a>
+                </span>
+                <span id="all_game_hover" class="all_games_ico">全部游戏<em class="down_ico"></em></span>
+            </div>
+            <script type="text/javascript">
+				if( $_COOKIE['login_name'] ) {
+					html = '欢迎您，'+$_COOKIE['login_name'];
+					html += '&nbsp;&nbsp;<a href="http://wvw.9377.com/login.php?do=logout">退出</a>';
+					$('#top_login_tips').html(html);
+				}
+            </script>
+			<div class="__data__" data_id="__data__[905]" page="" postfix="index" style="display: none;"><div></div><span>顶部所有游戏导航</span></div>        </div>
+    </div>
+</div>
+
+<div class="top_menu">
+    <div class="wrapper clearfix">
+		<h1 class="logo"><a href="http://www.9377.com/"><img src="http://cdnsource.9377.com/images/cms_style_2015/9377_logo.jpg?20150521152313" width="152" height="70" /></a></h1>
+		<ul class="clearfix">
+			<li><a href="http://www.9377.com/">首页</a></li>
+			<li><a href="http://www.9377.com/users/users_index.php" rel="nofollow">用户中心</a></li>
+			<li><a href="http://www.9377.com/game_center.php">游戏中心</a></li>
+			<li><a href="http://www.9377.com/pay_index.php" target="_blank" rel="nofollow">充值中心</a></li>
+			<li><a href="http://mall.9377.com/" target="_blank" rel="nofollow">积分商城</a></li>
+			<li><a href="http://www.9377.com/kefu/" rel="nofollow">客服中心</a></li>
+			<li><a href="http://www.9377.com/news/" target="_blank">游戏资讯</a></li>
+			<li><a href="http://bbs.9377.com/" target="_blank">官方论坛</a></li>
+		</ul>
+    </div>
+</div>  
+<!-- 头部导航部分 end -->
+<script type="text/javascript">
+//所有游戏下拉
+$(function(){
+	var timeout = null;
+	$('#all_game_hover').mouseover(function(){
+		clearTimeout(timeout);
+		$('.all_games_ico').addClass('hover');
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		timeout = setTimeout(function(){
+			 $('.all_games_ico').removeClass('hover');
+			 $('#all_game_div').hide(); 
+		 }, 300);
+	});
+	
+	$('#all_game_div').mouseover(function(){
+		clearTimeout(timeout);
+		$('.all_games_ico').addClass('hover');
+		$('#all_game_div').show();
+	}).mouseout(function(){
+		$('.all_games_ico').removeClass('hover');
+		$('#all_game_div').hide();
+	});
+	//input默认值
+	var text_val=$('.input_focus').val();
+	$('.input_focus').focus(function(){
+		if(this.value==text_val)this.value='';
+	}).blur(function(){
+		if(this.value=='')this.value=text_val;
+	});
+});
+
+
+//返回顶部
+$(function(e) {
+	
+	var $bp = $('.float_buttons'),$bt = $bp.find('.float_top');
+	$bp.show();
+	$bt.click(function (){
+		$('body,html').animate({scrollTop:0},200);
+	});
+	var st = 0;
+	$(window).scroll(function (){
+		if($(window).scrollTop() === 0){
+			$bt.slideUp();
+			st = 0;
+		} else {
+			if(st === 0) $bt.slideDown();
+			st = 1;
+		}
+	}).trigger('scroll');
+})
+
+// 导航去掉选中状态
+$(function(){
+	$(".top_menu li a.on").parent("li").addClass("mouse_out");
+	$(".top_menu ul").hover(function(){
+		$(".top_menu li a").removeClass("on");
+	},function(){
+		$(".top_menu li.mouse_out a").addClass("on");
+	});		
+});
+</script>
+<!--幻灯片切换 start-->
+<div id="index_banner">
+	<div class="__data__" data_id="__data__[26755]" page="" postfix="index" style="display: none;"><div></div><span>2015首页幻灯_new</span></div>    <div class="banBox" id="banBox">
+    			<a href="http://lt.9377.com/ztq/" target="_blank"><img _src="http://cdnsource.9377.com/uploads/2015-05/18/d34f7d9fb40d3313.jpg" /></a>
+				<a href="http://my.9377.com/" target="_blank"><img _src="http://cdnsource.9377.com/uploads/2015-04/16/dd1abae3636bd9eb.jpg" /></a>
+				<a href="http://cycs.9377.com/" target="_blank"><img _src="http://cdnsource.9377.com/uploads/2015-05/20/5f2356aee75ffcbd.jpg" /></a>
+			</div>
+    <div class="banBtns" id="banBtns"></div>
+	<!-- 登录 -->
+	<div class="login_main">
+		<script type="text/javascript">
+		function _login_form_index(form){
+			var form = $(form);
+			var username = form.find('input[name=username]').val();
+			if(username.length < 3 || username.length > 20) {
+				//alert("您输入的帐号有误");
+				$('.log_tip').css('top', '-20px').show();
+				$('.log_tip_content').html('您输入的帐号有误');
+				form.find('input[name=username]').focus();
+				setTimeout(function(){$('.log_tip').fadeOut();},2000);
+				return false;
+			}
+			
+			var pwd = form.find('input[name=password]').val();
+			if(pwd.length < 1) {
+				//alert("您输入的密码不正确");
+				$('.log_tip').css('top', '30px').show();
+				$('.log_tip_content').html('您输入的密码不正确');
+				form.find('input[name=password]').focus();
+				setTimeout(function(){$('.log_tip').fadeOut();},2000);
+				return false;
+			}
+			
+			return true;
+		}
+		</script>
+		<form method="post" id="login_form" action="http://wvw.9377.com/login.php" onsubmit="return _login_form_index(this);">
+			<input type="hidden" name="do" value="login" />
+			<div class="login_before">
+				<p>
+					<label><em class="c_account_icon"></em>账号</label>
+					<input class="index_input" name="username" id="username" type="text" value="" />
+				</p>
+				<p>
+					<label><em class="c_password_icon"></em>密码</label>
+					<input class="index_input" name="password" type="password" />
+				</p>
+				<div class="forget_p">
+					<a class="fr" href="http://wvw.9377.com/getpass.php" target="_blank" rel="nofollow">忘记密码</a>
+					<input name="login_save" type="checkbox" value="1" id="login_save" />
+					<label for="login_save">自动登录</label>
+				</div>
+				<input class="index_button" type="submit" value="登 录" />
+				<div class="reg_box">
+					<a class="l_reg_now" href="http://wvw.9377.com/register.php" rel="nofollow">立即注册<i></i></a>
+					<a class="qq_btn" href="http://wvw.9377.com/api/qq.php?_qq_action=login" target="_blank" rel="nofollow"><i></i>QQ登录</a>
+				</div>
+				<!-- 错误提示 -->
+				<div class="log_tip">
+					<p class="log_tip_content"></p>  <!-- top:30px; -->
+					<div class="log_tip_arrow_border"></div>
+					<div class="log_tip_arrow"></div>
+				</div>
+				<script type="text/javascript">
+					if($_COOKIE['Puser']) {
+						$('#username').val($_COOKIE['Puser']);
+					}
+				</script>
+			</div>
+		</form>
+		<div id="user_info" style="display:none;">
+			<div class="loged_mes clearfix">
+				<div class="logined_head">
+					<a href="http://wvw.9377.com/users/users_index.php" target="_blank" rel="nofollow">
+						<img class="avatar" src="http://bbs.9377.com/uc_server/images/noavatar_small.gif?20150521152313" />
+					</a>
+				</div>
+				<div class="game_home">
+					<div class="logined_usename">
+						<a class="fr" href="http://wvw.9377.com/login.php?do=logout" rel="nofollow">[退出]</a>
+						<a href="http://wvw.9377.com/users/users_index.php" target="_blank" rel="nofollow"><span class="username"></span></a>
+					</div> 
+					<div class="progress_bar">
+						<p class="progress_tips"></p>
+						<p class="progress_line"><span style="width:50%;"></span></p>
+						<div class="loged_exp">
+							<p>您的成长值：<span class="org_color up_credits">0</span></p>
+							<p><a target="_blank" title="什么是成长值？" href="http://www.9377.com/users/users_index.php?type=14">什么是成长值？</a></p>
+						</div>
+					</div>
+					<div class="integral_box clearfix">
+						<div class="integral">
+							<a href="http://www.9377.com/users/users_index.php?type=12" target="_blank">积分：<span class="user_credit">0</span></a>
+							<div class="loged_jifen">
+								<p>您的积分：<span class="org_color user_credit">0</span></p>
+								<p><a target="_blank" title="什么是积分？" href="http://mall.9377.com/center.php?ac=question#p1">什么是积分？</a></p>
+							</div>
+						</div>
+						<div class="logined_btn"><a class="blue_btn" href="http://www.9377.com/pay_index.php" target="_blank">充值</a><a class="sign_in orange_btn" href="javascript:;">签到</a></div>
+					</div>
+				</div>
+				<script type="text/javascript">
+					$(".progress_bar").hover(function(){
+						$(".loged_exp").show();
+					},function(){
+						$(".loged_exp").hide();
+					},200);
+					$(".integral").hover(function(){
+						$(".loged_jifen").show();
+					},function(){
+						$(".loged_jifen").hide();
+					},200);
+				</script>
+			</div>
+			<div class="index_tui_games">
+				<h3>我玩过的游戏</h3>
+				<table width="100%" border="0">
+					<tbody id="last_games"></tbody>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$.getJSON('http://wvw.9377.com/api/user_info_jsonp.php?level=1&last_game=1&num=3&callback=?', function(json){
+				if(!json.LOGIN_ACCOUNT) return;
+				
+				$('#login_form .login_before').html($('#user_info').html());
+				$('#login_form .login_before')
+				.find('.username').html(
+					($_COOKIE['openid_type'] ? '<img src="http://cdnsource.9377.com/images/openid/icon_'+ $_COOKIE['openid_type'] +'.png?20150521152313" />' : '') + 
+					(json.openid && json.openid.nickname ? 
+						json.openid.nickname :
+						(json.BBS_NAME ? json.BBS_NAME : json.LOGIN_ACCOUNT)
+					)
+				).end()
+				.find('.progress_tips').html(
+					'<span class="logined_vip">'+(json.user_level.name ? json.user_level.name : '普通会员')+
+					'</span><em><span class="up_credits">'+(json.user_level.score ? json.user_level.score : 0)+'</span>/'
+					+(json.user_level.next_level.credit ? json.user_level.next_level.credit : 0)+'</em>'
+				).end()
+				.find('.up_credits').html(
+					(json.user_level.score ? json.user_level.score : 0)
+				).end()
+				.find('.user_credit').html(
+					(json.credit ? json.credit : 0)
+				).end()
+				.find('.progress_line').html(
+					'<span style="width:'+json.user_level.next_level_per+'%;"></span>'
+				).end()
+				.find('.avatar').attr('src', $_COOKIE['user_avatar_big'] +'&size=small');
+				
+				var has_json = false;
+				if( json.last_games ) {
+					var html = '';
+					for( i in json.last_games ) {
+						if( !json.last_games[i].NAME ) continue;
+						has_json = true;									
+						html += ' <tr>';
+						html += '<td width="10%" align="center"><img src="http://cdnsource.9377.com/images/cms_style_2012_new/game/icon/'+json.last_games[i].ALIAS+'.jpg?20150521152313" /></td>'; 
+						html += '<td width="36%" align="center"><a href="'+json.last_games[i].site+'" target="_blank">'+json.last_games[i].NAME+'</a></td>';
+						html += '<td width="34%" align="center"><a href="'+json.last_games[i].url+'" target="_blank">'+json.last_games[i].name+'</a></td>';
+						html += '<td width="20%" align="center"><a class="status_btn" href="'+json.last_games[i].url+'" target="_balnk">立刻进入</a></td>';
+						html += '</tr>';
+						$('#last_games').html(html);
+					}
+				}
+				//新用户登录显示推荐游戏
+				if( has_json == false ){
+					$('.index_tui_games').find('h3').html('热门游戏推荐<div class="__data__" data_id="__data__[25426]" page="" postfix="index" style="display: none;"><div></div><span>用户热门游戏推荐</span></div>');
+					var html = '';
+					html += '<tbody>';
+					html += '';
+					html += '<tr>';
+					html += '<td width="10%" align="center"><img src="http://cdnsource.9377.com/images/cms_style_2012_new/game/icon/my.jpg?20150521152313"/></td>'; 
+					html += '<td width="36%" align="center"><a href="http://my.9377.com" target="_blank">魅影传说</a></td>';
+					html += '<td width="34%" align="center"><a href="http://wvw.9377.com/game_login.php?game=my&server=1899" target="_blank">双线1899区</a></td>';
+					html += '<td width="20%" align="center"><a class="status_btn" href="http://wvw.9377.com/game_login.php?game=my&server=1899" target="_blank">立即进入</a></td>';
+					html += '</tr>';
+					html += '';
+					html += '<tr>';
+					html += '<td width="10%" align="center"><img src="http://cdnsource.9377.com/images/cms_style_2012_new/game/icon/cycs.jpg?20150521152313"/></td>'; 
+					html += '<td width="36%" align="center"><a href="http://cycs.9377.com/" target="_blank">赤月传说</a></td>';
+					html += '<td width="34%" align="center"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3528" target="_blank">双线3528区</a></td>';
+					html += '<td width="20%" align="center"><a class="status_btn" href="http://wvw.9377.com/game_login.php?game=cycs&server=3528" target="_blank">立即进入</a></td>';
+					html += '</tr>';
+					html += '';
+					html += '<tr>';
+					html += '<td width="10%" align="center"><img src="http://cdnsource.9377.com/images/cms_style_2012_new/game/icon/lt2.jpg?20150521152313"/></td>'; 
+					html += '<td width="36%" align="center"><a href="http://lt.9377.com" target="_blank">雷霆之怒</a></td>';
+					html += '<td width="34%" align="center"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=272" target="_blank">双线272区</a></td>';
+					html += '<td width="20%" align="center"><a class="status_btn" href="http://wvw.9377.com/game_login.php?game=lt2&server=272" target="_blank">立即进入</a></td>';
+					html += '</tr>';
+					html += '';
+					html += '</tbody>';
+					$('#last_games').html(html);
+				}
+
+				$(function(){
+					$('.friends_link').remove();
+					$('.sign_in').live('click', function(){
+						$.getJSON('http://wvw.9377.com/api/user_sign_in.php?callback=?', function(res){
+							if( res == 0 ) {
+								alert('请先登录后再签到。');
+							}else if( res == -1 ) {
+								alert('对不起，您今天已签到，明天再来吧。');
+							}else if( res > 0 ) {
+								alert('签到成功，获得'+res+'积分。');
+								$('.user_credit').html(parseInt($('.user_credit').html())+res);
+								$('.up_credits').html(parseInt($('.up_credits').html())+res);
+							}else {
+								alert('对不起，网络繁忙，请稍候重试。');
+							}
+						});
+					});
+				});
+			});
+		</script>
+	</div>
+	<!-- 登录 -->
+</div>
+<script type="text/javascript">
+(function(){
+	var items = $('#banBox a:has(img)');
+	for(var i = 0; i < items.length; i++){
+		$('#banBtns').append($('<a></a>'));
+	}
+	$('#banBox a:first').css({'z-index': 3,'opacity':1});
+	$('#banBtns a:first').addClass('on');
+	var $con = $('#index_banner'),
+		$box = $con.find('#banBox'),
+		$btns = $con.find('#banBtns'),
+		$btnsNum = $('#banBox a').length,
+		i = -1,
+		autoChange = function(){
+			i += 1;
+			if (i >= $btnsNum){
+				i = 0;
+			}
+			$btns.find('a:eq(' + i + ')').addClass('on').siblings().removeClass('on');
+			var curr = $box.find('a:eq(' + i + ')'),
+			img = curr.find('img'),
+			prev = curr.siblings();
+			prev.css('z-index', 2);
+			if(!img.attr('src')){
+				img.bind('load', function(){
+					var next = i +1;
+					next = next >= $btnsNum ? 0 : next;
+					var next = $box.find('a:eq(' + next + ') img');
+					if(!next.attr('src')){
+						next.attr('src', next.attr('_src'));
+					}
+				});
+				img.attr('src', img.attr('_src'));
+			}
+			curr.css('z-index', 3).animate(
+				{'opacity': 1},
+				150,
+				function() {
+					prev.css({
+						'z-index': 1,
+						'opacity': 0.1
+					});
+				}
+			);
+		},
+		loop = setInterval(autoChange, 5000);
+	$con.hover(function(){
+		clearInterval(loop)
+	},function() {
+		loop = setInterval(autoChange, 5000)
+	});
+	$btns.find('a').click(function(){
+		i = $(this).index() - 1;
+		autoChange();
+	});
+	autoChange();
+})();
+</script>
+<!--幻灯片切换 end--> 
+<div class="wrapper"> 
+	<div class="clearfix">
+        <!-- 左侧部分 -->
+        <div class="main_area">
+            <!--火爆游戏 start-->
+			<div class="__data__" data_id="__data__[888]" page="" postfix="index" style="display: none;"><div></div><span>首页火爆游戏</span></div>			<h2 class="hide">最火的网页游戏</h2>
+            <div class="main_tips"><font class="org_color">火爆</font>游戏</div>
+            <div class="hot_game">
+                <ul class="clearfix">
+										<li>
+						<span class="hot_ico"></span>						<div class="site_pic">
+							<div class="__data__" data_id="__data__[25546]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏图lt2</span></div>							<img alt="5-12雷霆之怒-火爆图.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-05/12/f6a26b5eee1ecfa2.jpg" style="width: 220px; height: 250px;" />
+							<div class="site_pic_back">
+								<div class="__data__" data_id="__data__[25549]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏logolt2</span></div>								<p class="tc site_pic_logo"><a href="http://lt.9377.com" target="_blank"><img alt="最新雷霆logo.png" src="http://cdnsource.9377.com/uploads/2015-05/06/02d772fcc38cc1a8.png" style="width: 154px; height: 93px;" /></a></p>
+								<div class="__data__" data_id="__data__[25846]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏介绍lt2</span></div>								<p class="site_pic_info">最强悍的打击操作和最刺激的巅峰PK。独创的幻神系统，从未有过的游戏体验，从《雷霆之怒》开始!&nbsp;</p>
+								<div class="games_start_box">
+									<div class="games_start_tit clearfix"> 
+										<a href="http://lt.9377.com/nserver" target="_blank">开始游戏</a>
+										<span><i></i></span>
+									</div>
+									<div class="games_start_con"> 
+										<ul> 
+											<li><a href="http://www.9377.com/game_login.php?game=lt2&server=new" target="_blank">进入新服</a></li>
+											<li><a href="http://lt.9377.com" target="_blank">游戏官网</a></li>
+											<li><a href="http://wvw.9377.com/lt2xsk.html" target="_blank">新手礼包</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="site_txt">
+                            <h3><a href="http://lt.9377.com" target="_blank">雷霆之怒</a></h3>
+							<div class="__data__" data_id="" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏标语lt2</span></div>                            <p></p>
+                        </div>
+                    </li>
+										<li>
+						<span class="hot_ico"></span>						<div class="site_pic">
+							<div class="__data__" data_id="__data__[20240]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏图my</span></div>							<img alt="平台官网_03.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-01/20/94a6e629d0a5407a.jpg" style="width: 220px; height: 250px;" />
+							<div class="site_pic_back">
+								<div class="__data__" data_id="__data__[21922]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏logomy</span></div>								<p class="tc site_pic_logo"><a href="http://my.9377.com" target="_blank"><img alt="魅影传说.png" src="http://cdnsource.9377.com/uploads/2015-01/30/8f56d32f5a216efc.png" style="width: 149px; height: 90px;" /></a></p>
+								<div class="__data__" data_id="__data__[21928]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏介绍my</span></div>								<p class="site_pic_info">驯远古神兽坐骑，召武魂法宝助阵，秦唐汉跨时空三国混战，续写你的史战新篇章。</p>
+								<div class="games_start_box">
+									<div class="games_start_tit clearfix"> 
+										<a href="http://my.9377.com/server/" target="_blank">开始游戏</a>
+										<span><i></i></span>
+									</div>
+									<div class="games_start_con"> 
+										<ul> 
+											<li><a href="http://www.9377.com/game_login.php?game=my&server=new" target="_blank">进入新服</a></li>
+											<li><a href="http://my.9377.com" target="_blank">游戏官网</a></li>
+											<li><a href="http://wvw.9377.com/myxsk.html" target="_blank">新手礼包</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="site_txt">
+                            <h3><a href="http://my.9377.com" target="_blank">魅影传说</a></h3>
+							<div class="__data__" data_id="__data__[20222]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏标语my</span></div>                            <p></p>
+                        </div>
+                    </li>
+										<li>
+						<span class="hot_ico"></span>						<div class="site_pic">
+							<div class="__data__" data_id="__data__[20213]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏图cycs</span></div>							<img alt="赤月传说新平台火爆游戏图片220x250.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-03/26/e0ffb4847b63111b.jpg" style="width: 220px; height: 250px;" />
+							<div class="site_pic_back">
+								<div class="__data__" data_id="__data__[20216]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏logocycs</span></div>								<p class="tc site_pic_logo"><a href="http://cycs.9377.com/" target="_blank"><img alt="赤月传说" src="http://cdnsource.9377.com/uploads/2015-02/05/e8ac3b8b8143f9b8.png" style="width: 149px; height: 90px;" /></a></p>
+								<div class="__data__" data_id="__data__[20225]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏介绍cycs</span></div>								<p class="site_pic_info">全新微端技术，营造出刺激的boss打发与丰富的副本体验，全新经典版上线，专注只为PK！</p>
+								<div class="games_start_box">
+									<div class="games_start_tit clearfix"> 
+										<a href="http://cycs.9377.com/server_list/" target="_blank">开始游戏</a>
+										<span><i></i></span>
+									</div>
+									<div class="games_start_con"> 
+										<ul> 
+											<li><a href="http://www.9377.com/game_login.php?game=cycs&server=new" target="_blank">进入新服</a></li>
+											<li><a href="http://cycs.9377.com/" target="_blank">游戏官网</a></li>
+											<li><a href="http://wvw.9377.com/cycsxsk.html" target="_blank">新手礼包</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="site_txt">
+                            <h3><a href="http://cycs.9377.com/" target="_blank">赤月传说</a></h3>
+							<div class="__data__" data_id="__data__[21838]" page="" postfix="index" style="display: none;"><div></div><span>火爆游戏标语cycs</span></div>                            <p></p>
+                        </div>
+                    </li>
+					                </ul>
+            </div>
+            <script type="text/javascript">
+                $(function(){
+                    $(".hot_game li .site_pic").hover(function() {
+						if (!$(this).children(".site_pic_back").is(":animated")) {
+                        $(this).find(".site_pic_back").fadeIn();
+						return false;
+						}
+                    }, function() {
+                        $(this).find(".site_pic_back").fadeOut();
+						return false;
+                    });
+					//开始游戏按钮
+					var games_time = null;
+					$('.games_start_tit span').mouseover(function(){
+						clearTimeout(games_time);
+						$('.games_start_tit span').addClass('start_up');
+						$('.games_start_con').show();
+					}).mouseout(function(){
+						games_time = setTimeout(function(){
+							$('.games_start_tit span').removeClass('start_up');
+							$('.games_start_con').hide();
+						},300);
+					});
+					
+					$('.games_start_con').mouseover(function(){
+						clearTimeout(games_time);
+						$('.games_start_tit span').addClass('start_up');
+						$('.games_start_con').show();
+					}).mouseout(function(){
+						$('.games_start_con').hide();
+						$('.games_start_tit span').removeClass('start_up');
+					});
+                });
+            </script>
+            <!--热门游戏 start-->
+			<div class="__data__" data_id="__data__[890]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏</span></div>			<h2 class="hide">好玩的网页游戏推荐</h2>
+            <div class="main_tips"><a class="hot_more_games" href="http://www.9377.com/game_center.php" target="_blank">更多&gt;&gt;</a><font class="org_color">热门</font>游戏</div>
+            <div class="hot_game2">	
+                <ul class="hot_game2_ul clearfix">
+					                    <li>
+						<span class="news_ico"></span>
+												<div class="__data__" data_id="__data__[20390]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图sg2</span></div>                        <a class="c_hot_pic" href="http://sg2.9377.com" target="_blank">
+							<img alt="11.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-02/07/09a5d0775d264e29.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://sg2.9377.com" class="hot_txt_t" target="_blank">盛世三国2</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://sg2.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-613-1.html" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://sg2.9377.com/server" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="news_ico"></span>
+												<div class="__data__" data_id="__data__[20471]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图mu</span></div>                        <a class="c_hot_pic" href="http://mu.9377.com" target="_blank">
+							<img alt="平台官网_14.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-01/27/b432cfee23b4febb.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://mu.9377.com" class="hot_txt_t" target="_blank">奇迹来了</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://mu.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-551-1.html" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://mu.9377.com/server/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="hot_ico"></span>						<div class="__data__" data_id="__data__[25552]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图ly</span></div>                        <a class="c_hot_pic" href="http://ly.9377.com" target="_blank">
+							<img alt="3-24-烈焰-火爆图.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-03/24/fc201699962fc898.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://ly.9377.com" class="hot_txt_t" target="_blank">烈焰</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://ly.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://ly.9377.com/server_list/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+												<div class="__data__" data_id="__data__[20474]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图jz</span></div>                        <a class="c_hot_pic" href="http://jz.9377.com" target="_blank">
+							<img alt="平台官网_19.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-01/27/b19b6fae375b94b0.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://jz.9377.com" class="hot_txt_t" target="_blank">剑踪</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://jz.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-373-1.html" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://jz.9377.com/download/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="news_ico"></span>
+												<div class="__data__" data_id="__data__[29941]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图mhj</span></div>                        <a class="c_hot_pic" href="http://mhj.9377.com" target="_blank">
+							<img alt="9377莽荒纪" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-05/20/8ca5b5cc649f5e0a.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://mhj.9377.com" class="hot_txt_t" target="_blank">莽荒纪</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://mhj.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-677-1.html" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://mhj.9377.com/server" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="hot_ico"></span>						<div class="__data__" data_id="__data__[20468]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图lhzs</span></div>                        <a class="c_hot_pic" href="http://lhzs.9377.com" target="_blank">
+							<img alt="平台官网_13.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-01/27/cf3f816239f1add6.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://lhzs.9377.com" class="hot_txt_t" target="_blank">烈火战神</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://lhzs.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://lhzs.9377.com/server/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+												<div class="__data__" data_id="__data__[20477]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图tlcs</span></div>                        <a class="c_hot_pic" href="http://tlcs.9377.com" target="_blank">
+							<img alt="平台官网_20.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-01/27/e50e999a807b8098.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://tlcs.9377.com" class="hot_txt_t" target="_blank">屠龙传说</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://tlcs.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://tlcs.9377.com/server_list/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="news_ico"></span>
+												<div class="__data__" data_id="__data__[29416]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图tssj</span></div>                        <a class="c_hot_pic" href="http://ts.9377.com" target="_blank">
+							<img alt="平台新游戏图220X130.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-05/14/52d458210c6b9445.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://ts.9377.com" class="hot_txt_t" target="_blank">天书世界</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://ts.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-682-1.html " target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://ts.9377.com/server/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                    <li>
+						<span class="news_ico"></span>
+												<div class="__data__" data_id="__data__[29824]" page="" postfix="index" style="display: none;"><div></div><span>首页热门游戏图sjcq</span></div>                        <a class="c_hot_pic" href="http://sjcq.9377.com" target="_blank">
+							<img alt="3、-官网首页-热门游戏-220x130.jpg" class="lazy_load" _src="http://cdnsource.9377.com/uploads/2015-05/19/fc060d2e177e16d6.jpg" style="width: 220px; height: 130px;" />
+                            <!--<img src="/images/cms_style_2015/game_new_lt.jpg" width="220" height="130" class="img"/>-->
+                        </a>
+                        <div class="hot_txt">
+                            <h4><a href="http://sjcq.9377.com" class="hot_txt_t" target="_blank">神界传奇</a></h4>
+                            <p>
+                                <span class="fr"><a href="http://sjcq.9377.com" target="_blank">官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://bbs.9377.com/forum-588-1.html" target="_blank">论坛</a></span>
+                                <a class="gred" href="http://www.9377.com/game_center.php?type=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94#type" target="_blank">角色扮演</a>
+                            </p>
+                            <p class="selct_enter">
+                                <a class="go_new_area" href="http://sjcq.9377.com/server/" target="_blank">进入新区</a>
+                            </p>
+                        </div>
+                    </li>
+					                </ul>
+            </div>
+            <!--其他游戏 start-->
+			<div class="__data__" data_id="__data__[1072]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏</span></div>			<h2 class="hide">热门网页游戏</h2>
+            <div class="main_tips"><a class="hot_more_games" href="http://www.9377.com/game_center.php" target="_blank">更多&gt;&gt;</a><font class="org_color">其他</font>游戏</div>
+            <div class="hot_game2">
+                <div class="index_all_games">
+                    <table width="100%" border="0">
+															                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://cycs.9377.com/" target="_blank"></a>
+                            <h3><a href="http://cycs.9377.com/" target="_blank">赤月经典版</a></h3>
+							<div class="__data__" data_id="__data__[27217]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语cycs1</span></div>                            <p> <a href="" target="_blank">一个传说 两种选择</a></p>
+							<div class="__data__" data_id="__data__[27214]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图cycs1</span></div>							<img alt="345x66(新平台).jpg" _src="http://cdnsource.9377.com/uploads/2015-04/16/8de6124217d6740e.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://ah.9377.com" target="_blank"></a>
+                            <h3><a href="http://ah.9377.com" target="_blank">暗黑屠龙</a></h3>
+							<div class="__data__" data_id="__data__[21595]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语ahtl</span></div>                            <p> <a href="" target="_blank">暗黑魔幻 狂暴屠龙</a></p>
+							<div class="__data__" data_id="__data__[20899]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图ahtl</span></div>							<img alt="暗黑屠龙.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/e06f6ae15ab118ac.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://wxwz.9377.com" target="_blank"></a>
+                            <h3><a href="http://wxwz.9377.com" target="_blank">武侠外传</a></h3>
+							<div class="__data__" data_id="__data__[29947]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语wxwz</span></div>                            <p> <a href="" target="_blank">武林江湖路</a></p>
+							<div class="__data__" data_id="__data__[29944]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图wxwz</span></div>							<img alt="武侠外传.jpg" _src="http://cdnsource.9377.com/uploads/2015-05/20/db321bbddb2fdeff.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://rxzj.9377.com/" target="_blank"></a>
+                            <h3><a href="http://rxzj.9377.com/" target="_blank">热血战纪</a></h3>
+							<div class="__data__" data_id="__data__[21616]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语rxzj</span></div>                            <p> <a href="" target="_blank">热血传奇 经典再现</a></p>
+							<div class="__data__" data_id="__data__[20911]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图rxzj</span></div>							<img alt="热血战纪.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/69408efbba78e028.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://ogzq2.9377.com" target="_blank"></a>
+                            <h3><a href="http://ogzq2.9377.com" target="_blank">欧冠足球2</a></h3>
+							<div class="__data__" data_id="__data__[28762]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语ogzq2</span></div>                            <p> <a href="" target="_blank">全新联赛 最强赛程</a></p>
+							<div class="__data__" data_id="__data__[28342]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图ogzq2</span></div>							<img alt="1a7b053b702c1481.jpg" _src="http://cdnsource.9377.com/uploads/2015-05/04/8d81434666cd8cb3.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://hg.9377.com/" target="_blank"></a>
+                            <h3><a href="http://hg.9377.com/" target="_blank">黑暗之光</a></h3>
+							<div class="__data__" data_id="__data__[21604]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语hazg</span></div>                            <p> <a href="" target="_blank">斩断时空 跨越时代</a></p>
+							<div class="__data__" data_id="__data__[20914]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图hazg</span></div>							<img alt="黑暗之光.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/43719cf60842bc7b.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://wssb.9377.com" target="_blank"></a>
+                            <h3><a href="http://wssb.9377.com" target="_blank">无上神兵</a></h3>
+							<div class="__data__" data_id="__data__[28759]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语wssb</span></div>                            <p> <a href="" target="_blank">無上至尊 谁与争锋</a></p>
+							<div class="__data__" data_id="__data__[27760]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图wssb</span></div>							<img alt="新平台首页其他游戏1张：345X66.jpg" _src="http://cdnsource.9377.com/uploads/2015-04/23/0e09a4951cc718eb.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://www.9377.com/ogzq/" target="_blank"></a>
+                            <h3><a href="http://www.9377.com/ogzq/" target="_blank">欧冠足球</a></h3>
+							<div class="__data__" data_id="__data__[21607]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语ogzq</span></div>                            <p> <a href="" target="_blank">疯狂足球 竞技天下</a></p>
+							<div class="__data__" data_id="__data__[20908]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图ogzq</span></div>							<img alt="欧冠足球.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/ae74c46fc8be1e5d.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://zt.9377.com" target="_blank"></a>
+                            <h3><a href="http://zt.9377.com" target="_blank">战天</a></h3>
+							<div class="__data__" data_id="__data__[21592]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语zt</span></div>                            <p> <a href="" target="_blank">怒战天下 霸世传奇</a></p>
+							<div class="__data__" data_id="__data__[20905]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图zt</span></div>							<img alt="战天.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/5913e3d89b6ad9d5.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://jieji.9377.com" target="_blank"></a>
+                            <h3><a href="http://jieji.9377.com" target="_blank">街机三国</a></h3>
+							<div class="__data__" data_id="__data__[21613]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语jjsg</span></div>                            <p> <a href="" target="_blank">卧龙军事 风云战姬</a></p>
+							<div class="__data__" data_id="__data__[20917]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图jjsg</span></div>							<img alt="街机三国.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/09e265c705f43af8.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://tlz.9377.com/" target="_blank"></a>
+                            <h3><a href="http://tlz.9377.com/" target="_blank">屠龙战</a></h3>
+							<div class="__data__" data_id="__data__[21622]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语tlz</span></div>                            <p> <a href="" target="_blank">手刃真龙 屠戮万将</a></p>
+							<div class="__data__" data_id="__data__[20920]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图tlz</span></div>							<img alt="屠龙战.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/58f6e44ba50efac8.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://wj.9377.com/" target="_blank"></a>
+                            <h3><a href="http://wj.9377.com/" target="_blank">问剑</a></h3>
+							<div class="__data__" data_id="__data__[21625]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语wj</span></div>                            <p> <a href="" target="_blank">问尽江湖 剑从我心</a></p>
+							<div class="__data__" data_id="__data__[20923]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图wj</span></div>							<img alt="问剑.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/83938ff1ac323f34.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://nz.9377.com/" target="_blank"></a>
+                            <h3><a href="http://nz.9377.com/" target="_blank">怒斩</a></h3>
+							<div class="__data__" data_id="__data__[21628]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语nz</span></div>                            <p> <a href="" target="_blank">怒发冲天 浴血狂战</a></p>
+							<div class="__data__" data_id="__data__[20926]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图nz</span></div>							<img alt="怒斩.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/1a7b053b702c1481.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://qh.9377.com" target="_blank"></a>
+                            <h3><a href="http://qh.9377.com" target="_blank">枪魂</a></h3>
+							<div class="__data__" data_id="__data__[21631]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语qh</span></div>                            <p> <a href="" target="_blank">神枪狙击 生化危机</a></p>
+							<div class="__data__" data_id="__data__[20929]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图qh</span></div>							<img alt="枪魂.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/dffcbfae5627596d.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://aszt.9377.com/" target="_blank"></a>
+                            <h3><a href="http://aszt.9377.com/" target="_blank">傲视遮天</a></h3>
+							<div class="__data__" data_id="__data__[21634]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语aszt</span></div>                            <p> <a href="" target="_blank">俯视千雄 一手遮天</a></p>
+							<div class="__data__" data_id="__data__[20935]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图aszt</span></div>							<img alt="傲视遮天.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/931897b29ce2eb22.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://dntg.9377.com/" target="_blank"></a>
+                            <h3><a href="http://dntg.9377.com/" target="_blank">大闹天宫</a></h3>
+							<div class="__data__" data_id="__data__[21640]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语dntg</span></div>                            <p> <a href="" target="_blank">大圣闯天宫 72变法</a></p>
+							<div class="__data__" data_id="__data__[20938]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图dntg</span></div>							<img alt="大闹天宫.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/94fb3a4d423c892a.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://nb2.9377.com/" target="_blank"></a>
+                            <h3><a href="http://nb2.9377.com/" target="_blank">南帝北丐2</a></h3>
+							<div class="__data__" data_id="__data__[21643]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语nb2</span></div>                            <p> <a href="" target="_blank">东邪西毒 南帝北丐</a></p>
+							<div class="__data__" data_id="__data__[20941]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图nb2</span></div>							<img alt="南帝北丐2.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/9ef65e1ebd8128a8.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://cy.9377.com/" target="_blank"></a>
+                            <h3><a href="http://cy.9377.com/" target="_blank">赤月</a></h3>
+							<div class="__data__" data_id="__data__[21652]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语cy</span></div>                            <p> <a href="" target="_blank">赤瞳悬夜 只闻腥风</a></p>
+							<div class="__data__" data_id="__data__[20950]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图cy</span></div>							<img alt="赤月.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/fb1a940f65e12b54.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://dpcq.9377.com/" target="_blank"></a>
+                            <h3><a href="http://dpcq.9377.com/" target="_blank">斗破苍穹2</a></h3>
+							<div class="__data__" data_id="__data__[21658]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语dpcq</span></div>                            <p> <a href="" target="_blank">斗气之魂 破晓苍穹</a></p>
+							<div class="__data__" data_id="__data__[20956]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图dpcq</span></div>							<img alt="斗破苍穹2.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/bc3014a01c7ba002.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://sg.9377.com/" target="_blank"></a>
+                            <h3><a href="http://sg.9377.com/" target="_blank">盛世三国</a></h3>
+							<div class="__data__" data_id="__data__[21661]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语sg</span></div>                            <p> <a href="" target="_blank">经典国战 霸气对决</a></p>
+							<div class="__data__" data_id="__data__[20959]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图sg</span></div>							<img alt="盛世三国.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/fa5a1e39a289e91d.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://sxd.9377.com/" target="_blank"></a>
+                            <h3><a href="http://sxd.9377.com/" target="_blank">神仙道</a></h3>
+							<div class="__data__" data_id="__data__[21664]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语sxd</span></div>                            <p> <a href="" target="_blank">修仙道法 谁与争锋</a></p>
+							<div class="__data__" data_id="__data__[20962]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图sxd</span></div>							<img alt="神仙道.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/1f564ae08ed44bfb.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://frxz2.9377.com/" target="_blank"></a>
+                            <h3><a href="http://frxz2.9377.com/" target="_blank">凡人修真2</a></h3>
+							<div class="__data__" data_id="__data__[21667]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语frxz2</span></div>                            <p> <a href="" target="_blank">寻梦九天 凡人成仙</a></p>
+							<div class="__data__" data_id="__data__[20965]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图frxz2</span></div>							<img alt="凡人修真2.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/f1de5579dc58cfed.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://sanguo.9377.com" target="_blank"></a>
+                            <h3><a href="http://sanguo.9377.com" target="_blank">新三国</a></h3>
+							<div class="__data__" data_id="__data__[21676]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语xsg</span></div>                            <p> <a href="" target="_blank">运筹帷幄 决战千里</a></p>
+							<div class="__data__" data_id="__data__[20974]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图xsg</span></div>							<img alt="新三国.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/8e538eda34e62445.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://tlzj.9377.com" target="_blank"></a>
+                            <h3><a href="http://tlzj.9377.com" target="_blank">屠龙战记</a></h3>
+							<div class="__data__" data_id="__data__[21679]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语tlzj</span></div>                            <p> <a href="" target="_blank">屠龙再现 血染皇城</a></p>
+							<div class="__data__" data_id="__data__[20977]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图tlzj</span></div>							<img alt="屠龙战记.jpg" _src="http://cdnsource.9377.com/uploads/2015-01/20/9dcde1cfe171a8fe.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+																				                      <tr>
+					                        <td  width="50%">
+                            <a class="other_game_link" href="http://dp3.9377.com" target="_blank"></a>
+                            <h3><a href="http://dp3.9377.com" target="_blank">斗破苍穹</a></h3>
+							<div class="__data__" data_id="__data__[28756]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语dp3</span></div>                            <p> <a href="" target="_blank">决战皇城 问鼎苍穹</a></p>
+							<div class="__data__" data_id="__data__[22867]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图dp3</span></div>							<img alt="平台官网_03.jpg" _src="http://cdnsource.9377.com/uploads/2015-02/10/3fa6c675ca2a4298.jpg" style="width: 344px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+																				                        <td  width="50%">
+                            <a class="other_game_link" href="http://qiji.9377.com" target="_blank"></a>
+                            <h3><a href="http://qiji.9377.com" target="_blank">奇迹归来</a></h3>
+							<div class="__data__" data_id="__data__[28981]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏标语qiji</span></div>                            <p> <a href="" target="_blank">荣耀归来 共创奇迹</a></p>
+							<div class="__data__" data_id="__data__[28996]" page="" postfix="index" style="display: none;"><div></div><span>首页所有游戏图qiji</span></div>							<img alt="奇迹归来.jpg" _src="http://cdnsource.9377.com/uploads/2015-05/12/699fe7f987141432.jpg" style="width: 345px; height: 66px;" />
+                            <!--<img src="/images/cms_style_2015/other_game_lt.jpg" />-->
+                        </td>
+					                      </tr>
+										                    </table>
+                </div>
+                
+                <script type="text/javascript">
+                    $(".index_all_games tr:odd").addClass("white_bg");
+                    $(".index_all_games tr:even").addClass("gray_bg");
+                    
+                     var showTimer, hideTimer;
+                      $(".index_all_games tr").mouseenter(function(){
+                        clearTimeout(showTimer);
+                        var _this=$(this);
+                        showTimer=setTimeout(function(){
+                            _this.css({"height":66}).find("img,p").fadeIn(100);
+							_this.find('img').attr('src', function(){
+								var self = $(this);
+								if(!self.attr('src')) self.attr('src', self.attr('_src'));
+							});
+                            _this.siblings("tr").css({"height":33}).find("img,p").fadeOut(100);
+                        },50)
+                    });
+                    $(".index_all_games tr").mouseleave(function(){
+                        clearTimeout(showTimer);
+                    });
+                
+                    $(".index_all_games tr:eq(0)").css({"height":66}).find("img,p").show();
+					$(".index_all_games tr:eq(0)").find('img').attr('src', function(){
+						var self = $(this);
+						if(!self.attr('src')) self.attr('src', self.attr('_src'));
+					});
+                    $(".index_all_games td:nth-child(2n)").css("border-right","none");
+                </script>
+            </div>
+        </div>
+        
+        <!-- 右侧部分 -->
+        <div class="sidebar_area">
+			<!--  最新开服表 结束 --> 
+            <div class="index_news">
+				<h2 class="hide">网页游戏资讯</h2>
+                <div class="main_tips"><a class="hot_more_games" href="http://www.9377.com/news/">更多&gt;&gt;</a>新闻资讯</div>
+                <div class="index_news_con">
+					<div class="index_news_list"><div class="__data__" data_id="__data__[22525]" page="" postfix="index" style="display: none;"><div></div><span>新闻资讯链接1</span></div> 
+						<a href="http://lt.9377.com/voices/" target="_blank">
+							<div class="__data__" data_id="__data__[21430]" page="" postfix="index" style="display: none;"><div></div><span>新闻资讯图片283*901</span></div><img alt="5-13-雷霆之怒-283-90.jpg" src="http://cdnsource.9377.com/uploads/2015-05/13/4f97e96a84ada588.jpg" style="width: 283px; height: 90px;" />
+							<p class="index_news_info">《雷霆之怒》巨星代言 精彩无限！</p>
+							<p class="index_news_mark"></p><div class="__data__" data_id="__data__[21433]" page="" postfix="index" style="display: none;"><div></div><span>新闻资讯介绍1</span></div>						</a>
+					</div>
+					<div class="__data__" data_id="__data__[23062]" page="" postfix="index" style="display: none;"><div></div><span>首页新闻资讯</span></div>					<ul>
+												<li><a href="http://cycs.9377.com/xwzx/98683.html" title="【赤月传说】五月新版一览" target="_blank">【赤月传说】五月新版一览</a></li>
+												<li><a href="http://lt.9377.com/kfz_rule/?1431748513" title="【雷霆之怒】跨服攻城战即将开启！" target="_blank">【雷霆之怒】跨服攻城战即将开启！</a></li>
+												<li><a href="http://mhj.9377.com/xwzx/99520.html" title="【莽荒纪】首服5月21日14点火爆开启" target="_blank">【莽荒纪】首服5月21日14点火爆开启</a></li>
+												<li><a href="http://my.9377.com/ggzx/99541.html" title="【魅影传说】新版本坐骑丹药大富翁清凉出击" target="_blank">【魅影传说】新版本坐骑丹药大富翁清凉出击</a></li>
+												<li><a href="http://www.9377.com/news/dsj/97963.html" title="【行业资讯】9377《雷霆之怒》代言人视频花絮首曝" target="_blank">【行业资讯】9377《雷霆之怒》代言人视频花絮首曝</a></li>
+												<li><a href="http://lt.9377.com/mtxw/98740.html" title="【官方动态】来9377《雷霆之怒》领张卫健亲笔签名" target="_blank">【官方动态】来9377《雷霆之怒》领张卫健亲笔签名</a></li>
+											</ul>	
+				</div>
+            </div>
+            <!--  最新开服表 开始 -->
+            <div class="newServer_list">
+				<div class="__data__" data_id="__data__[9342]" page="" postfix="index" style="display: none;"><div></div><span>平台新闻开服表</span></div>				<h2 class="hide">最新网页游戏开服表</h2>
+                <div class="main_tips">最新开服表</div>
+                <div class="kafu_hd">
+                    <a class="next"></a>
+                      <ul class="list_tab" id="tab">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                      </ul>
+                    <a class="prev"></a>
+                </div>
+                <div class="index_content">
+                    <div class="kafu_table">
+                    <!-- 一页显示20条  -->
+					                        <table width="99%" border="0" cellpadding="0" cellspacing="0">
+												                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3531" target="_blank" class="gred">双线3531区</a></td>
+                            <td>05-21 22:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41890" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=275" target="_blank" class="gred">双线275区</a></td>
+                            <td>05-21 22:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41797" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1902" target="_blank" class="gred">双线1902区</a></td>
+                            <td>05-21 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41293" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1901" target="_blank" class="gred">双线1901区</a></td>
+                            <td>05-21 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41290" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1903" target="_blank" class="gred">双线1903区</a></td>
+                            <td>05-21 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41296" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3530" target="_blank" class="gred">双线3530区</a></td>
+                            <td>05-21 20:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41887" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=274" target="_blank" class="gred">双线274区</a></td>
+                            <td>05-21 20:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41794" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6825" target="_blank" class="gred">双线6825区</a></td>
+                            <td>05-21 19:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41965" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6824" target="_blank" class="gred">双线6824区</a></td>
+                            <td>05-21 19:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41962" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1900" target="_blank" class="gred">双线1900区</a></td>
+                            <td>05-21 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41287" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3529" target="_blank" class="gred">双线3529区</a></td>
+                            <td>05-21 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41884" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=273" target="_blank" class="gred">双线273区</a></td>
+                            <td>05-21 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41791" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3528" target="_blank" class="gred">双线3528区</a></td>
+                            <td>05-21 16:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41881" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=272" target="_blank" class="gred">双线272区</a></td>
+                            <td>05-21 15:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41788" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1899" target="_blank" class="gred">双线1899区</a></td>
+                            <td>05-21 15:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41284" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://mhj.9377.com" target="_blank" class="cred">莽荒纪</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=mhj&server=1" target="_blank" class="gred">双线一区</a></td>
+                            <td>05-21 14:00</td>
+                            <td>
+								<!-- 								<span class="normal_bgcolor">N</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/mhjxsk.html?serverid=40942" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://tlcs.9377.com" target="_blank" class="cred">屠龙传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=tlcs&server=1391" target="_blank" class="gred">双线1391区</a></td>
+                            <td>05-21 14:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/tlcsxsk.html?serverid=40828" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6822" target="_blank" class="gred">双线6822区</a></td>
+                            <td>05-21 14:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41956" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6823" target="_blank" class="gred">双线6823区</a></td>
+                            <td>05-21 14:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41959" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3527" target="_blank" class="gred">双线3527区</a></td>
+                            <td>05-21 13:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41878" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						                         </table>
+					                        <table width="99%" border="0" cellpadding="0" cellspacing="0">
+												                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3527" target="_blank" class="gred">双线3527区</a></td>
+                            <td>05-21 13:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41878" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1898" target="_blank" class="gred">双线1898区</a></td>
+                            <td>05-21 12:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41281" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=271" target="_blank" class="gred">双线271区</a></td>
+                            <td>05-21 12:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41785" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://mu.9377.com" target="_blank" class="cred">奇迹来了</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=mu&server=216" target="_blank" class="gred">双线216区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="normal_bgcolor">N</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/muxsk.html?serverid=41011" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ts.9377.com" target="_blank" class="cred">天书世界</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=tssj&server=4" target="_blank" class="gred">双线4区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="normal_bgcolor">N</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/tssjxsk.html?serverid=41497" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://www.9377.com/ogzq/" target="_blank" class="cred">欧冠足球</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ogzq&server=297" target="_blank" class="gred">双线297区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/ogzqxsk.html?serverid=41491" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6820" target="_blank" class="gred">双线6820区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41950" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://jz.9377.com" target="_blank" class="cred">剑踪</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=jz&server=368" target="_blank" class="gred">双线368区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/jzxsk.html?serverid=41548" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6821" target="_blank" class="gred">双线6821区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41953" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ah.9377.com" target="_blank" class="cred">暗黑屠龙</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ahtl&server=552" target="_blank" class="gred">双线552区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/ahtlxsk.html?serverid=41026" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lhzs.9377.com" target="_blank" class="cred">烈火战神</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lhzs&server=1465" target="_blank" class="gred">双线1465区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lhzsxsk.html?serverid=41611" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://sg2.9377.com" target="_blank" class="cred">盛世三国2</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=sg2&server=287" target="_blank" class="gred">双线287区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="normal_bgcolor">N</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/sg2xsk.html?serverid=40990" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3526" target="_blank" class="gred">双线3526区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41875" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ogzq2.9377.com" target="_blank" class="cred">欧冠足球2</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ogzq2&server=92" target="_blank" class="gred">双线92区</a></td>
+                            <td>05-21 10:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/ogzq2xsk.html?serverid=40318" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月经典版</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs1&server=10006" target="_blank" class="gred">经典六区</a></td>
+                            <td>05-21 09:50</td>
+                            <td>
+								<!-- 								<span class="normal_bgcolor">N</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycs1xsk.html?serverid=41869" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=270" target="_blank" class="gred">双线270区</a></td>
+                            <td>05-21 09:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41782" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1897" target="_blank" class="gred">双线1897区</a></td>
+                            <td>05-21 09:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41278" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3525" target="_blank" class="gred">双线3525区</a></td>
+                            <td>05-21 00:10</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41872" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6818" target="_blank" class="gred">双线6818区</a></td>
+                            <td>05-21 00:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41944" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6817" target="_blank" class="gred">双线6817区</a></td>
+                            <td>05-21 00:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41941" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						                         </table>
+					                        <table width="99%" border="0" cellpadding="0" cellspacing="0">
+												                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6817" target="_blank" class="gred">双线6817区</a></td>
+                            <td>05-21 00:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41941" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6819" target="_blank" class="gred">双线6819区</a></td>
+                            <td>05-21 00:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41947" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6816" target="_blank" class="gred">双线6816区</a></td>
+                            <td>05-21 00:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41938" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3524" target="_blank" class="gred">双线3524区</a></td>
+                            <td>05-20 22:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41764" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1895" target="_blank" class="gred">双线1895区</a></td>
+                            <td>05-20 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41179" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1894" target="_blank" class="gred">双线1894区</a></td>
+                            <td>05-20 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41176" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1896" target="_blank" class="gred">双线1896区</a></td>
+                            <td>05-20 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41182" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=269" target="_blank" class="gred">双线269区</a></td>
+                            <td>05-20 21:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41779" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3523" target="_blank" class="gred">双线3523区</a></td>
+                            <td>05-20 20:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41761" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6815" target="_blank" class="gred">双线6815区</a></td>
+                            <td>05-20 19:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41656" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6814" target="_blank" class="gred">双线6814区</a></td>
+                            <td>05-20 19:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41653" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3522" target="_blank" class="gred">双线3522区</a></td>
+                            <td>05-20 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41758" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=268" target="_blank" class="gred">双线268区</a></td>
+                            <td>05-20 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41776" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1893" target="_blank" class="gred">双线1893区</a></td>
+                            <td>05-20 18:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41173" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://cycs.9377.com/" target="_blank" class="cred">赤月传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=cycs&server=3521" target="_blank" class="gred">双线3521区</a></td>
+                            <td>05-20 16:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/cycsxsk.html?serverid=41755" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://my.9377.com" target="_blank" class="cred">魅影传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=my&server=1892" target="_blank" class="gred">双线1892区</a></td>
+                            <td>05-20 15:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/myxsk.html?serverid=41170" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://lt.9377.com" target="_blank" class="cred">雷霆之怒</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=lt2&server=267" target="_blank" class="gred">双线267区</a></td>
+                            <td>05-20 15:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lt2xsk.html?serverid=41773" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6812" target="_blank" class="gred">双线6812区</a></td>
+                            <td>05-20 14:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41647" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://tlcs.9377.com" target="_blank" class="cred">屠龙传说</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=tlcs&server=1390" target="_blank" class="gred">双线1390区</a></td>
+                            <td>05-20 14:00</td>
+                            <td>
+								<!--  -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/tlcsxsk.html?serverid=40825" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						 						                          <tr>
+                            <td ><a href="http://ly.9377.com" target="_blank" class="cred">烈焰</a></td>
+                            <td class="s2"><a href="http://wvw.9377.com/game_login.php?game=ly&server=6813" target="_blank" class="gred">双线6813区</a></td>
+                            <td>05-20 14:00</td>
+                            <td>
+								<!-- 								<span class="hot_bgcolor">H</span>
+								 -->
+								<a class="kafu_gifts" href="http://wvw.9377.com/lyxsk.html?serverid=41650" target="_balnk">礼</a>
+							</td>
+                          </tr>
+						                         </table>
+					                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+             jQuery(".newServer_list").slide({titCell:".kafu_hd li",mainCell:".kafu_table",effect:"left",scroll:1,vis:1,trigger:"click"});
+            </script>
+			<!-- 快速通道 -->
+			<div class="quick_zone">
+				<h2>快速通道</h2>
+				<ul class="clearfix">
+					<li><a class="q0" href="http://wvw.9377.com/users/users_index.php?type=1" target="_blank" rel="nofollow"><span></span>修改密码</a></li>
+					<li><a class="q1" href="http://wvw.9377.com/getpass.php" target="_blank" rel="nofollow"><span></span>密码找回</a></li>
+					<li><a class="q2" href="http://wvw.9377.com/users/users_index.php?type=6" target="_blank" rel="nofollow"><span></span>绑定手机</a></li>
+					<li><a class="q3" href="http://wvw.9377.com/users/users_index.php?type=0" target="_blank" rel="nofollow"><span></span>绑定邮箱</a></li>
+					<li><a class="q4" href="http://wvw.9377.com/register.php" target="_blank" rel="nofollow"><span></span>注册账号</a></li>
+					<li><a class="q5" href="http://wvw.9377.com/pay_index.php" target="_blank" rel="nofollow"><span></span>充值游戏</a></li>
+					<li><a class="q6" href="http://wvw.9377.com/zjjh/" target="_blank" rel="nofollow"><span></span>家长监护</a></li>
+					<li><a class="q7" href="http://wvw.9377.com/users/users_index.php#addiction" target="_blank" rel="nofollow"><span></span>防沉迷验证</a></li>
+				</ul>
+			</div>
+			<!-- 客服专区 -->
+			<div class="custom_area">
+				<h2><a href="http://www.9377.com/kefu" target="_blank" rel="nofollow">进入客服中心</a>客服专区</h2>
+				<div class="custom_box clearfix">
+					<div class="custom_online">
+						<a href="http://www.9377.com/kefu.html" target="_blank" rel="nofollow"><p class="p_oline">在线客服</p><p class="p_server">SERVICE</p></a>
+					</div>
+					<ul>
+						<li class="p_problem"><a href="http://www.9377.com/form/" target="_blank" rel="nofollow"><span></span>问题自助提报</a></li>
+						<li>
+							<p class="p_cell">客服电话<font>7×24</font></p>
+							<p class="p_num">020-37039849</p>
+						</li>
+						<li class="brone">未成年人家长监护工程</li>
+					</ul>
+				</div>	
+			</div>
+        </div>
+    </div>
+    <!--友情链接-->
+    <div class="friends_link">
+		<span class="link_icon"><em></em></span>
+		<div class="__data__" data_id="__data__[594]" page="" postfix="index" style="display: none;"><div></div><span>首页友情链接</span></div>        <div class="link">
+			 <a href="http://www.9377.com/" target="_blank">网页游戏</a>
+			 <a href="http://www.2366.com/" target="_blank">2366网页游戏</a>
+			 <a href="http://www.265g.com/" target="_blank">265G网页游戏</a>
+			 <a href="http://www.eeyy.com/" target="_blank">一游网</a>
+			 <a href="http://www.yaojingweiba.com/" target="_blank">妖精的尾巴</a>
+			 <a href="http://www.imanshi.com/" target="_blank">爱漫视</a>
+			 <a href="http://web.duowan.com/" target="_blank">多玩网页游戏</a>
+			 <a href="http://www.86wan.com/" target="_blank">网页游戏大全</a>
+			 <a href="http://game.people.com.cn/" target="_blank">人民游戏</a>
+			 <a href="http://www.kan300.com/" target="_blank">好看的动漫</a>
+			 <a href="http://www.bamuyu.com/" target="_blank">新锐网页游戏</a>
+			 <a href="http://www.25pp.com/" target="_blank">iPhone游戏</a>
+			 <a href="http://www.2144.cn/" target="_blank">2144小游戏</a>
+			 <a href="http://wanwan.sina.com.cn" target="_blank">新浪玩玩</a>
+			 <a href="http://game.china.com" target="_blank">中华网游戏</a>
+			 <a href="http://www.gao7.com/" target="_blank">手机游戏</a>
+			 <a href="http://games.qq.com/web/index.htm" target="_blank">腾讯网页游戏</a>
+			 <a href="http://www.igoodgame.com/" target="_blank">电竞网</a>
+			 <a href="http://www.66game.cn/" target="_blank">街机游戏下载</a>
+			 <a href="http://www.9k9k.com" target="_blank">网页游戏开服表</a>
+			 <a href="http://www.8721.com/" target="_blank">8721手游之家</a>
+			 <a href="http://www.cwan.com/" target="_blank">Cwan中国玩家网</a>
+			 <a href="http://web.pcgames.com.cn/" target="_blank">太平洋页游</a>
+			 <a href="http://youxi.baidu.com/" target="_blank">百度游戏</a>
+			        </div>
+    </div>
+    <!--友情链接结束-->    
+	<script type="text/javascript">
+        $(function() {
+            $('.link_icon').click(function() {
+                $('.link').toggleClass('link_click');
+                $('.link_icon').toggleClass('link_ico_click');
+            })
+			$('.index_tui_games table tr').eq(0).find('td').addClass('btnone');
+        });
+        $('.top_menu ul li').eq(0).find('a').addClass('on');
+    </script>
+</div>
+<div class="gap_height"></div>
+<!--右侧浮动菜单开始-->    
+<div class="float_buttons">
+	<a class="float_wechat" href="http://www.9377.com/platform/weixin/" target="_blank" rel="nofollow"></a>
+	<a class="float_kefu" href="http://www.9377.com/kefu.html" target="_blank" rel="nofollow"></a>
+	<a class="float_top" href="javascript:;"></a>
+</div>	
+<!--右侧浮动菜单开始-->
+<!--脚注开始-->
+<div class="commer_foot">
+    <div class="wrapper">
+        <div class="__data__" data_id="__data__[913]" page="" postfix="index" style="display: none;"><div></div><span>底部公司信息</span></div><!--<p>
+	<a rel="nofollow" href="http://www.9377.com/recruitment/contact/company_intro.html" target="_blank">公司介绍</a> | <a  rel="nofollow" href="http://www.9377.com/recruitment/contact/contact.html" target="_blank">联系方法</a> | <a rel="nofollow" href="http://www.9377.com/president/" target="_blank">招聘信息</a> | <a rel="nofollow" href="http://www.9377.com/recruitment/contact/business.html" target="_blank">商务合作</a>
+</p>-->
+<p>
+	广州创思信息技术有限公司 文网文[2013]0235-085号</p>
+<p>
+	备案号：粤ICP备10075466号-4 <a href="http://www.9377.com/icp.html" rel="nofollow" target="_blank">增值电信业务经营许可证粤B-20100584</a>&nbsp; 联系电话(7x24)：020-37039749&nbsp;<br />
+	文化部网络游戏举报和联系电子邮箱：<a href="mailto:wlwh@vip.sina.com" rel="nofollow">wlwh@vip.sina.com</a> <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=1569461094&amp;Site=hackp.com&amp;Menu=yes" rel="nofollow" target="_blank">友情链接联系</a><a href="http://hr.9377.com/" rel="nofollow" target="_blank">招聘英才</a></p>
+<script type="text/javascript">
+var timestamp = (new Date).getTime()/1000 + 3600;
+if($_GET['lm']){
+	C9377.setcookie('lm', $_GET['lm'], timestamp );
+}
+if($_GET['referer_param'] || $_GET['uid']){
+	C9377.setcookie('referer_param', $_GET['referer_param'] || $_GET['uid'], timestamp );
+}
+</script><img height="0" src="http://tk.937791.com/cppt.php?id=5411" width="0" />
+        <div class="foot_icon">
+            <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1552384807" target="_blank" rel="nofollow" class="ico1"></a>
+            <a href="http://www.9377.com/wangjian" target="_blank" rel="nofollow" class="ico2"></a>
+            <a href="http://sq.ccm.gov.cn:80/ccnt/sczr/service/business/emark/toDetail/502CA69E2A204B458F401D09A3CF9B23" target="_blank" rel="nofollow" class="ico3"></a>
+        </div>
+    </div>
+</div>
+
+<div class="__data__" data_id="__data__[1139]" page="" postfix="index" style="display: none;"><div></div><span>全站底部公共调用</span></div><div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_4962109'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s21.cnzz.com/stat.php%3Fid%3D4962109%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+
+<!--二维码 begin-->
+<script type="text/javascript">
+var e = document.getElementById('ew_win');
+
+var ie6 = /msie 6/i.test(navigator.userAgent);	
+
+function fix2_close(){
+	$("#im_fixed").html("");
+}
+function ew_close(){
+	$("#ew_win").css({"display":"none"});
+	$("#yct").css({"display":"block"});
+	$("#app_games").css({"display":"block"});
+}
+function ew_open(){
+	$("#ew_win").css({"display":"block"});
+	$("#yct").css({"display":"none"});
+	$("#app_games").css({"display":"none"});
+}
+</script>
+<script type="text/javascript">
+	$(window).load(function(){
+		function GameHelp() {}
+		GameHelp.$ = $("#game-help");
+		GameHelp.timer = null;
+		GameHelp.v = 1000;
+		GameHelp.animate = function(gh) {
+			gh.$.toggleClass("act");
+			gh.timer = setTimeout(function() {
+				gh.animate(gh);
+			}, gh.v);
+		}
+		GameHelp.init = function(gh) {
+			gh.animate(gh);
+			gh.$.hover(
+				function() { clearTimeout(gh.timer); },
+				function(){ gh.animate(gh); }
+			);
+		}
+		
+		GameHelp.init(GameHelp);
+	});
+</script>
+<style type="text/css">
+#ew_win{width:167px;height:249px;overflow:hidden;background:url(images/win-32.png) no-repeat !important;_background:url(images/win-8.png) no-repeat;display:none;position:relative;z-index:9999;_right:0px;_top:-249px;_bottom:auto;_position: absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+#ew_win a#wxclose{position:absolute;right:9px;top:8px;display:block;text-indent:-2000px;width:19px;height:19px;}
+#yct{width:101px;height:87px;overflow:hidden;background:url(images/yct-32.png) -66px -136px !important;background-repeat:no-repeat;_background-image:url(images/yct-8.png);_right:0px;_margin-top:-87px;_bottom:auto;_position: absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+#yct a{width:101px;height:87px;overflow:hidden;display:block;text-indent:-2000px;}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed;}
+#app_games{width:73px; height:96px; position:fixed; right:10px; bottom:30px; _position:absolute; _right:10px;  _bottom:auto; _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,0)||0)-(parseInt(this.currentStyle.marginBottom,0)||30)));}
+#app_games a{background:url(images/app_24.png) 0 0 no-repeat;_background:url(images/app_8.png) 0 0 no-repeat; display:block; width:100%; height:100%; font:0/0 a; overflow:hidden;}
+#app_games a.act{background-position:0 -96px;}
+</style>
+
+<div style="left: 0px; bottom: 0px; position: fixed;"><div id="im_fixed"></div></div>
+<div style="right: 0px; bottom: 0px; position: fixed;">
+	<div style="display: none;" id="ew_win">
+        <a href="javascript:ew_close();" target="_self" id="wxclose">关闭</a>
+    </div>
+</div>
+<!--<div style="right: 0px; bottom: 0px; position: fixed;">
+	<div style="display: block;" id="yct"><a href="http://www.9377.com/platform/weixin/" target="_blank">打开</a></div>
+</div>-->
+<div id="app_games"><a id="game-help" href="http://www.9377.com/news_/app/" target="_blank">游戏保镖</a></div>
+<!--二维码 over-->
+
+<script type="text/javascript" src="http://cdnsource.9377.com/js/set_referer.js?20150521152313"></script>
+<!--脚注结束-->
+<!--登录注册弹窗 start-->
+<style type="text/css">
+.clearfloat {clear:both;height:0;font-size: 1px;line-height: 0px;} 
+.clearfix{display:inline-block;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+/* Hides from IE-mac \*/
+* html .clearfix{height:1%;}
+.clearfix{display:block;}
+/* End hide from IE-mac */ 
+.db { display:block; }
+.dn { display:none; }
+.dib { display:inline-block; }
+.fl { float:left; }
+.fr { float:right; }
+.tac { text-align:center; }
+.mt5 { margin-top:5px; }
+.mt10 { margin-top:10px; }
+.mt15 { margin-top:15px; }
+.mt30 { margin-top:30px; }
+.mt35 { margin-top:35px; }
+.ml5 { margin-left:5px; }
+.ml10 { margin-left:10px; }
+.ml20 { margin-left:20px; }
+.mr5 { margin-right:5px; }
+.mr15 { margin-right:15px; }
+.mr10 { margin-right:10px; }
+.mr20{ margin-right:20px; }
+.mr25{ margin-right:25px; }
+.mr30 { margin-right:30px;}
+.mb1 { margin-bottom: 1px; }
+.mb5 { margin-bottom:5px; }
+.mb10 { margin-bottom:10px; }
+.mb15 { margin-bottom:15px; }
+.mb20 { margin-bottom:20px; }
+.mb25{ margin-bottom:25px; }
+.mb30 { margin-bottom:30px; }
+
+.gray{width:100%; position:absolute;left:0;top:0;z-index:100;background-color:#000; opacity:0.7;filter:alpha(opacity=70);}
+
+.login_register_box { display: none; width: 458px; padding-bottom: 30px; border-radius: 2px 0 2px 2px; background-color: #fff;}
+.login_register_box  button,input { border: 0 none; }
+.login_register_box label,input,select { vertical-align:middle; }
+.login_register_box ul,ol { list-style:none;}
+.login_register_box em,strong,i { font-style:normal; }
+.v_m_icon { display: inline-block; width: 0; height: 100%; vertical-align: middle; }
+.tab_l_g_list li,.login_register_box .s_close,.login_register_box .login_sm,.login_register_box .qq_login,.tab_l_g_list .btn .icon,.pop_register_box .register_sm
+{ background:url(http://cdnsource.9377.com/images/cms_style_2012_new/icon_l_g.png) no-repeat;}
+.tab_l_g_list li { float: left; width: 228px; height: 48px; border-bottom: 1px solid #dddcdc; background-position: 0 -58px; }
+.tab_l_g_list { height: 65px; }
+.tab_l_g_list .tab_l { border-radius: 2px 0 0 0; }
+.tab_l_g_list .on { height: 57px; border: none; background-position: 0 0; }
+.tab_l_g_list .btn .icon { float: left; width: 26px; height: 26px; overflow: hidden; margin: 4px 10px 0 56px; }
+.tab_l_g_list .btn_l .icon { background-position: -175px -201px; }
+.tab_l_g_list .btn_g .icon { background-position: -202px -201px; }
+.tab_l_g_list .on .btn_l .icon { background-position: -175px -174px; }
+.tab_l_g_list .on .btn_g .icon { background-position: -202px -174px; }
+.tab_l_g_list .bd_icon { height:47px; width: 0; border: 1px solid #dddcdc; }
+.login_register_box .s_close { position:absolute; top: 0; right:-38px; width:38px; height:36px; background-position: -190px -107px;}
+.tab_l_g_list .btn { display: inline-block; width: 218px; height: 40px; line-height:30px; padding: 8px 0 0 10px; font-family: 'microsoft yahei'; font-size: 20px; color: #999999; }
+.tab_l_g_list .on .btn { color: #fff; cursor: default; }
+.tab_l_g_list .btn:hover { text-decoration: none; }
+.l_g_tips { border-bottom: 1px solid #f4f4f4; padding: 0 0 12px 40px; }
+.l_g_tips a { margin-right: 10px; }
+.pop_logo { position:relative; top: 5px; }
+.l_g_tips span { vertical-align: bottom; color: #999999; }
+.l_g_tips em { color: #666666; margin: 0 5px; vertical-align: bottom; } 
+.l_g_tips strong { color: #ffb900; margin-right: 5px; vertical-align: bottom; } 
+.login_register_box .v_ul_txt span { display: inline-block; width: 14px; height: 14px; overflow: hidden; margin-left: 3px; vertical-align: middle; }
+.login_register_box .v_ul_txt span.normal {  }
+.login_register_box .v_ul_txt span.error { background:url(http://cdnsource.9377.com/images/cms_style_2012_new/icon_l_g.png) no-repeat -214px -259px; }
+.login_register_box .v_ul_txt span.ok { background:url(http://cdnsource.9377.com/images/cms_style_2012_new/icon_l_g.png) no-repeat -214px -239px; }
+
+.dialog_tips { height: 40px; line-height: 42px; color: #ff0000; font-size: 14px; margin-left: 104px; }
+.login_register_box .input_txt { width: 270px; height: 40px; line-height: 40px; font-size: 14px; padding: 0 3px; border: 1px solid #c1c1c1; border-radius: 1px; }
+.login_register_box .input_label { display: inline-block; width: 100px; text-align: right; font-size: 14px; color: #535353; }
+.check_auto,.login_register_box .login_sm { margin-left: 95px; }
+.label_check_auto { color: #989898; font-size: 14px; margin-left: 5px; }
+.login_register_box .forget_pwd { color: #4095ce; margin-left: 80px; }
+.login_register_box .login_sm { width: 118px; height: 39px; font-size: 0; line-height: 999px; overflow: hidden; cursor: pointer; background-position: 0 -279px; bo }
+.login_register_box .login_sm:hover { background-position: 0 -174px; }
+.login_register_box .qq_login { display: inline-block; width: 120px; height: 0; padding-top: 24px; margin-left: 10px; overflow: hidden; background-position: 0 -214px; vertical-align: bottom; }
+.pop_register_box .icon { display: inline-block; color: #ff0000; margin: 0 5px 0 0; font-family: simsun; }
+.pop_register_box .agreement { color: #989898; font-size: 14px; margin-left: 87px; }
+.pop_register_box .label_consent { color: #666; font-size: 14px; margin-left: 10px; }
+.pop_register_box .register_sm { width: 146px; height: 39px; background-position: 0 -239px; cursor: pointer; }
+.pop_register_box .register_sm:hover { background-position: 0 -134px; }
+</style>
+<div class="login_register_box" id="login_register_box">
+	<div>
+		<ul class="h_ul_txt tab_l_g_list">
+			<li class="tab tab_l"><a href="javascript:;" class="btn btn_l"><i class="icon"></i>登录</a></i></li>
+			<li class="bd_icon"></li>
+			<li class="tab tab_g"><a href="javascript:;" class="btn btn_g"><i class="icon"></i>注册</a></i></li>
+		</ul>
+		<a title="关闭" href="javascript:void(0);" class="s_close"></a>
+	</div>
+
+	<div>
+		<div class="pop_login_box tab_content dn">
+			<p class="l_g_tips mb25">
+				<a target="_blank" href="http://www.9377.com"><img alt="9377网页游戏平台" class="pop_logo" src="http://cdnsource.9377.com/images/cms_style_2012_new/pop_logo.jpg"></a><span>Hi<em>登陆</em><strong>9377</strong>一起创造游戏梦想吧！</span>
+			</p>
+
+			<form id="pop_form_login" method="post" action="http://wvw.9377.com/login.php" onsubmit="return _login_form(this);">
+				<input type="hidden" name="do" value="login" />
+				<input type="hidden" value="" name="gourl" />
+				<ul class="v_ul_txt">
+					<li class="mb10">
+						<label for="pop_username" class="input_label" id="l_f_label">用户名：</label>
+						<input type="text" name="username" id="pop_username" autocomplete="off" class="input_txt">
+					</li>
+					<li class="mb15">
+						<label for="pop_password" class="input_label">密码：</label>
+						<input type="password" name="password" id="pop_password" autocomplete="off" class="input_txt">
+					</li>
+					<li class="mb20">
+						<input type="checkbox" name="login_save" value="1" checked="checked" id="check_auto" class="check_auto"><label class="label_check_auto" for="check_auto">下次自动登录</label>
+						<a href="http://wvw.9377.com/getpass.php" class="forget_pwd" target="_blank">忘记密码了？</a>
+					</li>
+					<li>
+						<input type="submit" class="login_sm" value="登录">
+						<a href="http://wvw.9377.com/api/qq.php?_qq_action=login" target="_blank" class="qq_login">用QQ账号登录</a>
+					</li>
+				</ul>
+			</form>
+		</div>
+		
+		<div class="pop_register_box tab_content">
+			<p class="l_g_tips">
+				<a href="###"><img alt="9377网页游戏平台" class="pop_logo" src="http://cdnsource.9377.com/images/cms_style_2012_new/pop_logo.jpg"></a><span>Hi<em>注册</em><strong>9377</strong>成为我们的一员！</span>
+			</p>
+
+			<form id="pop_form_register" action="http://wvw.9377.com/register.php" method="post">
+				<input type="hidden" value="register" name="do">
+				<input type="hidden" value="1" name="register">
+				<input type="hidden" value="" name="gourl" />
+				<input type="hidden" value="" name="gid" />
+				<input type="hidden" value="" name="sid">
+				
+				<ul class="v_ul_txt">
+					<li><p class="dialog_tips" id="dialog_tips"></p></li>
+					<li class="mb10">
+						<label for="LOGIN_ACCOUNT" class="input_label" id="g_f_label"><i class="icon">*</i>账号：</label>
+						<input type="text" name="LOGIN_ACCOUNT" class="input_txt" />
+						<span></span>
+					</li>
+					<li class="mb10">
+						<label for="PASSWORD" class="input_label"><i class="icon">*</i>密码：</label>
+						<input type="password" name="PASSWORD" class="input_txt" autocomplete="off" />
+						<span></span>
+					</li>
+					<li class="mb20">
+						<label for="PASSWORD1" class="input_label"><i class="icon">*</i>确认密码：</label>
+						<input type="password" name="PASSWORD1" class="input_txt" autocomplete="off" />	
+						<span></span>	
+					</li>
+					<li class="mb15">
+						<a href="###" class="agreement">《用户注册服务协议》</a>
+						<input type="checkbox" name="input6" value="" checked="checked" id="check_consent" class="check_consent"><label class="label_consent" for="check_consent">我已看过并同意</label>
+					</li>
+					<li class="tac">
+						<input type="submit" value="" class="register_sm" id="register_sm">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		var _dialog = new P8_Dialog({
+			className: 'login_register_box',
+			element: $('#login_register_box'),
+			title_bar: $('#login_register_box .hd'),
+			content: $('#login_register_box'),
+			close: $('#login_register_box .s_close'),
+			keep_center: true,
+			width: 458,
+			height: "auto",
+			overlay: {backgroundColor: '#000000'},
+			content_height: 'm'
+		});
+		
+		(function(){
+			var $tabs = $("#login_register_box .tab");
+			$tabs.click(function(){
+				var index = $tabs.index(this);
+				$(this).addClass("on").siblings(".tab").removeClass("on");
+				$("#login_register_box .tab_content").eq(index).show(0,function(){
+					//切换登陆或注册框时文本域获得焦点
+					if (index === 0) {
+						$("#l_f_label").click();
+					} else if (index === 1) {
+						$("#g_f_label").click();
+					}
+				}).siblings(".tab_content").hide();
+			}).eq($_COOKIE['Puser'] ? 0 : 1).click();
+		})();
+		
+		$('#login_register_box').bind('register', function(){
+			$('#login_register_box').trigger('popup');
+			$("#login_register_box .tab:eq(1)").click();
+		});
+		$('#login_register_box').bind('login', function(){
+			$('#login_register_box').trigger('popup');
+			$("#login_register_box .tab:eq(0)").click();
+		});
+		$('#login_register_box').bind('popup', function(){
+			_dialog.show();
+			
+			if(!$('#login_register_box').data('valided')) include_once('http://cdnsource.9377.com/js/jquery.validator.js?20150521152313', function(){
+				$('#login_register_box').data('valided', true);
+				$.validator.addMethod('valid_username', function(value, element){
+					return /^[a-zA-Z0-9\_]{4,20}$/.test(value);
+				});
+				
+				$('#pop_form_register').validate({
+					rules: {
+						LOGIN_ACCOUNT: {
+							required: true,
+							rangelength: [4, 20],
+							valid_username: true,
+							remote: {
+								url: '/check_user.php',
+								cache: false,
+								data: {'do': 'user', 'new': 1, username: function(){ return $('#pop_form_register input[name=LOGIN_ACCOUNT]').val(); }},
+								beforeSend: function(){}
+							}
+						},
+						
+						PASSWORD: {
+							required: true,
+							rangelength: [6, 20]
+						},
+						
+						PASSWORD1: {
+							required: true,
+							rangelength: [6, 20],
+							equalTo: '#pop_form_register input[name=PASSWORD]'
+						}
+					},
+					
+					messages: {
+						LOGIN_ACCOUNT: {
+							required: '请填写账号名',
+							rangelength: '4-20位的用户名',
+							valid_username: '账号名只能为数字或字母',
+							remote: '账号名已存在'
+						},
+						
+						PASSWORD: {
+							required: '请填写密码',
+							rangelength: '6-20位的密码'
+						},
+						
+						PASSWORD1: {
+							required: '请再次输入密码',
+							rangelength: '6-20位的密码',
+							equalTo: '请确认两次输入的密码一致'
+						}
+					},
+					
+					errorClass: 'error',
+					success: 'ok',
+					
+					errorPlacement: function(error, element) {
+						$('#dialog_tips').empty().append(error.html());
+						
+						element.next('span').removeClass().addClass(error.html() ? 'error' : 'ok');
+					},
+					
+					invalidHandler: function(event, validator){
+						validator.element(validator.errorList[0].element);
+					},
+					
+					onkeyup: false
+				});
+			});
+		});
+		if(!$_COOKIE['login_name'] && ($_GET['lm'] || /server/.test(window.location.href))){
+			$('#login_register_box').trigger('popup');
+		}
+		
+		$('#login_register_box').data('set_gourl', function(url){
+			$("#pop_form_register input[name='gourl']").val(url);
+			$("#pop_form_login input[name='gourl']").val(url);
+			
+			var qq_param = $('#login_register_box').data('qq_param');
+			$('#login_register_box').data('qq_param', qq_param);
+			$('#login_register_box a.qq_login').attr('href', 'http://wvw.9377.com/api/qq.php?_qq_action=login'+ ajax_parameters({_9377_forward: url, _9377_param: qq_param}));
+		});
+		
+		//修改注册表单
+		if(window['is_blank']) {
+			$("#pop_form_register").attr("target","_blank");
+		}
+		$('#login_register_box').data('set_gourl')('');
+		if(window['go_url']) {
+			$('#login_register_box').data('set_gourl')(window['go_url']);
+		}
+		
+		var qq_param = {
+			gid: ''
+		};
+		$('#login_register_box').data('qq_param', qq_param);
+	});
+	
+	function _login_form(form) {
+		var form = $(form);
+		var username = form.find('input[name=username]').val();
+		if(username.length < 3 || username.length > 20) {
+			alert("您输入的帐号有误");
+			form.find('input[name=username]').focus();
+			return false;
+		}
+
+		var pwd = form.find('input[name=password]').val();
+		if(pwd.length < 1) {
+			alert("您输入的密码不正确");
+			form.find('input[name=password]').focus();
+			return false;
+		}
+
+		return true;
+	}
+	
+	</script>
+</div>
+<!--登录注册弹窗 end-->
+<script type="text/javascript">
+function lazy_img(){
+	var top = $(document).scrollTop();
+	var height = $(window).height();
+	lazy_img.img.each(function(){
+		var _this = $(this);
+		if(_this.attr('src')){
+			_this.removeClass('lazy_load');
+			return;
+		}
+		
+		var y = _this.offset().top;
+		var h = _this.height();
+		if(y >= top && y <= top + height || y < top && y + h >= top){
+			_this.attr('src', _this.attr('_src')).removeClass('lazy_load');
+		}
+	});
+	lazy_img.img = $('img.lazy_load');
+}
+lazy_img.img = $('img.lazy_load');
+$(window).scroll(lazy_img);
+lazy_img();
+</script>
+</body>
+</html>

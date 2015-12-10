@@ -1,0 +1,79 @@
+团队开发中少不了管理控制工具，对于小团队来说，一个稳定可靠的且支持私有仓库的在线版本控制工具很重要。
+特酷吧之前很少使用过Git，考虑到现在主流的Github.com,bitbucket.org等都采用Git方式，且更重要的是bitbucket.org
+支持私有仓库，就学习了关于Git的基础使用以及bitbucket.org团队开发方法。
+一，使用SSH方法使用Git服务器
+到http://git­scm.com/网站下载并安装好git工具。
+下载之后需要如下简单的配置:
+git config ­­global user.name "Your Real Name"
+git config ­­global user.email "your@email.address"
+这里的用户名和邮箱在commit的时候会用到，不妨和github或者bitbucket帐号使用一致。
+在使用git clone等操作私有仓库时，如果之前没有配置SSH公钥登陆方式，则git会提示输入用户名和密码或者会直接
+提示拒绝登陆:
+localhost:~ Admin$ git clone git@bitbucket.org:tekuba/test.git
+Cloning into 'test'...
+The authenticity of host 'bitbucket.org (131.103.20.168)' can't be established.
+RSA key fingerprint is 87:8d:2e:f2:5t:3r:6b:5c:3b:ec:ab:5y:bg:74:7c:41.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org,131.103.20.168' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights and the repository exists.
+所以为了开发方便一般我们都会采取SSH公钥方式使用git。
+所谓"公钥登录"原理很简单：就是用户将自己的公钥储存在远程主机上。登录的时候远程主机向用户发送一段随机
+字符串，用户用自己的私钥加密后，返回给远程主机。远程主机用事先储存的公钥进行解密，如果成功，就证明用
+户是可信的，直接允许登录shell，不再要求密码。这种方法要求用户必须提供自己的公钥。如果没有现成的，可以
+直接用ssh­keygen生成一个。
+git shell中默认支持ssh­keygen命令。
+示例如下:
+ssh­keygen ­ t rsa ­C "youremail" //youremail为账户邮箱地址
+执行以上语句并选择保存SSH­key文件的目录。并按要求输入SSL链接到版本库的密码。tekuba.net建议都输入空格忽
+略即可，这样就不用每次提交的时候还需要输入密码。完成之后会在用户的主目录生成.ssh文件夹(是隐藏的需要隐
+藏可见),该目录会有一个id_rsa.pub文件.
+登陆到github.com或者bitbucket.org等网站,(以github.com为例)在"Account settings"­>"SSH Keys"­>"Add SSH key",添加
+key信息:title随便填写,将id_rsa.pub文件内容复制到框中即可。
+测试公钥认证是否成功:
+ssh ­T git@github.com
+显示如下提示说明配置成功：
+Warning:Permanently added 'github.com,204.232.175.90' (RSA) to the list of known hosts.
+Hi tekuba! You've successfully authenticated, but GitHub does not provide shell access.
+同样的bitbucket.org使用ssh ­T git@bitbucket.org。
+另外一种访问方式是https，其实git的工作原理一致，只是访问方式格式不同。
+比如:
+git@bitbucket.org:tekuba/test.git使用https访问就是:
+https://tekuba@bitbucket.org/tekuba/test.git
+二，git的简单使用
+(1)新建代码仓库
+在github.com或者bitbucket.org上新建一个空代码仓库
+切换到文件代码的目录
+git init //将项目git化，只需执行一次即可
+git add .//当前目次下所有代码参加git的跟踪中，提交到本地库2015/5/12 Git的基础使用以及bitbucket团队开发-特酷吧
+http://www.tekuba.net/system/337/ 3/8
+git add <file> //把指定文件参加的git的跟踪中，提交到本地库
+git commit ­m “…”//准备提交
+git remote add origin git＠github.com:tekuba/test.git
+git push ­u origin master //将本地库提交到远程代码库。
+(2)从远程代码仓库下载文件
+git clone git@github.com:tekuba/test.git
+(3)本地提交新代码
+本地代码做修改之后，提交到远程服务器，保险起见，我们首先从远程服务器获取最新的到本地:
+git fetch origin master
+查看本地仓库和远程仓库的区别
+git log ­p master.. origin/master
+把远程下载下来的代码合并到本地仓库
+git merge origin/master
+如果代码相同会提示:
+Already up­to­date.
+完成这些操作之后，就提交本地更改到远程版本仓库
+git add 'filename' //添加文件，对应的删除文件是 git rm 'filename'
+git commit ­m "代码提交信息"
+git push origin master
+三，优秀的Git工具
+如果你不喜欢Git命令行的繁琐，也是有很多图形界面工具可供选择的，常用的就是SourceTree.SourceTreeWindows
+和Mac上免费的Git和Mercurial客户端,，支持git大部分功能的界面操作，还具有文件对比功能。
+四，团队协作
+大家熟知的Github.com只支持免费的开源仓库，对于很多小型开发团队来说，一个稳定的私有仓库是很有必要的。
+bitbucket.org支持免费私有仓库且支持最多5个人的团队协作，我们可以创建一个bitbucket.org账户，建立一个Team，
+添加好友邮箱，通过邮件邀请好友加入这个team。好友确认邮箱并注册bitbucket.org(如果之前注册过就不需要再注
+册了)后就加入了这个team，就可以很方便的进行团队协同开发了。同时，bitbucket.org支持绑定二级域名，但二级
+域名不提供https访问。不过，毕竟bitbucket是国外的网站，访问速度以及会不会被屏蔽等都是需要考虑的问题，特
+酷吧刚开始使用，也不好说什么，用用再说吧。

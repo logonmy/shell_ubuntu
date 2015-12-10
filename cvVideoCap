@@ -1,0 +1,124 @@
+VideoCapture
+
+同样，视频捕获的数据也从指针改成类 cv::VideoCapture 了。构造函数接受的参数有：
+
+std::string   : 文件名
+int               : 设备号 ( 当参数为0时， 打开默认的摄像头）
+由capture类输出图像的方法现在可以使用重载的 operator>>(cv::Mat imageOut) ，示例如下：
+
+cv::Mat img;
+cv::VideoCapture cap("test.avi");
+cap >> img;
+grab()方法将抓取下一帧，retrieve()函数则将抓取的帧解码，如果抓取失败， retrieve()将返回 false。
+
+double get(int PropertyID）和 bool set(int PropID, double value) 可以用来设置类内部的属性，可选的属性ID如下：
+
+CV_CAP_PROP_POS_MSEC 当前位置（单位:ms）
+
+CV_CAP_PROP_POS_FRAMES 当前位置（单位：帧数，从0开始计）
+
+CV_CAP_PROP_POS_AVI_RATIO 当前位置（单位：比率， 0表示开始，1表示结尾）
+
+CV_CAP_PROP_FRAME_WIDTH 帧宽度
+
+CV_CAP_PROP_FRAME_HEIGHT 帧高度
+
+CV_CAP_PROP_FPS 帧速率
+
+CV_CAP_PROP_FOURCC 4-字符表示的视频编码（如：’M‘, ’J‘, ’P‘, ’G‘）
+
+CV_CAP_PROP_FRAME_COUNT 总帧数
+
+CV_CAP_PROP_FORMAT retrieve().调用返回的矩阵格式
+
+CV_CAP_PROP_MODE 后端变量指示的当前捕获的模式
+
+CV_CAP_PROP_BRIGHTNESS 明亮度（仅用于摄像头）
+
+CV_CAP_PROP_CONTRAST 对比度（仅用于摄像头）
+
+CV_CAP_PROP_SATURATION 饱和度（仅用于摄像头）
+
+CV_CAP_PROP_HUE 色调（仅用于摄像头）
+
+CV_CAP_PROP_GAIN 增益（仅用于摄像头）
+
+CV_CAP_PROP_EXPOSURE 曝光度 （仅用于摄像头）
+
+CV_CAP_PROP_CONVERT_RGB 是否应该将图像转化为RGB图像（布尔值）
+
+CV_CAP_PROP_WHITE_BALANCE 白平衡（暂不支持 v2.4.3)
+
+CV_CAP_PROP_RECTIFICATION 立体摄像头标定 (目前仅支持 DC1394 v 2.x 后端)
+
+滚动条
+
+相关函数有：
+
+int createTrackbar(const string& trackbarname, const string& winname, int* value, int count, TrackbarCallback onChange=0, void* userdata=0)
+ 
+int getTrackbarPos(const string& trackbarname, const string& winname)
+ 
+void setTrackbarPos(const string& trackbarname, const string& winname, int pos)
+构造函数中，value指示当前的滚动条坐标，count指示坐标的最大值(最小值为0），onChange指向坐标改变时的回调函数，而userdata将作为参数传递给回调函数。
+
+回调函数的签名如下：
+
+void foo(int pos, void * userdata)
+其中，pos指示滚动条当前坐标。
+
+示例代码如下：
+
+// Exp 02-02~03 Video Player
+#include    "opencv2/opencv.hpp"
+#include    "cppcommon.hpp"
+#include    "scpp_assert.hpp"
+#include  <string>
+ 
+void onTrackbarChange(int pos, void * userdata)
+{
+    cv::VideoCapture cap = * (cv::VideoCapture *) userdata;
+    cap.set(CV_CAP_PROP_POS_FRAMES, pos);
+}
+ 
+int main(int argc, char *argv[])
+{
+    using namespace cliout;
+    using std::string;
+    USAGE(argc==2, "VideoFile");
+ 
+    string winName = "Video Player";
+    cv::namedWindow(winName);
+     
+    cv::VideoCapture cap(argv[1]);
+    SCPP_ASSERT(cap.isOpened(),
+            "Can not open Video Capture from file: " << argv[1]);
+ 
+    int frameCount = cap.get(CV_CAP_PROP_FRAME_COUNT);
+    SCPP_ASSERT(frameCount > 0 && cap.grab(),
+            "Bad Video File: " << argv[1] << "with frame count " << frameCount);
+ 
+    int fps = cap.get(CV_CAP_PROP_FPS);
+    int mspf = 1000 / fps;
+ 
+    string trackbarName = "Progress";
+    int pos = 0;
+    cv::createTrackbar(/* tbName = */trackbarName, 
+                       /* winName = */winName,
+                       /* current pos = */ &pos,
+                       /* max pos = */ frameCount,
+                       // void callback(int pos, void* userdata)
+                       /* callback = */ onTrackbarChange,
+                       /* userdata = */ (void*) &cap
+    );
+ 
+    cv::Mat frame;
+    while (pos < frameCount) {
+        cap >> frame;
+        cv::imshow(winName, frame);
+        cv::setTrackbarPos(trackbarName, winName, ++pos);
+ 
+        char c = cv::waitKey(mspf);
+        if (std::tolower(c) == 'q') break;
+    }
+}

@@ -1,0 +1,1 @@
+ make clean;make; ./P4P act=generetion > data.txt; sed -n '/^2[5-9][4-9]\./p' data.txt > data_1.txt

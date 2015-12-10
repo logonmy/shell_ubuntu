@@ -1,0 +1,17 @@
+1.1 安装
+sudo apt-get install gtk-recordmydesktop recordmydesktop
+1.2 操作
+①. 由 Advanced 或 另存新檔，決定錄影後檔案要放的位置. (如果不錄聲音, 可以把 Sound Quality 取消)
+  ②. Select Window 選擇要錄的畫面
+  ③. 點選 "錄音" 就會開始錄 (此時工具列會多一個灰白色的小正方形圖示)
+  ④. 錄完後，點選灰白色小正方形圖示，即會將錄影檔案存檔.(out.ogv)
+二、轉檔 mencoder
+若不經轉檔，則 ogv 格式的影片，利用mplayer軟體是無法觀看
+轉檔方式
+＊將 ogv 轉成 avi 就可以用其它播放器看
+mencoder out.ogv -nosound -ovc lavc -o out.avi
+批次自動轉檔
+for i in `find ./ -name "*.ogv"`;do mencoder $i -nosound -ovc lavc -o $i.avi ;done
+三、常见问题
+如果大家在录制过程中发现有错帧的现象，可以在Advanced设置中开启Performance 中的Encode On The Fly选项解决。
+

@@ -1,0 +1,35 @@
+$$$$$$$$$$$$$$$$$$$$\\\ -------------------------------------------------------------------- ///$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$>>> Notice :Before configure anything ,make sure your laptop enable WIFI <<<$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$/// -------------------------------------------------------------------- \\\$$$$$$$$$$$$$$$$$$$$
+
+FOLLOW these steps:
+   249  mkdir hostapd
+   250  cd hostapd/
+   251  git clone https://github.com/oblique/create_ap
+   252  cd create_ap/
+   254  sudo make install 
+
+   260  apt-cache search hostapd
+   261  sudo apt-get install hostapd
+   262  sudo reboot (may not be needed)
+   263  sudo  nmcli nm wifi off
+   264  sudo  rfkill unblock wlan
+   265  sudo create_ap -n wlan0 ZZW 12345678 
+
+	(more setting refer to ./creat_ap/README.md, eg. share internet)
+
+
+
+
+################# something useful #################
+1) scp opencv-2.4.9.zip pi@pi:/home/pi
+
+
+2)   sudo gvim /etc/hosts 
+  then
+     ip_adress host_name
+
+3) alias ssh_pi='ssh -X pi@pi'
+
+4) alias setup_ap="sudo nmcli nm wifi off;sudo rfkill unblock wlan;sudo create_ap -n wlan0 ZZW 12345678"
+################# something useful #################

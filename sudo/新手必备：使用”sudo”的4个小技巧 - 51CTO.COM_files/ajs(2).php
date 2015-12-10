@@ -1,0 +1,3 @@
+var OX_cac4af53 = '';
+OX_cac4af53 += "<"+"a href=\'//gg3.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2389__zoneid=256__cb=31d2b6efef__oadest=http%3A%2F%2Fbbs.51cto.com%2Fthread-1166722-1.html\' target=\'_blank\'><"+"font color=\'red\'>吐槽也拿奖,谈IT运维背后的故事<"+"/font><"+"/a><"+"div id=\'beacon_31d2b6efef\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg1.51cto.com/www/delivery/lg.php?bannerid=2389&amp;campaignid=545&amp;zoneid=256&amp;loc=1&amp;referer=http%3A%2F%2Fos.51cto.com%2Fart%2F201106%2F269725.htm&amp;cb=31d2b6efef\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_cac4af53);

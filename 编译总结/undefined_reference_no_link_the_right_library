@@ -1,0 +1,12 @@
+g++ -m64 -Wl,-O1 -Wl,-rpath,/home/zhenweizhang/Downloads/libQGLViewer-2.6.2/QGLViewer -o keyboardAndMouse .obj/keyboardAndMouse.o .obj/main.o    -L/usr/X11R6/lib64 -L/usr/lib/x86_64-linux-gnu -lQGLViewer -lpthread -lGL -lQtXml -lQtOpenGL -lQtGui -lQtCore 
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluCylinder'
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluSphere'
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluPickMatrix'
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluProject'
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluNewQuadric'
+/usr/lib/x86_64-linux-gnu/libQGLViewer.so: undefined reference to `gluUnProject'
+collect2: error: ld returned 1 exit status
+make: *** [keyboardAndMouse] Error 1
+
+**********************************************************************************************************************************************************************************************************************************
+solved　:LDFLAGS_CYG=-L/lib -lglut -lGLU -lGL -lm

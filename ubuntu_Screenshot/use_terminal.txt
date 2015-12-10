@@ -1,0 +1,22 @@
+From the Terminal
+You can use the mate-screenshot command to take a screenshot. The mate-screenshot command takes a screenshot of the entire screen, and displays the Save Screenshot dialog. Use the Save Screenshot dialog to save the screenshot.
+You can also use options on the mate-screenshot command as follows:
+Option
+Function
+--window
+Takes a screenshot of the window that has focus.
+--delay=seconds
+Takes a screenshot after the specified number of seconds, and displays the Save Screenshot dialog. Use the Save Screenshot dialog to save the screenshot.
+--include-border
+Takes a screenshot including the border of the window.
+--remove-border
+Takes a screenshot without the border of the window.
+--border-effect=shadow
+Takes a screenshot and adds a shadow bevel effect around it.
+--border-effect=border
+Takes a screenshot and adds a border effect around it.
+--interactive
+Opens a window that lets you set options before taking the screenshot.
+--help
+Displays the options for the command.
+When you take a screenshot, the Save Screenshot dialog opens. To save the screenshot as an image file, enter the filename for the screenshot, choose a location from the drop-down list and click the Save button. You can also use the Copy to Clipboard button to copy the image to the clipboard or transfer it to another application by drag-and-drop.

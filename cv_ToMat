@@ -1,0 +1,109 @@
+其实就是把其他数据类型转换成Mat
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& 利用数组来构建cv::Mat &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+void ArrayToMat()  
+{  
+    double m[3][3];  
+    for (int i=0; i<3; i++)  
+    {  
+        for (int j=0; j<3; j++)  
+        {  
+            m[i][j] = i+j;  
+            cout<<m[i][j]<<" ";  
+        }  
+        cout<<endl;  
+    }  
+    cout<<"****************************************"<<endl;  
+  
+    Mat M = Mat(3, 3, CV_64F, m);  
+    double tempVal = 0.0;  
+  
+    for (int i=0; i<3; i++)  
+    {  
+        for (int j=0; j<3; j++)  
+        {  
+            tempVal = M.at<double>(i,j);  
+            cout<<tempVal<<" ";  
+        }  
+        cout<<endl;  
+    }  
+}  
+&&&&&&&&&&&&&&&&&&&&&&&&&&& IplImage*跟cv::Mat之间的互相转换 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+void IplImageToMat()  
+{  
+    IplImage* pImg = cvLoadImage("c:/test.jpg");  
+    if (!pImg)  
+    {  
+        cout<<"pImg load error"<<endl;  
+        system("pause");  
+        exit(-1);  
+    }  
+  
+    cvNamedWindow("pImg", 0);  
+    cvNamedWindow("mtx", 0);  
+      
+    Mat mtx(pImg);   
+      
+    cvShowImage("pImg", pImg);  
+    imshow("mtx", mtx);  
+    cvWaitKey(0);  
+  
+    cvReleaseImage(&pImg);  
+}  
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&  Mat转换为IplImge  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+void MatToIplImage()  
+{  
+    Mat m = imread("c:/test.jpg");  
+    if (m.empty())  
+    {  
+        cout<<"mat load error"<<endl;  
+        system("pause");  
+        exit(-1);  
+    }  
+  
+    IplImage img1 = IplImage(m);  
+    IplImage img2 = m;  
+  
+    cvNamedWindow("img1", 0);  
+    cvNamedWindow("img2", 0);  
+  
+    cvShowImage("img1", &img1);  
+    cvShowImage("img2", &img2);  
+  
+    cvWaitKey(0);  
+}  
+
+&&&&&&&&&&&&&&& 访问二维数据（cv::Mat）最高效的方式是先得到该二维数据的每一行的指针，然后利用下标运算符逐列访问示例代码 &&&&&&&&&&&&&
+
+void MatAccess()  
+{  
+    double m[3][3];  
+    for (int i=0; i<3; i++)  
+    {  
+        for (int j=0; j<3; j++)  
+        {  
+            m[i][j] = i+j;  
+            cout<<m[i][j]<<" ";  
+        }  
+        cout<<endl;  
+    }  
+    cout<<"****************************************"<<endl;  
+  
+    Mat M = Mat(3, 3, CV_64F, m);  
+    double sum = 0;  
+    int rows = M.rows;  
+    int cols = M.cols;  
+  
+    for (int i=0; i<rows; i++)  
+    {  
+        const double* Mi = M.ptr<double>(i);  
+        for (int j=0; j<cols; j++)  
+        {  
+            sum += Mi[j];  
+        }  
+    }  
+    cout<<"sum: "<<sum<<endl;  
+}  

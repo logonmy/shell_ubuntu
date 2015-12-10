@@ -1,0 +1,5 @@
+Linux下保留history的话，如果服务器被攻破，会根据其记录得知很多相关的服务器信息，这样明显是不安全的，可以通过一下方法进行处理：
+1、vi  /etc/profile，添加 HISTSIZE=0或1
+2、清除用户home路径下的.bash_history文件
+3、立即清空里的history当前历史命令的记录：history -c
+4、bash执行命令时不是马上把命令名称写入history文件的，而是存放在内部的buffer中，等bash退出时会一并写入。不过，可以调用：history -w命令要求bash立即更新history文件。

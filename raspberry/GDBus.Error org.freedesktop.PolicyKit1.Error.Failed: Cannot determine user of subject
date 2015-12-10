@@ -1,0 +1,17 @@
+When I boot up my Banana Pi with Raspian V3 I got an error message
+"GDBus.Error org.freedesktop.PolicyKit1.Error.Failed: Cannot determine user of subject"
+Found a solution here:
+http://ubuntuforums.org/showthread.php?t=779992
+
+Edit (or create) file 
+/etc/dbus-1/system-local.conf
+Paste this text:
+<!DOCTYPE busconfig PUBLIC
+"-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd">
+<busconfig>
+        <!-- for some reason this isn't being set properly in Hardy 15 May, 2008 -->
+        <limit name="max_connections_per_user">256</limit>
+</busconfig>
+Copy the Code
+and then reboot

@@ -1,0 +1,3 @@
+var OX_2bce25ed = '';
+OX_2bce25ed += "<"+"a href=\'//gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2134__zoneid=257__cb=e0e4979474__oadest=http%3A%2F%2Fserver.51cto.com%2Fexp%2Funitedstack2015%2F\' target=\'_blank\'><"+"font color=\'red\'>OpenStack为何这么火？<"+"/font><"+"/a><"+"div id=\'beacon_e0e4979474\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg3.51cto.com/www/delivery/lg.php?bannerid=2134&amp;campaignid=474&amp;zoneid=257&amp;loc=1&amp;referer=http%3A%2F%2Fos.51cto.com%2Fart%2F200709%2F57169.htm&amp;cb=e0e4979474\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_2bce25ed);

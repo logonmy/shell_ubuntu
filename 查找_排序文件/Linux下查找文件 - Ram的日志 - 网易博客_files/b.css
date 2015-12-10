@@ -1,0 +1,85 @@
+body,a{color:#4c402b;}
+.fc01{color:#432914;}
+.fc02,.fc02 a{color:#863417;font-size:12px;}
+.fc03,.fc03 a,.fc04,.fc04 a,.fc11 a{color:#863417;}
+.fc05{color:#4c402b;}
+.fc06,.fc07{color:#aea085;}
+.fc08{color:#ffffff;}
+.fc00,.fc09{color:#863417;}
+.fc10{color:#e8e8e8;}
+.bdc0{border-color:#e8e8e8;}
+.bdc1{border-color:#ffffff;}
+.bdc9t{border-top-color:#ffffff;}
+.bdc9r{border-right-color:#ffffff;}
+.bdc9b{border-bottom-color:#ffffff;}
+.bdc9l{border-left-color:#ffffff;}
+.bgc0,.bgc9:hover,.bgc9.js-bgc9-hover{background-color:#eeeeee;}
+.bgc1{background-color:#ffffff;}
+.bgc2{background-color:transparent;}
+.bgp0{background-image:url(http://b.bst.126.net/newpage/style/nblog/4178/img/-1.gif);}
+.nb-body{background:url(http://img.bimg.126.net/photo/l3wOh1qv0YbnJgLkmG8KHg==/5774177672242723020.jpg) #d8a169 repeat left top ;}
+.nb-bar{background:none transparent repeat left top;}
+.nb-top{background:none transparent no-repeat center top;}
+.nb-top .h{height:85px;}
+.nb-top .t{top:11px;left:16px;font-family:Î¢ÈíÑÅºÚ;color:#643e1b;}
+.nb-top .n{font-size:32px;}
+.nb-top .d{font-size:18px;}
+.nb-nav .wkg{background:none transparent no-repeat center top;}
+.nb-nav .h{height:52px;line-height:52px;}
+.nb-nav .c{margin-left:17px;}
+.nb-nav .i{width:70px;font-weight:normal;font-size:12px;}
+.nb-nav .i:hover{font-weight:normal;font-size:12px;color:#ffffff;background:url(http://img.bimg.126.net/photo/pOHIUUFoINSnQoRRdA9Qbg==/5783466346474172238.jpg) transparent no-repeat center center;}
+.nb-nav .selected{background:url(http://img.bimg.126.net/photo/yHt-LfBobv0XUmb0AACcYw==/5783466346474172233.jpg) transparent no-repeat center center;}
+.nb-nav .selected .i,.nb-nav .selected .i:hover{font-weight:normal;font-size:12px;color:#ffffff;background:none;}
+.nb-cnt .wkg{background:none transparent repeat center top;}
+.nb-cnt .wc{margin:0 5px 0 5px;min-height:560px;_height:560px;}
+.nb-fot{background:none transparent no-repeat center top;}
+.nb-fot .h{height:110px;}
+.nb-fot .k{padding-top:21px;}
+.nb-mdl{margin:10px 5px;border:1px none #aaaaaa;}
+.nb-mdl .th{height:20px;}
+.nb-mdl .bh{height:38px;}
+.nb-mt .tm{top:0;right:10px;line-height:25px;}
+.nb-mt .tc{margin:0 19px 0 49px;height:20px;line-height:25px;font-size:12px;font-weight:bold;background:url(http://img.bimg.126.net/photo/rE3enQcMAFRINc9cdvex5g==/5783466346474172189.jpg) transparent repeat-x center top;}
+.nb-mt .tc .thide{font-size:12px;}
+.nb-mt .tl{width:49px;background:url(http://img.bimg.126.net/photo/CIp2B0FVJgdvapgUAomW1w==/5783466346474172079.jpg) transparent no-repeat left top;}
+.nb-mt .tr{width:19px;background:url(http://img.bimg.126.net/photo/qbtpzMyE4v1LXsotx7wl8Q==/5783466346474172083.jpg) transparent no-repeat right top;}
+.nb-mc .cc{margin:0 19px 0 49px;background:none #fbf8f4 repeat-y left center;}
+.nb-mc .cl{width:49px;background:url(http://img.bimg.126.net/photo/s0Vr8bFGR8HFpQznfOaa0A==/5783466346474172259.jpg) transparent repeat-y left top;}
+.nb-mc .cr{width:19px;background:url(http://img.bimg.126.net/photo/tp5oyrTn54r6AS6Hv5iK0g==/5783466346474172086.jpg) transparent repeat-y right top;}
+.nb-mb{display:block;}
+.nb-mb .bc{margin:0 19px 0 49px;background:url(http://img.bimg.126.net/photo/cMPIrdf5sj2gz8YZB1W2hA==/5783466346474172179.jpg) transparent repeat-x center bottom;}
+.nb-mb .bl{width:49px;background:url(http://img.bimg.126.net/photo/g3pT6vBwmPb2LZ0JLaLT-w==/5783466346474172175.jpg) transparent no-repeat center top;}
+.nb-mb .br{width:19px;background:url(http://img.bimg.126.net/photo/Ytx_thagyFhDkbrlHNLY6g==/5783466346474172180.jpg) transparent no-repeat center center;}
+.wsy,.wkg{width:1004px;margin:0px auto;}
+.bdc9t{border-top-color:#ffffff;}
+.bdc9r{border-right-color:#ffffff;}
+.bdc9b{border-bottom-color:#ffffff;}
+.bdc9l{border-left-color:#ffffff;}
+.bgc1{background-color:#ffffff;}
+.nb-mdl-n{color:#ffffff;}
+.nb-mdl-n a{color:#ffffff;}
+.nb-mdl-n .fc02,.nb-mdl-n  .fc02 a{color:#381307;font-size:12px;}
+.nb-mdl-n .fc03,.nb-mdl-n .fc03 a,.nb-mdl-n .fc04,.nb-mdl-n .fc04 a,.nb-mdl-n .fc11,.nb-mdl-n .fc11 a{color:#f5f5f5;},.nb-mdl-n .fc11 a{color:#f5f5f5;}
+.nb-mdl-n .fc05{color:#ffffff;}
+.nb-mdl-n .fc06,.nb-mdl-n .fc07{color:#ffffff;}
+.nb-mdl-n {margin:10px 5px;border:1px none #aaaaaa;}
+.nb-mdl-n .th{height:25px;}
+.nb-mdl-n .bh{height:32px;}
+.nb-mdl-n .nb-mt .tm{top:0;right:10px;line-height:25px;}
+.nb-mdl-n .nb-mt .tc{margin:0 8px 0 8px;height:25px;line-height:25px;font-size:12px;font-weight:bold;background:url(http://img.bimg.126.net/photo/TVTihPCQkf-v3MTmrx25Aw==/5783466346474172116.jpg) transparent repeat-x center top;}
+.nb-mdl-n .nb-mt .tc .thide{font-size:12px;}
+.nb-mdl-n .nb-mt .tl{width:8px;background:url(http://img.bimg.126.net/photo/Jk-ycQMnY05mOb-q9_C10g==/5783466346474172115.jpg) transparent no-repeat left top;}
+.nb-mdl-n .nb-mt .tr{width:8px;background:url(http://img.bimg.126.net/photo/PvSBommR19ESdICrJSgVhg==/5783466346474172117.jpg) transparent no-repeat left top;}
+.nb-mdl-n .nb-mc .cc{margin:0 8px 0 8px;background:url(http://img.bimg.126.net/photo/vHWrm0G_U0vt4WLlR_zCrQ==/5774177672242723043.jpg) transparent repeat center top;}
+.nb-mdl-n .nb-mc .cl{width:8px;background:url(http://img.bimg.126.net/photo/6_BysKpkKN3ANFKJfac1fw==/5783466346474172118.jpg) transparent repeat-y left top;}
+.nb-mdl-n .nb-mc .cr{width:8px;background:url(http://img.bimg.126.net/photo/rjctEWyf0kBimCgv0HsTtQ==/5783466346474172131.jpg) transparent repeat-y right top;}
+.nb-mdl-n .nb-mb{display:block;}
+.nb-mdl-n .nb-mb .bc{margin:0 12px 0 10px;background:url(http://img.bimg.126.net/photo/9fj0GjsCLfRXNy5arFvyfA==/5783466346474172120.jpg) transparent repeat-x center bottom;}
+.nb-mdl-n .nb-mb .bl{width:10px;background:url(http://img.bimg.126.net/photo/C5V0ESpm8KYj2Dq1sYaB9Q==/5783466346474172119.jpg) transparent no-repeat left bottom;}
+.nb-mdl-n .nb-mb .br{width:12px;background:url(http://img.bimg.126.net/photo/IYsq8sRBtGWzb4E_Mz6Ebg==/5783466346474172121.jpg) transparent no-repeat right bottom;}
+.nb-mdl .mdl_t_t{display:none;}
+.nb-mdl .mdl_t_t_x a{display:none;}
+.nb-mdl-n .mdl_t_t{display:block;}
+.nb-mdl-n .mdl_t_t_x a{display:block;}
+.nb-top .d{text-align:left;text-indent:0.2em;padding-left:0;}

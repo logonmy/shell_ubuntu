@@ -1,0 +1,25 @@
+　上一篇[命令技巧]mkcd中，mkcd函数里面使用到了mkdir的-p选项。mkdir的-p选项允许你一次性创建多层次的目录，而不是一次只创建单独的目录。例如，我们要在当前目录创建目录Projects/a/src，使用命令
+
+1
+mkdir -p Project/a/src
+而不是
+
+1
+2
+3
+4
+5
+mkdir Project
+cd Project
+mkdir a
+cd a
+mkdir src
+　　当然，如果你有mkcd，就可以直接
+
+1
+mkcd Project/a/src
+　　此外，如果我们想创建多层次、多维度的目录树，mkcd也显得比较苍白了。例如我们想要建立目录Project，其中含有4个文件夹a, b, c, d，且这4个文件都含有一个src文件夹。或许，我们可以逐个创建，但我更倾向于使用单个命令来搞定，而mkdir 的-p选项和shell的参数扩展允许我这么做，例如下面的一个命令就可以完成任务。
+
+1
+mkdir -p Project/{a,b,c,d}/src
+　　嗯，mkdir -p到此over~
